@@ -1,5 +1,4 @@
-import Image from 'next/image'
-import TagItem from '@/components/TagItem'
+import TagItem from '@/components/layouts/PostLayout/TagItem'
 import {
   NotionRenderer,
   Equation,
@@ -29,6 +28,7 @@ const PostLayout = ({ children, blockMap, frontMatter }) => {
         </h1>
         {frontMatter.type[0] !== 'Page' && (
           <nav className="flex mt-7 items-start text-gray-500 dark:text-gray-400">
+            {/* 작성자는 개인 블로그이므로 disable */}
             {/* <div className="flex mb-4">
               <a href={BLOG.socialLink || '#'} className="flex">
                 <Image

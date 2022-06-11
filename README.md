@@ -54,7 +54,9 @@ Check out our roadmap [here]()
 - [x] Open Graph support
 - [x] Switch to react-notion-x
 - [x] Sitemap
-- [ ] ...
+- [ ] pagenation in serach component
+- [ ] retactoring search component
+- [ ] dark mode toggle buttom
 
 ## Technical details
 

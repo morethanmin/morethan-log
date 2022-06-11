@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import BlogPost from '@/components/BlogPost'
-import Tags from '@/components/Tags'
+import Post from '@/components/Post'
+import Tags from '@/components/layouts/SearchLayout/Tags'
 import PropTypes from 'prop-types'
 
 const SearchLayout = ({ tags, posts, currentTag }) => {
@@ -46,7 +46,7 @@ const SearchLayout = ({ tags, posts, currentTag }) => {
           <p className="text-gray-500 dark:text-gray-300">No posts found.</p>
         )}
         {filteredBlogPosts.slice(0, 20).map((post) => (
-          <BlogPost key={post.id} post={post} />
+          <Post key={post.id} post={post} />
         ))}
       </div>
     </>

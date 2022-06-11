@@ -1,4 +1,4 @@
-import BlogPost from '@/components/BlogPost'
+import Post from '@/components/Post'
 import Pagination from '@/components/Pagination'
 import { getAllPosts } from '@/lib/notion'
 import BLOG from '@/blog.config'
@@ -9,7 +9,7 @@ const Page = ({ postsToShow, page, showNext }) => {
   return (
     <Layout>
       {postsToShow &&
-        postsToShow.map(post => <BlogPost key={post.id} post={post} />)}
+        postsToShow.map(post => <Post key={post.id} post={post} />)}
       <Pagination page={page} showNext={showNext} />
     </Layout>
   )

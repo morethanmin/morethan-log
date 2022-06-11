@@ -3,7 +3,6 @@ import Footer from '@/components/layouts/Layout/Footer'
 import BLOG from '@/blog.config'
 import Head from 'next/head'
 import PropTypes from 'prop-types'
-// import BlogPost from './BlogPost'
 
 const Layout = ({ children, pageType, fullWidth, ...customMeta }) => {
   const url = BLOG.path.length ? `${BLOG.link}/${BLOG.path}` : BLOG.link
