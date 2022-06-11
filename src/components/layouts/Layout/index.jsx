@@ -1,23 +1,17 @@
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 import BLOG from '@/blog.config'
 import Head from 'next/head'
-import React from 'react'
-import Footer from '../Footer'
-import Header from '../Header'
+import PropTypes from 'prop-types'
+// import BlogPost from './BlogPost'
 
-type Props = {
-  children: any
-  type: string
-  fullWidth: boolean
-}
-
-function Layout({ children, type, fullWidth, ...customMeta }: Props) {
+const Layout = ({ children, layout, fullWidth, ...customMeta }) => {
   const url = BLOG.path.length ? `${BLOG.link}/${BLOG.path}` : BLOG.link
-  const meta: any = {
+  const meta = {
     title: BLOG.title,
     type: 'website',
     ...customMeta,
   }
-
   return (
     <div>
       <Head>
@@ -74,7 +68,7 @@ function Layout({ children, type, fullWidth, ...customMeta }: Props) {
         }`}
       >
         <Header
-          navBarTitle={type === 'blog' ? meta.title : null}
+          navBarTitle={layout === 'blog' ? meta.title : null}
           fullWidth={fullWidth}
         />
         <main
@@ -88,6 +82,10 @@ function Layout({ children, type, fullWidth, ...customMeta }: Props) {
       </div>
     </div>
   )
+}
+
+Layout.propTypes = {
+  children: PropTypes.node,
 }
 
 export default Layout

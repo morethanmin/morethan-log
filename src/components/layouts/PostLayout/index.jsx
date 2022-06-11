@@ -1,35 +1,28 @@
 import Image from 'next/image'
 import Container from '@/components/Container'
 import TagItem from '@/components/TagItem'
-import { NotionRenderer, Equation, Code, Collection, CollectionRow } from 'react-notion-x'
+import {
+  NotionRenderer,
+  Equation,
+  Code,
+  Collection,
+  CollectionRow,
+} from 'react-notion-x'
 import BLOG from '@/blog.config'
 import formatDate from '@/lib/formatDate'
 import { useLocale } from '@/lib/locale'
 import { useRouter } from 'next/router'
 import Comments from '@/components/Comments'
 
-const mapPageUrl = id => {
+const mapPageUrl = (id) => {
   return 'https://www.notion.so/' + id.replace(/-/g, '')
 }
 
-const Layout = ({
-  children,
-  blockMap,
-  frontMatter,
-  emailHash,
-  fullWidth = false
-}) => {
+const PostLayout = ({ children, blockMap, frontMatter, emailHash }) => {
   const locale = useLocale()
   const router = useRouter()
   return (
-    <Container
-      layout="blog"
-      title={frontMatter.title}
-      description={frontMatter.summary}
-      // date={new Date(frontMatter.publishedAt).toISOString()}
-      type="article"
-      fullWidth={fullWidth}
-    >
+    <>
       <article>
         <h1 className="font-bold text-3xl text-black dark:text-white">
           {frontMatter.title}
@@ -57,7 +50,7 @@ const Layout = ({
             </div>
             {frontMatter.tags && (
               <div className="flex flex-nowrap max-w-full overflow-x-auto article-tags">
-                {frontMatter.tags.map(tag => (
+                {frontMatter.tags.map((tag) => (
                   <TagItem key={tag} tag={tag} />
                 ))}
               </div>
@@ -73,7 +66,7 @@ const Layout = ({
                 equation: Equation,
                 code: Code,
                 collection: Collection,
-                collectionRow: CollectionRow
+                collectionRow: CollectionRow,
               }}
               mapPageUrl={mapPageUrl}
             />
@@ -99,8 +92,8 @@ const Layout = ({
         </a>
       </div>
       <Comments frontMatter={frontMatter} />
-    </Container>
+    </>
   )
 }
 
-export default Layout
+export default PostLayout

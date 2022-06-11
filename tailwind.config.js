@@ -10,7 +10,7 @@ const fontSerifCJK = !CJK()
 
 module.exports = {
   mode: 'jit',
-  purge: ['./src/pages/**/*.js', './src/components/**/*.js', './src/layouts/**/*.js'],
+  purge: ['./src/pages/**/*.js', './src/components/**/*.jsx', './src/layouts/**/*.jsx'],
   darkMode: BLOG.appearance === 'auto' ? 'media' : 'class', // or 'media' or 'class'
   theme: {
     extend: {

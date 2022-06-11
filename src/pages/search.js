@@ -1,10 +1,8 @@
 import { getAllPosts, getAllTagsFromPosts } from '@/lib/notion'
-import SearchLayout from '@/layouts/search'
+import Layout from '@/components/layouts/Layout'
+import SearchLayout from '@/components/layouts/SearchLayout'
 
-export default function search ({ tags, posts }) {
-  return <SearchLayout tags={tags} posts={posts} />
-}
-export async function getStaticProps () {
+export async function getStaticProps() {
   const posts = await getAllPosts({ includePages: false })
   const tags = getAllTagsFromPosts(posts)
   return {
@@ -14,4 +12,11 @@ export async function getStaticProps () {
     },
     revalidate: 1
   }
+}
+
+export default function search({ tags, posts, currentTag = null }) {
+
+  return <Layout>
+    <SearchLayout tags={tags} posts={posts} currentTag={currentTag} />
+  </Layout>
 }
