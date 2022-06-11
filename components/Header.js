@@ -60,9 +60,8 @@ const Header = ({ navBarTitle, fullWidth }) => {
     <>
       <div className="observer-element h-4 md:h-12" ref={sentinalRef}></div>
       <div
-        className={`sticky-nav m-auto w-full h-6 flex flex-row justify-between items-center mb-2 md:mb-12 py-8 bg-opacity-60 ${
-          !fullWidth ? 'max-w-3xl px-4' : 'px-4 md:px-24'
-        }`}
+        className={`sticky-nav m-auto w-full h-6 flex flex-row justify-between items-center mb-2 md:mb-12 py-8 bg-opacity-60 ${!fullWidth ? 'max-w-3xl px-4' : 'px-4 md:px-24'
+          }`}
         id="sticky-nav"
         ref={navRef}
       >
@@ -102,16 +101,16 @@ const Header = ({ navBarTitle, fullWidth }) => {
           </Link>
           {navBarTitle
             ? (
-            <p className="ml-2 font-medium text-day dark:text-night header-name">
-              {navBarTitle}
-            </p>
-              )
+              <p className="ml-2 font-medium text-day dark:text-night header-name">
+                {navBarTitle}
+              </p>
+            )
             : (
-            <p className="ml-2 font-medium text-day dark:text-night header-name">
-              {BLOG.title},{' '}
-              <span className="font-normal">{BLOG.description}</span>
-            </p>
-              )}
+              <p className="ml-2 font-medium text-day dark:text-night header-name">
+                {BLOG.title},{' '}
+                <span className="font-normal">{BLOG.description}</span>
+              </p>
+            )}
         </div>
         <NavBar />
       </div>
