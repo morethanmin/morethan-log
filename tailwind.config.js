@@ -1,6 +1,6 @@
 const BLOG = require('./blog.config')
 const { fontFamily } = require('tailwindcss/defaultTheme')
-const CJK = require('./lib/cjk')
+const CJK = require('./src/lib/cjk')
 const fontSansCJK = !CJK()
   ? []
   : [`"Noto Sans CJK ${CJK()}"`, `"Noto Sans ${CJK()}"`]
@@ -10,7 +10,7 @@ const fontSerifCJK = !CJK()
 
 module.exports = {
   mode: 'jit',
-  purge: ['./pages/**/*.js', './components/**/*.js', './layouts/**/*.js'],
+  purge: ['./src/pages/**/*.js', './src/components/**/*.js', './src/layouts/**/*.js'],
   darkMode: BLOG.appearance === 'auto' ? 'media' : 'class', // or 'media' or 'class'
   theme: {
     extend: {

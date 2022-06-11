@@ -1,4 +1,4 @@
-const BLOG = require('../blog.config')
+const BLOG = require('../../blog.config')
 
 module.exports = function () {
   switch (BLOG.lang.toLowerCase()) {
