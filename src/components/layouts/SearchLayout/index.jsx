@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Post from '@/components/Post'
+import Post from '@/src/components/PostCard'
 import Tags from '@/components/layouts/SearchLayout/Tags'
 import PropTypes from 'prop-types'
 

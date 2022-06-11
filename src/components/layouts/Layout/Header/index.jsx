@@ -4,29 +4,8 @@ import BLOG from '@/blog.config'
 import NavBar from './NavBar'
 
 const Header = ({ fullWidth }) => {
-  const useSticky = !BLOG.autoCollapsedNavBar
   const navRef = useRef(null)
   const sentinalRef = useRef([])
-  const handler = ([entry]) => {
-    if (navRef && navRef.current && useSticky) {
-      if (!entry.isIntersecting && entry !== undefined) {
-        navRef.current?.classList.add('sticky-nav-full')
-      } else {
-        navRef.current?.classList.remove('sticky-nav-full')
-      }
-    } else {
-      navRef.current?.classList.add('remove-sticky')
-    }
-  }
-  useEffect(() => {
-    const obvserver = new window.IntersectionObserver(handler)
-    obvserver.observe(sentinalRef.current)
-    // Don't touch this, I have no idea how it works XD
-    // return () => {
-    //   if (sentinalRef.current) obvserver.unobserve(sentinalRef.current)
-    // }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [sentinalRef])
   return (
     <>
       <div className="observer-element h-4 md:h-12" ref={sentinalRef}></div>

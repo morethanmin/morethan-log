@@ -2,7 +2,7 @@ import Link from 'next/link'
 import BLOG from '@/blog.config'
 import formatDate from '@/lib/formatDate'
 
-const Post = ({ post }) => {
+const PostCard = ({ post }) => {
   return (
     <Link href={`${BLOG.path}/${post.slug}`}>
       <a>
@@ -29,4 +29,4 @@ const Post = ({ post }) => {
   )
 }
 
-export default Post
+export default PostCard

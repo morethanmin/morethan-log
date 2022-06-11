@@ -1,4 +1,4 @@
-import Post from '@/components/Post'
+import Post from '@/src/components/PostCard'
 import Pagination from '@/components/Pagination'
 import { getAllPosts } from '@/lib/notion'
 import BLOG from '@/blog.config'
