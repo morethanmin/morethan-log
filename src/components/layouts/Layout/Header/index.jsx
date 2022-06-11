@@ -1,35 +1,7 @@
 import { useEffect, useRef } from 'react'
 import Link from 'next/link'
 import BLOG from '@/blog.config'
-import { useLocale } from '@/lib/locale'
-
-const NavBar = () => {
-  const locale = useLocale()
-  const links = [
-    { id: 0, name: locale.NAV.ABOUT, to: '/about', show: BLOG.showAbout },
-    // feed는 하단에 배치할 예정
-    // { id: 1, name: locale.NAV.RSS, to: '/feed', show: true },
-  ]
-  return (
-    <div className="flex-shrink-0">
-      <ul className="flex flex-row">
-        {links.map(
-          (link) =>
-            link.show && (
-              <li
-                key={link.id}
-                className="block ml-4 text-black dark:text-gray-50 nav"
-              >
-                <Link href={link.to}>
-                  <a>{link.name}</a>
-                </Link>
-              </li>
-            )
-        )}
-      </ul>
-    </div>
-  )
-}
+import NavBar from './NavBar'
 
 const Header = ({ navBarTitle, fullWidth }) => {
   const useSticky = !BLOG.autoCollapsedNavBar
@@ -100,13 +72,14 @@ const Header = ({ navBarTitle, fullWidth }) => {
             </a>
           </Link>
           {navBarTitle ? (
-            <p className="ml-2 font-medium text-day dark:text-night header-name">
+            <p className="ml-2 font-medium text-black dark:text-white header-name">
               {navBarTitle}
             </p>
           ) : (
-            <p className="ml-2 font-medium text-day dark:text-night header-name">
-              {BLOG.title},{' '}
-              <span className="font-normal">{BLOG.description}</span>
+            <p className="ml-2 font-medium text-black dark:text-white header-name">
+              {BLOG.title}
+              {/* ,{' '}
+              <span className="font-normal">{BLOG.description}</span> */}
             </p>
           )}
         </div>
