@@ -16,19 +16,14 @@ export async function getStaticProps({ params: { slug } }) {
   const posts = await getAllPosts({ includePages: true })
   const post = posts.find(t => t.slug === slug)
   const blockMap = await getPostBlocks(post.id)
-  const emailHash = createHash('md5')
-    .update(BLOG.email)
-    .digest('hex')
-    .trim()
-    .toLowerCase()
 
   return {
-    props: { post, blockMap, emailHash },
+    props: { post, blockMap },
     revalidate: 1
   }
 }
 
-const BlogPost = ({ post, blockMap, emailHash }) => {
+const Post = ({ post, blockMap }) => {
   if (!post) return null
   return (
     <Layout
@@ -42,11 +37,10 @@ const BlogPost = ({ post, blockMap, emailHash }) => {
       <PostLayout
         blockMap={blockMap}
         frontMatter={post}
-        emailHash={emailHash}
       />
     </Layout>
   )
 }
 
 
-export default BlogPost
+export default Post

@@ -17,9 +17,10 @@ const mapPageUrl = (id) => {
   return 'https://www.notion.so/' + id.replace(/-/g, '')
 }
 
-const PostLayout = ({ children, blockMap, frontMatter, emailHash }) => {
+const PostLayout = ({ children, blockMap, frontMatter }) => {
   const locale = useLocale()
   const router = useRouter()
+  const isAboutPage = router.query.slug === 'about'
   return (
     <>
       <article>
@@ -28,7 +29,7 @@ const PostLayout = ({ children, blockMap, frontMatter, emailHash }) => {
         </h1>
         {frontMatter.type[0] !== 'Page' && (
           <nav className="flex mt-7 items-start text-gray-500 dark:text-gray-400">
-            <div className="flex mb-4">
+            {/* <div className="flex mb-4">
               <a href={BLOG.socialLink || '#'} className="flex">
                 <Image
                   alt={BLOG.author}
@@ -40,7 +41,7 @@ const PostLayout = ({ children, blockMap, frontMatter, emailHash }) => {
                 <p className="ml-2 md:block">{BLOG.author}</p>
               </a>
               <span className="block">&nbsp;/&nbsp;</span>
-            </div>
+            </div> */}
             <div className="mr-2 mb-4 md:ml-0">
               {formatDate(
                 frontMatter?.date?.start_date || frontMatter.createdTime,
@@ -90,7 +91,7 @@ const PostLayout = ({ children, blockMap, frontMatter, emailHash }) => {
           </button>
         </a>
       </div>
-      <Comments frontMatter={frontMatter} />
+      {isAboutPage === false && <Comments frontMatter={frontMatter} />}
     </>
   )
 }

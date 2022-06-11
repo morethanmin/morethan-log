@@ -3,7 +3,7 @@ import Link from 'next/link'
 import BLOG from '@/blog.config'
 import NavBar from './NavBar'
 
-const Header = ({ navBarTitle, fullWidth }) => {
+const Header = ({ fullWidth }) => {
   const useSticky = !BLOG.autoCollapsedNavBar
   const navRef = useRef(null)
   const sentinalRef = useRef([])
@@ -37,9 +37,9 @@ const Header = ({ navBarTitle, fullWidth }) => {
         id="sticky-nav"
         ref={navRef}
       >
-        <div className="flex items-center">
-          <Link href="/">
-            <a aria-label={BLOG.title}>
+        <Link href="/">
+          <a aria-label={BLOG.title}>
+            <div className="flex items-center">
               <div className="h-6">
                 <svg
                   width="24"
@@ -69,20 +69,13 @@ const Header = ({ navBarTitle, fullWidth }) => {
                   </defs>
                 </svg>
               </div>
-            </a>
-          </Link>
-          {navBarTitle ? (
-            <p className="ml-2 font-medium text-black dark:text-white header-name">
-              {navBarTitle}
-            </p>
-          ) : (
-            <p className="ml-2 font-medium text-black dark:text-white header-name">
-              {BLOG.title}
-              {/* ,{' '}
-              <span className="font-normal">{BLOG.description}</span> */}
-            </p>
-          )}
-        </div>
+              <div className="ml-2 font-medium text-black dark:text-white header-name">
+                {BLOG.title}
+              </div>
+            </div>
+          </a>
+        </Link>
+
         <NavBar />
       </div>
     </>
