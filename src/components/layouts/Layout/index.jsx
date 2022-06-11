@@ -1,11 +1,11 @@
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
+import Header from '@/components/layouts/Layout/Header'
+import Footer from '@/components/layouts/Layout/Footer'
 import BLOG from '@/blog.config'
 import Head from 'next/head'
 import PropTypes from 'prop-types'
 // import BlogPost from './BlogPost'
 
-const Layout = ({ children, layout, fullWidth, ...customMeta }) => {
+const Layout = ({ children, pageType, fullWidth, ...customMeta }) => {
   const url = BLOG.path.length ? `${BLOG.link}/${BLOG.path}` : BLOG.link
   const meta = {
     title: BLOG.title,
@@ -68,7 +68,7 @@ const Layout = ({ children, layout, fullWidth, ...customMeta }) => {
         }`}
       >
         <Header
-          navBarTitle={layout === 'blog' ? meta.title : null}
+          navBarTitle={pageType === 'post' ? meta.title : null}
           fullWidth={fullWidth}
         />
         <main

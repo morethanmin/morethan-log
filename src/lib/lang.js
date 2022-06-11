@@ -3,7 +3,7 @@ import BLOG from '@/blog.config'
 const lang = {
   en: {
     NAV: {
-      INDEX: 'Blog',
+      INDEX: 'Posts',
       RSS: 'RSS',
       SEARCH: 'Search',
       ABOUT: 'About'
@@ -83,7 +83,7 @@ const lang = {
   },
   es: {
     NAV: {
-      INDEX: 'Blog',
+      INDEX: 'Posts',
       RSS: 'RSS',
       SEARCH: 'Buscar',
       ABOUT: 'Acerca de mí'

@@ -6,16 +6,15 @@ import { useLocale } from '@/lib/locale'
 const NavBar = () => {
   const locale = useLocale()
   const links = [
-    { id: 0, name: locale.NAV.INDEX, to: BLOG.path || '/', show: true },
-    { id: 1, name: locale.NAV.ABOUT, to: '/about', show: BLOG.showAbout },
-    { id: 2, name: locale.NAV.RSS, to: '/feed', show: true },
-    { id: 3, name: locale.NAV.SEARCH, to: '/search', show: true }
+    { id: 0, name: locale.NAV.ABOUT, to: '/about', show: BLOG.showAbout },
+    // feed는 하단에 배치할 예정
+    // { id: 1, name: locale.NAV.RSS, to: '/feed', show: true },
   ]
   return (
     <div className="flex-shrink-0">
       <ul className="flex flex-row">
         {links.map(
-          link =>
+          (link) =>
             link.show && (
               <li
                 key={link.id}
@@ -60,8 +59,9 @@ const Header = ({ navBarTitle, fullWidth }) => {
     <>
       <div className="observer-element h-4 md:h-12" ref={sentinalRef}></div>
       <div
-        className={`sticky-nav m-auto w-full h-6 flex flex-row justify-between items-center mb-2 md:mb-12 py-8 bg-opacity-60 ${!fullWidth ? 'max-w-3xl px-4' : 'px-4 md:px-24'
-          }`}
+        className={`sticky-nav m-auto w-full h-6 flex flex-row justify-between items-center mb-2 md:mb-12 py-8 bg-opacity-60 ${
+          !fullWidth ? 'max-w-3xl px-4' : 'px-4 md:px-24'
+        }`}
         id="sticky-nav"
         ref={navRef}
       >
@@ -99,18 +99,16 @@ const Header = ({ navBarTitle, fullWidth }) => {
               </div>
             </a>
           </Link>
-          {navBarTitle
-            ? (
-              <p className="ml-2 font-medium text-day dark:text-night header-name">
-                {navBarTitle}
-              </p>
-            )
-            : (
-              <p className="ml-2 font-medium text-day dark:text-night header-name">
-                {BLOG.title},{' '}
-                <span className="font-normal">{BLOG.description}</span>
-              </p>
-            )}
+          {navBarTitle ? (
+            <p className="ml-2 font-medium text-day dark:text-night header-name">
+              {navBarTitle}
+            </p>
+          ) : (
+            <p className="ml-2 font-medium text-day dark:text-night header-name">
+              {BLOG.title},{' '}
+              <span className="font-normal">{BLOG.description}</span>
+            </p>
+          )}
         </div>
         <NavBar />
       </div>

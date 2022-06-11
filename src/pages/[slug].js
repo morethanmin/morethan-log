@@ -32,8 +32,8 @@ const BlogPost = ({ post, blockMap, emailHash }) => {
   if (!post) return null
   return (
     <Layout
-      layout="blog"
       title={post.title}
+      pageType="post"
       description={post.summary}
       // date={new Date(frontMatter.publishedAt).toISOString()}
       type="article"
