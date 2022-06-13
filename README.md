@@ -2,7 +2,7 @@
 
 A static blog build on top of Notion and Nextjs, deployed on [Vercel](https://vercel.com?utm_source=Craigary&utm_campaign=oss).
 
-Demo: [https://morethan_log.vercel.app](https://morethan_log.vercel.app/)
+Demo: [https://morethan-log.vercel.app](https://morethan-log.vercel.app/)
 
 ## Highlights ✨
 
