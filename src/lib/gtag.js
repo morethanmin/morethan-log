@@ -1,5 +1,5 @@
 import BLOG from '@/blog.config'
-export const GA_TRACKING_ID = BLOG.analytics.gaConfig.measurementId
+export const GA_TRACKING_ID = BLOG.googleAnalytics.config.measurementId
 
 // https://developers.google.com/analytics/devguides/collection/gtagjs/pages
 export const pageview = url => {

@@ -20,19 +20,21 @@ const BLOG = {
   },
   notionPageId: process.env.NOTION_PAGE_ID, // DO NOT CHANGE THIS！！！
   notionAccessToken: process.env.NOTION_ACCESS_TOKEN, // Useful if you prefer not to make your database public
-  analytics: {
-    provider: 'ga', // Currently we support Google Analytics, please fill with 'ga', leave it empty to disable it.
-    gaConfig: {
-      measurementId: 'G-9N3FE0117Q' // e.g: G-XXXXXXXXXX
+
+  googleAnalytics: {
+    enable: true,
+    config: {
+      measurementId: 'G-9N3FE0117Q'
     }
   },
-  comment: {
-    // support provider: utterances
-    provider: 'utterances', // leave it empty if you don't need any comment plugin
-    utterancesConfig: {
+
+  utterances: {
+    enable: true,
+    config: {
       repo: 'morethanmin/morethan_log'
-    },
+    }
   },
+  
   isProd: process.env.VERCEL_ENV === 'production' // distinguish between development and production environment (ref: https://vercel.com/docs/environment-variables#system-environment-variables)
 }
 module.exports = BLOG

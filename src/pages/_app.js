@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }) {
       <Scripts />
       <LocaleProvider>
         <>
-          {BLOG.isProd && BLOG?.analytics?.provider === 'ga' && <Gtag />}
+          {BLOG.isProd && BLOG?.googleAnalytics?.enable === true && <Gtag />}
           <Component {...pageProps} />
         </>
       </LocaleProvider>

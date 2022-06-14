@@ -11,7 +11,7 @@ const UtterancesComponent = dynamic(
 const Comments = ({ frontMatter }) => {
   return (
     <div>
-      {BLOG.comment && BLOG.comment.provider === 'utterances' && (
+      {BLOG.utterances.enable && (
         <UtterancesComponent issueTerm={frontMatter.id} />
       )}
     </div>
