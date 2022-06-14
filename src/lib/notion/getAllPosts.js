@@ -9,8 +9,8 @@ import filterPublishedPosts from './filterPublishedPosts'
  * @param {{ includePages: boolean }} - false: posts only / true: include pages
  */
 export async function getAllPosts({ includePages = false }) {
-  let id = BLOG.notionPageId
-  const authToken = BLOG.notionAccessToken || null
+  let id = BLOG.notionConfig.pageId
+  const authToken = BLOG.notionConfig.accessToken || null
   const api = new NotionAPI({ authToken })
   const response = await api.getPage(id)
 
