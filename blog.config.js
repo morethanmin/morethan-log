@@ -13,7 +13,7 @@ const CONFIG = {
   font: 'sans-serif', // ['sans-serif', 'serif']
   path: '', // leave this empty unless you want to deploy Nobelium in a folder
   postsPerPage: 10,
-  ogImageGenerateURL: 'https://og-image-craigary.vercel.app', // The link to generate OG image, don't end with a slash
+  ogImageGenerateURL: 'https://og-image-korean.vercel.app/', // The link to generate OG image, don't end with a slash
   appearance: 'auto', // ['light', 'dark', 'auto'],
   lightBackground: '#ffffff', // use hex value, don't forget '#' e.g #fffefc
   darkBackground: '#18181B', // use hex value, don't forget '#'
