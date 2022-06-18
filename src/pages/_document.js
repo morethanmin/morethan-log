@@ -98,7 +98,7 @@ class MyDocument extends Document {
             )
           }
           {/* google search console */}
-          {CONFIG.googleSearchConsole.enable === true & (<>
+          {CONFIG.googleSearchConsole.enable === true && (<>
             <meta name="google-site-verification" content={CONFIG.googleSearchConsole.config.siteVerification} />
           </>)
           }
