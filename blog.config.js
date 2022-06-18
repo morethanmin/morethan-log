@@ -26,7 +26,7 @@ const CONFIG = {
   notionConfig: {
     pageId: process.env.NOTION_PAGE_ID,
     // if you prefer not to make your database public, use this!!!
-    accessToken : process.env.NOTION_ACCESS_TOKEN 
+    accessToken: process.env.NOTION_ACCESS_TOKEN
   },
 
   // plugin configuration
@@ -36,13 +36,19 @@ const CONFIG = {
       measurementId: 'G-9N3FE0117Q'
     }
   },
+  googleSearchConsole: {
+    enable: true,
+    config: {
+      siteVerification: 'qvdR1gXMirk_DCUOKPgRnxu2x6fqSPrquYnEZZMjR9w'
+    }
+  },
   utterances: {
     enable: true,
     config: {
       repo: 'morethanmin/morethan_log'
     }
   },
-  
+
   isProd: process.env.VERCEL_ENV === 'production' // distinguish between development and production environment (ref: https://vercel.com/docs/environment-variables#system-environment-variables)
 }
 module.exports = CONFIG
