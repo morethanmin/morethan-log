@@ -1,6 +1,6 @@
 # morethan_log
 
-A static blog build on top of Notion and Nextjs, deployed on [Vercel](https://vercel.com?utm_source=Craigary&utm_campaign=oss).
+A static CONFIGbuild on top of Notion and Nextjs, deployed on [Vercel](https://vercel.com?utm_source=Craigary&utm_campaign=oss).
 
 Demo: [https://morethan-log.vercel.app](https://morethan-log.vercel.app/)
 

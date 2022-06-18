@@ -3,7 +3,7 @@ import 'react-notion-x/src/styles.css'
 import 'katex/dist/katex.min.css'
 import '@/styles/globals.css'
 import '@/styles/notion.css'
-import BLOG from '@/blog.config'
+import CONFIG from '@/blog.config'
 import dynamic from 'next/dynamic'
 import { LocaleProvider } from '@/lib/locale'
 import Scripts from '@/components/Scripts'
@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }) {
       <Scripts />
       <LocaleProvider>
         <>
-          {BLOG.isProd && BLOG?.googleAnalytics?.enable === true && <Gtag />}
+          {CONFIG.isProd && CONFIG?.googleAnalytics?.enable === true && <Gtag />}
           <Component {...pageProps} />
         </>
       </LocaleProvider>

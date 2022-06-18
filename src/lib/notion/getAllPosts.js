@@ -1,4 +1,4 @@
-import BLOG from '@/blog.config'
+import CONFIG from '@/blog.config'
 import { NotionAPI } from 'notion-client'
 import { idToUuid } from 'notion-utils'
 import getAllPageIds from './getAllPageIds'
@@ -9,8 +9,8 @@ import filterPublishedPosts from './filterPublishedPosts'
  * @param {{ includePages: boolean }} - false: posts only / true: include pages
  */
 export async function getAllPosts({ includePages = false }) {
-  let id = BLOG.notionConfig.pageId
-  const authToken = BLOG.notionConfig.accessToken || null
+  let id = CONFIG.notionConfig.pageId
+  const authToken = CONFIG.notionConfig.accessToken || null
   const api = new NotionAPI({ authToken })
   const response = await api.getPage(id)
 

@@ -1,4 +1,4 @@
-import BLOG from '@/blog.config'
+import CONFIG from '@/blog.config'
 import dynamic from 'next/dynamic'
 
 const UtterancesComponent = dynamic(
@@ -11,7 +11,7 @@ const UtterancesComponent = dynamic(
 const Comments = ({ frontMatter }) => {
   return (
     <div>
-      {BLOG.utterances.enable && (
+      {CONFIG.utterances.enable && (
         <UtterancesComponent issueTerm={frontMatter.id} />
       )}
     </div>

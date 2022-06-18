@@ -1,13 +1,13 @@
 import PostLayout from '@/components/layouts/PostLayout'
 import { getAllPosts, getPostBlocks } from '@/lib/notion'
-import BLOG from '@/blog.config'
+import CONFIG from '@/blog.config'
 import { createHash } from 'crypto'
 import Layout from '@/components/layouts/Layout'
 
 export async function getStaticPaths() {
   const posts = await getAllPosts({ includePages: true })
   return {
-    paths: posts.map(row => `${BLOG.path}/${row.slug}`),
+    paths: posts.map(row => `${CONFIG.path}/${row.slug}`),
     fallback: true
   }
 }

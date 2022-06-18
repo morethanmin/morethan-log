@@ -1,7 +1,7 @@
 import Post from '@/src/components/PostCard'
 import Pagination from '@/components/Pagination'
 import { getAllPosts } from '@/lib/notion'
-import BLOG from '@/blog.config'
+import CONFIG from '@/blog.config'
 import Layout from '@/components/layouts/Layout'
 
 //for pagenation
@@ -19,11 +19,11 @@ export async function getStaticProps(context) {
   const { page } = context.params // Get Current Page No.
   const posts = await getAllPosts({ includePages: false })
   const postsToShow = posts.slice(
-    BLOG.postsPerPage * (page - 1),
-    BLOG.postsPerPage * page
+    CONFIG.postsPerPage * (page - 1),
+    CONFIG.postsPerPage * page
   )
   const totalPosts = posts.length
-  const showNext = page * BLOG.postsPerPage < totalPosts
+  const showNext = page * CONFIG.postsPerPage < totalPosts
   return {
     props: {
       page, // Current Page
@@ -37,7 +37,7 @@ export async function getStaticProps(context) {
 export async function getStaticPaths() {
   const posts = await getAllPosts({ includePages: false })
   const totalPosts = posts.length
-  const totalPages = Math.ceil(totalPosts / BLOG.postsPerPage)
+  const totalPages = Math.ceil(totalPosts / CONFIG.postsPerPage)
   return {
     // remove first page, we 're not gonna handle that.
     paths: Array.from({ length: totalPages - 1 }, (_, i) => ({

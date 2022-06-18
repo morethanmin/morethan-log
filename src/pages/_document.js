@@ -1,5 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import BLOG from '@/blog.config'
+import CONFIG from '@/blog.config'
 import CJK from '@/lib/cjk'
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -10,12 +10,12 @@ class MyDocument extends Document {
   render() {
     return (
       <Html
-        lang={BLOG.lang}
-        className={BLOG.appearance === 'dark' ? 'dark' : undefined}
+        lang={CONFIG.lang}
+        className={CONFIG.appearance === 'dark' ? 'dark' : undefined}
       >
         <Head>
           {/* 폰트 설정 */}
-          {BLOG.font && BLOG.font === 'serif'
+          {CONFIG.font && CONFIG.font === 'serif'
             ? (
               <>
                 <link
@@ -53,7 +53,7 @@ class MyDocument extends Document {
               </>
             )}
           {['zh', 'ja', 'ko'].includes(
-            BLOG.lang.slice(0, 2).toLocaleLowerCase()
+            CONFIG.lang.slice(0, 2).toLocaleLowerCase()
           ) && (
               <>
                 <link
@@ -64,18 +64,18 @@ class MyDocument extends Document {
                 <link
                   rel="preload"
                   as="style"
-                  href={`https://fonts.googleapis.com/css2?family=Noto+${BLOG.font === 'serif' ? 'Serif' : 'Sans'
+                  href={`https://fonts.googleapis.com/css2?family=Noto+${CONFIG.font === 'serif' ? 'Serif' : 'Sans'
                     }+${CJK()}:wght@400;500;700&display=swap`}
                 />
                 <link
                   rel="stylesheet"
-                  href={`https://fonts.googleapis.com/css2?family=Noto+${BLOG.font === 'serif' ? 'Serif' : 'Sans'
+                  href={`https://fonts.googleapis.com/css2?family=Noto+${CONFIG.font === 'serif' ? 'Serif' : 'Sans'
                     }+${CJK()}:wght@400;500;700&display=swap`}
                 />
                 <noscript>
                   <link
                     rel="stylesheet"
-                    href={`https://fonts.googleapis.com/css2?family=Noto+${BLOG.font === 'serif' ? 'Serif' : 'Sans'
+                    href={`https://fonts.googleapis.com/css2?family=Noto+${CONFIG.font === 'serif' ? 'Serif' : 'Sans'
                       }+${CJK()}:wght@400;500;700&display=swap`}
                   />
                 </noscript>
@@ -86,20 +86,20 @@ class MyDocument extends Document {
           <link rel="apple-touch-icon" sizes="192x192" href="/apple-touch-icon.png"></link>
           <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/feed"></link>
           {/* 테마 설정 */}
-          {BLOG.appearance === 'auto'
+          {CONFIG.appearance === 'auto'
             ? (
               <>
-                <meta name="theme-color" content={BLOG.lightBackground} media="(prefers-color-scheme: light)" />
-                <meta name="theme-color" content={BLOG.darkBackground} media="(prefers-color-scheme: dark)" />
+                <meta name="theme-color" content={CONFIG.lightBackground} media="(prefers-color-scheme: light)" />
+                <meta name="theme-color" content={CONFIG.darkBackground} media="(prefers-color-scheme: dark)" />
               </>
             )
             : (
-              <meta name="theme-color" content={BLOG.appearance === 'dark' ? BLOG.darkBackground : BLOG.lightBackground} />
+              <meta name="theme-color" content={CONFIG.appearance === 'dark' ? CONFIG.darkBackground : CONFIG.lightBackground} />
             )
           }
           {/* google search console */}
-          {BLOG.googleSearchConsole.enable === true & (<>
-            <meta name="google-site-verification" content={googleSearchConsole.config.siteVerification} />
+          {CONFIG.googleSearchConsole.enable === true & (<>
+            <meta name="google-site-verification" content={CONFIG.googleSearchConsole.config.siteVerification} />
           </>)
           }
         </Head>

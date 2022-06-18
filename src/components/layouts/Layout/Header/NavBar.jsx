@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { useLocale } from '@/lib/locale'
-import BLOG from '@/blog.config'
+import CONFIG from '@/blog.config'
 
 const NavBar = () => {
   const locale = useLocale()

@@ -1,4 +1,4 @@
-import BLOG from '@/blog.config'
+import CONFIG from '@/blog.config'
 
 const lang = {
   en: {
@@ -100,7 +100,7 @@ const lang = {
 }
 
 export const fetchLocaleLang = () => {
-  switch (BLOG.lang.toLowerCase()) {
+  switch (CONFIG.lang.toLowerCase()) {
     case 'zh-cn':
     case 'zh-sg':
       return lang['zh-CN']

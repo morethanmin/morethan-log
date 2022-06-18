@@ -1,7 +1,7 @@
-const BLOG = require('./blog.config')
+const CONFIG = require('./blog.config')
 
 module.exports = {
-  siteUrl: BLOG.link,
+  siteUrl: CONFIG.link,
   generateRobotsTxt: true,
   sitemapSize: 7000
   // ...other options

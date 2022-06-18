@@ -1,10 +1,10 @@
 import Link from 'next/link'
-import BLOG from '@/blog.config'
+import CONFIG from '@/blog.config'
 import formatDate from '@/lib/formatDate'
 
 const PostCard = ({ post }) => {
   return (
-    <Link href={`${BLOG.path}/${post.slug}`}>
+    <Link href={`${CONFIG.path}/${post.slug}`}>
       <a>
         <article key={post.id} className="mb-6 md:mb-8">
           <header className="flex flex-col justify-between md:flex-row md:items-baseline">
@@ -14,7 +14,7 @@ const PostCard = ({ post }) => {
             <time className="flex-shrink-0 text-gray-600 dark:text-gray-400">
               {formatDate(
                 post?.date?.start_date || post.createdTime,
-                BLOG.lang
+                CONFIG.lang
               )}
             </time>
           </header>

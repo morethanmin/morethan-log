@@ -6,7 +6,7 @@ import {
   Collection,
   CollectionRow,
 } from 'react-notion-x'
-import BLOG from '@/blog.config'
+import CONFIG from '@/blog.config'
 import formatDate from '@/lib/formatDate'
 import { useLocale } from '@/lib/locale'
 import { useRouter } from 'next/router'
@@ -30,22 +30,22 @@ const PostLayout = ({ children, blockMap, frontMatter }) => {
           <nav className="flex mt-7 items-start text-gray-500 dark:text-gray-400">
             {/* 작성자는 개인 블로그이므로 disable */}
             {/* <div className="flex mb-4">
-              <a href={BLOG.socialLink || '#'} className="flex">
+              <a href={CONFIG.socialLink || '#'} className="flex">
                 <Image
-                  alt={BLOG.author}
+                  alt={CONFIG.author}
                   width={24}
                   height={24}
                   src={`https://gravatar.com/avatar/${emailHash}`}
                   className="rounded-full"
                 />
-                <p className="ml-2 md:block">{BLOG.author}</p>
+                <p className="ml-2 md:block">{CONFIG.author}</p>
               </a>
               <span className="block">&nbsp;/&nbsp;</span>
             </div> */}
             <div className="mr-2 mb-4 md:ml-0">
               {formatDate(
                 frontMatter?.date?.start_date || frontMatter.createdTime,
-                BLOG.lang
+                CONFIG.lang
               )}
             </div>
             {frontMatter.tags && (
@@ -76,7 +76,7 @@ const PostLayout = ({ children, blockMap, frontMatter }) => {
       <div className="flex justify-between font-medium text-gray-500 dark:text-gray-400">
         <a>
           <button
-            onClick={() => router.push(BLOG.path || '/')}
+            onClick={() => router.push(CONFIG.path || '/')}
             className="mt-2 cursor-pointer hover:text-black dark:hover:text-gray-100"
           >
             ← {locale.POST.BACK}

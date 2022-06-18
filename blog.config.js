@@ -1,5 +1,5 @@
 const CONFIG = {
-  // blog content configration
+  // CONFIGcontent configration
   title: 'morethan_log',
   author: 'morethanmin',
   email: 'morethanmin.dev@gmail.com',
@@ -8,7 +8,7 @@ const CONFIG = {
   link: 'https://morethan_log.vercel.app',
   since: 2022, // If leave this empty, current year will be used.
 
-  // blog configration
+  // CONFIGconfigration
   lang: 'ko-KR', // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES', 'ko-KR']
   font: 'sans-serif', // ['sans-serif', 'serif']
   path: '', // leave this empty unless you want to deploy Nobelium in a folder

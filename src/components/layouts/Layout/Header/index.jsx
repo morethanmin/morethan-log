@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import Link from 'next/link'
-import BLOG from '@/blog.config'
+import CONFIG from '@/blog.config'
 import NavBar from './NavBar'
 
 const Header = ({ fullWidth }) => {
@@ -17,7 +17,7 @@ const Header = ({ fullWidth }) => {
         ref={navRef}
       >
         <Link href="/">
-          <a aria-label={BLOG.title}>
+          <a aria-label={CONFIG.title}>
             <div className="flex items-center">
               <div className="h-6">
                 <svg
@@ -49,7 +49,7 @@ const Header = ({ fullWidth }) => {
                 </svg>
               </div>
               <div className="ml-2 font-medium text-black dark:text-white header-name">
-                {BLOG.title}
+                {CONFIG.title}
               </div>
             </div>
           </a>

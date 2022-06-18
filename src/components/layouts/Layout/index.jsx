@@ -1,13 +1,13 @@
 import Header from '@/components/layouts/Layout/Header'
 import Footer from '@/components/layouts/Layout/Footer'
-import BLOG from '@/blog.config'
+import CONFIG from '@/blog.config'
 import Head from 'next/head'
 import PropTypes from 'prop-types'
 
 const Layout = ({ children, pageType, fullWidth, ...customMeta }) => {
-  const url = BLOG.path.length ? `${BLOG.link}/${BLOG.path}` : BLOG.link
+  const url = CONFIG.path.length ? `${CONFIG.link}/${CONFIG.path}` : CONFIG.link
   const meta = {
-    title: BLOG.title,
+    title: CONFIG.title,
     type: 'website',
     ...customMeta,
   }
@@ -15,20 +15,20 @@ const Layout = ({ children, pageType, fullWidth, ...customMeta }) => {
     <div>
       <Head>
         <title>{meta.title}</title>
-        {/* <meta content={BLOG.darkBackground} name="theme-color" /> */}
+        {/* <meta content={CONFIG.darkBackground} name="theme-color" /> */}
         <meta name="robots" content="follow, index" />
         <meta charSet="UTF-8" />
-        {BLOG.seo.googleSiteVerification && (
+        {CONFIG.seo.googleSiteVerification && (
           <meta
             name="google-site-verification"
-            content={BLOG.seo.googleSiteVerification}
+            content={CONFIG.seo.googleSiteVerification}
           />
         )}
-        {BLOG.seo.keywords && (
-          <meta name="keywords" content={BLOG.seo.keywords.join(', ')} />
+        {CONFIG.seo.keywords && (
+          <meta name="keywords" content={CONFIG.seo.keywords.join(', ')} />
         )}
         <meta name="description" content={meta.description} />
-        <meta property="og:locale" content={BLOG.lang} />
+        <meta property="og:locale" content={CONFIG.lang} />
         <meta property="og:title" content={meta.title} />
         <meta property="og:description" content={meta.description} />
         <meta
@@ -37,7 +37,7 @@ const Layout = ({ children, pageType, fullWidth, ...customMeta }) => {
         />
         <meta
           property="og:image"
-          content={`${BLOG.ogImageGenerateURL}/${encodeURIComponent(
+          content={`${CONFIG.ogImageGenerateURL}/${encodeURIComponent(
             meta.title
           )}.png?theme=dark&md=1&fontSize=125px&images=https%3A%2F%2Fnobelium.vercel.app%2Flogo-for-dark-bg.svg`}
         />
@@ -47,7 +47,7 @@ const Layout = ({ children, pageType, fullWidth, ...customMeta }) => {
         <meta name="twitter:title" content={meta.title} />
         <meta
           name="twitter:image"
-          content={`${BLOG.ogImageGenerateURL}/${encodeURIComponent(
+          content={`${CONFIG.ogImageGenerateURL}/${encodeURIComponent(
             meta.title
           )}.png?theme=dark&md=1&fontSize=125px&images=https%3A%2F%2Fnobelium.vercel.app%2Flogo-for-dark-bg.svg`}
         />
@@ -57,13 +57,13 @@ const Layout = ({ children, pageType, fullWidth, ...customMeta }) => {
               property="article:published_time"
               content={meta.date || meta.createdTime}
             />
-            <meta property="article:author" content={BLOG.author} />
+            <meta property="article:author" content={CONFIG.author} />
           </>
         )}
       </Head>
       <div
         className={`wrapper ${
-          BLOG.font === 'serif' ? 'font-serif' : 'font-sans'
+          CONFIG.font === 'serif' ? 'font-serif' : 'font-sans'
         }`}
       >
         <Header fullWidth={fullWidth} />
