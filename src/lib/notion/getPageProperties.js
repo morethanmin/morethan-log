@@ -1,7 +1,7 @@
 import { getTextContent, getDateValue } from 'notion-utils'
 import { NotionAPI } from 'notion-client'
 
-async function getPageProperties (id, block, schema, authToken) {
+async function getPageProperties(id, block, schema, authToken) {
   const api = new NotionAPI({ authToken })
   const rawProperties = Object.entries(block?.[id]?.value?.properties || [])
   const excludeProperties = ['date', 'select', 'multi_select', 'person']
@@ -19,7 +19,13 @@ async function getPageProperties (id, block, schema, authToken) {
           properties[schema[key].name] = dateProperty
           break
         }
-        case 'select':
+        case 'select': {
+          const selects = getTextContent(val)
+          if (selects[0]?.length) {
+            properties[schema[key].name] = selects.split(',')
+          }
+          break
+        }
         case 'multi_select': {
           const selects = getTextContent(val)
           if (selects[0]?.length) {

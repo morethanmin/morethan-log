@@ -1,6 +1,6 @@
 const CONFIG = {
   // CONFIGcontent configration
-  title: 'morethan_log',
+  title: 'MORETHAN-LOG',
   author: 'morethanmin',
   email: 'morethanmin.dev@gmail.com',
   description: 'Hello',
@@ -14,8 +14,8 @@ const CONFIG = {
   path: '', // leave this empty unless you want to deploy Nobelium in a folder
   postsPerPage: 10,
   ogImageGenerateURL: 'https://og-image-korean.vercel.app/', // The link to generate OG image, don't end with a slash
-  appearance: 'auto', // ['light', 'dark', 'auto'],
-  lightBackground: '#ffffff', // use hex value, don't forget '#' e.g #fffefc
+  appearance: 'light', // ['light', 'dark', 'auto'],
+  lightBackground: '#f1f3f5', // use hex value, don't forget '#' e.g #fffefc
   darkBackground: '#18181B', // use hex value, don't forget '#'
   seo: {
     keywords: ['Blog', 'Website', 'Notion'],

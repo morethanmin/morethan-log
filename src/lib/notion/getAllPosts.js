@@ -13,7 +13,6 @@ export async function getAllPosts({ includePages = false }) {
   const authToken = CONFIG.notionConfig.accessToken || null
   const api = new NotionAPI({ authToken })
   const response = await api.getPage(id)
-
   id = idToUuid(id)
   const collection = Object.values(response.collection)[0]?.value
   const collectionQuery = response.collection_query
@@ -36,7 +35,6 @@ export async function getAllPosts({ includePages = false }) {
     for (let i = 0; i < pageIds.length; i++) {
       const id = pageIds[i]
       const properties = (await getPageProperties(id, block, schema)) || null
-
       // Add fullwidth, createdtime to properties
       properties.createdTime = new Date(
         block[id].value?.created_time
