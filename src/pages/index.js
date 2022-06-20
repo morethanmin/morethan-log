@@ -14,9 +14,15 @@ export async function getStaticProps() {
   }
 }
 
-export default function home({ tags, posts, currentTag = null }) {
 
-  return <Layout>
-    <SearchLayout tags={tags} posts={posts} currentTag={currentTag} />
-  </Layout>
+function HomePage({ tags, posts, currentTag = null }) {
+
+  return <SearchLayout tags={tags} posts={posts} currentTag={currentTag} />
 }
+
+HomePage.getLayout = function getlayout(page) {
+  return <Layout>{page}</Layout>
+}
+
+
+export default HomePage

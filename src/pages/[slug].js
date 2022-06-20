@@ -26,18 +26,25 @@ export async function getStaticProps({ params: { slug } }) {
 const Post = ({ post, blockMap }) => {
   if (!post) return null
   return (
+    <PostLayout
+      blockMap={blockMap}
+      data={post}
+    />
+  )
+}
+
+Post.getLayout = function getlayout(page) {
+  return (
     <Layout
-      title={post.title}
-      pageType="post"
-      description={post.summary}
-      // date={new Date(frontMatter.publishedAt).toISOString()}
+      // for meta tag
+      title={page.props.post.title}
+      date={new Date(page.props.post.date.start_date).toISOString()}
+      description={page.props.post.summary}
       type="article"
-      fullWidth={post.fullWidth}
+
+      fullWidth={page.props.post.fullWidth}
     >
-      <PostLayout
-        blockMap={blockMap}
-        frontMatter={post}
-      />
+      {page}
     </Layout>
   )
 }

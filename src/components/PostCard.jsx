@@ -16,23 +16,25 @@ const PostCard = ({ post }) => {
             <h2 className="text-lg md:text-xl font-medium mb-2 cursor-pointer text-black dark:text-gray-100">
               {post.title}
             </h2>
-            <time className="flex-shrink-0 text-gray-600 dark:text-gray-400">
-              {formatDate(
-                post?.date?.start_date || post.createdTime,
-                CONFIG.lang
-              )}
-            </time>
           </header>
           <div className="flex mb-4">
-            {post.tags.map((tag, idx) => (
-              <Tag key={idx}>{tag}</Tag>
-            ))}
+            <div className="flex mb-4">
+              {post.tags.map((tag, idx) => (
+                <Tag key={idx}>{tag}</Tag>
+              ))}
+            </div>
           </div>
-          <main>
+          <main className="mb-4">
             <p className="hidden md:block leading-8 text-gray-700 dark:text-gray-300">
               {post.summary}
             </p>
           </main>
+          <time className="flex-shrink-0 text-sm text-gray-600 dark:text-gray-400">
+            {formatDate(
+              post?.date?.start_date || post.createdTime,
+              CONFIG.lang
+            )}
+          </time>
         </article>
       </a>
     </Link>

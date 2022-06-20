@@ -28,9 +28,13 @@ export async function getStaticPaths() {
   }
 }
 
-
-export default function Tag({ tags, posts, currentTag }) {
-  return <Layout>
-    <SearchLayout tags={tags} posts={posts} currentTag={currentTag} />
-  </Layout>
+const TagPage = function ({ tags, posts, currentTag }) {
+  return <SearchLayout tags={tags} posts={posts} currentTag={currentTag} />
 }
+
+TagPage.getLayout = function getlayout(page) {
+  return <Layout>{page}</Layout>
+}
+
+
+export default TagPage

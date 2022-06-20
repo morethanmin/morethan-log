@@ -4,7 +4,7 @@ import CONFIG from '@/blog.config'
 import Head from 'next/head'
 import PropTypes from 'prop-types'
 
-const Layout = ({ children, pageType, fullWidth, ...customMeta }) => {
+const Layout = ({ children, fullWidth, ...customMeta }) => {
   const url = CONFIG.path.length ? `${CONFIG.link}/${CONFIG.path}` : CONFIG.link
   const meta = {
     title: CONFIG.title,

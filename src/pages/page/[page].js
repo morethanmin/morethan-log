@@ -4,16 +4,6 @@ import { getAllPosts } from '@/lib/notion'
 import CONFIG from '@/blog.config'
 import Layout from '@/components/layouts/Layout'
 
-//for pagenation
-const Page = ({ postsToShow, page, showNext }) => {
-  return (
-    <Layout>
-      {postsToShow &&
-        postsToShow.map(post => <Post key={post.id} post={post} />)}
-      <Pagination page={page} showNext={showNext} />
-    </Layout>
-  )
-}
 
 export async function getStaticProps(context) {
   const { page } = context.params // Get Current Page No.
@@ -45,6 +35,22 @@ export async function getStaticPaths() {
     })),
     fallback: true
   }
+}
+
+//for pagenation
+const Page = ({ postsToShow, page, showNext }) => {
+  return (
+    <>
+      {postsToShow &&
+        postsToShow.map(post => <Post key={post.id} post={post} />)}
+      <Pagination page={page} showNext={showNext} />
+    </>
+  )
+}
+
+
+Page.getLayout = function getlayout(page) {
+  return <Layout>{page}</Layout>
 }
 
 export default Page

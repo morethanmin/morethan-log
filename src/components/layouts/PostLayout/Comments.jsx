@@ -8,12 +8,10 @@ const UtterancesComponent = dynamic(
   { ssr: false }
 )
 
-const Comments = ({ frontMatter }) => {
+const Comments = ({ data }) => {
   return (
     <div>
-      {CONFIG.utterances.enable && (
-        <UtterancesComponent issueTerm={frontMatter.id} />
-      )}
+      {CONFIG.utterances.enable && <UtterancesComponent issueTerm={data.id} />}
     </div>
   )
 }

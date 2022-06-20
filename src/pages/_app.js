@@ -11,13 +11,14 @@ import Scripts from '@/components/Scripts'
 const Gtag = dynamic(() => import('@/components/Gtag'), { ssr: false })
 
 function MyApp({ Component, pageProps }) {
+  const getLayout = Component.getLayout || ((page) => page)
   return (
     <>
       <Scripts />
       <LocaleProvider>
         <>
           {CONFIG.isProd && CONFIG?.googleAnalytics?.enable === true && <Gtag />}
-          <Component {...pageProps} />
+          {getLayout(<Component {...pageProps} />)}
         </>
       </LocaleProvider>
     </>

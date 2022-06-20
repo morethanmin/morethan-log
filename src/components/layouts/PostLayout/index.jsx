@@ -16,7 +16,7 @@ const mapPageUrl = (id) => {
   return 'https://www.notion.so/' + id.replace(/-/g, '')
 }
 
-const PostLayout = ({ children, blockMap, frontMatter }) => {
+const PostLayout = ({ children, blockMap, data }) => {
   const locale = useLocale()
   const router = useRouter()
   const isAboutPage = router.query.slug === 'about'
@@ -24,9 +24,9 @@ const PostLayout = ({ children, blockMap, frontMatter }) => {
     <>
       <article>
         <h1 className="font-bold text-3xl text-black dark:text-white">
-          {frontMatter.title}
+          {data.title}
         </h1>
-        {frontMatter.type[0] !== 'Page' && (
+        {data.type[0] !== 'Page' && (
           <nav className="flex mt-7 items-start text-gray-500 dark:text-gray-400">
             {/* 작성자는 개인 블로그이므로 disable */}
             {/* <div className="flex mb-4">
@@ -44,13 +44,13 @@ const PostLayout = ({ children, blockMap, frontMatter }) => {
             </div> */}
             <div className="mr-2 mb-4 md:ml-0">
               {formatDate(
-                frontMatter?.date?.start_date || frontMatter.createdTime,
+                data?.date?.start_date || data.createdTime,
                 CONFIG.lang
               )}
             </div>
-            {frontMatter.tags && (
+            {data.tags && (
               <div className="flex flex-nowrap max-w-full overflow-x-auto article-tags">
-                {frontMatter.tags.map((tag) => (
+                {data.tags.map((tag) => (
                   <TagItem key={tag} tag={tag} />
                 ))}
               </div>
@@ -58,6 +58,7 @@ const PostLayout = ({ children, blockMap, frontMatter }) => {
           </nav>
         )}
         {children}
+        {/* 해당 컴포넌트에서 warning 발생 ㅡㅡ */}
         {blockMap && (
           <div className="-mt-4">
             <NotionRenderer
@@ -91,7 +92,7 @@ const PostLayout = ({ children, blockMap, frontMatter }) => {
           </button>
         </a>
       </div>
-      {isAboutPage === false && <Comments frontMatter={frontMatter} />}
+      {isAboutPage === false && <Comments data={data} />}
     </>
   )
 }
