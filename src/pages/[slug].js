@@ -1,7 +1,6 @@
 import PostLayout from '@/components/layouts/PostLayout'
 import { getAllPosts, getPostBlocks } from '@/lib/notion'
 import CONFIG from '@/blog.config'
-import { createHash } from 'crypto'
 import Layout from '@/components/layouts/Layout'
 
 export async function getStaticPaths() {
@@ -34,6 +33,7 @@ const Post = ({ post, blockMap }) => {
 }
 
 Post.getLayout = function getlayout(page) {
+  if (!page.props.post) return null
   return (
     <Layout
       // for meta tag
