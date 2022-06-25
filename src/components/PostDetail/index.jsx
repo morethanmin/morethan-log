@@ -1,4 +1,4 @@
-import TagItem from '@/components/layouts/PostLayout/TagItem'
+import TagItem from '@/src/components/PostDetail/TagItem'
 import {
   NotionRenderer,
   Equation,
@@ -10,7 +10,7 @@ import CONFIG from '@/blog.config'
 import formatDate from '@/lib/formatDate'
 import { useLocale } from '@/lib/locale'
 import { useRouter } from 'next/router'
-import Comments from '@/src/components/layouts/PostLayout/Comments'
+import Comments from '@/src/components/PostDetail/Comments'
 
 const mapPageUrl = (id) => {
   return 'https://www.notion.so/' + id.replace(/-/g, '')

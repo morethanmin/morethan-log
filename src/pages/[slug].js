@@ -1,4 +1,4 @@
-import PostLayout from '@/components/layouts/PostLayout'
+import PostDetail from '@/src/components/PostDetail'
 import { getAllPosts, getPostBlocks } from '@/lib/notion'
 import CONFIG from '@/blog.config'
 import Layout from '@/components/layouts/Layout'
@@ -24,7 +24,7 @@ export async function getStaticProps({ params: { slug } }) {
 const Post = ({ post, blockMap }) => {
   if (!post) return null
   return (
-    <PostLayout
+    <PostDetail
       blockMap={blockMap}
       data={post}
     />

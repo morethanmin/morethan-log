@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic'
 
 const UtterancesComponent = dynamic(
   () => {
-    return import('@/src/components/layouts/PostLayout/Utterances')
+    return import('@/src/components/PostDetail/Utterances')
   },
   { ssr: false }
 )
