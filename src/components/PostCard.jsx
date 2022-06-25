@@ -4,7 +4,6 @@ import formatDate from '@/lib/formatDate'
 import Tag from './Tag'
 
 const PostCard = ({ post }) => {
-  // console.log(post)
   return (
     <Link href={`${CONFIG.path}/${post.slug}`}>
       <a>
@@ -19,9 +18,8 @@ const PostCard = ({ post }) => {
           </header>
           <div className="flex mb-4">
             <div className="flex mb-4">
-              {post.tags.map((tag, idx) => (
-                <Tag key={idx}>{tag}</Tag>
-              ))}
+              {post.tags &&
+                post.tags.map((tag, idx) => <Tag key={idx}>{tag}</Tag>)}
             </div>
           </div>
           <main className="mb-4">

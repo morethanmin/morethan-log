@@ -5,7 +5,7 @@ import CONFIG from '@/blog.config'
 const NavBar = () => {
   const locale = useLocale()
   const links = [
-    { id: 0, name: locale.NAV.ABOUT, to: '/about' },
+    { id: 0, name: 'GitHub', to: 'https://github.com/morethanmin' },
     // feed는 하단에 배치할 예정
     // { id: 1, name: locale.NAV.RSS, to: '/feed', show: true },
   ]

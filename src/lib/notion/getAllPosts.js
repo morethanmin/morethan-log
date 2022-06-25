@@ -26,7 +26,6 @@ export async function getAllPosts({ includePages = false }) {
     rawMetadata?.type !== 'collection_view_page' &&
     rawMetadata?.type !== 'collection_view'
   ) {
-    console.log(`pageId "${id}" is not a database`)
     return null
   } else {
     // Construct Data

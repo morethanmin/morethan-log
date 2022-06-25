@@ -19,8 +19,6 @@ const mapPageUrl = (id) => {
 const PostLayout = ({ children, blockMap, data }) => {
   const locale = useLocale()
   const router = useRouter()
-  const isAboutPage =
-    router.query.slug === 'about' || router.query.slug === 'resume'
   return (
     <>
       <article>
@@ -29,20 +27,6 @@ const PostLayout = ({ children, blockMap, data }) => {
         </h1>
         {data.type[0] !== 'Page' && (
           <nav className="flex mt-7 items-start text-gray-500 dark:text-gray-400">
-            {/* 작성자는 개인 블로그이므로 disable */}
-            {/* <div className="flex mb-4">
-              <a href={CONFIG.socialLink || '#'} className="flex">
-                <Image
-                  alt={CONFIG.author}
-                  width={24}
-                  height={24}
-                  src={`https://gravatar.com/avatar/${emailHash}`}
-                  className="rounded-full"
-                />
-                <p className="ml-2 md:block">{CONFIG.author}</p>
-              </a>
-              <span className="block">&nbsp;/&nbsp;</span>
-            </div> */}
             <div className="mr-2 mb-4 md:ml-0">
               {formatDate(
                 data?.date?.start_date || data.createdTime,
@@ -75,25 +59,29 @@ const PostLayout = ({ children, blockMap, data }) => {
           </div>
         )}
       </article>
-      <div className="flex justify-between font-medium text-gray-500 dark:text-gray-400">
-        <a>
-          <button
-            onClick={() => router.push(CONFIG.path || '/')}
-            className="mt-2 cursor-pointer hover:text-black dark:hover:text-gray-100"
-          >
-            ← {locale.POST.BACK}
-          </button>
-        </a>
-        <a>
-          <button
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="mt-2 cursor-pointer hover:text-black dark:hover:text-gray-100"
-          >
-            ↑ {locale.POST.TOP}
-          </button>
-        </a>
-      </div>
-      {isAboutPage === false && <Comments data={data} />}
+      {data.type[0] !== 'Page' && (
+        <>
+          <div className="flex justify-between font-medium text-gray-500 dark:text-gray-400">
+            <a>
+              <button
+                onClick={() => router.push(CONFIG.path || '/')}
+                className="mt-2 cursor-pointer hover:text-black dark:hover:text-gray-100"
+              >
+                ← {locale.POST.BACK}
+              </button>
+            </a>
+            <a>
+              <button
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                className="mt-2 cursor-pointer hover:text-black dark:hover:text-gray-100"
+              >
+                ↑ {locale.POST.TOP}
+              </button>
+            </a>
+          </div>
+          <Comments data={data} />
+        </>
+      )}
     </>
   )
 }

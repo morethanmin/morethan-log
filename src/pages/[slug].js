@@ -15,7 +15,6 @@ export async function getStaticProps({ params: { slug } }) {
   const posts = await getAllPosts({ includePages: true })
   const post = posts.find(t => t.slug === slug)
   const blockMap = await getPostBlocks(post.id)
-
   return {
     props: { post, blockMap },
     revalidate: 1
@@ -40,7 +39,7 @@ Post.getLayout = function getlayout(page) {
       title={page.props.post.title}
       date={new Date(page.props.post.date.start_date).toISOString()}
       description={page.props.post.summary}
-      type="article"
+      type={page.props.post.type[0]}
 
       fullWidth={page.props.post.fullWidth}
     >
