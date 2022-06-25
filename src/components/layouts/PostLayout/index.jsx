@@ -19,7 +19,8 @@ const mapPageUrl = (id) => {
 const PostLayout = ({ children, blockMap, data }) => {
   const locale = useLocale()
   const router = useRouter()
-  const isAboutPage = router.query.slug === 'about'
+  const isAboutPage =
+    router.query.slug === 'about' || router.query.slug === 'resume'
   return (
     <>
       <article>
