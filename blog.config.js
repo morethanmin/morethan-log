@@ -1,6 +1,6 @@
 const CONFIG = {
   // CONFIGcontent configration
-  title: 'MORETHAN-LOG',
+  title: 'morethan-log',
   author: 'morethanmin',
   email: 'morethanmin.dev@gmail.com',
   description: 'Hello',
