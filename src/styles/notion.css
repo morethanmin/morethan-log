@@ -8,9 +8,13 @@
 .notion-text,
 .notion-quote,
 .notion-h-title {
-  @apply leading-8;
+  @apply leading-7;
   @apply p-0;
-  @apply my-3;
+  @apply my-1;
+}
+
+.notion-list li {
+  @apply py-0;
 }
 .notion-page-link {
   color: inherit;
