@@ -16,8 +16,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "postbuild": "next-sitemap --config next-sitemap.config.js"
+    "lint": "next lint"
   },
   "dependencies": {
     "axios": ">=0.21.1",
@@ -39,7 +38,6 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.1",
     "eslint-plugin-react": "^7.26.1",
-    "next-sitemap": "^1.6.203",
     "postcss": "^8.3.11",
     "prettier": "^2.7.1",
     "tailwindcss": "^2.2.19"
