@@ -2,7 +2,7 @@ import { getAllPosts, getAllTagsFromPosts } from '@/lib/notion'
 import Layout from '@/components/layouts/Layout'
 import SearchLayout from '@/components/layouts/SearchLayout'
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const posts = await getAllPosts({ includePages: false })
   const tags = getAllTagsFromPosts(posts)
   return {
@@ -10,7 +10,7 @@ export async function getStaticProps() {
       tags,
       posts
     },
-    revalidate: 1
+    // revalidate: 1
   }
 }
 
