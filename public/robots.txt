@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://morethan_log.vercel.app
+
+# Sitemaps
+Sitemap: https://morethan_log.vercel.app/sitemap.xml
