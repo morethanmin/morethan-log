@@ -1,8 +1,8 @@
-import Post from '@/src/components/PostCard'
+import PostCard from '@/src/components/_shared/PostCard'
 import Pagination from '@/components/Pagination'
 import { getAllPosts } from '@/lib/notion'
 import CONFIG from '@/blog.config'
-import Layout from '@/components/layouts/Layout'
+import Layout from '@/src/components/_layout'
 
 export async function getServerSideProps(context) {
   const { page } = context.params // Get Current Page No.
@@ -27,7 +27,7 @@ const Page = ({ postsToShow, page, showNext }) => {
   return (
     <>
       {postsToShow &&
-        postsToShow.map(post => <Post key={post.id} post={post} />)}
+        postsToShow.map(post => <PostCard key={post.id} post={post} />)}
       <Pagination page={page} showNext={showNext} />
     </>
   )

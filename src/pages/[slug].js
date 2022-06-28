@@ -1,6 +1,6 @@
-import PostDetail from '@/src/components/PostDetail'
+import PostDetail from '@/src/components/[slug]'
 import { getAllPosts, getPostBlocks } from '@/lib/notion'
-import Layout from '@/components/layouts/Layout'
+import Layout from '@/src/components/_layout'
 
 export async function getServerSideProps({ query: { slug } }) {
   const posts = await getAllPosts({ includePages: true })
@@ -11,7 +11,7 @@ export async function getServerSideProps({ query: { slug } }) {
   }
 }
 
-const Post = ({ post, blockMap }) => {
+const PostDetailPage = ({ post, blockMap }) => {
   if (!post) return null
   return (
     <PostDetail
@@ -21,7 +21,7 @@ const Post = ({ post, blockMap }) => {
   )
 }
 
-Post.getLayout = function getlayout(page) {
+PostDetailPage.getLayout = function getlayout(page) {
   if (!page.props.post) return null
   return (
     <Layout
@@ -39,4 +39,4 @@ Post.getLayout = function getlayout(page) {
 }
 
 
-export default Post
+export default PostDetailPage

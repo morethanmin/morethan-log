@@ -1,6 +1,5 @@
 import { useState } from 'react'
-import Post from '@/src/components/PostCard'
-import Tags from '@/components/layouts/SearchLayout/Tags'
+import Post from '@/src/components/_shared/PostCard'
 import PropTypes from 'prop-types'
 
 const SearchLayout = ({ tags, posts, currentTag }) => {
@@ -15,8 +14,9 @@ const SearchLayout = ({ tags, posts, currentTag }) => {
   }
 
   return (
-    <>
-      <div className="relative">
+    <div className="">
+      <div></div>
+      {/* <div className="relative">
         <input
           type="text"
           placeholder={
@@ -40,16 +40,26 @@ const SearchLayout = ({ tags, posts, currentTag }) => {
           ></path>
         </svg>
       </div>
-      <Tags tags={tags} currentTag={currentTag} />
-      <div className="my-2">
-        {!filteredBlogPosts.length && (
-          <p className="text-gray-500 dark:text-gray-300">No posts found.</p>
-        )}
-        {filteredBlogPosts.slice(0, 20).map((post) => (
-          <Post key={post.id} post={post} />
-        ))}
+      <Tags tags={tags} currentTag={currentTag} /> */}
+      <div className="w-full">
+        <div className="flex border-b border-gray-300 mb-4 justify-between items-center ">
+          <div className="text-xl font-bold my-2 ">💻 전체</div>
+          <div className="flex text-sm gap-2 ">
+            <div>최신순</div>
+            <div className="text-gray-500">오래된순</div>
+          </div>
+        </div>
+        <div className="my-2">
+          {!filteredBlogPosts.length && (
+            <p className="text-gray-500 dark:text-gray-300">No posts found.</p>
+          )}
+          {filteredBlogPosts.slice(0, 20).map((post) => (
+            <Post key={post.id} post={post} />
+          ))}
+        </div>
       </div>
-    </>
+      <div></div>
+    </div>
   )
 }
 SearchLayout.propTypes = {

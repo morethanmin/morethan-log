@@ -1,6 +1,6 @@
 import { getAllPosts, getAllTagsFromPosts } from '@/lib/notion'
-import Layout from '@/components/layouts/Layout'
-import SearchLayout from '@/components/layouts/SearchLayout'
+import Layout from '@/src/components/_layout'
+import Home from '@/src/components/home'
 
 export async function getServerSideProps({ query: { tag } }) {
   const currentTag = tag
@@ -20,7 +20,7 @@ export async function getServerSideProps({ query: { tag } }) {
 
 
 const TagPage = function ({ tags, posts, currentTag }) {
-  return <SearchLayout tags={tags} posts={posts} currentTag={currentTag} />
+  return <Home tags={tags} posts={posts} currentTag={currentTag} />
 }
 
 TagPage.getLayout = function getlayout(page) {
