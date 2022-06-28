@@ -1,5 +1,5 @@
-import Header from '@/components/layouts/Layout/Header'
-import Footer from '@/components/layouts/Layout/Footer'
+import Header from '@/src/components/_layout/Header'
+import Footer from '@/src/components/_layout/Footer'
 import CONFIG from '@/blog.config'
 import Head from 'next/head'
 import PropTypes from 'prop-types'
@@ -68,8 +68,8 @@ const Layout = ({ children, fullWidth, ...customMeta }) => {
       >
         {meta.type !== 'Page' && <Header fullWidth={fullWidth} />}
         <main
-          className={`m-auto flex-grow w-full transition-all ${
-            !fullWidth ? 'max-w-2xl px-4' : 'px-4 md:px-24'
+          className={`m-auto flex-grow w-full transition-all max-w-6xl px-4 ${
+            fullWidth && 'px-4 md:px-24'
           } ${meta.type === 'Page' && 'py-10'} `}
         >
           {children}

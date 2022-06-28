@@ -6,12 +6,13 @@ import '@/styles/notion.css'
 import CONFIG from '@/blog.config'
 import dynamic from 'next/dynamic'
 import { LocaleProvider } from '@/lib/locale'
-import Scripts from '@/components/Scripts'
+import Scripts from '@/components/_shared/Scripts'
 
-const Gtag = dynamic(() => import('@/components/Gtag'), { ssr: false })
+const Gtag = dynamic(() => import('@/src/components/_shared/Gtag'), { ssr: false })
 
 function MyApp({ Component, pageProps }) {
   const getLayout = Component.getLayout || ((page) => page)
+
   return (
     <>
       <Scripts />

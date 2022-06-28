@@ -1,4 +1,4 @@
-import TagItem from '@/src/components/PostDetail/TagItem'
+import TagItem from '@/src/components/_shared/TagItem'
 import {
   NotionRenderer,
   Equation,
@@ -10,17 +10,17 @@ import CONFIG from '@/blog.config'
 import formatDate from '@/lib/formatDate'
 import { useLocale } from '@/lib/locale'
 import { useRouter } from 'next/router'
-import Comments from '@/src/components/PostDetail/Comments'
+import Comments from '@/src/components/_shared/Comments'
 
 const mapPageUrl = (id) => {
   return 'https://www.notion.so/' + id.replace(/-/g, '')
 }
 
-const PostLayout = ({ children, blockMap, data }) => {
+const PostDetail = ({ children, blockMap, data }) => {
   const locale = useLocale()
   const router = useRouter()
   return (
-    <>
+    <div className="m-auto max-w-2xl">
       <article>
         <h1 className="font-bold text-3xl text-black dark:text-white">
           {data.title}
@@ -82,8 +82,8 @@ const PostLayout = ({ children, blockMap, data }) => {
           <Comments data={data} />
         </>
       )}
-    </>
+    </div>
   )
 }
 
-export default PostLayout
+export default PostDetail
