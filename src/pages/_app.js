@@ -12,6 +12,7 @@ const Gtag = dynamic(() => import('@/src/components/_shared/Gtag'), { ssr: false
 
 function MyApp({ Component, pageProps }) {
   const getLayout = Component.getLayout || ((page) => page)
+
   return (
     <>
       <Scripts />

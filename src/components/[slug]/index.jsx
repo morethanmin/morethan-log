@@ -16,11 +16,11 @@ const mapPageUrl = (id) => {
   return 'https://www.notion.so/' + id.replace(/-/g, '')
 }
 
-const PostLayout = ({ children, blockMap, data }) => {
+const PostDetail = ({ children, blockMap, data }) => {
   const locale = useLocale()
   const router = useRouter()
   return (
-    <>
+    <div className="m-auto max-w-2xl">
       <article>
         <h1 className="font-bold text-3xl text-black dark:text-white">
           {data.title}
@@ -82,8 +82,8 @@ const PostLayout = ({ children, blockMap, data }) => {
           <Comments data={data} />
         </>
       )}
-    </>
+    </div>
   )
 }
 
-export default PostLayout
+export default PostDetail

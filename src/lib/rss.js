@@ -29,7 +29,7 @@ export async function generateRss(posts) {
     id: `${CONFIG.link}/${CONFIG.path}`,
     link: `${CONFIG.link}/${CONFIG.path}`,
     language: CONFIG.lang,
-    favicon: `${CONFIG.link}/favicon.svg`,
+    favicon: `${CONFIG.link}/favicon.ico`,
     copyright: `All rights reserved ${year}, ${CONFIG.author}`,
     author: {
       name: CONFIG.author,

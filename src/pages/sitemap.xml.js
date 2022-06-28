@@ -1,4 +1,3 @@
-import React from 'react'
 import { getAllPosts } from '@/lib/notion'
 import { link } from '@/blog.config'
 
@@ -7,7 +6,7 @@ const Sitemap = () => {
 }
 
 export const getServerSideProps = async ({ res }) => {
-  //post url 가져오기
+  // post url 가져오기
   const posts = await getAllPosts({ includePages: true })
   const dynamicPaths = posts.map(post => {
     return `${link}/${post.slug}`
