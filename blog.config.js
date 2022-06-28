@@ -6,7 +6,7 @@ const CONFIG = {
   image: ['/profile.png', '/profile-hover.png'],
   description: 'Hello',
   socialLink: 'https://github.com/morethanmin',
-  link: 'https://morethan_log.vercel.app',
+  link: 'https://morethan-log.vercel.app',
   since: 2022, // If leave this empty, current year will be used.
 
   // CONFIG configration
