@@ -15,7 +15,6 @@ const Layout = ({ children, fullWidth, ...customMeta }) => {
     <div>
       <Head>
         <title>{meta.title}</title>
-        {/* <meta content={CONFIG.darkBackground} name="theme-color" /> */}
         <meta name="robots" content="follow, index" />
         <meta charSet="UTF-8" />
         {CONFIG.seo.googleSiteVerification && (

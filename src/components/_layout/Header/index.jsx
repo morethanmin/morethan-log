@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import Link from 'next/link'
 import CONFIG from '@/blog.config'
 import NavBar from './NavBar'

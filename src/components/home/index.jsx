@@ -22,24 +22,36 @@ const Home = ({ tags, posts }) => {
     })
   }
 
-  const currentTag = router.query.tag ? router.query.tag : '전체'
-  const handleClickTag = (tagName) => {
+  const handleClickTag = (value) => {
     router.push({
       query: {
-        tag: tagName,
+        ...router.query,
+        tag: value,
       },
     })
   }
+
+  const handleClickOrderBy = (value) => {
+    router.push({
+      query: {
+        ...router.query,
+        order: value,
+      },
+    })
+  }
+  const currentTag = router.query.tag || '전체'
+  const currentOrder = router.query.order || 'asc'
+
   return (
-    <div className="grid grid-cols-12 gap-6">
-      <div className="col-span-2 hidden md:block">
+    <div className="block md:grid grid-cols-12 gap-6">
+      <div className="col-span-2  ">
         <div className="p-1 mb-3">🏷️ Tags</div>
-        <ul className="cursor-pointer">
+        <ul className="cursor-pointer flex overflow-x-scroll md:block mb-6">
           {Object.keys(tags).map((key) => (
             <li
               key={key}
-              className={`text-sm  p-1 px-4 my-1 rounded-xl text-gray-500  ${
-                key === currentTag && 'bg-white'
+              className={`text-sm  p-1 px-4 my-1 flex-shrink-0 rounded-xl text-gray-500  ${
+                key === currentTag && 'bg-white text-black'
               }`}
               onClick={() => handleClickTag(key)}
             >
@@ -58,15 +70,31 @@ const Home = ({ tags, posts }) => {
           onChange={(e) => setSearchValue(e.target.value)}
         />
         <div className="flex border-b border-gray-300 mb-4 justify-between items-center ">
-          <div className="text-xl font-bold my-2 ">전체 포스트</div>
-          <div className="flex text-sm gap-2 cursor-pointer">
-            <div>최신순</div>
-            <div className="text-gray-500">오래된순</div>
+          <div className="text-xl font-bold my-2 ">{currentTag} 포스트</div>
+          <div className={`flex text-sm gap-2  font-bold`}>
+            <div
+              className={`cursor-pointer ${
+                currentOrder === 'asc' ? 'text-black' : 'text-gray-500'
+              }`}
+              onClick={() => handleClickOrderBy('asc')}
+            >
+              최신순
+            </div>
+            <div
+              className={`cursor-pointer ${
+                currentOrder === 'desc' ? 'text-black' : 'text-gray-500'
+              }`}
+              onClick={() => handleClickOrderBy('desc')}
+            >
+              오래된순
+            </div>
           </div>
         </div>
         <div className="my-2">
           {!filteredBlogPosts.length && (
-            <p className="text-gray-500 dark:text-gray-300">No posts found.</p>
+            <p className="text-gray-500 dark:text-gray-300">
+              게시글이 없습니다. 😺
+            </p>
           )}
           {filteredBlogPosts.slice(0, 20).map((post) => (
             <Post key={post.id} post={post} />
@@ -74,7 +102,7 @@ const Home = ({ tags, posts }) => {
         </div>
       </div>
       <div className="hidden lg:block col-span-3">
-        <div className="p-1 mb-3">💻 About Me</div>
+        <div className="p-1 mb-3">💻 Profile</div>
         <div className="w-full p-8 rounded-t-2xl bg-white">
           <div className="relative w-full after:content-[''] after:block after:pb-[100%]">
             <Image

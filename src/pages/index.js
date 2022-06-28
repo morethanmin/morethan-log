@@ -2,8 +2,9 @@ import { getAllPosts, getAllTagsFromPosts } from '@/lib/notion'
 import Layout from '@/src/components/_layout'
 import Home from '@/src/components/home'
 
-export async function getServerSideProps({ query: { tag } }) {
+export async function getServerSideProps({ query: { tag, order } }) {
   const currentTag = tag || '전체'
+  const currentOrder = order || 'asc'
   let posts
   posts = await getAllPosts({ includePages: false })
   const tags = getAllTagsFromPosts(posts)
@@ -12,6 +13,9 @@ export async function getServerSideProps({ query: { tag } }) {
     posts = posts.filter(
       post => post && post.tags && post.tags.includes(currentTag)
     )
+  }
+  if (currentOrder !== 'asc') {
+    posts = posts.reverse()
   }
 
   return {
