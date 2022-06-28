@@ -71,10 +71,12 @@ const Home = ({ tags, posts }) => {
         />
         <div className="flex border-b border-gray-300 mb-4 justify-between items-center ">
           <div className="text-xl font-bold my-2 ">{currentTag} 포스트</div>
-          <div className={`flex text-sm gap-2  font-bold`}>
+          <div className={`flex text-sm gap-2  `}>
             <div
               className={`cursor-pointer ${
-                currentOrder === 'asc' ? 'text-black' : 'text-gray-500'
+                currentOrder === 'asc'
+                  ? 'text-black font-bold'
+                  : 'text-gray-500'
               }`}
               onClick={() => handleClickOrderBy('asc')}
             >
@@ -82,7 +84,9 @@ const Home = ({ tags, posts }) => {
             </div>
             <div
               className={`cursor-pointer ${
-                currentOrder === 'desc' ? 'text-black' : 'text-gray-500'
+                currentOrder === 'desc'
+                  ? 'text-black font-bold'
+                  : 'text-gray-500'
               }`}
               onClick={() => handleClickOrderBy('desc')}
             >
