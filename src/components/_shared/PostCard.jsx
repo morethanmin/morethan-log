@@ -5,11 +5,11 @@ import Tag from './Tag'
 
 const PostCard = ({ post }) => {
   return (
-    <Link href={`${CONFIG.path}/${post.slug}`}>
+    <Link href={`/${post.slug}`}>
       <a>
         <article
           key={post.id}
-          className="mb-6 md:mb-8 rounded-2xl p-5 bg-white dark:bg-gray-900 hover:shadow-md transition-shadow "
+          className="mb-6 md:mb-8 rounded-2xl p-5 bg-white dark:bg-zinc-700 hover:shadow-md transition-shadow "
         >
           <header className="flex flex-col justify-between md:flex-row md:items-baseline">
             <h2 className="text-lg md:text-xl font-medium mb-2 cursor-pointer text-black dark:text-gray-100">

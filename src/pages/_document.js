@@ -15,43 +15,22 @@ class MyDocument extends Document {
       >
         <Head>
           {/* 폰트 설정 */}
-          {CONFIG.font && CONFIG.font === 'serif'
-            ? (
-              <>
-                <link
-                  rel="preload"
-                  href="/fonts/SourceSerif.var.woff2"
-                  as="font"
-                  type="font/woff2"
-                  crossOrigin="anonymous"
-                />
-                <link
-                  rel="preload"
-                  href="/fonts/SourceSerif-Italic.var.woff2"
-                  as="font"
-                  type="font/woff2"
-                  crossOrigin="anonymous"
-                />
-              </>
-            )
-            : (
-              <>
-                <link
-                  rel="preload"
-                  href="/fonts/IBMPlexSansVar-Roman.woff2"
-                  as="font"
-                  type="font/woff2"
-                  crossOrigin="anonymous"
-                />
-                <link
-                  rel="preload"
-                  href="/fonts/IBMPlexSansVar-Italic.woff2"
-                  as="font"
-                  type="font/woff2"
-                  crossOrigin="anonymous"
-                />
-              </>
-            )}
+          <>
+            <link
+              rel="preload"
+              href="/fonts/SourceSerif.var.woff2"
+              as="font"
+              type="font/woff2"
+              crossOrigin="anonymous"
+            />
+            <link
+              rel="preload"
+              href="/fonts/SourceSerif-Italic.var.woff2"
+              as="font"
+              type="font/woff2"
+              crossOrigin="anonymous"
+            />
+          </>
           {['zh', 'ja', 'ko'].includes(
             CONFIG.lang.slice(0, 2).toLocaleLowerCase()
           ) && (
@@ -64,19 +43,16 @@ class MyDocument extends Document {
                 <link
                   rel="preload"
                   as="style"
-                  href={`https://fonts.googleapis.com/css2?family=Noto+${CONFIG.font === 'serif' ? 'Serif' : 'Sans'
-                    }+${CJK()}:wght@400;500;700&display=swap`}
+                  href={`https://fonts.googleapis.com/css2?family=Noto+Sans+${CJK()}:wght@400;500;700&display=swap`}
                 />
                 <link
                   rel="stylesheet"
-                  href={`https://fonts.googleapis.com/css2?family=Noto+${CONFIG.font === 'serif' ? 'Serif' : 'Sans'
-                    }+${CJK()}:wght@400;500;700&display=swap`}
+                  href={`https://fonts.googleapis.com/css2?family=Noto+Sans+${CJK()}:wght@400;500;700&display=swap`}
                 />
                 <noscript>
                   <link
                     rel="stylesheet"
-                    href={`https://fonts.googleapis.com/css2?family=Noto+${CONFIG.font === 'serif' ? 'Serif' : 'Sans'
-                      }+${CJK()}:wght@400;500;700&display=swap`}
+                    href={`https://fonts.googleapis.com/css2?family=Noto+Sans+${CJK()}:wght@400;500;700&display=swap`}
                   />
                 </noscript>
               </>
@@ -88,12 +64,12 @@ class MyDocument extends Document {
           {CONFIG.appearance === 'auto'
             ? (
               <>
-                <meta name="theme-color" content={CONFIG.lightBackground} media="(prefers-color-scheme: light)" />
-                <meta name="theme-color" content={CONFIG.darkBackground} media="(prefers-color-scheme: dark)" />
+                <meta name="theme-color" content="#f1f3f5" media="(prefers-color-scheme: light)" />
+                <meta name="theme-color" content="#18181B" media="(prefers-color-scheme: dark)" />
               </>
             )
             : (
-              <meta name="theme-color" content={CONFIG.appearance === 'dark' ? CONFIG.darkBackground : CONFIG.lightBackground} />
+              <meta name="theme-color" content={CONFIG.appearance === 'dark' ? '#18181B' : '#f1f3f5'} />
             )
           }
           {/* google search console */}

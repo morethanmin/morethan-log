@@ -5,9 +5,9 @@ import Head from 'next/head'
 import PropTypes from 'prop-types'
 
 const Layout = ({ children, fullWidth, ...customMeta }) => {
-  const url = CONFIG.path.length ? `${CONFIG.link}/${CONFIG.path}` : CONFIG.link
+  const url = CONFIG.link
   const meta = {
-    title: CONFIG.title,
+    title: CONFIG.blog.title,
     type: 'website',
     ...customMeta,
   }
@@ -17,12 +17,6 @@ const Layout = ({ children, fullWidth, ...customMeta }) => {
         <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />
         <meta charSet="UTF-8" />
-        {CONFIG.seo.googleSiteVerification && (
-          <meta
-            name="google-site-verification"
-            content={CONFIG.seo.googleSiteVerification}
-          />
-        )}
         {CONFIG.seo.keywords && (
           <meta name="keywords" content={CONFIG.seo.keywords.join(', ')} />
         )}
@@ -56,15 +50,11 @@ const Layout = ({ children, fullWidth, ...customMeta }) => {
               property="article:published_time"
               content={meta.date || meta.createdTime}
             />
-            <meta property="article:author" content={CONFIG.author} />
+            <meta property="article:author" content={CONFIG.profile.name} />
           </>
         )}
       </Head>
-      <div
-        className={`wrapper ${
-          CONFIG.font === 'serif' ? 'font-serif' : 'font-sans'
-        }`}
-      >
+      <div className={`wrapper font-sans`}>
         {meta.type !== 'Page' && <Header fullWidth={fullWidth} />}
         <main
           className={`m-auto flex-grow w-full transition-all max-w-6xl px-4 ${

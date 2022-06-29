@@ -14,7 +14,7 @@ const Footer = ({ fullWidth }) => {
       <div className="my-4 text-sm leading-6">
         <div className="flex align-baseline justify-center flex-wrap">
           <p>
-            © {CONFIG.author} {from === y || !from ? y : `${from} - ${y}`}
+            © {CONFIG.profile.name} {from === y || !from ? y : `${from} - ${y}`}
           </p>
           {/* <Vercel /> */}
         </div>

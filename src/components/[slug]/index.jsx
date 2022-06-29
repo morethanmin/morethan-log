@@ -20,7 +20,7 @@ const PostDetail = ({ children, blockMap, data }) => {
   const locale = useLocale()
   const router = useRouter()
   return (
-    <div className="m-auto max-w-4xl bg-white rounded-3xl py-12 px-6 shadow-md">
+    <div className="m-auto max-w-4xl bg-white dark:bg-zinc-700 rounded-3xl py-12 px-6 shadow-md">
       <article className="m-auto max-w-2xl">
         <h1 className="font-bold text-3xl text-black dark:text-white">
           {data.title}
@@ -62,7 +62,7 @@ const PostDetail = ({ children, blockMap, data }) => {
             <div className="flex justify-between font-medium text-gray-500 dark:text-gray-400">
               <a>
                 <button
-                  onClick={() => router.push(CONFIG.path || '/')}
+                  onClick={() => router.push('/')}
                   className="mt-2 cursor-pointer hover:text-black dark:hover:text-gray-100"
                 >
                   ← {locale.POST.BACK}

@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import CONFIG from '@/blog.config'
 import { useLocale } from '@/lib/locale'
 
 const Pagination = ({ page, showNext }) => {
@@ -13,13 +12,7 @@ const Pagination = ({ page, showNext }) => {
       className={`flex font-medium text-black dark:text-gray-100 ${additionalClassName}`}
     >
       {currentPage !== 1 && (
-        <Link
-          href={
-            currentPage - 1 === 1
-              ? `${CONFIG.path || '/'}`
-              : `/page/${currentPage - 1}`
-          }
-        >
+        <Link href={currentPage - 1 === 1 && `/page/${currentPage - 1}`}>
           <a>
             <button rel="prev" className="block cursor-pointer">
               ← {locale.PAGINATION.PREV}

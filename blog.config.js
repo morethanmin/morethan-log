@@ -1,26 +1,29 @@
 const CONFIG = {
-  // CONFIG content configration
-  title: 'morethan-log',
-  author: 'morethanmin',
-  email: 'morethanmin.dev@gmail.com',
-  image: ['/profile.png', '/profile-hover.png'],
-  description: 'Hello',
-  socialLink: 'https://github.com/morethanmin',
-  link: 'https://morethan-log.vercel.app',
-  since: 2022, // If leave this empty, current year will be used.
+  // profile setting
+  profile: {
+    name: 'morethanmin',
+    image: ['/profile.png', '/profile-hover.png'],
+    discription: 'frontend developer',
+    email: 'morethanmin.dev@gmail.com',
+    github: 'morethanmin',
+    instagram: 'more_dev_min',
+  },
+
+  // blog setting
+  blog: {
+    title: 'morethan-log', // blog 타이틀과 
+    description: '개발자로 일하면서 배운 내용들을 기록합니다.',
+  },
 
   // CONFIG configration
+  link: 'https://morethan-log.vercel.app',
+  since: 2022, // If leave this empty, current year will be used.
   lang: 'ko-KR', // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES', 'ko-KR']
-  font: 'sans-serif', // ['sans-serif', 'serif']
-  path: '', // leave this empty unless you want to deploy Nobelium in a folder
   postsPerPage: 10,
-  ogImageGenerateURL: 'https://og-image-korean.vercel.app/', // The link to generate OG image, don't end with a slash
+  ogImageGenerateURL: 'https://og-image-korean.vercel.app', // The link to generate OG image, don't end with a slash
   appearance: 'light', // ['light', 'dark', 'auto'],
-  lightBackground: '#f1f3f5', // use hex value, don't forget '#' e.g #fffefc
-  darkBackground: '#18181B', // use hex value, don't forget '#'
   seo: {
     keywords: ['Blog', 'Website', 'Notion'],
-    googleSiteVerification: '' // Remove the value or replace it with your own google site verification code
   },
 
   // notion configuration

@@ -15,10 +15,10 @@ const Header = ({ fullWidth }) => {
         ref={navRef}
       >
         <Link href="/">
-          <a aria-label={CONFIG.title}>
+          <a aria-label={CONFIG.blog.title}>
             <div className="flex items-center">
               <div className="ml-2 text-black dark:text-white header-name">
-                {CONFIG.title}
+                {CONFIG.blog.title}
               </div>
             </div>
           </a>

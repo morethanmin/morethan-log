@@ -24,16 +24,16 @@ const createFeedContent = async post => {
 export async function generateRss(posts) {
   const year = new Date().getFullYear()
   const feed = new Feed({
-    title: CONFIG.title,
-    description: CONFIG.description,
-    id: `${CONFIG.link}/${CONFIG.path}`,
-    link: `${CONFIG.link}/${CONFIG.path}`,
+    title: CONFIG.blog.title,
+    description: CONFIG.blog.description,
+    id: `${CONFIG.link}`,
+    link: `${CONFIG.link}`,
     language: CONFIG.lang,
     favicon: `${CONFIG.link}/favicon.ico`,
-    copyright: `All rights reserved ${year}, ${CONFIG.author}`,
+    copyright: `All rights reserved ${year}, ${CONFIG.profile.name}`,
     author: {
-      name: CONFIG.author,
-      email: CONFIG.email,
+      name: CONFIG.profile.name,
+      email: CONFIG.profile.email,
       link: CONFIG.link
     }
   })
