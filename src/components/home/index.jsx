@@ -50,7 +50,7 @@ const Home = ({ tags, posts }) => {
             {currentTag} 포스트
           </div>
           <div className={`flex text-sm gap-2  `}>
-            <div
+            <a
               className={`cursor-pointer ${
                 currentOrder === 'asc'
                   ? 'text-black font-bold dark:text-white'
@@ -59,8 +59,8 @@ const Home = ({ tags, posts }) => {
               onClick={() => handleClickOrderBy('asc')}
             >
               최신순
-            </div>
-            <div
+            </a>
+            <a
               className={`cursor-pointer ${
                 currentOrder === 'desc'
                   ? 'text-black font-bold dark:text-white'
@@ -69,7 +69,7 @@ const Home = ({ tags, posts }) => {
               onClick={() => handleClickOrderBy('desc')}
             >
               오래된순
-            </div>
+            </a>
           </div>
         </div>
         <div className="my-2">

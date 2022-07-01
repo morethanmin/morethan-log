@@ -26,7 +26,7 @@ function TagsMenu({ data }) {
             }`}
             onClick={() => handleClickTag(key)}
           >
-            {key}
+            <a>{key}</a>
           </li>
         ))}
       </ul>

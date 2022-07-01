@@ -5,7 +5,7 @@ import Link from 'next/link'
 const NavBar = () => {
   // const locale = useLocale()
   const links = [
-    { id: 0, name: 'Home', to: '/' },
+    // { id: 0, name: 'Home', to: '/' },
     { id: 1, name: 'About', to: '/about' },
     // { id: 3, name: 'GitHub', to: 'https://github.com/morethanmin' },
     // feed는 하단에 배치할 예정
