@@ -4,6 +4,7 @@ const CONFIG = {
     name: 'morethanmin',
     image: ['/profile.png', '/profile-hover.png'],
     discription: 'frontend developer',
+    linkedin: 'morethanmin',
     email: 'morethanmin.dev@gmail.com',
     github: 'morethanmin',
     instagram: 'more_dev_min',
