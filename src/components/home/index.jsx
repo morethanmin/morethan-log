@@ -48,14 +48,15 @@ const Home = ({ tags, posts }) => {
         <input
           className="rounded-2xl px-5 py-2  mb-8 w-full bg-gray-200 dark:bg-zinc-700 dark:text-white focus:bg-white focus:shadow-md outline-none transition"
           type="text"
-          placeholder="포스트 검색하기"
+          placeholder="포스트 검색하기.."
           value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}
         />
         {/* order */}
         <div className="flex border-b border-gray-300 mb-4 justify-between items-center ">
           <div className="text-xl font-bold my-2 dark:text-white">
-            {currentTag} 포스트
+            {currentTag} 포스트{' '}
+            <span className="text-sm align-text-top">({tags[currentTag]})</span>
           </div>
           <div className={`flex text-sm gap-2  `}>
             <a
