@@ -2,12 +2,8 @@ import CONFIG from '@/blog.config'
 import { useEffect } from 'react'
 const Utterances = ({ issueTerm }) => {
   useEffect(() => {
-    const theme =
-      CONFIG.appearance === 'auto'
-        ? 'preferred-color-scheme'
-        : CONFIG.appearance === 'light'
-        ? 'github-light'
-        : 'github-dark'
+    const theme = 'github-light'
+    // 'github-dark'
     const script = document.createElement('script')
     const anchor = document.getElementById('comments')
     script.setAttribute('src', 'https://utteranc.es/client.js')

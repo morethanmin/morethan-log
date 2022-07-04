@@ -11,7 +11,6 @@ class MyDocument extends Document {
     return (
       <Html
         lang={CONFIG.lang}
-        className={CONFIG.appearance === 'dark' ? 'dark' : undefined}
       >
         <Head>
           {/* 폰트 설정 */}
@@ -61,17 +60,8 @@ class MyDocument extends Document {
           <link rel="apple-touch-icon" sizes="192x192" href="/apple-touch-icon.png"></link>
           <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/feed"></link>
           {/* 테마 설정 */}
-          {CONFIG.appearance === 'auto'
-            ? (
-              <>
-                <meta name="theme-color" content="#f1f3f5" media="(prefers-color-scheme: light)" />
-                <meta name="theme-color" content="#18181B" media="(prefers-color-scheme: dark)" />
-              </>
-            )
-            : (
-              <meta name="theme-color" content={CONFIG.appearance === 'dark' ? '#18181B' : '#f1f3f5'} />
-            )
-          }
+          <meta name="theme-color" content={'#f1f3f5'} />
+
           {/* google search console */}
           {CONFIG.googleSearchConsole.enable === true && (<>
             <meta name="google-site-verification" content={CONFIG.googleSearchConsole.config.siteVerification} />

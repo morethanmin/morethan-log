@@ -1,10 +1,27 @@
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import CONFIG from '@/blog.config'
 import NavBar from './NavBar'
 
 const Header = ({ fullWidth }) => {
   const navRef = useRef(null)
+  const [theme, setTheme] = useState()
+
+  useEffect(() => {
+    if (typeof window === 'object') {
+      setTheme(localStorage.theme || 'light')
+    }
+  }, [])
+
+  const handleClick = () => {
+    const changedTheme = localStorage.theme !== 'dark' ? 'dark' : 'light'
+    localStorage.setItem('theme', changedTheme)
+    setTheme(changedTheme)
+    changedTheme === 'dark'
+      ? document.documentElement.classList.add('dark')
+      : document.documentElement.classList.remove('dark')
+  }
+
   return (
     <>
       <div
@@ -23,8 +40,10 @@ const Header = ({ fullWidth }) => {
             </div>
           </a>
         </Link>
-
-        <NavBar />
+        <div className={`flex gap-3 items-center`}>
+          {/* <div onClick={handleClick}>{theme}</div> */}
+          <NavBar />
+        </div>
       </div>
     </>
   )
