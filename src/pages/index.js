@@ -2,7 +2,12 @@ import { getAllPosts, getAllTagsFromPosts } from '@/lib/notion'
 import Layout from '@/src/components/_layout'
 import Home from '@/src/components/home'
 
-export async function getServerSideProps({ query: { tag, order } }) {
+export async function getServerSideProps({ res, query: { tag, order } }) {
+  res.setHeader(
+    'Cache-Control',
+    'public, s-maxage=10, stale-while-revalidate=59'
+  )
+
   const currentTag = tag || '전체'
   const currentOrder = order || 'asc'
   let posts
