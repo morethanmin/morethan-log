@@ -20,7 +20,9 @@ const PostDetail = ({ children, blockMap, data }) => {
   const locale = useLocale()
   const router = useRouter()
   return (
-    <div className="m-auto max-w-4xl bg-white dark:bg-zinc-700 rounded-3xl py-12 px-6 shadow-md">
+    <div
+      className={`m-auto max-w-4xl bg-white dark:bg-zinc-700 rounded-3xl py-12 px-6 shadow-md`}
+    >
       <article className="m-auto max-w-2xl">
         <h1 className="font-bold text-3xl text-black dark:text-white">
           {data.title}
