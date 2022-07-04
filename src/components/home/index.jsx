@@ -6,6 +6,11 @@ import { useRouter } from 'next/router'
 import TagsMenu from './_shared/Tags'
 import Profile from './_shared/Profile'
 import Chennel from './_shared/Chennel'
+import CONFIG from '@/blog.config'
+
+const d = new Date()
+const y = d.getFullYear()
+const from = +CONFIG.since
 
 const Home = ({ tags, posts }) => {
   const router = useRouter()
@@ -32,9 +37,11 @@ const Home = ({ tags, posts }) => {
 
   return (
     <div className="block md:grid grid-cols-12 gap-6">
+      {/* left */}
       <div className="col-span-2  ">
         <TagsMenu data={tags} />
       </div>
+      {/* center */}
       <div className="col-span-12 md:col-span-10  lg:col-span-7 ">
         {/* search */}
         <div className="p-1 mb-3 dark:text-white">🔎 Search</div>
@@ -45,6 +52,7 @@ const Home = ({ tags, posts }) => {
           value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}
         />
+        {/* order */}
         <div className="flex border-b border-gray-300 mb-4 justify-between items-center ">
           <div className="text-xl font-bold my-2 dark:text-white">
             {currentTag} 포스트
@@ -72,6 +80,7 @@ const Home = ({ tags, posts }) => {
             </a>
           </div>
         </div>
+        {/* article */}
         <div className="my-2">
           {!filteredBlogPosts.length && (
             <p className="text-gray-500 dark:text-gray-300">
@@ -83,9 +92,14 @@ const Home = ({ tags, posts }) => {
           ))}
         </div>
       </div>
+      {/* right */}
       <div className="hidden lg:block col-span-3">
         <Profile />
         <Chennel />
+        {/* footer */}
+        <div className="text-gray-500 text-sm mt-3">
+          © {CONFIG.profile.name} {from === y || !from ? y : `${from} - ${y}`}
+        </div>
       </div>
     </div>
   )

@@ -63,7 +63,7 @@ const Layout = ({ children, fullWidth, ...customMeta }) => {
         >
           {children}
         </main>
-        {meta.type !== 'Page' && <Footer fullWidth={fullWidth} />}
+        {/* {meta.type !== 'Page' && <Footer fullWidth={fullWidth} />} */}
       </div>
     </div>
   )
