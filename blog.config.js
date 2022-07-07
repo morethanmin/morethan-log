@@ -49,7 +49,7 @@ const CONFIG = {
   utterances: {
     enable: true,
     config: {
-      repo: 'morethanmin/morethan_log'
+      repo: 'morethanmin/morethan-log'
     }
   },
 
