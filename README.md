@@ -4,7 +4,7 @@
 
 노션을 활용한 개인 블로그 입니다. 이제 더 이상 게시글 작성을 위해 커밋을 할 필요가 없습니다. 노션을 이용하여 게시글을 작성하고, 블로그를 통해 내용을 공유해보세요😇
 
-## features
+## Features
 
 ### 📒 notion을 이용한 게시글 작성
 
@@ -37,6 +37,12 @@
   - 공유 > 웹에서 공유를 켜주시면 url이 나오는데, www.notion.so/[pageId]?v=[version] 에서 pageId를 입력해주시면 됩니다.
 - [Vercel](https://vercel.com/dashboard)을 사용하여 배포를 해주세요.
   - 해당 repo를 선택하고 배포만하면 바로 배포가 가능합니다!
+
+## Tech Stack
+
+- Next.js
+- tailwind
+- notion-client
 
 ## License
 
