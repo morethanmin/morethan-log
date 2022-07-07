@@ -36,7 +36,7 @@
   - notion config의 pageId는 본인의 notion에 [해당 페이지](https://quasar-season-ed5.notion.site/12c38b5f459d4eb9a759f92fba6cea36?v=2e7962408e3842b2a1a801bf3546edda)를 복제해주세요. 
   - 공유 > 웹에서 공유를 켜주시면 url이 나오는데, www.notion.so/[pageId]?v=[version] 에서 pageId를 입력해주시면 됩니다.
 - [Vercel](https://vercel.com/dashboard)을 사용하여 배포를 해주세요.
-  - 해당 repo를 선택하고 배포만하면 바로 배포가 가능합니다!
+  - 해당 repo를 선택하고 별다른 설정없이 바로 배포가 가능합니다!
 
 ## Tech Stack
 
