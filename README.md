@@ -2,7 +2,7 @@
 
 <img width="1314" alt="image" src="https://user-images.githubusercontent.com/72514247/177747208-cc01cc79-e9af-4009-be70-f2182bde5c4e.png">
 
-노션을 활용한 개인 블로그 입니다. 더이상 게시글 작성을 위해 커밋을 할 필요가 없습니다!
+노션을 활용한 개인 블로그 입니다. 이제 더 이상 게시글 작성을 위해 커밋을 할 필요가 없습니다. 노션을 이용하여 게시글을 작성하고, 블로그를 통해 내용을 공유해보세요😇
 
 ## features
 
@@ -13,8 +13,10 @@
 
 ### 👀 SEO 지원
 
-- 게시글에 대해 동적으로 OG IMAGE를 생성합니다. ()
+- 게시글에 대해 동적으로 OG IMAGE를 생성합니다.
+  - og-image에서 한글이 적용이 안되는 오류를 수정하여 적용했습니다. [og-image-korean](https://github.com/morethanmin/og-image-korean)
 - 게시글에 대해 동적으로 sitemap을 작성합니다.
+  - 기존의 배포시 적용되는 방식에서 동적으로 적용되도록 수정하여 적용했습니다.
 
 ### 🤖 CONFIG를 통한 다양한 Plugin 지원 (Google Analytics, Comment using utterances)
 
