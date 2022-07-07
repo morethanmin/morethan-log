@@ -18,10 +18,10 @@
 - 게시글에 대해 동적으로 sitemap을 작성합니다.
   - 기존의 배포시 적용되는 방식에서 동적으로 적용되도록 수정하여 적용했습니다.
 
-### 🤖 CONFIG를 통한 다양한 Plugin 지원 (Google Analytics, Comment using utterances)
+### 🤖 CONFIG를 통한 다양한 Plugin 지원
 
 - 본인의 프로필 정보를 쉽게 세팅할 수 있습니다.
-- GA를 쉽게 연동이 가능합니다.
+- GA, utterances를 쉽게 연동이 가능합니다.
 - 댓글 기능이 지원됩니다.
 
 ### 📄 Page 생성 기능
