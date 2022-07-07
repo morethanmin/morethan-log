@@ -1,6 +1,8 @@
-# morethan_log
+# 🥺 morethan-log
 
 노션 api를 활용한 개인 블로그 입니다.
+
+## Quick Start
 
 ## features
 
