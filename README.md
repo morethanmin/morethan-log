@@ -13,7 +13,7 @@
 
 ### 👀 SEO 지원
 
-- 게시글에 대해 동적으로 OG IMAGE를 생성합니다.
+- 게시글에 대해 동적으로 OG IMAGE(썸네일!)를 생성합니다.
   - og-image에서 한글이 적용이 안되는 오류를 수정하여 적용했습니다. [og-image-korean](https://github.com/morethanmin/og-image-korean)
 - 게시글에 대해 동적으로 sitemap을 작성합니다.
   - 기존의 배포시 적용되는 방식에서 동적으로 적용되도록 수정하여 적용했습니다.
