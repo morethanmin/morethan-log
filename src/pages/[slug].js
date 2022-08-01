@@ -5,7 +5,7 @@ import Layout from '@/src/components/_layout'
 export async function getServerSideProps({ res, query: { slug } }) {
   res.setHeader(
     'Cache-Control',
-    'public, s-maxage=10, stale-while-revalidate=59'
+    'public, s-maxage=86400, stale-while-revalidate=59'
   )
 
   const posts = await getAllPosts({ includePages: true })
@@ -32,7 +32,7 @@ PostDetailPage.getLayout = function getlayout(page) {
     <Layout
       // for meta tag
       title={page.props.post.title}
-      date={new Date(page.props.post.date.start_date).toISOString()}
+      date={new Date(page.props.post.date?.start_date || page.props.post.createdTime).toISOString()}
       description={page.props.post.summary}
       type={page.props.post.type[0]}
 

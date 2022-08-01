@@ -5,7 +5,7 @@ import Home from '@/src/components/home'
 export async function getServerSideProps({ res, query: { tag, order } }) {
   res.setHeader(
     'Cache-Control',
-    'public, s-maxage=10, stale-while-revalidate=59'
+    'public, s-maxage=86400, stale-while-revalidate=59'
   )
 
   const currentTag = tag || '전체'

@@ -1,5 +1,4 @@
 import Header from '@/src/components/_layout/Header'
-import Footer from '@/src/components/_layout/Footer'
 import CONFIG from '@/blog.config'
 import Head from 'next/head'
 import PropTypes from 'prop-types'
