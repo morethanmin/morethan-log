@@ -1,16 +1,10 @@
 {
-  "name": "nobelium",
+  "name": "morethan-log",
   "version": "1.3.0",
-  "homepage": "https://nobelium.js.org",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/craigary/nobelium.git"
-  },
-  "author": {
-    "name": "Craig Hart",
-    "email": "i@craigary.net",
-    "url": "http://craigary.net"
+    "url": "https://github.com/morethanmin/morethan-log.git"
   },
   "scripts": {
     "dev": "next dev",
@@ -43,9 +37,5 @@
     "postcss": "^8.3.11",
     "prettier": "^2.7.1",
     "tailwindcss": "^3.1.4"
-  },
-  "bugs": {
-    "url": "https://github.com/craigary/nobelium/issues",
-    "email": "i@craigary.net"
   }
 }
