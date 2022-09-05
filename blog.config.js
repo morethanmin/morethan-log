@@ -9,7 +9,12 @@ const CONFIG = {
     github: 'morethanmin',
     instagram: 'more_dev_min',
   },
-
+  projects: [
+    {
+      name: 'Untilled',
+      href: 'https://untilled.web.app'
+    }
+  ],
   // blog setting
   blog: {
     title: 'morethan-log', // blog 타이틀과 

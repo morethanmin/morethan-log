@@ -7,6 +7,7 @@ import TagsMenu from './_shared/Tags'
 import Profile from './_shared/Profile'
 import Chennel from './_shared/Chennel'
 import CONFIG from '@/blog.config'
+import Products from './_shared/Product'
 
 const d = new Date()
 const y = d.getFullYear()
@@ -96,6 +97,7 @@ const Home = ({ tags, posts }) => {
       {/* right */}
       <div className="hidden lg:block col-span-3">
         <Profile />
+        <Products />
         <Chennel />
         {/* footer */}
         <div className="text-gray-500 text-sm mt-3">
