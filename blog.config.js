@@ -17,7 +17,7 @@ const CONFIG = {
   ],
   // blog setting
   blog: {
-    title: '멋쟁이 상민처럼', // blog 타이틀과 
+    title: '🦁 멋쟁이 상민처럼', // blog 타이틀과 
     description: '개발자로 일하면서 배운 내용들을 기록합니다.',
   },
 
