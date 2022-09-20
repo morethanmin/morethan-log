@@ -3,10 +3,10 @@ import { getAllPosts, getPostBlocks } from '@/lib/notion'
 import Layout from '@/src/components/_layout'
 
 export async function getServerSideProps({ res, query: { slug } }) {
-  res.setHeader(
-    'Cache-Control',
-    'public, s-maxage=86400, stale-while-revalidate=59'
-  )
+  // res.setHeader(
+  //   'Cache-Control',
+  //   'public, s-maxage=86400, stale-while-revalidate=59'
+  // )
 
   const posts = await getAllPosts({ includePages: true })
   const post = posts.find(t => t.slug === slug)
