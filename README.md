@@ -2,7 +2,7 @@
 
 <img width="1314" alt="image" src="https://user-images.githubusercontent.com/72514247/177747208-cc01cc79-e9af-4009-be70-f2182bde5c4e.png">
 
-노션을 활용한 개인 블로그 입니다. 이제 더 이상 게시글 작성을 위해 커밋을 할 필요가 없습니다. 노션을 이용하여 게시글을 작성하고, 블로그를 통해 내용을 공유해보세요!
+노션을 활용한 개인 블로그 입니다. 이제 더 이상 게시글 작성을 위해 커밋을 할 필요가 없습니다. 노션을 이용하여 게시글을 작성하고, 블로그를 통해 내용을 공유해보세요.
 
 ## Features
 
@@ -33,7 +33,7 @@
 
 - 해당 저장소를 fork 해주세요.
 - `blog.config.js`을 본인에게 맞도록 수정해주세요.
-  - pageId같은 경우, 본인의 notion에 [해당 페이지](https://quasar-season-ed5.notion.site/12c38b5f459d4eb9a759f92fba6cea36?v=2e7962408e3842b2a1a801bf3546edda)를 복제를 한뒤, 해당 페이지에서 `공유` -> `웹에서 공유` 클릭시 생성되는 url`www.notion.so/[pageId]?v=[version]`에서 pageId를 입력해주시면 됩니다.
+  - pageId같은 경우, 본인의 notion에 [해당 페이지](https://quasar-season-ed5.notion.site/12c38b5f459d4eb9a759f92fba6cea36?v=2e7962408e3842b2a1a801bf3546edda)를 복제를 한뒤, 해당 페이지에서 `공유` -> `웹에서 공유` 클릭시 생성되는 url`www.notion.so/[pageId]?v=[version]`에서 pageId를 입력하면 됩니다.
 - [Vercel](https://vercel.com/dashboard)을 사용하여 배포를 해주세요.
   - 해당 repo를 선택하고 별다른 설정없이 바로 배포가 가능합니다!
 
