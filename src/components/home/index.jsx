@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Post from '@/src/components/_shared/PostCard'
 import PropTypes from 'prop-types'
 import { useRouter } from 'next/router'
@@ -16,14 +16,35 @@ const from = +CONFIG.since
 const Home = ({ tags, posts }) => {
   const router = useRouter()
   const [searchValue, setSearchValue] = useState('')
-  let filteredBlogPosts = []
-  if (posts) {
-    filteredBlogPosts = posts.filter((post) => {
-      const tagContent = post.tags ? post.tags.join(' ') : ''
-      const searchContent = post.title + post.summary + tagContent
-      return searchContent.toLowerCase().includes(searchValue.toLowerCase())
+  const [filteredPosts, setFilteredPosts] = useState(posts)
+
+  const currentTag = router.query.tag || '전체'
+  const currentOrder = router.query.order || 'asc'
+
+  useEffect(() => {
+    setFilteredPosts(() => {
+      let filteredPosts = posts
+      // 검색 필터링
+      filteredPosts = filteredPosts.filter((post) => {
+        const tagContent = post.tags ? post.tags.join(' ') : ''
+        const searchContent = post.title + post.summary + tagContent
+        return searchContent.toLowerCase().includes(searchValue.toLowerCase())
+      })
+
+      // 태그 필터링
+      if (currentTag !== '전체') {
+        filteredPosts = filteredPosts.filter(
+          (post) => post && post.tags && post.tags.includes(currentTag)
+        )
+      }
+      // 정렬 필터링
+      if (currentOrder !== 'asc') {
+        filteredPosts = filteredPosts.reverse()
+      }
+
+      return filteredPosts
     })
-  }
+  }, [searchValue, currentTag, currentOrder])
 
   const handleClickOrderBy = (value) => {
     router.push({
@@ -33,8 +54,6 @@ const Home = ({ tags, posts }) => {
       },
     })
   }
-  const currentTag = router.query.tag || '전체'
-  const currentOrder = router.query.order || 'asc'
 
   return (
     <div className="block md:grid grid-cols-12 gap-6">
@@ -84,12 +103,12 @@ const Home = ({ tags, posts }) => {
         </div>
         {/* article */}
         <div className="my-2">
-          {!filteredBlogPosts.length && (
+          {!filteredPosts.length && (
             <p className="text-gray-500 dark:text-gray-300">
               게시글이 없습니다. 😺
             </p>
           )}
-          {filteredBlogPosts.slice(0, 20).map((post) => (
+          {filteredPosts.slice(0, 20).map((post) => (
             <Post key={post.id} post={post} />
           ))}
         </div>
