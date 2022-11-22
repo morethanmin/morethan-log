@@ -1,6 +1,6 @@
 const CONFIG = require('../../blog.config')
 
-module.exports = function () {
+module.exports = function lang() {
   switch (CONFIG.lang.toLowerCase()) {
     case 'zh-cn':
     case 'zh-sg':

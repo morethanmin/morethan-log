@@ -1,6 +1,7 @@
 import CONFIG from '@/blog.config'
 import Image from 'next/image'
 import React from 'react'
+import imageLoader from '../../../lib/loader'
 
 function Profile() {
   return (
@@ -12,6 +13,7 @@ function Profile() {
             className="block hover:hidden"
             src={CONFIG.profile.image[0]}
             layout="fill"
+            loader={imageLoader}
             alt=""
           />
         </div>

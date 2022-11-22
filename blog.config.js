@@ -22,7 +22,8 @@ const CONFIG = {
   },
 
   // CONFIG configration
-  link: 'https://morethan-log.vercel.app',
+  link: 'https://morethanmin.web.app',
+  // link: 'https://morethan-log.vercel.app',
   since: 2022, // If leave this empty, current year will be used.
   lang: 'ko-KR', // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES', 'ko-KR']
   postsPerPage: 10,

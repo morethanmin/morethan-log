@@ -2,10 +2,10 @@ import Document, { Html, Head, Main, NextScript } from 'next/document'
 import CONFIG from '@/blog.config'
 import CJK from '@/lib/cjk'
 class MyDocument extends Document {
-  static async getInitialProps(ctx) {
-    const initialProps = await Document.getInitialProps(ctx)
-    return { ...initialProps }
-  }
+  // static async getInitialProps(ctx) {
+  //   const initialProps = await Document.getInitialProps(ctx)
+  //   return { ...initialProps }
+  // }
 
   render() {
     return (
