@@ -16,3 +16,5 @@ jobs:
 
       - name: Build And Deploy
         run: yarn next build && next export && deploy --only hosting:morethanmin --token "${{ secrets.FIREBASE_TOKEN }}"
+        env:
+          NOTION_PAGE_ID: ${{ secrets.NOTION_PAGE_ID }}
