@@ -14,7 +14,12 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
-      - name: Build And Deploy
-        run: yarn next build && next export && deploy --only hosting:morethanmin --token "${{ secrets.FIREBASE_TOKEN }}"
+      - name: Build And Export
+        run: yarn next build && next export
         env:
           NOTION_PAGE_ID: ${{ secrets.NOTION_PAGE_ID }}
+
+      - name: Deploy
+        run: yarn deploy:prod
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
