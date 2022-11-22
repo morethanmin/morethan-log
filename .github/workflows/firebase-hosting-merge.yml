@@ -14,8 +14,8 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
-      - name: Build And Export
-        run: yarn next build && next export
+      - name: Build and export
+        run: yarn next build && yarn next export
         env:
           NOTION_PAGE_ID: ${{ secrets.NOTION_PAGE_ID }}
 
