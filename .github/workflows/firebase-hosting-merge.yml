@@ -16,16 +16,7 @@ jobs:
         with:
           cmd: install --production
 
-      - name: Build
+      - name: Build And Deploy
         uses: borales/actions-yarn@v2.3.0
         with:
-          cmd: next build && next export
-
-      - name: Deploy
-        uses: w9jds/firebase-action@master
-        with:
-          args: deploy --only hosting:morethanmin
-        env:
-          CI: true
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-          PROJECT_ID: ${{ steps.vars.outputs.PROJECT_ID }}
+          cmd: next build && next export && deploy --only hosting:morethanmin --token "${{ secrets.FIREBASE_TOKEN }}"
