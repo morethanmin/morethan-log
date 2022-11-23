@@ -5,7 +5,7 @@ import { AiFillCodeSandboxCircle } from 'react-icons/ai'
 function Product() {
   return (
     <>
-      <div className="p-1 mb-3 dark:text-white">🌟 Product</div>
+      <div className="p-1 mb-3 dark:text-white">🌟 Service</div>
       <ul className="rounded-2xl mb-9 bg-white dark:bg-zinc-700 p-1 flex flex-col">
         <a
           href={`${CONFIG.projects[0].href}`}
