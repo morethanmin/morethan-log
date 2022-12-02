@@ -9,7 +9,7 @@ export async function getStaticProps() {
   return {
     props: {
       tags: {
-        '전체': posts.length,
+        'All': posts.length,
         ...tags
       },
       posts

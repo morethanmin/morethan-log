@@ -18,7 +18,7 @@ const Home = ({ tags, posts }) => {
   const [searchValue, setSearchValue] = useState('')
   const [filteredPosts, setFilteredPosts] = useState(posts)
 
-  const currentTag = router.query.tag || '전체'
+  const currentTag = router.query.tag || 'All'
   const currentOrder = router.query.order || 'asc'
 
   useEffect(() => {
@@ -32,7 +32,7 @@ const Home = ({ tags, posts }) => {
       })
 
       // 태그 필터링
-      if (currentTag !== '전체') {
+      if (currentTag !== 'All') {
         filteredPosts = filteredPosts.filter(
           (post) => post && post.tags && post.tags.includes(currentTag)
         )

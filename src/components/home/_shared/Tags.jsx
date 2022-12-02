@@ -3,7 +3,7 @@ import React from 'react'
 
 function TagsMenu({ data }) {
   const router = useRouter()
-  const currentTag = router.query.tag || '전체'
+  const currentTag = router.query.tag || 'All'
 
   const handleClickTag = (value) => {
     router.push({
