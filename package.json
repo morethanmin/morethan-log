@@ -11,9 +11,7 @@
     "build": "next build",
     "start": "next start",
     "postbuild": "next-sitemap --config next-sitemap.config.js",
-    "lint": "next lint",
-    "deploy:dev": "firebase login --no-localhost && firebase deploy --only hosting:morethanmin",
-    "deploy:prod": "firebase deploy --only hosting:morethanmin --token $FIREBASE_TOKEN"
+    "lint": "next lint"
   },
   "dependencies": {
     "axios": ">=0.21.1",
@@ -37,8 +35,6 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.1",
     "eslint-plugin-react": "^7.26.1",
-    "firebase": "^9.14.0",
-    "firebase-tools": "^11.16.1",
     "next-sitemap": "^3.1.32",
     "postcss": "^8.3.11",
     "prettier": "^2.7.1",
