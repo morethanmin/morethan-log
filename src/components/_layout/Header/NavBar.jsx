@@ -1,6 +1,6 @@
 import Link from 'next/link'
 // import { useLocale } from '@/lib/locale'
-// import CONFIG from '@/blog.config'
+// import CONFIG from '@/morethan-log.config'
 
 const NavBar = () => {
   // const locale = useLocale()

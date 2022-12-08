@@ -26,13 +26,13 @@
 
 ### 📄 Page 생성 기능
 
-- 게시글 작성 이외에 노션 페이지를 보여줄 수 있는 기능을 추가하였습니다. 
+- 게시글 작성 이외에 노션 페이지를 보여줄 수 있는 기능을 추가하였습니다.
 - 노션으로 만들어진 이력서, 포트폴리오 등을 공유할 때 유용하게 사용이 가능합니다.
 
 ## Quick Start
 
 - 해당 저장소를 fork 해주세요.
-- `blog.config.js`을 본인에게 맞도록 수정해주세요.
+- `morethan-log.config.js`을 본인에게 맞도록 수정해주세요.
   - pageId같은 경우, 본인의 notion에 [해당 페이지](https://quasar-season-ed5.notion.site/12c38b5f459d4eb9a759f92fba6cea36?v=2e7962408e3842b2a1a801bf3546edda)를 복제를 한뒤, 해당 페이지에서 `공유` -> `웹에서 공유` 클릭시 생성되는 url`www.notion.so/[pageId]?v=[version]`에서 pageId를 입력하면 됩니다.
 - [Vercel](https://vercel.com/dashboard)을 사용하여 배포를 해주세요.
   - 해당 repo를 선택하고 별다른 설정없이 바로 배포가 가능합니다!

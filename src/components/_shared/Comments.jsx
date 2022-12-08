@@ -1,4 +1,4 @@
-import CONFIG from '@/blog.config'
+import CONFIG from '@/morethan-log.config'
 import dynamic from 'next/dynamic'
 
 const UtterancesComponent = dynamic(

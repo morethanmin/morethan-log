@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import CONFIG from '@/blog.config'
+import CONFIG from '@/morethan-log.config'
 import formatDate from '@/lib/formatDate'
 import Tag from './Tag'
 

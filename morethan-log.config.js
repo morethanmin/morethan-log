@@ -1,8 +1,8 @@
 const CONFIG = {
   // profile setting
   profile: {
-    name: 'morethanmin',
-    image: ['/profile.png', '/profile-hover.png'],
+    name: 'morethan-log',
+    image: '/profile.png',
     discription: 'frontend developer',
     linkedin: 'morethanmin',
     email: 'morethanmin.dev@gmail.com',
@@ -17,8 +17,8 @@ const CONFIG = {
   ],
   // blog setting
   blog: {
-    title: '🦁 멋쟁이 상민처럼', // blog 타이틀과 
-    description: '개발자로 일하면서 배운 내용들을 기록합니다.',
+    title: 'morethan-log', // blog 타이틀과 
+    description: 'welcome to morethan-log!',
   },
 
   // CONFIG configration
@@ -57,7 +57,6 @@ const CONFIG = {
       repo: 'morethanmin/morethan-log'
     }
   },
-
   isProd: process.env.VERCEL_ENV === 'production' // distinguish between development and production environment (ref: https://vercel.com/docs/environment-variables#system-environment-variables)
 }
 module.exports = CONFIG

@@ -1,4 +1,4 @@
-import CONFIG from '@/blog.config'
+import CONFIG from '@/morethan-log.config'
 import { NotionAPI } from 'notion-client'
 import { idToUuid } from 'notion-utils'
 import getAllPageIds from './getAllPageIds'

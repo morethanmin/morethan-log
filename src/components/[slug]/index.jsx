@@ -5,7 +5,7 @@ import {
   Collection,
   CollectionRow,
 } from 'react-notion-x'
-import CONFIG from '@/blog.config'
+import CONFIG from '@/morethan-log.config'
 import formatDate from '@/lib/formatDate'
 import { useLocale } from '@/lib/locale'
 import { useRouter } from 'next/router'

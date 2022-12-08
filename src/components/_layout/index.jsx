@@ -1,5 +1,5 @@
 import Header from '@/src/components/_layout/Header'
-import CONFIG from '@/blog.config'
+import CONFIG from '@/morethan-log.config'
 import Head from 'next/head'
 import PropTypes from 'prop-types'
 

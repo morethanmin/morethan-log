@@ -6,7 +6,7 @@ import { useRouter } from 'next/router'
 import TagsMenu from './_shared/Tags'
 import Profile from './_shared/Profile'
 import Chennel from './_shared/Chennel'
-import CONFIG from '@/blog.config'
+import CONFIG from '@/morethan-log.config'
 import Products from './_shared/Product'
 
 const d = new Date()

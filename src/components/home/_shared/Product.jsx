@@ -1,4 +1,4 @@
-import CONFIG from '@/blog.config'
+import CONFIG from '@/morethan-log.config'
 import React from 'react'
 import { AiFillCodeSandboxCircle } from 'react-icons/ai'
 

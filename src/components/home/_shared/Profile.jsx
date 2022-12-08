@@ -1,4 +1,4 @@
-import CONFIG from '@/blog.config'
+import CONFIG from '@/morethan-log.config'
 import Image from 'next/image'
 import React from 'react'
 import imageLoader from '../../../lib/loader'
@@ -11,7 +11,7 @@ function Profile() {
         <div className="relative w-full after:content-[''] after:block after:pb-[100%]">
           <Image
             className="block hover:hidden"
-            src={CONFIG.profile.image[0]}
+            src={CONFIG.profile.image}
             layout="fill"
             loader={imageLoader}
             alt=""

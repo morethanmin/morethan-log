@@ -1,4 +1,4 @@
-const CONFIG = require('./blog.config')
+const CONFIG = require('./morethan-log.config')
 
 module.exports = {
   siteUrl: CONFIG.link,

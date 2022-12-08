@@ -1,4 +1,4 @@
-import CONFIG from '@/blog.config'
+import CONFIG from '@/morethan-log.config'
 // import Vercel from '@/components/Vercel'
 const Footer = ({ fullWidth }) => {
   const d = new Date()
