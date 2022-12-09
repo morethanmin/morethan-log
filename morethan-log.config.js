@@ -40,15 +40,15 @@ const CONFIG = {
 
   // plugin configuration
   googleAnalytics: {
-    enable: true,
+    enable: false,
     config: {
-      measurementId: 'G-9N3FE0117Q'
+      measurementId: '' // ex. G-9N3FE0117Q
     }
   },
   googleSearchConsole: {
-    enable: true,
+    enable: false,
     config: {
-      siteVerification: 'qvdR1gXMirk_DCUOKPgRnxu2x6fqSPrquYnEZZMjR9w'
+      siteVerification: '' // ex. qvdR1gXMirk_DCUOKPgRnxu2x6fqSPrquYnEZZMjR9w
     }
   },
   utterances: {
