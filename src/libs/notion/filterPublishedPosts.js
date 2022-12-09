@@ -1,4 +1,4 @@
-// import CONFIG from '@/morethan-log.config'
+// import CONFIG from 'morethan-log.config'
 const current = new Date()
 const tomorrow = new Date(current)
 tomorrow.setDate(tomorrow.getDate() + 1)

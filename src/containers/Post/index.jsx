@@ -5,18 +5,18 @@ import {
   Collection,
   CollectionRow,
 } from 'react-notion-x'
-import CONFIG from '@/morethan-log.config'
-import formatDate from '@/lib/formatDate'
-import { useLocale } from '@/lib/locale'
+import CONFIG from 'morethan-log.config'
+import formatDate from '@libs/formatDate'
+import { useLocale } from '@libs/locale'
 import { useRouter } from 'next/router'
-import Comments from '@/src/components/_shared/Comments'
-import Tag from '../_shared/Tag'
+import Comments from '@components/Comments'
+import Tag from '../../components/Tag'
 
 const mapPageUrl = (id) => {
   return 'https://www.notion.so/' + id.replace(/-/g, '')
 }
 
-const PostDetail = ({ children, blockMap, data }) => {
+const Post = ({ children, blockMap, data }) => {
   const locale = useLocale()
   const router = useRouter()
   return (
@@ -89,4 +89,4 @@ const PostDetail = ({ children, blockMap, data }) => {
   )
 }
 
-export default PostDetail
+export default Post

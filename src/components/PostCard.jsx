@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import CONFIG from '@/morethan-log.config'
-import formatDate from '@/lib/formatDate'
+import CONFIG from 'morethan-log.config'
+import formatDate from '@libs/formatDate'
 import Tag from './Tag'
 
 const PostCard = ({ post }) => {

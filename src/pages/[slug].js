@@ -1,6 +1,6 @@
-import PostDetail from '@/src/components/[slug]'
-import { getAllPosts, getPostBlocks } from '@/lib/notion'
-import Layout from '@/src/components/_layout'
+import Post from '@containers/Post'
+import { getAllPosts, getPostBlocks } from '@libs/notion'
+import Layout from '@components/Layout'
 
 
 
@@ -23,17 +23,17 @@ export async function getStaticProps({ params: { slug } }) {
   }
 }
 
-const PostDetailPage = ({ post, blockMap }) => {
+const PostPage = ({ post, blockMap }) => {
   if (!post) return null
   return (
-    <PostDetail
+    <Post
       blockMap={blockMap}
       data={post}
     />
   )
 }
 
-PostDetailPage.getLayout = function getlayout(page) {
+PostPage.getLayout = function getlayout(page) {
   if (!page.props.post) return null
   return (
     <Layout
@@ -50,4 +50,4 @@ PostDetailPage.getLayout = function getlayout(page) {
   )
 }
 
-export default PostDetailPage
+export default PostPage

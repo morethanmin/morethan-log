@@ -1,9 +1,9 @@
-import CONFIG from '@/morethan-log.config'
+import CONFIG from 'morethan-log.config'
 import dynamic from 'next/dynamic'
 
 const UtterancesComponent = dynamic(
   () => {
-    return import('@/src/components/_shared/Utterances')
+    return import('@components/Utterances')
   },
   { ssr: false }
 )

@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react'
-import Post from '@/src/components/_shared/PostCard'
+import Post from '@components/PostCard'
 import PropTypes from 'prop-types'
 import { useRouter } from 'next/router'
 
-import TagsMenu from './_shared/Tags'
-import Profile from './_shared/Profile'
-import Chennel from './_shared/Chennel'
-import CONFIG from '@/morethan-log.config'
-import Products from './_shared/Product'
+import TagsMenu from './components/Tags'
+import Profile from './components/Profile'
+import Chennel from './components/Chennel'
+import CONFIG from 'morethan-log.config'
+import Products from './components/Product'
 
 const d = new Date()
 const y = d.getFullYear()
@@ -66,7 +66,7 @@ const Home = ({ tags, posts }) => {
         {/* search */}
         <div className="p-1 mb-3 dark:text-white">🔎 Search</div>
         <input
-          className="rounded-2xl px-5 py-2  mb-8 w-full bg-gray-200 dark:bg-zinc-700 dark:text-white focus:bg-white focus:shadow-md outline-none transition"
+          className="rounded-2xl px-5 py-2 mb-8 w-full bg-gray-200 dark:bg-zinc-700 dark:text-white focus:bg-white focus:shadow-md outline-none transition"
           type="text"
           placeholder="포스트 검색하기.."
           value={searchValue}

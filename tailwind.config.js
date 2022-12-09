@@ -1,5 +1,5 @@
 const { fontFamily } = require('tailwindcss/defaultTheme')
-const CJK = require('./src/lib/cjk')
+const CJK = require('./src/libs/cjk')
 const fontSansCJK = !CJK()
   ? []
   : [`"Noto Sans CJK ${CJK()}"`, `"Noto Sans ${CJK()}"`]

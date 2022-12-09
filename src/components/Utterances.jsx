@@ -1,4 +1,4 @@
-import CONFIG from '@/morethan-log.config'
+import CONFIG from 'morethan-log.config'
 import { useEffect } from 'react'
 const Utterances = ({ issueTerm }) => {
   useEffect(() => {

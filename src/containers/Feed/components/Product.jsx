@@ -1,8 +1,9 @@
-import CONFIG from '@/morethan-log.config'
+import CONFIG from 'morethan-log.config'
 import React from 'react'
 import { AiFillCodeSandboxCircle } from 'react-icons/ai'
 
 function Product() {
+  if (!CONFIG.projects) return null
   return (
     <>
       <div className="p-1 mb-3 dark:text-white">🌟 Service</div>

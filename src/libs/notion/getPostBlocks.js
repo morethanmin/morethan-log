@@ -1,4 +1,4 @@
-import CONFIG from '@/morethan-log.config'
+import CONFIG from 'morethan-log.config'
 import { NotionAPI } from 'notion-client'
 
 export async function getPostBlocks(id) {

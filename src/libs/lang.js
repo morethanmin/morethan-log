@@ -1,4 +1,4 @@
-import CONFIG from '@/morethan-log.config'
+import CONFIG from 'morethan-log.config'
 
 const lang = {
   en: {

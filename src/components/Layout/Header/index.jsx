@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
-import CONFIG from '@/morethan-log.config'
+import CONFIG from 'morethan-log.config'
 import NavBar from './NavBar'
 
 const Header = ({ fullWidth }) => {

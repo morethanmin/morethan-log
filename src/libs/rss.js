@@ -1,7 +1,7 @@
 import { Feed } from 'feed'
-import CONFIG from '@/morethan-log.config'
+import CONFIG from 'morethan-log.config'
 import ReactDOMServer from 'react-dom/server'
-import { getPostBlocks } from '@/lib/notion'
+import { getPostBlocks } from '@libs/notion'
 import { NotionRenderer, Equation, Code, Collection, CollectionRow } from 'react-notion-x'
 
 const mapPageUrl = id => 'https://www.notion.so/' + id.replace(/-/g, '')

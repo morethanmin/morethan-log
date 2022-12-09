@@ -1,6 +1,6 @@
-import { getAllPosts, getAllTagsFromPosts } from '@/lib/notion'
-import Layout from '@/src/components/_layout'
-import Home from '@/src/components/home'
+import { getAllPosts, getAllTagsFromPosts } from '@libs/notion'
+import Layout from '@components/Layout'
+import Feed from '@containers/Feed'
 
 export async function getStaticProps() {
   const posts = await getAllPosts({ includePages: false })
@@ -19,13 +19,13 @@ export async function getStaticProps() {
 }
 
 
-function HomePage({ tags, posts, currentTag = null }) {
-  return <Home tags={tags} posts={posts} currentTag={currentTag} />
+function FeedPage({ tags, posts, currentTag = null }) {
+  return <Feed tags={tags} posts={posts} currentTag={currentTag} />
 }
 
-HomePage.getLayout = function getlayout(page) {
+FeedPage.getLayout = function getlayout(page) {
   return <Layout>{page}</Layout>
 }
 
 
-export default HomePage
+export default FeedPage

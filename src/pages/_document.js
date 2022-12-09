@@ -1,6 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import CONFIG from '@/morethan-log.config'
-import CJK from '@/lib/cjk'
+import CONFIG from 'morethan-log.config'
+import CJK from '@libs/cjk'
 class MyDocument extends Document {
   // static async getInitialProps(ctx) {
   //   const initialProps = await Document.getInitialProps(ctx)

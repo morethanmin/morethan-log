@@ -1,7 +1,7 @@
-import CONFIG from '@/morethan-log.config'
+import CONFIG from 'morethan-log.config'
 import Image from 'next/image'
 import React from 'react'
-import imageLoader from '../../../lib/loader'
+import imageLoader from '../../../libs/loader'
 
 function Profile() {
   return (

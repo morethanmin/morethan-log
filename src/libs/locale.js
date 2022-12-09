@@ -1,10 +1,10 @@
 import { useContext, createContext } from 'react'
-import { fetchLocaleLang } from '@/lib/lang'
+import { fetchLocaleLang } from '@libs/lang'
 
 const locale = fetchLocaleLang()
 const LocaleContext = createContext()
 
-export function LocaleProvider ({ children }) {
+export function LocaleProvider({ children }) {
   return (
     <LocaleContext.Provider value={locale}>{children}</LocaleContext.Provider>
   )

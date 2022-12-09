@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { useLocale } from '@/lib/locale'
+import { useLocale } from '@libs/locale'
 
 const Pagination = ({ page, showNext }) => {
   const locale = useLocale()

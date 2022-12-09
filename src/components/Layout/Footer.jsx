@@ -1,5 +1,5 @@
-import CONFIG from '@/morethan-log.config'
-// import Vercel from '@/components/Vercel'
+import CONFIG from 'morethan-log.config'
+// import Vercel from '@components/Vercel'
 const Footer = ({ fullWidth }) => {
   const d = new Date()
   const y = d.getFullYear()
