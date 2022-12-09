@@ -17,7 +17,7 @@ const CONFIG = {
   ],
   // blog setting
   blog: {
-    title: 'morethan-log', // blog 타이틀과 
+    title: 'morethan-log',
     description: 'welcome to morethan-log!',
   },
 
@@ -54,7 +54,9 @@ const CONFIG = {
   utterances: {
     enable: true,
     config: {
-      repo: 'morethanmin/morethan-log'
+      repo: 'morethanmin/morethan-log',
+      'issue-term': 'og:title',
+      label: '💬Comment',
     }
   },
   isProd: process.env.VERCEL_ENV === 'production' // distinguish between development and production environment (ref: https://vercel.com/docs/environment-variables#system-environment-variables)

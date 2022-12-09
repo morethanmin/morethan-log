@@ -9,9 +9,11 @@ const Utterances = ({ issueTerm }) => {
     script.setAttribute('src', 'https://utteranc.es/client.js')
     script.setAttribute('crossorigin', 'anonymous')
     script.setAttribute('async', true)
-    script.setAttribute('repo', CONFIG.utterances.config.repo)
     script.setAttribute('issue-term', issueTerm)
     script.setAttribute('theme', theme)
+    Object.keys(CONFIG.utterances.config).forEach((key) => {
+      script.setAttribute(key, CONFIG.utterances.config[key])
+    })
     anchor.appendChild(script)
     return () => {
       anchor.innerHTML = ''
