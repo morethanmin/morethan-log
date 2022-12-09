@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://morethanmin.web.app
+Host: https://morethan-log.vercel.app
 
 # Sitemaps
-Sitemap: https://morethanmin.web.app/sitemap.xml
+Sitemap: https://morethan-log.vercel.app/sitemap.xml

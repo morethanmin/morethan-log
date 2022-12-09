@@ -1,4 +1,4 @@
-import Header from '@components/Layout/Header'
+import Header from './Header'
 import CONFIG from 'morethan-log.config'
 import Head from 'next/head'
 import PropTypes from 'prop-types'

@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react'
-import Post from '@components/PostCard'
 import PropTypes from 'prop-types'
 import { useRouter } from 'next/router'
 
+import Post from '@components/PostCard'
 import TagsMenu from './components/Tags'
 import Profile from './components/Profile'
 import Chennel from './components/Chennel'
-import CONFIG from 'morethan-log.config'
 import Products from './components/Product'
+
+import CONFIG from 'morethan-log.config'
 
 const d = new Date()
 const y = d.getFullYear()
@@ -68,14 +69,14 @@ const Home = ({ tags, posts }) => {
         <input
           className="rounded-2xl px-5 py-2 mb-8 w-full bg-gray-200 dark:bg-zinc-700 dark:text-white focus:bg-white focus:shadow-md outline-none transition"
           type="text"
-          placeholder="포스트 검색하기.."
+          placeholder="search keyword.."
           value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}
         />
         {/* order */}
         <div className="flex border-b border-gray-300 mb-4 justify-between items-center ">
           <div className="text-xl font-bold my-2 dark:text-white">
-            {currentTag} 포스트{' '}
+            {currentTag} Posts{' '}
             <span className="text-sm align-text-top">({tags[currentTag]})</span>
           </div>
           <div className={`flex text-sm gap-2  `}>
@@ -87,7 +88,7 @@ const Home = ({ tags, posts }) => {
               }`}
               onClick={() => handleClickOrderBy('asc')}
             >
-              최신순
+              Desc
             </a>
             <a
               className={`cursor-pointer ${
@@ -97,16 +98,14 @@ const Home = ({ tags, posts }) => {
               }`}
               onClick={() => handleClickOrderBy('desc')}
             >
-              오래된순
+              Asc
             </a>
           </div>
         </div>
         {/* article */}
         <div className="my-2">
           {!filteredPosts.length && (
-            <p className="text-gray-500 dark:text-gray-300">
-              게시글이 없습니다. 😺
-            </p>
+            <p className="text-gray-500 dark:text-gray-300">Nothing! 😺</p>
           )}
           {filteredPosts.slice(0, 20).map((post) => (
             <Post key={post.id} post={post} />
@@ -118,7 +117,6 @@ const Home = ({ tags, posts }) => {
         <Profile />
         <Products />
         <Chennel />
-        {/* footer */}
         <div className="text-gray-500 text-sm mt-3">
           © {CONFIG.profile.name} {from === y || !from ? y : `${from} - ${y}`}
         </div>
