@@ -1,51 +1,51 @@
-import { useState, useEffect } from 'react'
-import PropTypes from 'prop-types'
-import { useRouter } from 'next/router'
+import { useState, useEffect } from "react";
+import PropTypes from "prop-types";
+import { useRouter } from "next/router";
 
-import Post from '@components/PostCard'
-import TagsMenu from './components/Tags'
-import Profile from './components/Profile'
-import Chennel from './components/Chennel'
-import Products from './components/Product'
+import Post from "@components/PostCard";
+import TagsMenu from "./components/Tags";
+import Profile from "./components/Profile";
+import Chennel from "./components/Chennel";
+import Products from "./components/Product";
 
-import CONFIG from 'morethan-log.config'
+import CONFIG from "notes.config";
 
-const d = new Date()
-const y = d.getFullYear()
-const from = +CONFIG.since
+const d = new Date();
+const y = d.getFullYear();
+const from = +CONFIG.since;
 
 const Home = ({ tags, posts }) => {
-  const router = useRouter()
-  const [searchValue, setSearchValue] = useState('')
-  const [filteredPosts, setFilteredPosts] = useState(posts)
+  const router = useRouter();
+  const [searchValue, setSearchValue] = useState("");
+  const [filteredPosts, setFilteredPosts] = useState(posts);
 
-  const currentTag = router.query.tag || 'All'
-  const currentOrder = router.query.order || 'asc'
+  const currentTag = router.query.tag || "All";
+  const currentOrder = router.query.order || "asc";
 
   useEffect(() => {
     setFilteredPosts(() => {
-      let filteredPosts = posts
+      let filteredPosts = posts;
       // 검색 필터링
       filteredPosts = filteredPosts.filter((post) => {
-        const tagContent = post.tags ? post.tags.join(' ') : ''
-        const searchContent = post.title + post.summary + tagContent
-        return searchContent.toLowerCase().includes(searchValue.toLowerCase())
-      })
+        const tagContent = post.tags ? post.tags.join(" ") : "";
+        const searchContent = post.title + post.summary + tagContent;
+        return searchContent.toLowerCase().includes(searchValue.toLowerCase());
+      });
 
       // 태그 필터링
-      if (currentTag !== 'All') {
+      if (currentTag !== "All") {
         filteredPosts = filteredPosts.filter(
           (post) => post && post.tags && post.tags.includes(currentTag)
-        )
+        );
       }
       // 정렬 필터링
-      if (currentOrder !== 'asc') {
-        filteredPosts = filteredPosts.reverse()
+      if (currentOrder !== "asc") {
+        filteredPosts = filteredPosts.reverse();
       }
 
-      return filteredPosts
-    })
-  }, [searchValue, currentTag, currentOrder])
+      return filteredPosts;
+    });
+  }, [searchValue, currentTag, currentOrder]);
 
   const handleClickOrderBy = (value) => {
     router.push({
@@ -53,8 +53,8 @@ const Home = ({ tags, posts }) => {
         ...router.query,
         order: value,
       },
-    })
-  }
+    });
+  };
 
   return (
     <div className="block md:grid grid-cols-12 gap-6">
@@ -76,27 +76,27 @@ const Home = ({ tags, posts }) => {
         {/* order */}
         <div className="flex border-b border-gray-300 mb-4 justify-between items-center ">
           <div className="text-xl font-bold my-2 dark:text-white">
-            {currentTag} Posts{' '}
+            {currentTag} Posts{" "}
             <span className="text-sm align-text-top">({tags[currentTag]})</span>
           </div>
           <div className={`flex text-sm gap-2  `}>
             <a
               className={`cursor-pointer ${
-                currentOrder === 'asc'
-                  ? 'text-black font-bold dark:text-white'
-                  : 'text-gray-500 dark:text-gray-400'
+                currentOrder === "asc"
+                  ? "text-black font-bold dark:text-white"
+                  : "text-gray-500 dark:text-gray-400"
               }`}
-              onClick={() => handleClickOrderBy('asc')}
+              onClick={() => handleClickOrderBy("asc")}
             >
               Desc
             </a>
             <a
               className={`cursor-pointer ${
-                currentOrder === 'desc'
-                  ? 'text-black font-bold dark:text-white'
-                  : 'text-gray-500 dark:text-gray-400'
+                currentOrder === "desc"
+                  ? "text-black font-bold dark:text-white"
+                  : "text-gray-500 dark:text-gray-400"
               }`}
-              onClick={() => handleClickOrderBy('desc')}
+              onClick={() => handleClickOrderBy("desc")}
             >
               Asc
             </a>
@@ -122,11 +122,11 @@ const Home = ({ tags, posts }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 Home.propTypes = {
   posts: PropTypes.array.isRequired,
   tags: PropTypes.object.isRequired,
   currentTag: PropTypes.string,
-}
-export default Home
+};
+export default Home;

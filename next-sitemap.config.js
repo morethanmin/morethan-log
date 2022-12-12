@@ -1,4 +1,4 @@
-const CONFIG = require('./morethan-log.config')
+const CONFIG = require('./notes.config')
 
 module.exports = {
   siteUrl: CONFIG.link,

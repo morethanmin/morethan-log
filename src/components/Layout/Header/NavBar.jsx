@@ -1,16 +1,16 @@
-import Link from 'next/link'
+import Link from "next/link";
 // import { useLocale } from '@lib/locale'
-// import CONFIG from 'morethan-log.config'
+// import CONFIG from 'notes.config'
 
 const NavBar = () => {
   // const locale = useLocale()
   const links = [
     // { id: 0, name: 'Home', to: '/' },
-    { id: 1, name: 'About', to: '/about' },
+    { id: 1, name: "About", to: "/about" },
     // { id: 3, name: 'GitHub', to: 'https://github.com/morethanmin' },
     // feed는 하단에 배치할 예정
     // { id: 1, name: 'RSS', to: '/feed', show: true },
-  ]
+  ];
   return (
     <div className="flex-shrink-0">
       <ul className="flex flex-row">
@@ -26,7 +26,7 @@ const NavBar = () => {
         ))}
       </ul>
     </div>
-  )
-}
+  );
+};
 
-export default NavBar
+export default NavBar;

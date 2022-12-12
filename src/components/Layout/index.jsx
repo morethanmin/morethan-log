@@ -1,15 +1,15 @@
-import Header from './Header'
-import CONFIG from 'morethan-log.config'
-import Head from 'next/head'
-import PropTypes from 'prop-types'
+import Header from "./Header";
+import CONFIG from "notes.config";
+import Head from "next/head";
+import PropTypes from "prop-types";
 
 const Layout = ({ children, fullWidth, ...customMeta }) => {
-  const url = CONFIG.link
+  const url = CONFIG.link;
   const meta = {
     title: CONFIG.blog.title,
-    type: 'website',
+    type: "website",
     ...customMeta,
-  }
+  };
   return (
     <div>
       <Head>
@@ -17,7 +17,7 @@ const Layout = ({ children, fullWidth, ...customMeta }) => {
         <meta name="robots" content="follow, index" />
         <meta charSet="UTF-8" />
         {CONFIG.seo.keywords && (
-          <meta name="keywords" content={CONFIG.seo.keywords.join(', ')} />
+          <meta name="keywords" content={CONFIG.seo.keywords.join(", ")} />
         )}
         <meta name="description" content={meta.description} />
         <meta property="og:locale" content={CONFIG.lang} />
@@ -43,7 +43,7 @@ const Layout = ({ children, fullWidth, ...customMeta }) => {
             meta.title
           )}.png?theme=dark&md=1&fontSize=125px&images=https%3A%2F%2Fnobelium.vercel.app%2Flogo-for-dark-bg.svg`}
         />
-        {meta.type === 'Post' && (
+        {meta.type === "Post" && (
           <>
             <meta
               property="article:published_time"
@@ -54,21 +54,21 @@ const Layout = ({ children, fullWidth, ...customMeta }) => {
         )}
       </Head>
       <div className={`wrapper font-sans`}>
-        {meta.type !== 'Page' && <Header fullWidth={fullWidth} />}
+        {meta.type !== "Page" && <Header fullWidth={fullWidth} />}
         <main
           className={`m-auto flex-grow w-full transition-all max-w-6xl px-4 ${
-            fullWidth && 'px-4 md:px-24'
-          } ${meta.type === 'Page' && 'py-10'} `}
+            fullWidth && "px-4 md:px-24"
+          } ${meta.type === "Page" && "py-10"} `}
         >
           {children}
         </main>
       </div>
     </div>
-  )
-}
+  );
+};
 
 Layout.propTypes = {
   children: PropTypes.node,
-}
+};
 
-export default Layout
+export default Layout;
