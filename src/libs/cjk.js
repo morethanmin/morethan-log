@@ -1,4 +1,4 @@
-const CONFIG = require('../../morethan-log.config')
+const CONFIG = require('../../notes.config')
 
 module.exports = function lang() {
   switch (CONFIG.lang.toLowerCase()) {

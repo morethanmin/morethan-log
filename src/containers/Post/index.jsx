@@ -4,21 +4,21 @@ import {
   Code,
   Collection,
   CollectionRow,
-} from 'react-notion-x'
-import CONFIG from 'morethan-log.config'
-import formatDate from '@libs/formatDate'
-import { useLocale } from '@libs/locale'
-import { useRouter } from 'next/router'
-import Comments from '@components/Comments'
-import Tag from '../../components/Tag'
+} from "react-notion-x";
+import CONFIG from "notes.config";
+import formatDate from "@libs/formatDate";
+import { useLocale } from "@libs/locale";
+import { useRouter } from "next/router";
+import Comments from "@components/Comments";
+import Tag from "../../components/Tag";
 
 const mapPageUrl = (id) => {
-  return 'https://www.notion.so/' + id.replace(/-/g, '')
-}
+  return "https://www.notion.so/" + id.replace(/-/g, "");
+};
 
 const Post = ({ children, blockMap, data }) => {
-  const locale = useLocale()
-  const router = useRouter()
+  const locale = useLocale();
+  const router = useRouter();
   return (
     <div
       className={`m-auto max-w-4xl bg-white dark:bg-zinc-700 rounded-3xl py-12 px-6 shadow-md`}
@@ -27,7 +27,7 @@ const Post = ({ children, blockMap, data }) => {
         <h1 className="font-bold text-3xl text-black dark:text-white">
           {data.title}
         </h1>
-        {data.type[0] !== 'Page' && (
+        {data.type[0] !== "Page" && (
           <nav className="flex mt-7 items-start text-gray-500 dark:text-gray-400">
             <div className="mr-2 mb-4 md:ml-0">
               {formatDate(
@@ -59,12 +59,12 @@ const Post = ({ children, blockMap, data }) => {
             />
           </div>
         )}
-        {data.type[0] !== 'Page' && (
+        {data.type[0] !== "Page" && (
           <>
             <div className="flex justify-between font-medium text-gray-500 dark:text-gray-400">
               <a>
                 <button
-                  onClick={() => router.push('/')}
+                  onClick={() => router.push("/")}
                   className="mt-2 cursor-pointer hover:text-black dark:hover:text-gray-100"
                 >
                   ← {locale.POST.BACK}
@@ -73,7 +73,7 @@ const Post = ({ children, blockMap, data }) => {
               <a>
                 <button
                   onClick={() =>
-                    window.scrollTo({ top: 0, behavior: 'smooth' })
+                    window.scrollTo({ top: 0, behavior: "smooth" })
                   }
                   className="mt-2 cursor-pointer hover:text-black dark:hover:text-gray-100"
                 >
@@ -86,7 +86,7 @@ const Post = ({ children, blockMap, data }) => {
         )}
       </article>
     </div>
-  )
-}
+  );
+};
 
-export default Post
+export default Post;

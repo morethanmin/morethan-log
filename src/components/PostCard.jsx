@@ -1,7 +1,7 @@
-import Link from 'next/link'
-import CONFIG from 'morethan-log.config'
-import formatDate from '@libs/formatDate'
-import Tag from './Tag'
+import Link from "next/link";
+import CONFIG from "notes.config";
+import formatDate from "@libs/formatDate";
+import Tag from "./Tag";
 
 const PostCard = ({ post }) => {
   return (
@@ -36,7 +36,7 @@ const PostCard = ({ post }) => {
         </article>
       </a>
     </Link>
-  )
-}
+  );
+};
 
-export default PostCard
+export default PostCard;

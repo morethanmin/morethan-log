@@ -1,16 +1,16 @@
-import CONFIG from 'morethan-log.config'
-import React from 'react'
+import CONFIG from "notes.config";
+import React from "react";
 import {
   AiOutlineInstagram,
   AiOutlineGithub,
   AiOutlineMail,
   AiFillLinkedin,
-} from 'react-icons/ai'
+} from "react-icons/ai";
 
 function Chennel() {
   return (
     <>
-      <div className="p-1 mb-3 dark:text-white">🌐 Channel</div>
+      <div className="p-1 mb-3 dark:text-white">💬 Contact</div>
       <ul className="rounded-2xl bg-white dark:bg-zinc-700 p-1 flex flex-col">
         {CONFIG.profile.github && (
           <a
@@ -58,7 +58,7 @@ function Chennel() {
         )}
       </ul>
     </>
-  )
+  );
 }
 
-export default Chennel
+export default Chennel;

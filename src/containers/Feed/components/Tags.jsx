@@ -1,9 +1,9 @@
-import { useRouter } from 'next/router'
-import React from 'react'
+import { useRouter } from "next/router";
+import React from "react";
 
 function TagsMenu({ data }) {
-  const router = useRouter()
-  const currentTag = router.query.tag || 'All'
+  const router = useRouter();
+  const currentTag = router.query.tag || "All";
 
   const handleClickTag = (value) => {
     router.push({
@@ -11,8 +11,8 @@ function TagsMenu({ data }) {
         ...router.query,
         tag: value,
       },
-    })
-  }
+    });
+  };
 
   return (
     <>
@@ -22,7 +22,7 @@ function TagsMenu({ data }) {
           <li
             key={key}
             className={`text-sm  p-1 px-4 my-1 flex-shrink-0 rounded-xl text-gray-500  dark:text-white ${
-              key === currentTag && 'bg-white text-black dark:bg-zinc-700 '
+              key === currentTag && "bg-white text-black dark:bg-zinc-700 "
             }`}
             onClick={() => handleClickTag(key)}
           >
@@ -31,7 +31,7 @@ function TagsMenu({ data }) {
         ))}
       </ul>
     </>
-  )
+  );
 }
 
-export default TagsMenu
+export default TagsMenu;

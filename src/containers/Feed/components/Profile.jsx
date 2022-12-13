@@ -1,7 +1,7 @@
-import CONFIG from 'morethan-log.config'
-import Image from 'next/image'
-import React from 'react'
-import imageLoader from '../../../libs/loader'
+import CONFIG from "notes.config";
+import Image from "next/image";
+import React from "react";
+import imageLoader from "../../../libs/loader";
 
 function Profile() {
   return (
@@ -25,7 +25,7 @@ function Profile() {
         <div className="mb-6 text-sm ">{CONFIG.profile.discription}</div>
       </div>
     </>
-  )
+  );
 }
 
-export default Profile
+export default Profile;
