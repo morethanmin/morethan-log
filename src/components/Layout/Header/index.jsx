@@ -5,7 +5,7 @@ import NavBar from './NavBar'
 
 const Header = ({ fullWidth }) => {
   const navRef = useRef(null)
-  const [, setTheme] = useState()
+  const [theme, setTheme] = useState()
 
   useEffect(() => {
     if (typeof window === 'object') {
@@ -13,14 +13,14 @@ const Header = ({ fullWidth }) => {
     }
   }, [])
 
-  // const handleClick = () => {
-  //   const changedTheme = localStorage.theme !== 'dark' ? 'dark' : 'light'
-  //   localStorage.setItem('theme', changedTheme)
-  //   setTheme(changedTheme)
-  //   changedTheme === 'dark'
-  //     ? document.documentElement.classList.add('dark')
-  //     : document.documentElement.classList.remove('dark')
-  // }
+  const handleClick = () => {
+    const changedTheme = localStorage.theme !== 'dark' ? 'dark' : 'light'
+    localStorage.setItem('theme', changedTheme)
+    setTheme(changedTheme)
+    changedTheme === 'dark'
+      ? document.documentElement.classList.add('dark')
+      : document.documentElement.classList.remove('dark')
+  }
 
   return (
     <>
@@ -41,7 +41,7 @@ const Header = ({ fullWidth }) => {
           </a>
         </Link>
         <div className={`flex gap-3 items-center`}>
-          {/* <div onClick={handleClick}>{theme}</div> */}
+          <div className={`cursor-pointer dark:text-gray-50`} onClick={handleClick}>{theme}</div>
           <NavBar />
         </div>
       </div>
