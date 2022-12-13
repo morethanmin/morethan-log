@@ -7,7 +7,7 @@ import {
   AiFillLinkedin,
 } from "react-icons/ai";
 
-function Chennel() {
+function Contact() {
   return (
     <>
       <div className="p-1 mb-3 dark:text-white">💬 Contact</div>
@@ -61,4 +61,4 @@ function Chennel() {
   );
 }
 
-export default Chennel;
+export default Contact

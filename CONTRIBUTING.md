@@ -19,7 +19,7 @@ $ cd [YOUR_REPOSITORY_NAME]
 
 # Install packages and start this project.
 $ yarn add
-$ yarn dev 
+$ yarn dev
 
 # (Working...)
 
@@ -32,8 +32,10 @@ $ git push origin [YOUR_REPOSITORY_NAME]
 
 ## Commit message rules
 
-Consider starting the commit message with an applicable emoji:
+Consider starting the commit message with an applicable word:
 
-- 🔧 : when create new feature.
-- 🎨 : when styling a this application.
-- 🐛 : when fixing a bug.
+`feat|fix|perf|refactor|test|ci|docs|build|chore`
+
+- feat: when create new feature.
+- style: when styling a this application.
+- fix: when fixing a bug.

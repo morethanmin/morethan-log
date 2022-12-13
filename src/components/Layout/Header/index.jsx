@@ -1,20 +1,21 @@
-import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
-import CONFIG from "notes.config";
-import NavBar from "./NavBar";
+import { useEffect, useRef, useState } from 'react'
+import Link from 'next/link'
+import CONFIG from "notes.config"
+import NavBar from './NavBar'
+import { getTheme } from '../../Theme'
 
 const Header = ({ fullWidth }) => {
   const navRef = useRef(null)
   const [theme, setTheme] = useState()
 
   useEffect(() => {
-    if (typeof window === "object") {
-      setTheme(localStorage.theme || "light");
+    if (typeof window === 'object') {
+      setTheme(getTheme())
     }
   }, []);
 
   const handleClick = () => {
-    const changedTheme = localStorage.theme !== 'dark' ? 'dark' : 'light'
+    const changedTheme = getTheme() !== 'dark' ? 'dark' : 'light'
     localStorage.setItem('theme', changedTheme)
     setTheme(changedTheme)
     changedTheme === 'dark'
@@ -41,7 +42,12 @@ const Header = ({ fullWidth }) => {
           </a>
         </Link>
         <div className={`flex gap-3 items-center`}>
-          <div className={`cursor-pointer dark:text-gray-50`} onClick={handleClick}>{theme}</div>
+          <div
+            className={`cursor-pointer dark:text-gray-50`}
+            onClick={handleClick}
+          >
+            {theme}
+          </div>
           <NavBar />
         </div>
       </div>
