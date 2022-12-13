@@ -119,6 +119,10 @@ nav {
   user-select: none;
 }
 
+.mobile-x-scroll {
+  overflow-x: scroll;
+}
+
 @media (max-width: 768px) {
   .sticky-nav-full {
     @apply max-w-full border-b border-opacity-50 border-gray-200 dark:border-gray-600 dark:border-opacity-50;
@@ -138,5 +142,11 @@ nav {
   .sticky-nav {
     backdrop-filter: none;
     @apply bg-day bg-opacity-90 dark:bg-night dark:bg-opacity-90;
+  }
+}
+
+@media (min-width: 768px) {
+  .mobile-x-scroll {
+    overflow-x: hidden;
   }
 }

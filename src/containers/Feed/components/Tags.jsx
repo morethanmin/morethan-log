@@ -17,7 +17,7 @@ function TagsMenu({ data }) {
   return (
     <>
       <div className="p-1 mb-3 dark:text-white">🏷️ Tags</div>
-      <ul className="cursor-pointer flex overflow-x-scroll md:block mb-6">
+      <ul className="cursor-pointer flex mobile-x-scroll md:block mb-6">
         {Object.keys(data).map((key) => (
           <li
             key={key}
