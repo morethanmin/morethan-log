@@ -15,7 +15,7 @@ const Header = ({ fullWidth }) => {
   }, [])
 
   const handleClick = () => {
-    const changedTheme = localStorage.theme !== 'dark' ? 'dark' : 'light'
+    const changedTheme = getTheme() !== 'dark' ? 'dark' : 'light'
     localStorage.setItem('theme', changedTheme)
     setTheme(changedTheme)
     changedTheme === 'dark'
