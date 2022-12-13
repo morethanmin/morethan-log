@@ -5,8 +5,8 @@ import { useRouter } from 'next/router'
 import Post from '@components/PostCard'
 import TagsMenu from './components/Tags'
 import Profile from './components/Profile'
-import Chennel from './components/Chennel'
-import Products from './components/Product'
+import Contact from './components/Contact'
+import Service from './components/Service'
 
 import CONFIG from 'morethan-log.config'
 
@@ -115,8 +115,8 @@ const Home = ({ tags, posts }) => {
       {/* right */}
       <div className="hidden lg:block col-span-3">
         <Profile />
-        <Products />
-        <Chennel />
+        <Service />
+        <Contact />
         <div className="text-gray-500 text-sm mt-3">
           © {CONFIG.profile.name} {from === y || !from ? y : `${from} - ${y}`}
         </div>
