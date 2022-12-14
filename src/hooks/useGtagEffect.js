@@ -1,10 +1,13 @@
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import * as gtag from '@libs/gtag'
+import CONFIG from '@/morethan-log.config'
 
-const Gtag = () => {
+const useGtagEffect = () => {
   const router = useRouter()
   useEffect(() => {
+    if (!(CONFIG.isProd && CONFIG?.googleAnalytics?.enable)) return
+
     const handleRouteChange = (url) => {
       gtag.pageview(url)
     }
@@ -15,4 +18,4 @@ const Gtag = () => {
   }, [router.events])
   return null
 }
-export default Gtag
+export default useGtagEffect
