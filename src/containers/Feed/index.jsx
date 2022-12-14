@@ -25,20 +25,20 @@ const Home = ({ tags, posts }) => {
   useEffect(() => {
     setFilteredPosts(() => {
       let filteredPosts = posts
-      // 검색 필터링
+      // keyword
       filteredPosts = filteredPosts.filter((post) => {
         const tagContent = post.tags ? post.tags.join(' ') : ''
         const searchContent = post.title + post.summary + tagContent
         return searchContent.toLowerCase().includes(searchValue.toLowerCase())
       })
 
-      // 태그 필터링
+      // tag
       if (currentTag !== 'All') {
         filteredPosts = filteredPosts.filter(
           (post) => post && post.tags && post.tags.includes(currentTag)
         )
       }
-      // 정렬 필터링
+      // order
       if (currentOrder !== 'asc') {
         filteredPosts = filteredPosts.reverse()
       }

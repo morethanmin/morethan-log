@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import CONFIG from 'morethan-log.config'
 import NavBar from './NavBar'
-import { getTheme } from '../../Theme'
+import { getTheme } from '@hooks/useThemeEffect'
 
 const Header = ({ fullWidth }) => {
   const navRef = useRef(null)
