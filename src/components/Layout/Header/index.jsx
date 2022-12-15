@@ -3,6 +3,7 @@ import Link from 'next/link'
 import CONFIG from 'morethan-log.config'
 import NavBar from './NavBar'
 import { getTheme } from '@hooks/useThemeEffect'
+import Logo from './Logo'
 
 const Header = ({ fullWidth }) => {
   const navRef = useRef(null)
@@ -32,15 +33,7 @@ const Header = ({ fullWidth }) => {
         id="sticky-nav"
         ref={navRef}
       >
-        <Link href="/">
-          <a aria-label={CONFIG.blog.title}>
-            <div className="flex items-center">
-              <div className="ml-2 text-black dark:text-white header-name">
-                {CONFIG.blog.title}
-              </div>
-            </div>
-          </a>
-        </Link>
+        <Logo />
         <div className={`flex gap-3 items-center`}>
           <div
             className={`cursor-pointer dark:text-gray-50`}

@@ -7,7 +7,6 @@ const NavBar = () => {
   const links = [
     // { id: 0, name: 'Home', to: '/' },
     { id: 1, name: 'About', to: '/about' },
-    // { id: 3, name: 'GitHub', to: 'https://github.com/morethanmin' },
     // feed는 하단에 배치할 예정
     // { id: 1, name: 'RSS', to: '/feed', show: true },
   ]
