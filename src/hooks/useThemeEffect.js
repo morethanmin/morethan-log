@@ -1,6 +1,8 @@
 import { useEffect } from "react"
+import CONFIG from 'morethan-log.config'
 
 export const getTheme = () => {
+  if (CONFIG.blog.theme !== 'auto') return CONFIG.blog.theme
   if (
     localStorage.theme === 'dark' ||
     (!('theme' in localStorage) &&
