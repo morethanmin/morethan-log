@@ -1,15 +1,7 @@
 import Link from 'next/link'
-// import { useLocale } from '@lib/locale'
-// import CONFIG from 'morethan-log.config'
 
-const NavBar = () => {
-  // const locale = useLocale()
-  const links = [
-    // { id: 0, name: 'Home', to: '/' },
-    { id: 1, name: 'About', to: '/about' },
-    // feed는 하단에 배치할 예정
-    // { id: 1, name: 'RSS', to: '/feed', show: true },
-  ]
+const NavBar: React.FC = () => {
+  const links = [{ id: 1, name: 'About', to: '/about' }]
   return (
     <div className="flex-shrink-0">
       <ul className="flex flex-row">

@@ -12,11 +12,17 @@ import { useRouter } from 'next/router'
 import Comments from '@components/Comments'
 import Tag from '../../components/Tag'
 
-const mapPageUrl = (id) => {
+const mapPageUrl = (id: any) => {
   return 'https://www.notion.so/' + id.replace(/-/g, '')
 }
 
-const Post = ({ children, blockMap, data }) => {
+type Props = {
+  children?: any
+  blockMap: any
+  data: any
+}
+
+const Post: React.FC<Props> = ({ children, blockMap, data }) => {
   const locale = useLocale()
   const router = useRouter()
   return (
@@ -37,7 +43,7 @@ const Post = ({ children, blockMap, data }) => {
             </div>
             {data.tags && (
               <div className="flex flex-nowrap max-w-full overflow-x-auto article-tags gap-2">
-                {data.tags.map((tag) => (
+                {data.tags.map((tag: any) => (
                   <Tag key={tag}>{tag}</Tag>
                 ))}
               </div>

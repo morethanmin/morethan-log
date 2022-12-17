@@ -1,8 +1,11 @@
-import { useEffect } from "react"
+import { useEffect } from 'react'
 import CONFIG from 'morethan-log.config'
 
-export const getTheme = () => {
-  if (CONFIG.blog.theme !== 'auto') return CONFIG.blog.theme
+export type ThemeType = 'dark' | 'light'
+
+export const getTheme: () => ThemeType = () => {
+  const themeConfig = CONFIG.blog.theme as 'auto' & ThemeType
+  if (themeConfig !== 'auto') return themeConfig
   if (
     localStorage.theme === 'dark' ||
     (!('theme' in localStorage) &&
@@ -16,14 +19,13 @@ export const getTheme = () => {
 
 const useThemeEffect = () => {
   useEffect(() => {
-    if (typeof document !== 'object') return null
+    if (typeof document !== 'object') return
     if (getTheme() === 'dark') {
       document.documentElement.classList.add('dark')
     } else {
       document.documentElement.classList.remove('dark')
     }
   }, [])
-  return null
 }
 
 export default useThemeEffect
