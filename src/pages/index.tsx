@@ -1,6 +1,6 @@
 import { getAllPosts, getAllTagsFromPosts } from '@libs/notion'
 import Layout from '@components/Layout'
-import Feed from '@containers/Feed'
+import Feed, { Posts, Tags } from '@containers/Feed'
 import CONFIG from '../../morethan-log.config'
 import { NextPageWithLayout } from './_app'
 
@@ -21,17 +21,12 @@ export async function getStaticProps() {
 }
 
 type Props = {
-  tags: any
-  posts: any
-  currentTag: any
+  tags: Tags
+  posts: Posts
 }
 
-const FeedPage: NextPageWithLayout<Props> = ({
-  tags,
-  posts,
-  currentTag = null,
-}) => {
-  return <Feed tags={tags} posts={posts} currentTag={currentTag} />
+const FeedPage: NextPageWithLayout<Props> = ({ tags, posts }) => {
+  return <Feed tags={tags} posts={posts} />
 }
 
 FeedPage.getLayout = function getlayout(page) {

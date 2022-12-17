@@ -14,13 +14,25 @@ const d = new Date()
 const y = d.getFullYear()
 const from = +CONFIG.since
 
-const Home = ({ tags, posts }) => {
+export type Tags = {
+  [tagName: string]: number
+}
+
+// TODO: typing
+export type Posts = any[]
+
+type Props = {
+  tags: Tags
+  posts: any[]
+}
+
+const Feed: React.FC<Props> = ({ tags, posts }) => {
   const router = useRouter()
   const [searchValue, setSearchValue] = useState('')
   const [filteredPosts, setFilteredPosts] = useState(posts)
 
-  const currentTag = router.query.tag || 'All'
-  const currentOrder = router.query.order || 'asc'
+  const currentTag = `${router.query.tag || ``}` || 'All'
+  const currentOrder = `${router.query.order || ``}` || 'asc'
 
   useEffect(() => {
     setFilteredPosts(() => {
@@ -47,7 +59,7 @@ const Home = ({ tags, posts }) => {
     })
   }, [searchValue, currentTag, currentOrder])
 
-  const handleClickOrderBy = (value) => {
+  const handleClickOrderBy = (value: any) => {
     router.push({
       query: {
         ...router.query,
@@ -124,9 +136,5 @@ const Home = ({ tags, posts }) => {
     </div>
   )
 }
-Home.propTypes = {
-  posts: PropTypes.array.isRequired,
-  tags: PropTypes.object.isRequired,
-  currentTag: PropTypes.string,
-}
-export default Home
+
+export default Feed
