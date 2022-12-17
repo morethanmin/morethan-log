@@ -28,6 +28,6 @@
       "@styles/*": ["src/styles/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/libs/gtag.ts"],
   "exclude": ["node_modules"]
 }

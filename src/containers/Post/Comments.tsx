@@ -8,7 +8,11 @@ const UtterancesComponent = dynamic(
   { ssr: false }
 )
 
-const Comments = ({ data }) => {
+type Props = {
+  data: any
+}
+
+const Comments: React.FC<Props> = ({ data }) => {
   return (
     <div>
       {CONFIG.utterances.enable && <UtterancesComponent issueTerm={data.id} />}

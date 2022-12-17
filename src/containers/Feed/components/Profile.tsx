@@ -3,7 +3,7 @@ import Image from 'next/image'
 import React from 'react'
 import imageLoader from '../../../libs/loader'
 
-function Profile() {
+const Profile: React.FC = () => {
   return (
     <>
       <div className="p-1 mb-3 dark:text-white">💻 Profile</div>

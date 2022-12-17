@@ -1,11 +1,15 @@
 import { useRouter } from 'next/router'
 import React from 'react'
 
-function TagsMenu({ data }) {
+type Props = {
+  data: any
+}
+
+const TagsMenu: React.FC<Props> = ({ data }) => {
   const router = useRouter()
   const currentTag = router.query.tag || 'All'
 
-  const handleClickTag = (value) => {
+  const handleClickTag = (value: any) => {
     router.push({
       query: {
         ...router.query,

@@ -9,8 +9,8 @@ import filterPublishedPosts from './filterPublishedPosts'
  * @param {{ includePages: boolean }} - false: posts only / true: include pages
  */
 export async function getAllPosts({ includePages = false }) {
-  let id = CONFIG.notionConfig.pageId
-  const authToken = CONFIG.notionConfig.accessToken || null
+  let id = CONFIG.notionConfig.pageId as string
+  const authToken = CONFIG.notionConfig.accessToken || undefined
   const api = new NotionAPI({ authToken })
   const response = await api.getPage(id)
   id = idToUuid(id)
@@ -38,7 +38,8 @@ export async function getAllPosts({ includePages = false }) {
       properties.createdTime = new Date(
         block[id].value?.created_time
       ).toString()
-      properties.fullWidth = block[id].value?.format?.page_full_width ?? false
+      properties.fullWidth =
+        (block[id].value?.format as any)?.page_full_width ?? false
 
       data.push(properties)
     }
@@ -47,9 +48,9 @@ export async function getAllPosts({ includePages = false }) {
     const posts = filterPublishedPosts({ posts: data, includePages })
 
     // Sort by date
-    posts.sort((a, b) => {
-      const dateA = new Date(a?.date?.start_date || a.createdTime)
-      const dateB = new Date(b?.date?.start_date || b.createdTime)
+    posts.sort((a: any, b: any) => {
+      const dateA: any = new Date(a?.date?.start_date || a.createdTime)
+      const dateB: any = new Date(b?.date?.start_date || b.createdTime)
       return dateB - dateA
     })
     return posts

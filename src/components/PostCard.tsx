@@ -3,7 +3,11 @@ import CONFIG from 'morethan-log.config'
 import formatDate from '@libs/formatDate'
 import Tag from './Tag'
 
-const PostCard = ({ post }) => {
+type Props = {
+  post: any
+}
+
+const PostCard: React.FC<Props> = ({ post }) => {
   return (
     <Link href={`/${post.slug}`}>
       <a>
@@ -31,7 +35,9 @@ const PostCard = ({ post }) => {
           </main>
           <div className="flex gap-2">
             {post.tags &&
-              post.tags.map((tag, idx) => <Tag key={idx}>{tag}</Tag>)}
+              post.tags.map((tag: string, idx: number) => (
+                <Tag key={idx}>{tag}</Tag>
+              ))}
           </div>
         </article>
       </a>

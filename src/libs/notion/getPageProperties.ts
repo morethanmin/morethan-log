@@ -1,20 +1,25 @@
 import { getTextContent, getDateValue } from 'notion-utils'
 import { NotionAPI } from 'notion-client'
 
-async function getPageProperties(id, block, schema, authToken) {
+async function getPageProperties(
+  id: any,
+  block: any,
+  schema: any,
+  authToken?: any
+) {
   const api = new NotionAPI({ authToken })
   const rawProperties = Object.entries(block?.[id]?.value?.properties || [])
   const excludeProperties = ['date', 'select', 'multi_select', 'person']
-  const properties = {}
+  const properties: any = {}
   for (let i = 0; i < rawProperties.length; i++) {
-    const [key, val] = rawProperties[i]
+    const [key, val]: any = rawProperties[i]
     properties.id = id
     if (schema[key]?.type && !excludeProperties.includes(schema[key].type)) {
       properties[schema[key].name] = getTextContent(val)
     } else {
       switch (schema[key]?.type) {
         case 'date': {
-          const dateProperty = getDateValue(val)
+          const dateProperty: any = getDateValue(val)
           delete dateProperty.type
           properties[schema[key].name] = dateProperty
           break
@@ -39,14 +44,14 @@ async function getPageProperties(id, block, schema, authToken) {
           for (let i = 0; i < rawUsers.length; i++) {
             if (rawUsers[i][0][1]) {
               const userId = rawUsers[i][0]
-              const res = await api.getUsers(userId)
+              const res: any = await api.getUsers(userId)
               const resValue =
                 res?.recordMapWithRoles?.notion_user?.[userId[1]]?.value
               const user = {
                 id: resValue?.id,
                 first_name: resValue?.given_name,
                 last_name: resValue?.family_name,
-                profile_photo: resValue?.profile_photo
+                profile_photo: resValue?.profile_photo,
               }
               users.push(user)
             }

@@ -7,9 +7,8 @@ import {
 } from 'react-notion-x'
 import CONFIG from 'morethan-log.config'
 import formatDate from '@libs/formatDate'
-import { useLocale } from '@libs/locale'
 import { useRouter } from 'next/router'
-import Comments from '@components/Comments'
+import Comments from '@/src/containers/Post/Comments'
 import Tag from '../../components/Tag'
 
 const mapPageUrl = (id: any) => {
@@ -23,7 +22,6 @@ type Props = {
 }
 
 const Post: React.FC<Props> = ({ children, blockMap, data }) => {
-  const locale = useLocale()
   const router = useRouter()
   return (
     <div
@@ -73,7 +71,7 @@ const Post: React.FC<Props> = ({ children, blockMap, data }) => {
                   onClick={() => router.push('/')}
                   className="mt-2 cursor-pointer hover:text-black dark:hover:text-gray-100"
                 >
-                  ← {locale.POST.BACK}
+                  ← Back
                 </button>
               </a>
               <a>
@@ -83,7 +81,7 @@ const Post: React.FC<Props> = ({ children, blockMap, data }) => {
                   }
                   className="mt-2 cursor-pointer hover:text-black dark:hover:text-gray-100"
                 >
-                  ↑ {locale.POST.TOP}
+                  ↑ Top
                 </button>
               </a>
             </div>

@@ -7,7 +7,7 @@ import {
   AiFillLinkedin,
 } from 'react-icons/ai'
 
-function Contact() {
+const Contact: React.FC = () => {
   return (
     <>
       <div className="p-1 mb-3 dark:text-white">💬 Contact</div>

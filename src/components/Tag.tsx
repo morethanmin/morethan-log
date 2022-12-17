@@ -1,10 +1,14 @@
 import { useRouter } from 'next/router'
 import React from 'react'
 
-function Tag({ children }) {
+type Props = {
+  children: string
+}
+
+const Tag: React.FC<Props> = ({ children }) => {
   const router = useRouter()
 
-  const handleClick = (value) => {
+  const handleClick = (value: string) => {
     router.push(`/?tag=${value}`)
   }
   return (

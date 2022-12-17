@@ -6,7 +6,6 @@ import '@styles/notion.css'
 import useThemeEffect from '@hooks/useThemeEffect'
 import useGtagEffect from '@hooks/useGtagEffect'
 import Scripts from '@components/Scripts'
-import { LocaleProvider } from '@libs/locale'
 import { NextPage } from 'next'
 import { ReactElement, ReactNode } from 'react'
 import { AppProps } from 'next/app'
@@ -27,7 +26,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   return (
     <>
       <Scripts />
-      <LocaleProvider>{getLayout(<Component {...pageProps} />)}</LocaleProvider>
+      {getLayout(<Component {...pageProps} />)}
     </>
   )
 }

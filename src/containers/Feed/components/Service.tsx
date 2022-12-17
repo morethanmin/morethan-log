@@ -2,7 +2,7 @@ import CONFIG from 'morethan-log.config'
 import React from 'react'
 import { AiFillCodeSandboxCircle } from 'react-icons/ai'
 
-function Product() {
+const Product: React.FC = () => {
   if (!CONFIG.projects) return null
   return (
     <>
