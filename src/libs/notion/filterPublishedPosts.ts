@@ -1,4 +1,4 @@
-// import CONFIG from 'morethan-log.config'
+// import CONFIG from 'c4cydonia.config'
 const current = new Date()
 const tomorrow = new Date(current)
 tomorrow.setDate(tomorrow.getDate() + 1)

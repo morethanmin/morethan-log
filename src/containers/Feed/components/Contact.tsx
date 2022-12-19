@@ -1,4 +1,4 @@
-import CONFIG from 'morethan-log.config'
+import CONFIG from 'c4cydonia.config'
 import React from 'react'
 import {
   AiOutlineInstagram,

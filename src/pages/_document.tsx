@@ -1,5 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import CONFIG from 'morethan-log.config'
+import CONFIG from 'c4cydonia.config'
 import CJK from '@libs/cjk'
 
 class MyDocument extends Document {

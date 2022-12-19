@@ -1,4 +1,4 @@
-import CONFIG from 'morethan-log.config'
+import CONFIG from 'c4cydonia.config'
 import Image from 'next/image'
 import React from 'react'
 import imageLoader from '../../../libs/loader'

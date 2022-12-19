@@ -1,4 +1,4 @@
-import CONFIG from '@/morethan-log.config'
+import CONFIG from '@/c4cydonia.config'
 import { getTheme, ThemeType } from '@/src/hooks/useThemeEffect'
 import React, { useEffect, useState } from 'react'
 
