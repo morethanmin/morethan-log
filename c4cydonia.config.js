@@ -1,13 +1,13 @@
 const CONFIG = {
   // profile setting
   profile: {
-    name: 'morethanmin',
+    name: 'c4cydonia',
     image: '/avatar.svg',  // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
     discription: 'frontend developer',
-    linkedin: 'morethanmin',
-    email: 'morethanmin.dev@gmail.com',
-    github: 'morethanmin',
-    instagram: 'more_dev_min',
+    linkedin: 'gustavo-leyva-b9493846',
+    email: 'ovatleyva@gmail.com',
+    github: 'gusleyva',
+    instagram: 'ovatleyva',
   },
   projects: [
     {
@@ -17,13 +17,13 @@ const CONFIG = {
   ],
   // blog setting
   blog: {
-    title: 'morethan-log',
-    description: 'welcome to morethan-log!',
+    title: 'c4cydonia',
+    description: 'welcome to c4cydonia',
     theme: 'auto' // ['light', 'dark', 'auto']
   },
 
   // CONFIG configration
-  link: 'https://morethan-log.vercel.app',
+  link: 'https://c4cydonia-vercel-blog.vercel.app',
   since: 2022, // If leave this empty, current year will be used.
   lang: 'en-US', // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES', 'ko-KR']
   postsPerPage: 10,
@@ -55,7 +55,7 @@ const CONFIG = {
   utterances: {
     enable: true,
     config: {
-      repo: 'morethanmin/morethan-log',
+      repo: 'gusleyva/c4cydonia-vercel-blog',
       'issue-term': 'og:title',
       label: '💬 Utterances',
     }
