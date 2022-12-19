@@ -1,7 +1,7 @@
 import { getAllPosts, getAllTagsFromPosts } from '@libs/notion'
 import Layout from '@components/Layout'
 import Feed, { Posts, Tags } from '@containers/Feed'
-import CONFIG from '../../morethan-log.config'
+import CONFIG from '../../c4cydonia.config'
 import { NextPageWithLayout } from './_app'
 
 export async function getStaticProps() {
