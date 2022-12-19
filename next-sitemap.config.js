@@ -1,4 +1,4 @@
-const CONFIG = require('./morethan-log.config')
+const CONFIG = require('./c4cydonia.config')
 
 module.exports = {
   siteUrl: CONFIG.link,

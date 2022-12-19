@@ -1,4 +1,4 @@
-import CONFIG from 'morethan-log.config'
+import CONFIG from 'c4cydonia.config'
 import { NotionAPI } from 'notion-client'
 
 export async function getPostBlocks(id: string) {

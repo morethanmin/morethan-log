@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import CONFIG from 'morethan-log.config'
+import CONFIG from 'c4cydonia.config'
 import formatDate from '@libs/formatDate'
 import Tag from './Tag'
 

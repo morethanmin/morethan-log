@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import CONFIG from 'morethan-log.config'
+import CONFIG from 'c4cydonia.config'
 
 export type ThemeType = 'dark' | 'light'
 

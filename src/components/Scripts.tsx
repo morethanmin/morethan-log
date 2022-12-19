@@ -1,5 +1,5 @@
 import Script from 'next/script'
-import CONFIG from 'morethan-log.config'
+import CONFIG from 'c4cydonia.config'
 
 const Scripts: React.FC = () => (
   <>

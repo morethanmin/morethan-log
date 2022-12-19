@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import CONFIG from 'morethan-log.config'
+import CONFIG from 'c4cydonia.config'
 
 type Props = {}
 

@@ -8,7 +8,7 @@ import Profile from './components/Profile'
 import Contact from './components/Contact'
 import Service from './components/Service'
 
-import CONFIG from 'morethan-log.config'
+import CONFIG from 'c4cydonia.config'
 
 const d = new Date()
 const y = d.getFullYear()
