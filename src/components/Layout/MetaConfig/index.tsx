@@ -34,7 +34,7 @@ const MetaConfig: React.FC<MetaConfigProps> = ({ ...props }) => {
           property="og:image"
           content={`${CONFIG.ogImageGenerateURL}/${encodeURIComponent(
             meta.title
-          )}.png?theme=dark&md=1&fontSize=125px&images=https%3A%2F%2Fnotes-git-fork-update-kvaishak.vercel.app%2Flogo.png`}
+          )}.png?theme=dark&md=1&fontSize=125px&images=https%3A%2F%2Fnotes-kvaishak.vercel.app%2Flogo.png`}
         />
       )}
       {/* twitter */}
@@ -46,7 +46,7 @@ const MetaConfig: React.FC<MetaConfigProps> = ({ ...props }) => {
           name="twitter:image"
           content={`${CONFIG.ogImageGenerateURL}/${encodeURIComponent(
             meta.title
-          )}.png?theme=dark&md=1&fontSize=125px&images=https%3A%2F%2Fnotes-git-fork-update-kvaishak.vercel.app%2Flogo.png`}
+          )}.png?theme=dark&md=1&fontSize=125px&images=https%3A%2F%2Fnotes-kvaishak.vercel.app%2Flogo.png`}
         />
       )}
       {/* post */}
