@@ -1,4 +1,4 @@
-import CONFIG from 'morethan-log.config'
+import CONFIG from 'notes.config'
 import Head from 'next/head'
 
 export type MetaConfigProps = {
@@ -34,7 +34,7 @@ const MetaConfig: React.FC<MetaConfigProps> = ({ ...props }) => {
           property="og:image"
           content={`${CONFIG.ogImageGenerateURL}/${encodeURIComponent(
             meta.title
-          )}.png?theme=dark&md=1&fontSize=125px&images=https%3A%2F%2Fmorethan-log.vercel.app%2Flogo-for-dark-bg.svg`}
+          )}.png?theme=dark&md=1&fontSize=125px&images=https%3A%2F%2Fnotes-kvaishak.vercel.app%2Flogo-for-dark-bg.svg`}
         />
       )}
       {/* twitter */}
@@ -46,7 +46,7 @@ const MetaConfig: React.FC<MetaConfigProps> = ({ ...props }) => {
           name="twitter:image"
           content={`${CONFIG.ogImageGenerateURL}/${encodeURIComponent(
             meta.title
-          )}.png?theme=dark&md=1&fontSize=125px&images=https%3A%2F%2Fmorethan-log.vercel.app%2Flogo-for-dark-bg.svg`}
+          )}.png?theme=dark&md=1&fontSize=125px&images=https%3A%2F%2Fnotes-kvaishak.vercel.app%2Flogo-for-dark-bg.svg`}
         />
       )}
       {/* post */}

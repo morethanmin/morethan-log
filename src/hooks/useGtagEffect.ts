@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import * as gtag from '@libs/gtag'
-import CONFIG from '@/morethan-log.config'
+import CONFIG from '@/notes.config'
 
 const useGtagEffect = () => {
   const router = useRouter()

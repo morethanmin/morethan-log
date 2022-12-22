@@ -5,7 +5,7 @@ import {
   Collection,
   CollectionRow,
 } from 'react-notion-x'
-import CONFIG from 'morethan-log.config'
+import CONFIG from 'notes.config'
 import formatDate from '@libs/formatDate'
 import { useRouter } from 'next/router'
 import Comments from '@/src/containers/Post/Comments'

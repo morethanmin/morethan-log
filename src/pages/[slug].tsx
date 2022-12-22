@@ -1,7 +1,7 @@
 import Post from '@containers/Post'
 import { getAllPosts, getPostBlocks } from '@libs/notion'
 import Layout from '@components/Layout'
-import CONFIG from '../../morethan-log.config'
+import CONFIG from '../../notes.config'
 import { NextPageWithLayout } from './_app'
 
 export async function getStaticPaths() {

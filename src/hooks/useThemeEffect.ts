@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import CONFIG from 'morethan-log.config'
+import CONFIG from 'notes.config'
 
 export type ThemeType = 'dark' | 'light'
 

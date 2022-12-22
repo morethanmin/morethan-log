@@ -7,6 +7,7 @@ const CONFIG = {
     linkedin: "kvaishak",
     email: "hi.kvaishak@gmail.com",
     github: "kvaishak",
+    instagram: ''
   },
   projects: [
     {
@@ -18,6 +19,7 @@ const CONFIG = {
   blog: {
     title: "Notes",
     description: "welcome to my Notes!",
+    theme: 'auto' // ['light', 'dark', 'auto']
   },
 
   // CONFIG configration

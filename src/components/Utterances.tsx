@@ -1,4 +1,4 @@
-import CONFIG from 'morethan-log.config'
+import CONFIG from 'notes.config'
 import { useEffect } from 'react'
 
 //TODO: useRef?
