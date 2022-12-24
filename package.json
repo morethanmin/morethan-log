@@ -4,7 +4,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/morethanmin/c4cydonia.git"
+    "url": "https://github.com/gusleyva/c4cydonia-vercel-blog.git"
   },
   "scripts": {
     "dev": "next dev",

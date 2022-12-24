@@ -1,11 +1,11 @@
 # c4cydonia
-
+Testing changes
 Static Blog and Resume using Notion and Next.js, deployed on Vercel.
 
 <img width="1712" alt="image" src="https://user-images.githubusercontent.com/72514247/206892232-8a92d9f5-7106-4fe8-aab3-d25f9426f304.png">
 
-- Demo Blog: https://c4cydonia.vercel.app
-- Demo Resume: https://c4cydonia.vercel.app/resume
+- Demo Blog: https://c4cydonia-vercel-blog.vercel.app
+- Demo Resume: https://c4cydonia-vercel-blog.vercel.app/resume
 
 ## Features
 
@@ -21,7 +21,7 @@ Static Blog and Resume using Notion and Next.js, deployed on Vercel.
 
 **👀 SEO friendly**
 
-- Dynamically generate OG IMAGEs (thumbnails!) for posts. ([og-image-korean](https://github.com/morethanmin/og-image-korean))
+- Dynamically generate OG IMAGEs (thumbnails!) for posts. ([og-image-korean](https://github.com/gusleyva/og-image-korean))
 - Dynamically create a sitemap for posts
 
 **🤖 Various plugin support through CONFIG**

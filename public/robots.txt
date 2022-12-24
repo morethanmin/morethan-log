@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://c4cydonia.vercel.app
+Host: https://c4cydonia-vercel-blog.vercel.app
 
 # Sitemaps
-Sitemap: https://c4cydonia.vercel.app/sitemap.xml
+Sitemap: https://c4cydonia-vercel-blog.vercel.app/sitemap.xml
