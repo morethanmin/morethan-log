@@ -27,7 +27,7 @@ $ git commit [...]
 $ git push origin [YOUR_REPOSITORY_NAME]
 
 # Enroll pull request.
-# in https://github.com/morethanmin/morethan_log
+# in https://github.com/gusleyva/c4cydonia-vercel-blog
 ```
 
 ## Commit message rules
