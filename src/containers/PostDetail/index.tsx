@@ -19,7 +19,7 @@ type Props = {
   data: TPost
 }
 
-const Post: React.FC<Props> = ({ blockMap, data }) => {
+const PostDetail: React.FC<Props> = ({ blockMap, data }) => {
   return (
     <div
       className={`m-auto max-w-4xl bg-white dark:bg-zinc-700 rounded-3xl py-12 px-6 shadow-md`}
@@ -51,4 +51,4 @@ const Post: React.FC<Props> = ({ blockMap, data }) => {
   )
 }
 
-export default Post
+export default PostDetail

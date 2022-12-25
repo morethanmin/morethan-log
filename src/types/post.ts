@@ -5,6 +5,12 @@ export type TPost = {
   slug: string
   tags?: string[]
   summary?: string
+  author?: {
+    id: string
+    first_name: string
+    last_name: string
+    profile_photo: string
+  }[]
   title: string
   status: string[]
   createdTime: string

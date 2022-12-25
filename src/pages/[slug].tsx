@@ -25,6 +25,8 @@ export async function getStaticProps({ params: { slug } }: any) {
       revalidate: 1,
     }
   } catch (error) {
+    console.log('error')
+
     return
   }
 }
@@ -59,4 +61,4 @@ PostDetailPage.getLayout = function getlayout(page) {
   )
 }
 
-export default PostDetail
+export default PostDetailPage
