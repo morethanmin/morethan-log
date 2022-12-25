@@ -10,6 +10,7 @@ import formatDate from '@libs/formatDate'
 import { useRouter } from 'next/router'
 import Comments from '@/src/containers/Post/Comments'
 import Tag from '../../components/Tag'
+import { TPost } from '@/src/types/post'
 
 const mapPageUrl = (id: any) => {
   return 'https://www.notion.so/' + id.replace(/-/g, '')
@@ -18,7 +19,7 @@ const mapPageUrl = (id: any) => {
 type Props = {
   children?: any
   blockMap: any
-  data: any
+  data: TPost
 }
 
 const Post: React.FC<Props> = ({ children, blockMap, data }) => {

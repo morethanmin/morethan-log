@@ -1,13 +1,13 @@
 import { getTextContent, getDateValue } from 'notion-utils'
 import { NotionAPI } from 'notion-client'
+import { BlockMap, CollectionPropertySchemaMap } from 'notion-types'
 
 async function getPageProperties(
-  id: any,
-  block: any,
-  schema: any,
-  authToken?: any
+  id: string,
+  block: BlockMap,
+  schema: CollectionPropertySchemaMap
 ) {
-  const api = new NotionAPI({ authToken })
+  const api = new NotionAPI()
   const rawProperties = Object.entries(block?.[id]?.value?.properties || [])
   const excludeProperties = ['date', 'select', 'multi_select', 'person']
   const properties: any = {}

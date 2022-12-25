@@ -9,21 +9,15 @@ import Contact from './components/Contact'
 import Service from './components/Service'
 
 import CONFIG from 'morethan-log.config'
+import { TPosts, TTags } from '@/src/types/post'
 
 const d = new Date()
 const y = d.getFullYear()
 const from = +CONFIG.since
 
-export type Tags = {
-  [tagName: string]: number
-}
-
-// TODO: typing
-export type Posts = any[]
-
 type Props = {
-  tags: Tags
-  posts: any[]
+  tags: TTags
+  posts: TPosts
 }
 
 const Feed: React.FC<Props> = ({ tags, posts }) => {

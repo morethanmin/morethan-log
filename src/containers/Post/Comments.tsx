@@ -1,3 +1,4 @@
+import { TPost } from '@/src/types/post'
 import CONFIG from 'morethan-log.config'
 import dynamic from 'next/dynamic'
 
@@ -9,7 +10,7 @@ const UtterancesComponent = dynamic(
 )
 
 type Props = {
-  data: any
+  data: TPost
 }
 
 const Comments: React.FC<Props> = ({ data }) => {
