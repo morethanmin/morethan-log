@@ -13,7 +13,7 @@ type Props = {
   data: TPost
 }
 
-const Comments: React.FC<Props> = ({ data }) => {
+const CommentBox: React.FC<Props> = ({ data }) => {
   return (
     <div>
       {CONFIG.utterances.enable && <UtterancesComponent issueTerm={data.id} />}
@@ -21,4 +21,4 @@ const Comments: React.FC<Props> = ({ data }) => {
   )
 }
 
-export default Comments
+export default CommentBox

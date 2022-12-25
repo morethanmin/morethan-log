@@ -8,7 +8,7 @@ type Props = {
   tags: TTags
 }
 
-const PostHeader: React.FC<Props> = ({ tags }) => {
+const Header: React.FC<Props> = ({ tags }) => {
   const router = useRouter()
 
   const currentTag = `${router.query.tag || ``}` || 'All'
@@ -55,4 +55,4 @@ const PostHeader: React.FC<Props> = ({ tags }) => {
   )
 }
 
-export default PostHeader
+export default Header

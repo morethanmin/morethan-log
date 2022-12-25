@@ -6,7 +6,7 @@ import ServiceCard from './components/cards/ServiceCard'
 
 import { TPosts, TTags } from '@/src/types/post'
 import SearchInput from './components/SearchInput'
-import PostHeader from './components/PostHeader'
+import PostHeader from './components/Header'
 import PostList from './components/lists/PostList'
 import Footer from './components/Footer'
 import TagList from './components/lists/TagList'
