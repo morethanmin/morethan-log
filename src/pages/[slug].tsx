@@ -1,4 +1,4 @@
-import Post from '@containers/Post'
+import PostDetail from '@/src/containers/PostDetail'
 import { getAllPosts, getPostBlocks } from '@libs/notion'
 import Layout from '@components/Layout'
 import CONFIG from '../../morethan-log.config'
@@ -34,12 +34,12 @@ type Props = {
   blockMap: any
 }
 
-const PostPage: NextPageWithLayout<Props> = ({ post, blockMap }) => {
+const PostDetailPage: NextPageWithLayout<Props> = ({ post, blockMap }) => {
   if (!post) return null
-  return <Post blockMap={blockMap} data={post} />
+  return <PostDetail blockMap={blockMap} data={post} />
 }
 
-PostPage.getLayout = function getlayout(page) {
+PostDetailPage.getLayout = function getlayout(page) {
   if (!page.props.post) return null
   return (
     <Layout
@@ -59,4 +59,4 @@ PostPage.getLayout = function getlayout(page) {
   )
 }
 
-export default PostPage
+export default PostDetail

@@ -8,21 +8,20 @@ import {
 import CONFIG from 'morethan-log.config'
 import formatDate from '@libs/formatDate'
 import { useRouter } from 'next/router'
-import Comments from '@/src/containers/Post/Comments'
+import Comments from '@/src/containers/PostDetail/Comments'
 import Tag from '../../components/Tag'
 import { TPost } from '@/src/types/post'
 
-const mapPageUrl = (id: any) => {
+const mapPageUrl = (id: string) => {
   return 'https://www.notion.so/' + id.replace(/-/g, '')
 }
 
 type Props = {
-  children?: any
   blockMap: any
   data: TPost
 }
 
-const Post: React.FC<Props> = ({ children, blockMap, data }) => {
+const Post: React.FC<Props> = ({ blockMap, data }) => {
   const router = useRouter()
   return (
     <div
@@ -49,7 +48,6 @@ const Post: React.FC<Props> = ({ children, blockMap, data }) => {
             )}
           </nav>
         )}
-        {children}
         {blockMap && (
           <div className="-mt-4">
             <NotionRenderer

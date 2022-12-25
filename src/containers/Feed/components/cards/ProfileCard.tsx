@@ -1,7 +1,7 @@
+import imageLoader from '@/src/libs/loader'
 import CONFIG from 'morethan-log.config'
 import Image from 'next/image'
 import React from 'react'
-import imageLoader from '../../../libs/loader'
 
 const Profile: React.FC = () => {
   return (
