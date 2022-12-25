@@ -2,7 +2,7 @@
 
 Static Blog and Resume using Notion and Next.js, deployed on Vercel.
 
-<img width="1712" alt="image" src="https://user-images.githubusercontent.com/72514247/206892232-8a92d9f5-7106-4fe8-aab3-d25f9426f304.png">
+<img width="1715" alt="image" src="https://user-images.githubusercontent.com/72514247/209467478-6b31cfee-d018-4865-bbf1-60b488427caf.png">
 
 - Demo Blog: https://morethan-log.vercel.app
 - Demo Resume: https://morethan-log.vercel.app/resume
