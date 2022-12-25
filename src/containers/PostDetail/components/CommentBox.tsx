@@ -1,3 +1,4 @@
+import { TPost } from '@/src/types/post'
 import CONFIG from 'morethan-log.config'
 import dynamic from 'next/dynamic'
 
@@ -9,10 +10,10 @@ const UtterancesComponent = dynamic(
 )
 
 type Props = {
-  data: any
+  data: TPost
 }
 
-const Comments: React.FC<Props> = ({ data }) => {
+const CommentBox: React.FC<Props> = ({ data }) => {
   return (
     <div>
       {CONFIG.utterances.enable && <UtterancesComponent issueTerm={data.id} />}
@@ -20,4 +21,4 @@ const Comments: React.FC<Props> = ({ data }) => {
   )
 }
 
-export default Comments
+export default CommentBox

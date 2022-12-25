@@ -5,7 +5,7 @@ type Props = {
   data: any
 }
 
-const TagsMenu: React.FC<Props> = ({ data }) => {
+const TagList: React.FC<Props> = ({ data }) => {
   const router = useRouter()
   const currentTag = router.query.tag || 'All'
 
@@ -38,4 +38,4 @@ const TagsMenu: React.FC<Props> = ({ data }) => {
   )
 }
 
-export default TagsMenu
+export default TagList

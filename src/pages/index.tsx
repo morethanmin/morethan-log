@@ -1,28 +1,32 @@
 import { getAllPosts, getAllTagsFromPosts } from '@libs/notion'
 import Layout from '@components/Layout'
-import Feed, { Posts, Tags } from '@containers/Feed'
+import Feed from '@containers/Feed'
 import CONFIG from '../../morethan-log.config'
 import { NextPageWithLayout } from './_app'
+import { TPosts, TTags } from '../types/post'
 
 export async function getStaticProps() {
-  const posts = await getAllPosts({ includePages: false })
-  const tags = getAllTagsFromPosts(posts)
-
-  return {
-    props: {
-      tags: {
-        All: posts.length,
-        ...tags,
+  try {
+    const posts = await getAllPosts({ includePages: false })
+    const tags = getAllTagsFromPosts(posts)
+    return {
+      props: {
+        tags: {
+          All: posts.length,
+          ...tags,
+        },
+        posts,
       },
-      posts,
-    },
-    revalidate: 1,
+      revalidate: 1,
+    }
+  } catch (error) {
+    return
   }
 }
 
 type Props = {
-  tags: Tags
-  posts: Posts
+  tags: TTags
+  posts: TPosts
 }
 
 const FeedPage: NextPageWithLayout<Props> = ({ tags, posts }) => {

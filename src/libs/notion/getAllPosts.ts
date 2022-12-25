@@ -4,18 +4,18 @@ import { idToUuid } from 'notion-utils'
 import getAllPageIds from './getAllPageIds'
 import getPageProperties from './getPageProperties'
 import filterPublishedPosts from './filterPublishedPosts'
+import { TPosts } from '@/src/types/post'
 
 /**
  * @param {{ includePages: boolean }} - false: posts only / true: include pages
  */
+
 export async function getAllPosts({ includePages = false }) {
   let id = CONFIG.notionConfig.pageId as string
-  const authToken = CONFIG.notionConfig.accessToken || undefined
-  const api = new NotionAPI({ authToken })
+  const api = new NotionAPI()
   const response = await api.getPage(id)
   id = idToUuid(id)
   const collection = Object.values(response.collection)[0]?.value
-  const collectionQuery = response.collection_query
   const block = response.block
   const schema = collection?.schema
 
@@ -26,10 +26,10 @@ export async function getAllPosts({ includePages = false }) {
     rawMetadata?.type !== 'collection_view_page' &&
     rawMetadata?.type !== 'collection_view'
   ) {
-    return null
+    return []
   } else {
     // Construct Data
-    const pageIds = getAllPageIds(collectionQuery)
+    const pageIds = getAllPageIds(response)
     const data = []
     for (let i = 0; i < pageIds.length; i++) {
       const id = pageIds[i]
@@ -53,6 +53,6 @@ export async function getAllPosts({ includePages = false }) {
       const dateB: any = new Date(b?.date?.start_date || b.createdTime)
       return dateB - dateA
     })
-    return posts
+    return posts as TPosts
   }
 }

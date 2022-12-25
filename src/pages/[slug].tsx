@@ -1,39 +1,47 @@
-import Post from '@containers/Post'
+import PostDetail from '@/src/containers/PostDetail'
 import { getAllPosts, getPostBlocks } from '@libs/notion'
 import Layout from '@components/Layout'
 import CONFIG from '../../morethan-log.config'
 import { NextPageWithLayout } from './_app'
+import { TPost } from '../types/post'
 
 export async function getStaticPaths() {
   const posts = await getAllPosts({ includePages: true })
   return {
-    paths: posts.map((row: any) => `/${row.slug}`),
+    paths: posts.map((row) => `/${row.slug}`),
     fallback: true,
   }
 }
 
 export async function getStaticProps({ params: { slug } }: any) {
-  const posts = await getAllPosts({ includePages: true })
-  const post = posts.find((t: any) => t.slug === slug)
-  const blockMap = await getPostBlocks(post.id)
+  try {
+    const posts = await getAllPosts({ includePages: true })
+    const post = posts.find((t) => t.slug === slug)
+    if (!post) throw new Error('Post not found')
+    const blockMap = await getPostBlocks(post.id)
 
-  return {
-    props: { post, blockMap },
-    revalidate: 1,
+    return {
+      props: { post, blockMap },
+      revalidate: 1,
+    }
+  } catch (error) {
+    console.log('error')
+
+    return
   }
 }
 
 type Props = {
-  post: any
+  post: TPost
   blockMap: any
 }
 
-const PostPage: NextPageWithLayout<Props> = ({ post, blockMap }) => {
+const PostDetailPage: NextPageWithLayout<Props> = ({ post, blockMap }) => {
   if (!post) return null
-  return <Post blockMap={blockMap} data={post} />
+  return <PostDetail blockMap={blockMap} data={post} />
 }
 
-PostPage.getLayout = function getlayout(page) {
+PostDetailPage.getLayout = function getlayout(page) {
   if (!page.props.post) return null
   return (
     <Layout
@@ -53,4 +61,4 @@ PostPage.getLayout = function getlayout(page) {
   )
 }
 
-export default PostPage
+export default PostDetailPage

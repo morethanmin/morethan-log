@@ -1,8 +1,11 @@
-export function getAllTagsFromPosts(posts: any) {
-  const taggedPosts = posts.filter((post: any) => post?.tags)
-  const tags = [...taggedPosts.map((p: any) => p.tags).flat()]
-  const tagObj: any = {}
+import { TPosts } from '@/src/types/post'
+
+export function getAllTagsFromPosts(posts: TPosts) {
+  const taggedPosts = posts.filter((post) => post?.tags)
+  const tags = [...taggedPosts.map((p) => p.tags).flat()]
+  const tagObj: { [tagName: string]: number } = {}
   tags.forEach((tag) => {
+    if (!tag) return
     if (tag in tagObj) {
       tagObj[tag]++
     } else {
