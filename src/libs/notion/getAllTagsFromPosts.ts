@@ -1,6 +1,6 @@
-import { Posts } from './getAllPosts'
+import { TPosts } from '@/src/types/post'
 
-export function getAllTagsFromPosts(posts: Posts) {
+export function getAllTagsFromPosts(posts: TPosts) {
   const taggedPosts = posts.filter((post) => post?.tags)
   const tags = [...taggedPosts.map((p) => p.tags).flat()]
   const tagObj: { [tagName: string]: number } = {}
