@@ -35,7 +35,7 @@ const MobileProfileCard: React.FC<Props> = () => {
             <div className="text-sm">{CONFIG.profile.discription}</div>
           </div>
         </div>
-        <div className="flex">
+        {/* <div className="flex">
           {CONFIG.profile.github && (
             <a
               href={`https://github.com/${CONFIG.profile.github}`}
@@ -76,7 +76,7 @@ const MobileProfileCard: React.FC<Props> = () => {
               <AiFillLinkedin className="text-2xl flex-shrink-0" />
             </a>
           )}
-        </div>
+        </div> */}
       </div>
     </div>
   )
