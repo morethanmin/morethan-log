@@ -1,4 +1,4 @@
-import PostDetail from '@/src/containers/PostDetail'
+import PostDetail from '@containers/PostDetail'
 import { getAllPosts, getPostBlocks } from '@libs/notion'
 import Layout from '@components/Layout'
 import CONFIG from '../../morethan-log.config'

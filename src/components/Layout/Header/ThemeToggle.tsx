@@ -1,5 +1,5 @@
 import CONFIG from '@/morethan-log.config'
-import { getTheme, ThemeType } from '@/src/hooks/useThemeEffect'
+import { getTheme, ThemeType } from '@hooks/useThemeEffect'
 import React, { useEffect, useState } from 'react'
 
 type Props = {}
