@@ -22,3 +22,5 @@ export type TPosts = TPost[]
 export type TTags = {
   [tagName: string]: number
 }
+
+export type ThemeType = 'dark' | 'light'

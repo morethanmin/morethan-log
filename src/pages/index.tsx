@@ -3,7 +3,7 @@ import Layout from '@components/Layout'
 import Feed from '@containers/Feed'
 import CONFIG from '../../morethan-log.config'
 import { NextPageWithLayout } from './_app'
-import { TPosts, TTags } from '../types/post'
+import { TPosts, TTags } from '../types'
 
 export async function getStaticProps() {
   try {

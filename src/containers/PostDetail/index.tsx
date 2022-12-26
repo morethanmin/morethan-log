@@ -8,7 +8,7 @@ import {
 import CommentBox from '@containers/PostDetail/components/CommentBox'
 import Footer from './components/PostFooter'
 import PostHeader from './components/PostHeader'
-import { TPost } from '@custeomTypes/post'
+import { TPost } from '@/src/types'
 
 const mapPageUrl = (id: string) => {
   return 'https://www.notion.so/' + id.replace(/-/g, '')

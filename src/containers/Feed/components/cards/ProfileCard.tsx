@@ -1,4 +1,4 @@
-import imageLoader from '@libs/loader'
+import imageLoader from '@/src/libs/next/imageLoader'
 import CONFIG from 'morethan-log.config'
 import Image from 'next/image'
 import React from 'react'

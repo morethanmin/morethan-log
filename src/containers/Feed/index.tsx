@@ -4,7 +4,7 @@ import ProfileCard from './components/cards/ProfileCard'
 import ContactCard from './components/cards/ContactCard'
 import ServiceCard from './components/cards/ServiceCard'
 
-import { TPosts, TTags } from '@/src/types/post'
+import { TPosts, TTags } from '@/src/types'
 import SearchInput from './components/SearchInput'
 import PostHeader from './components/Header'
 import PostList from './components/lists/PostList'

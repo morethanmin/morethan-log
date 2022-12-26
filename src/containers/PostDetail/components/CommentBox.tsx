@@ -1,4 +1,4 @@
-import { TPost } from '@custeomTypes/post'
+import { TPost } from '@/src/types'
 import CONFIG from 'morethan-log.config'
 import dynamic from 'next/dynamic'
 

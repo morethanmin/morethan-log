@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import CONFIG from 'morethan-log.config'
-import formatDate from '@libs/formatDate'
+import { formatDate } from '@/src/libs/utils'
 import Tag from './Tag'
 
 type Props = {

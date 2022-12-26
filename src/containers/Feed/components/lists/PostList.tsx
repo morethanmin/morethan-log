@@ -1,5 +1,5 @@
 import PostCard from '@components/PostCard'
-import { TPosts, TTags } from '@custeomTypes/post'
+import { TPosts, TTags } from '@/src/types'
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 

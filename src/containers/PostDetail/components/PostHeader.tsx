@@ -1,8 +1,8 @@
 import CONFIG from '@/morethan-log.config'
 import Tag from '@components/Tag'
-import imageLoader from '@libs/loader'
-import { TPost } from '@custeomTypes/post'
-import formatDate from '@libs/formatDate'
+import imageLoader from '@/src/libs/next/imageLoader'
+import { TPost } from '@/src/types'
+import {formatDate} from '@/src/libs/utils'
 import Image from 'next/image'
 import React from 'react'
 
