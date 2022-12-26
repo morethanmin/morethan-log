@@ -7,7 +7,7 @@ import {
   AiFillLinkedin,
 } from 'react-icons/ai'
 
-const Contact: React.FC = () => {
+const ContactCard: React.FC = () => {
   return (
     <>
       <div className="p-1 mb-3 dark:text-white">💬 Contact</div>
@@ -61,4 +61,4 @@ const Contact: React.FC = () => {
   )
 }
 
-export default Contact
+export default ContactCard

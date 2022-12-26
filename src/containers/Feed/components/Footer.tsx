@@ -1,16 +1,26 @@
 import CONFIG from '@/morethan-log.config'
+import Link from 'next/link'
 import React from 'react'
 
 const d = new Date()
 const y = d.getFullYear()
 const from = +CONFIG.since
 
-type Props = {}
+type Props = {
+  className?: string
+}
 
-const Footer: React.FC<Props> = () => {
+const Footer: React.FC<Props> = ({ className }) => {
   return (
-    <div className="text-gray-500 text-sm mt-3">
-      © {CONFIG.profile.name} {from === y || !from ? y : `${from} - ${y}`}
+    <div className={className}>
+      <a
+        href={'https://github.com/morethanmin/morethan-log'}
+        target="_blank"
+        className="text-gray-500 text-sm mt-3"
+        rel="noreferrer"
+      >
+        © {CONFIG.profile.name} {from === y || !from ? y : `${from} - ${y}`}
+      </a>
     </div>
   )
 }

@@ -2,7 +2,7 @@ import CONFIG from 'morethan-log.config'
 import React from 'react'
 import { AiFillCodeSandboxCircle } from 'react-icons/ai'
 
-const Product: React.FC = () => {
+const ServiceCard: React.FC = () => {
   if (!CONFIG.projects) return null
   return (
     <>
@@ -22,4 +22,4 @@ const Product: React.FC = () => {
   )
 }
 
-export default Product
+export default ServiceCard
