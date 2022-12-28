@@ -5,10 +5,10 @@ import {
   Collection,
   CollectionRow,
 } from 'react-notion-x'
-import CommentBox from '@/src/containers/PostDetail/components/CommentBox'
-import { TPost } from '@/src/types/post'
+import CommentBox from '@containers/PostDetail/components/CommentBox'
 import Footer from './components/PostFooter'
 import PostHeader from './components/PostHeader'
+import { TPost } from '@/src/types'
 
 const mapPageUrl = (id: string) => {
   return 'https://www.notion.so/' + id.replace(/-/g, '')

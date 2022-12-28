@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import CONFIG from 'morethan-log.config'
+import { ThemeType } from '@custeomTypes/index'
 
-export type ThemeType = 'dark' | 'light'
 
 export const getTheme: () => ThemeType = () => {
   const themeConfig = CONFIG.blog.theme as 'auto' & ThemeType

@@ -1,15 +1,12 @@
 import { useState } from 'react'
 
-import ProfileCard from './components/cards/ProfileCard'
-import ContactCard from './components/cards/ContactCard'
-import ServiceCard from './components/cards/ServiceCard'
+import * as Cards from './components/cards'
+import * as Lists from './components/lists'
 
-import { TPosts, TTags } from '@/src/types/post'
+import { TPosts, TTags } from '@custeomTypes/index'
 import SearchInput from './components/SearchInput'
 import PostHeader from './components/Header'
-import PostList from './components/lists/PostList'
 import Footer from './components/Footer'
-import TagList from './components/lists/TagList'
 
 type Props = {
   tags: TTags
@@ -18,21 +15,23 @@ type Props = {
 
 const Feed: React.FC<Props> = ({ tags, posts }) => {
   const [q, setQ] = useState('')
+
   return (
     <div className="block md:grid grid-cols-12 gap-6">
-      <div className="col-span-2">
-        <TagList data={tags} />
-      </div>
-      <div className="col-span-12 md:col-span-10 lg:col-span-7 ">
+      <Lists.TagList className="hidden lg:block col-span-2" data={tags} />
+      <div className="col-span-12 lg:col-span-7">
+        <Cards.MobileProfileCard />
         <SearchInput value={q} onChange={(e) => setQ(e.target.value)} />
+        <Lists.TagList className="block lg:hidden" data={tags} />
         <PostHeader tags={tags} />
-        <PostList q={q} posts={posts} tags={tags} />
+        <Lists.PostList q={q} posts={posts} tags={tags} />
+        <Footer className="block lg:hidden flex justify-center pb-8" />
       </div>
-      <div className="hidden lg:block col-span-3">
-        <ProfileCard />
-        <ServiceCard />
-        <ContactCard />
-        <Footer />
+      <div className="hidden lg:block lg:col-span-3">
+        <Cards.ProfileCard />
+        <Cards.ServiceCard />
+        <Cards.ContactCard />
+        <Footer className="pt-4" />
       </div>
     </div>
   )

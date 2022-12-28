@@ -4,7 +4,7 @@ import { idToUuid } from 'notion-utils'
 import getAllPageIds from './getAllPageIds'
 import getPageProperties from './getPageProperties'
 import filterPublishedPosts from './filterPublishedPosts'
-import { TPosts } from '@/src/types/post'
+import { TPosts } from '@/src/types'
 
 /**
  * @param {{ includePages: boolean }} - false: posts only / true: include pages

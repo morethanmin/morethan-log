@@ -1,4 +1,4 @@
-import { TTags } from '@/src/types/post'
+import { TTags } from '@/src/types'
 import { useRouter } from 'next/router'
 import React from 'react'
 

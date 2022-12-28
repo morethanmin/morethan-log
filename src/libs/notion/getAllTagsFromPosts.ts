@@ -1,4 +1,4 @@
-import { TPosts } from '@/src/types/post'
+import { TPosts } from '@/src/types'
 
 export function getAllTagsFromPosts(posts: TPosts) {
   const taggedPosts = posts.filter((post) => post?.tags)

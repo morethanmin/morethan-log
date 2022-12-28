@@ -2,7 +2,7 @@ import CONFIG from 'morethan-log.config'
 import React from 'react'
 import { AiFillCodeSandboxCircle } from 'react-icons/ai'
 
-const Product: React.FC = () => {
+const ServiceCard: React.FC = () => {
   if (!CONFIG.projects) return null
   return (
     <>
@@ -12,7 +12,7 @@ const Product: React.FC = () => {
           href={`${CONFIG.projects[0].href}`}
           rel="noreferrer"
           target="_blank"
-          className="p-3 hover:bg-gray-100 dark:hover:bg-zinc-700 rounded-2xl cursor-pointer flex items-center gap-3 text-gray-500 dark:text-white hover:text-black dark:hover:text-white "
+          className="p-3 hover:bg-gray-100 dark:hover:bg-zinc-700 rounded-2xl cursor-pointer flex items-center gap-3 text-gray-500 dark:text-white hover:text-black dark:hover:text-white"
         >
           <AiFillCodeSandboxCircle className="text-2xl" />
           <div className="text-sm">{CONFIG.projects[0].name}</div>
@@ -22,4 +22,4 @@ const Product: React.FC = () => {
   )
 }
 
-export default Product
+export default ServiceCard

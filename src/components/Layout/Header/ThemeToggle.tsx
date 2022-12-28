@@ -1,5 +1,6 @@
 import CONFIG from '@/morethan-log.config'
-import { getTheme, ThemeType } from '@/src/hooks/useThemeEffect'
+import { ThemeType } from '@/src/types'
+import { getTheme } from '@hooks/useThemeEffect'
 import React, { useEffect, useState } from 'react'
 
 type Props = {}
@@ -25,7 +26,7 @@ const ThemeToggle: React.FC<Props> = () => {
   if (CONFIG.blog.theme !== 'auto') return null
   return (
     <div className={`cursor-pointer dark:text-gray-50`} onClick={handleClick}>
-      {theme}
+      {theme === 'light' ? '☀️' : '🌙'}
     </div>
   )
 }
