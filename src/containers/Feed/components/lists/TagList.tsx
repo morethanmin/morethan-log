@@ -27,9 +27,9 @@ const TagList: React.FC<Props> = ({ className, data }) => {
         {Object.keys(data).map((key) => (
           <li
             key={key}
-            className={`text-sm p-1 px-4 my-1 flex-shrink-0 rounded-xl text-gray-500 dark:text-white hover:bg-gray-200 ${
+            className={`text-sm p-1 px-4 my-1 flex-shrink-0 rounded-xl text-gray-500 dark:text-white hover:bg-gray-200 dark:hover:bg-zinc-800 ${
               key === currentTag &&
-              'hover:bg-white bg-white text-black dark:bg-zinc-700 '
+              'text-black bg-white dark:bg-zinc-700 hover:bg-white dark:hover:bg-zinc-700'
             }`}
             onClick={() => handleClickTag(key)}
           >

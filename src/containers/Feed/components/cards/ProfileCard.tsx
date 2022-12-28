@@ -23,7 +23,7 @@ const ProfileCard: React.FC<Props> = ({ className }) => {
         </div>
         <div className="bg-white p-2 flex flex-col items-center dark:bg-zinc-700 dark:text-white">
           <div className=" text-xl italic font-bold">{CONFIG.profile.name}</div>
-          <div className="text-sm mb-4 text-gray-500">
+          <div className="text-sm mb-4 text-gray-500 dark:text-gray-400">
             {CONFIG.profile.role}
           </div>
           <div className="text-sm mb-2">{CONFIG.profile.bio}</div>
