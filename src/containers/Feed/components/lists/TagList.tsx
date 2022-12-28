@@ -23,7 +23,7 @@ const TagList: React.FC<Props> = ({ className, data }) => {
   return (
     <div className={className}>
       <div className="hidden lg:block p-1 mb-3 dark:text-white">🏷️ Tags</div>
-      <ul className="cursor-pointer flex mobile-x-scroll lg:block mb-6">
+      <ul className="cursor-pointer gap-1 flex mobile-x-scroll lg:block mb-6">
         {Object.keys(data).map((key) => (
           <li
             key={key}
