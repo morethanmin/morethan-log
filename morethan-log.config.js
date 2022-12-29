@@ -7,6 +7,8 @@ const CONFIG = {
     bio: 'I develop everything using node.',
     email: 'morethanmin.dev@gmail.com',
     github: 'morethanmin',
+    linkedin: '',
+    instagram: '',
   },
   projects: [
     {
