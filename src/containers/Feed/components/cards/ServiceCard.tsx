@@ -3,7 +3,7 @@ import React from 'react'
 import { AiFillCodeSandboxCircle } from 'react-icons/ai'
 
 const ServiceCard: React.FC = () => {
-  if (!CONFIG.projects) return null
+  if (!CONFIG.projects.length) return null
   return (
     <>
       <div className="p-1 mb-3 dark:text-white">🌟 Service</div>
