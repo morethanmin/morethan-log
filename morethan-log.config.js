@@ -1,9 +1,9 @@
 const CONFIG = {
   // profile setting
   profile: {
-    name: 'morethanmin',
+    name: 'inmo',
     image: '/avatar.svg',  // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
-    role: 'frontend developer',
+    role: 'white hat hacker',
     bio: 'I develop everything using node.',
     email: 'morethanmin.dev@gmail.com',
     github: 'morethanmin',
@@ -18,9 +18,9 @@ const CONFIG = {
   ],
   // blog setting
   blog: {
-    title: 'morethan-log',
-    description: 'welcome to morethan-log!',
-    theme: 'auto' // ['light', 'dark', 'auto']
+    title: 'inmoG-log',
+    description: 'welcome to inmo-log!',
+    theme: 'dark' // ['light', 'dark', 'auto']
   },
 
   // CONFIG configration
