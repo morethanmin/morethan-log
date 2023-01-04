@@ -42,6 +42,14 @@ const PostDetailPage: NextPageWithLayout<Props> = ({ post, blockMap }) => {
 }
 
 PostDetailPage.getLayout = function getlayout(page) {
+  const getImage = () => {
+    if (page.props.post.thumbnail) return page.props.post.thumbnail
+    if (CONFIG.ogImageGenerateURL)
+      return `${CONFIG.ogImageGenerateURL}/${encodeURIComponent(
+        page.props.post.title
+      )}.png?theme=dark&md=1&fontSize=125px&images=https%3A%2F%2Fmorethan-log.vercel.app%2Flogo-for-dark-bg.svg`
+  }
+
   if (!page.props.post) return null
   return (
     <Layout
@@ -50,6 +58,7 @@ PostDetailPage.getLayout = function getlayout(page) {
         date: new Date(
           page.props.post.date?.start_date || page.props.post.createdTime
         ).toISOString(),
+        image: getImage(),
         description: page.props.post.summary,
         type: page.props.post.type[0],
         url: `${CONFIG.link}/${page.props.post.slug}`,

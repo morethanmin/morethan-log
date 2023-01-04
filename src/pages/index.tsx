@@ -8,6 +8,7 @@ import { TPosts, TTags } from '../types'
 export async function getStaticProps() {
   try {
     const posts = await getAllPosts({ includePages: false })
+
     const tags = getAllTagsFromPosts(posts)
     return {
       props: {
