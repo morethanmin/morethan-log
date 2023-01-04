@@ -15,6 +15,7 @@ export type TPost = {
   status: string[]
   createdTime: string
   fullWidth: boolean
+  thumbnail?: string
 }
 
 export type TPosts = TPost[]
