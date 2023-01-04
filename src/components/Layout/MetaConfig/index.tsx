@@ -6,7 +6,7 @@ export type MetaConfigProps = {
   description: string
   type: 'Website' | 'Post' | 'Page' | string
   date?: string
-  image: string
+  image?: string
   url: string
 }
 
@@ -30,12 +30,12 @@ const MetaConfig: React.FC<MetaConfigProps> = ({ ...props }) => {
       <meta property="og:description" content={meta.description} />
       <meta property="og:url" content={meta.url} />
       {CONFIG.lang && <meta property="og:locale" content={CONFIG.lang} />}
-      <meta property="og:image" content={meta.image} />
+      {meta.image && <meta property="og:image" content={meta.image} />}
       {/* twitter */}
       <meta name="twitter:title" content={meta.title} />
       <meta name="twitter:description" content={meta.description} />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:image" content={meta.image} />
+      {meta.image && <meta name="twitter:image" content={meta.image} />}
       {/* post */}
       {meta.type === 'Post' && (
         <>
