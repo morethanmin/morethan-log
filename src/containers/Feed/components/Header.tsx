@@ -12,7 +12,7 @@ const Header: React.FC<Props> = ({ tags }) => {
   const router = useRouter()
 
   const currentTag = `${router.query.tag || ``}` || 'All'
-  const currentOrder = `${router.query.order || ``}` || ('asc' as TOrder)
+  const currentOrder = `${router.query.order || ``}` || ('desc' as TOrder)
 
   const handleClickOrderBy = (value: TOrder) => {
     router.push({
@@ -32,21 +32,21 @@ const Header: React.FC<Props> = ({ tags }) => {
       <div className={`flex text-sm gap-2  `}>
         <a
           className={`cursor-pointer ${
-            currentOrder === 'asc'
-              ? 'text-black font-bold dark:text-white'
-              : 'text-gray-500 dark:text-gray-400'
-          }`}
-          onClick={() => handleClickOrderBy('asc')}
-        >
-          Desc
-        </a>
-        <a
-          className={`cursor-pointer ${
             currentOrder === 'desc'
               ? 'text-black font-bold dark:text-white'
               : 'text-gray-500 dark:text-gray-400'
           }`}
           onClick={() => handleClickOrderBy('desc')}
+        >
+          Desc
+        </a>
+        <a
+          className={`cursor-pointer ${
+            currentOrder === 'asc'
+              ? 'text-black font-bold dark:text-white'
+              : 'text-gray-500 dark:text-gray-400'
+          }`}
+          onClick={() => handleClickOrderBy('asc')}
         >
           Asc
         </a>
