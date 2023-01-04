@@ -8,7 +8,8 @@ const CONFIG = {
     email: 'morethanmin.dev@gmail.com',
     linkedin: 'morethanmin',
     github: 'morethanmin',
-    instagram: 'more_dev_min',
+    linkedin: '',
+    instagram: '',
   },
   projects: [
     {
