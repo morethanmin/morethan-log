@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://notes-kvaishak.vercel.app
-
-# Sitemaps
-Sitemap: https://notes-kvaishak.vercel.app/sitemap.xml
