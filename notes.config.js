@@ -24,7 +24,7 @@ const CONFIG = {
   },
 
   // CONFIG configration
-  link: "notes.kvaishak.com",
+  link: "https://notes-kvaishak.vercel.app",
   since: 2022, // If leave this empty, current year will be used.
   lang: "en-US", // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES', 'ko-KR']
   postsPerPage: 10,

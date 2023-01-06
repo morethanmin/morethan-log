@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://notes.kvaishak.com
+Host: https://notes-kvaishak.vercel.app
 
 # Sitemaps
-Sitemap: https://notes.kvaishak.com/sitemap.xml
+Sitemap: https://notes-kvaishak.vercel.app/sitemap.xml
