@@ -3,11 +3,12 @@ const CONFIG = {
   profile: {
     name: "Vaishak Kaippanchery",
     image: "/profile.png",
-    discription: "Senior Software Engineer",
+    role: "Senior Software Engineer",
+    bio: "Working at Fintech in Berlin, Prev worked on building collaborative design tool @Zoho",
     linkedin: "kvaishak",
     email: "hi.kvaishak@gmail.com",
     github: "kvaishak",
-    instagram: ''
+    instagram: "",
   },
   projects: [
     {
@@ -19,11 +20,11 @@ const CONFIG = {
   blog: {
     title: "Notes",
     description: "welcome to my Notes!",
-    theme: 'auto' // ['light', 'dark', 'auto']
+    theme: "auto", // ['light', 'dark', 'auto']
   },
 
   // CONFIG configration
-  link: "notes.kvaishak.com",
+  link: "https://notes-kvaishak.vercel.app",
   since: 2022, // If leave this empty, current year will be used.
   lang: "en-US", // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES', 'ko-KR']
   postsPerPage: 10,
@@ -35,21 +36,19 @@ const CONFIG = {
   // notion configuration
   notionConfig: {
     pageId: process.env.NOTION_PAGE_ID,
-    // if you prefer not to make your database public, use this!!!
-    accessToken: process.env.NOTION_ACCESS_TOKEN,
   },
 
   // plugin configuration
   googleAnalytics: {
     enable: false,
     config: {
-      measurementId: "", // ex. G-9N3FE0117Q
+      measurementId: process.env.GOOGLE_MEASUREMENT_ID || "",
     },
   },
   googleSearchConsole: {
     enable: false,
     config: {
-      siteVerification: "", // ex. qvdR1gXMirk_DCUOKPgRnxu2x6fqSPrquYnEZZMjR9w
+      siteVerification: process.env.GOOGLE_SITE_VERIFICATION || "",
     },
   },
   utterances: {

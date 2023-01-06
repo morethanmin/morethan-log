@@ -1,8 +1,9 @@
 # morethan-log
 
+<img width="1715" alt="image" src="https://user-images.githubusercontent.com/72514247/209824600-ca9c8acc-6d2d-4041-9931-43e34b8a9a5f.png">
+
 Static Blog and Resume using Notion and Next.js, deployed on Vercel.
 
-<img width="1712" alt="image" src="https://user-images.githubusercontent.com/72514247/206892232-8a92d9f5-7106-4fe8-aab3-d25f9426f304.png">
 
 - Demo Blog: https://morethan-log.vercel.app
 - Demo Resume: https://morethan-log.vercel.app/resume
