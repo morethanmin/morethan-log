@@ -1,18 +1,19 @@
-import CONFIG from 'notes.config'
-import Head from 'next/head'
+import CONFIG from "notes.config";
+import Head from "next/head";
 
 export type MetaConfigProps = {
-  title: string
-  description: string
-  type: 'Website' | 'Post' | 'Page' | string
-  date?: string
-  url: string
-}
+  title: string;
+  description: string;
+  type: "Website" | "Post" | "Page" | string;
+  date?: string;
+  image?: string;
+  url: string;
+};
 
 const MetaConfig: React.FC<MetaConfigProps> = ({ ...props }) => {
   const meta = {
     ...props,
-  }
+  };
 
   return (
     <Head>
@@ -20,7 +21,7 @@ const MetaConfig: React.FC<MetaConfigProps> = ({ ...props }) => {
       <meta name="robots" content="follow, index" />
       <meta charSet="UTF-8" />
       {CONFIG.seo.keywords && (
-        <meta name="keywords" content={CONFIG.seo.keywords.join(', ')} />
+        <meta name="keywords" content={CONFIG.seo.keywords.join(", ")} />
       )}
       <meta name="description" content={meta.description} />
       {/* og */}
@@ -50,14 +51,14 @@ const MetaConfig: React.FC<MetaConfigProps> = ({ ...props }) => {
         />
       )}
       {/* post */}
-      {meta.type === 'Post' && (
+      {meta.type === "Post" && (
         <>
           <meta property="article:published_time" content={meta.date} />
           <meta property="article:author" content={CONFIG.profile.name} />
         </>
       )}
     </Head>
-  )
-}
+  );
+};
 
-export default MetaConfig
+export default MetaConfig;

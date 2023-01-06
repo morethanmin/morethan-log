@@ -1,33 +1,34 @@
-import CONFIG from '@/notes.config'
-import { getTheme, ThemeType } from '@/src/hooks/useThemeEffect'
-import React, { useEffect, useState } from 'react'
+import CONFIG from "@/notes.config";
+import { ThemeType } from "@/src/types";
+import { getTheme } from "@hooks/useThemeEffect";
+import React, { useEffect, useState } from "react";
 
-type Props = {}
+type Props = {};
 
 const ThemeToggle: React.FC<Props> = () => {
-  const [theme, setTheme] = useState<ThemeType>()
+  const [theme, setTheme] = useState<ThemeType>();
 
   useEffect(() => {
-    if (typeof window === 'object') {
-      setTheme(getTheme())
+    if (typeof window === "object") {
+      setTheme(getTheme());
     }
-  }, [])
+  }, []);
 
   const handleClick = () => {
-    const changedTheme = getTheme() !== 'dark' ? 'dark' : 'light'
-    localStorage.setItem('theme', changedTheme)
-    setTheme(changedTheme)
-    changedTheme === 'dark'
-      ? document.documentElement.classList.add('dark')
-      : document.documentElement.classList.remove('dark')
-  }
+    const changedTheme = getTheme() !== "dark" ? "dark" : "light";
+    localStorage.setItem("theme", changedTheme);
+    setTheme(changedTheme);
+    changedTheme === "dark"
+      ? document.documentElement.classList.add("dark")
+      : document.documentElement.classList.remove("dark");
+  };
 
-  if (CONFIG.blog.theme !== 'auto') return null
+  if (CONFIG.blog.theme !== "auto") return null;
   return (
     <div className={`cursor-pointer dark:text-gray-50`} onClick={handleClick}>
-      {theme}
+      {theme === "light" ? "☀️" : "🌙"}
     </div>
-  )
-}
+  );
+};
 
-export default ThemeToggle
+export default ThemeToggle;

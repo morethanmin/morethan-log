@@ -4,25 +4,25 @@ import {
   Code,
   Collection,
   CollectionRow,
-} from 'react-notion-x'
-import CONFIG from 'notes.config'
-import formatDate from '@libs/formatDate'
-import { useRouter } from 'next/router'
-import Comments from '@/src/containers/Post/Comments'
-import Tag from '../../components/Tag'
+} from "react-notion-x";
+import CONFIG from "notes.config";
+import formatDate from "@libs/formatDate";
+import { useRouter } from "next/router";
+import Comments from "@/src/containers/Post/Comments";
+import Tag from "../../components/Tag";
 
 const mapPageUrl = (id: any) => {
-  return 'https://www.notion.so/' + id.replace(/-/g, '')
-}
+  return "https://www.notion.so/" + id.replace(/-/g, "");
+};
 
 type Props = {
-  children?: any
-  blockMap: any
-  data: any
-}
+  children?: any;
+  blockMap: any;
+  data: any;
+};
 
 const Post: React.FC<Props> = ({ children, blockMap, data }) => {
-  const router = useRouter()
+  const router = useRouter();
   return (
     <div
       className={`m-auto max-w-4xl bg-white dark:bg-zinc-700 rounded-3xl py-12 px-6 shadow-md`}
