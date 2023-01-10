@@ -63,7 +63,7 @@ async function getPageProperties(
                 id: resValue?.id,
                 first_name: resValue?.given_name,
                 last_name: resValue?.family_name,
-                profile_photo: resValue?.profile_photo,
+                profile_photo: resValue?.profile_photo || null,
               }
               users.push(user)
             }
