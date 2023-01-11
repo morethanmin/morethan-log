@@ -38,7 +38,7 @@ const PostCard: React.FC<Props> = ({ post }) => {
               </h2>
             </header>
             <div className="flex items-center gap-2 mb-4">
-              {post.author && post.author[0] && (
+              {/* {post.author && post.author[0] && (
                 <>
                   <div className="flex items-center gap-1">
                     <Image
@@ -55,7 +55,7 @@ const PostCard: React.FC<Props> = ({ post }) => {
                   </div>
                   <div className="self-stretch w-px my-1 bg-gray-300"></div>
                 </>
-              )}
+              )} */}
               <div className="text-sm text-gray-500 dark:text-gray-400 md:ml-0">
                 {formatDate(
                   post?.date?.start_date || post.createdTime,
