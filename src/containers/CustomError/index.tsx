@@ -1,5 +1,4 @@
 import React from 'react'
-import Footer from '../PostDetail/components/PostFooter'
 
 type Props = {
   errorType?: 'NOT_FOUND' | 'UNKNOWN'

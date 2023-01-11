@@ -13,41 +13,33 @@ type Props = {
 const PostHeader: React.FC<Props> = ({ data }) => {
   return (
     <>
-      {/* {data.thumbnail && (
-        <div className="relative w-full pb-[66%] lg:pb-[50%] bg-gray-200 dark:bg-zinc-700 mb-7 rounded-3xl overflow-hidden">
-          <Image
-            src={data.thumbnail}
-            className="object-cover"
-            loader={imageLoader}
-            layout="fill"
-            alt={data.title}
-          />
-        </div>
-      )} */}
       <h1 className="font-bold text-3xl text-black dark:text-white">
         {data.title}
       </h1>
       {data.type[0] !== 'Page' && (
         <nav className="mt-6 text-gray-500 dark:text-gray-400">
           <div className="flex items-center gap-3 mb-3">
-            {data.author && data.author[0] && (
-              <>
-                <div className="flex items-center gap-2">
-                  <Image
-                    className="rounded-full"
-                    src={data.author[0].profile_photo}
-                    alt="profile_photo"
-                    loader={imageLoader}
-                    width={24}
-                    height={24}
-                  />
-                  <div className="">
-                    {`${data.author[0].last_name}${data.author[0].first_name}`}
+            {data.author &&
+              data.author[0] &&
+              data.author[0].last_name !== undefined &&
+              data.author[0].first_name !== undefined && (
+                <>
+                  <div className="flex items-center gap-2">
+                    <Image
+                      className="rounded-full"
+                      src={data.author[0].profile_photo}
+                      alt="profile_photo"
+                      loader={imageLoader}
+                      width={24}
+                      height={24}
+                    />
+                    <div className="">
+                      {`${data.author[0].last_name}${data.author[0].first_name}`}
+                    </div>
                   </div>
-                </div>
-                <div className="self-stretch w-px my-1 bg-gray-300"></div>
-              </>
-            )}
+                  <div className="self-stretch w-px my-1 bg-gray-300"></div>
+                </>
+              )}
             <div className=" mr-2 md:ml-0">
               {formatDate(
                 data?.date?.start_date || data.createdTime,
@@ -64,6 +56,17 @@ const PostHeader: React.FC<Props> = ({ data }) => {
               </div>
             )}
           </div>
+          {data.thumbnail && (
+            <div className="relative w-full pb-[66%] lg:pb-[50%] bg-gray-200 dark:bg-zinc-700 mb-7 rounded-3xl overflow-hidden">
+              <Image
+                src={data.thumbnail}
+                className="object-cover"
+                loader={imageLoader}
+                layout="fill"
+                alt={data.title}
+              />
+            </div>
+          )}
         </nav>
       )}
     </>
