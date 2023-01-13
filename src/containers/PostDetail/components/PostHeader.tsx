@@ -18,26 +18,21 @@ const PostHeader: React.FC<Props> = ({ data }) => {
       {data.type[0] !== 'Page' && (
         <nav className="mt-6 text-gray-500 dark:text-gray-400">
           <div className="flex items-center gap-3 mb-3">
-            {data.author &&
-              data.author[0] &&
-              data.author[0].last_name !== undefined &&
-              data.author[0].first_name !== undefined && (
-                <>
-                  <div className="flex items-center gap-2">
-                    <Image
-                      className="rounded-full"
-                      src={data.author[0].profile_photo}
-                      alt="profile_photo"
-                      width={24}
-                      height={24}
-                    />
-                    <div className="">
-                      {`${data.author[0].last_name}${data.author[0].first_name}`}
-                    </div>
-                  </div>
-                  <div className="self-stretch w-px my-1 bg-gray-300"></div>
-                </>
-              )}
+            {data.author && data.author[0] && data.author[0].name && (
+              <>
+                <div className="flex items-center gap-2">
+                  <Image
+                    className="rounded-full"
+                    src={data.author[0].profile_photo}
+                    alt="profile_photo"
+                    width={24}
+                    height={24}
+                  />
+                  <div className="">{data.author[0].name}</div>
+                </div>
+                <div className="self-stretch w-px my-1 bg-gray-300"></div>
+              </>
+            )}
             <div className=" mr-2 md:ml-0">
               {formatDate(
                 data?.date?.start_date || data.createdTime,
