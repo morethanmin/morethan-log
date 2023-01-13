@@ -3,7 +3,6 @@ import CONFIG from 'morethan-log.config'
 import { formatDate } from '@/src/libs/utils'
 import Tag from './Tag'
 import { TPost } from '../types'
-import imageLoader from '@/src/libs/next/imageLoader'
 import Image from 'next/image'
 
 type Props = {
@@ -25,7 +24,6 @@ const PostCard: React.FC<Props> = ({ post }) => {
               <Image
                 src={post.thumbnail}
                 className="object-cover"
-                loader={imageLoader}
                 layout="fill"
                 alt={post.title}
               />
@@ -37,13 +35,31 @@ const PostCard: React.FC<Props> = ({ post }) => {
                 {post.title}
               </h2>
             </header>
-            <div className="mb-4">
-              <time className="flex-shrink-0 text-sm text-gray-600 dark:text-gray-400 ">
+            <div className="flex items-center gap-2 mb-4">
+              {/* {post.author && post.author[0] && (
+                <>
+                  <div className="flex items-center gap-1">
+                    <Image
+                      className="rounded-full"
+                      src={post.author[0].profile_photo}
+                      alt="profile_photo"
+                      loader={imageLoader}
+                      width={20}
+                      height={20}
+                    />
+                    <div className="text-sm text-gray-500 dark:text-gray-400">
+                      {`${post.author[0].last_name}${post.author[0].first_name}`}
+                    </div>
+                  </div>
+                  <div className="self-stretch w-px my-1 bg-gray-300"></div>
+                </>
+              )} */}
+              <div className="text-sm text-gray-500 dark:text-gray-400 md:ml-0">
                 {formatDate(
                   post?.date?.start_date || post.createdTime,
                   CONFIG.lang
                 )}
-              </time>
+              </div>
             </div>
             <main className="mb-4">
               <p className="hidden md:block leading-8 text-gray-700 dark:text-gray-300">
