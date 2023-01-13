@@ -1,4 +1,3 @@
-import imageLoader from '@/src/libs/next/imageLoader'
 import CONFIG from 'morethan-log.config'
 import Image from 'next/image'
 import React from 'react'
@@ -15,7 +14,6 @@ const MobileProfileCard: React.FC<Props> = () => {
         <div className="flex items-center gap-2">
           <Image
             src={CONFIG.profile.image}
-            loader={imageLoader}
             width={90}
             height={90}
             alt="profile_image"

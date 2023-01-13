@@ -1,6 +1,5 @@
 import CONFIG from '@/morethan-log.config'
 import Tag from '@components/Tag'
-import imageLoader from '@/src/libs/next/imageLoader'
 import { TPost } from '@/src/types'
 import { formatDate } from '@/src/libs/utils'
 import Image from 'next/image'
@@ -29,7 +28,6 @@ const PostHeader: React.FC<Props> = ({ data }) => {
                       className="rounded-full"
                       src={data.author[0].profile_photo}
                       alt="profile_photo"
-                      loader={imageLoader}
                       width={24}
                       height={24}
                     />
@@ -61,7 +59,6 @@ const PostHeader: React.FC<Props> = ({ data }) => {
               <Image
                 src={data.thumbnail}
                 className="object-cover"
-                loader={imageLoader}
                 layout="fill"
                 alt={data.title}
               />

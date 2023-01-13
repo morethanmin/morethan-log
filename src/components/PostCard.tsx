@@ -3,7 +3,6 @@ import CONFIG from 'morethan-log.config'
 import { formatDate } from '@/src/libs/utils'
 import Tag from './Tag'
 import { TPost } from '../types'
-import imageLoader from '@/src/libs/next/imageLoader'
 import Image from 'next/image'
 
 type Props = {
@@ -25,7 +24,6 @@ const PostCard: React.FC<Props> = ({ post }) => {
               <Image
                 src={post.thumbnail}
                 className="object-cover"
-                loader={imageLoader}
                 layout="fill"
                 alt={post.title}
               />

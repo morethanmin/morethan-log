@@ -3,7 +3,7 @@ import Feed from '@containers/Feed'
 import CONFIG from '../../morethan-log.config'
 import { NextPageWithLayout } from './_app'
 import { TPosts, TTags } from '../types'
-import Error from '../containers/CustomError'
+import CustomError from '../containers/CustomError'
 
 type Props = {
   tags: TTags
@@ -11,7 +11,7 @@ type Props = {
 }
 
 const NotFoundPage: NextPageWithLayout<Props> = () => {
-  return <Error />
+  return <CustomError />
 }
 
 NotFoundPage.getLayout = function getlayout(page) {
