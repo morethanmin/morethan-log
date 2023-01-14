@@ -1,10 +1,10 @@
-import CONFIG from 'morethan-log.config'
-import Head from 'next/head'
+import CONFIG from "site.config"
+import Head from "next/head"
 
 export type MetaConfigProps = {
   title: string
   description: string
-  type: 'Website' | 'Post' | 'Page' | string
+  type: "Website" | "Post" | "Page" | string
   date?: string
   image?: string
   url: string
@@ -21,7 +21,7 @@ const MetaConfig: React.FC<MetaConfigProps> = ({ ...props }) => {
       <meta name="robots" content="follow, index" />
       <meta charSet="UTF-8" />
       {CONFIG.seo.keywords && (
-        <meta name="keywords" content={CONFIG.seo.keywords.join(', ')} />
+        <meta name="keywords" content={CONFIG.seo.keywords.join(", ")} />
       )}
       <meta name="description" content={meta.description} />
       {/* og */}
@@ -37,7 +37,7 @@ const MetaConfig: React.FC<MetaConfigProps> = ({ ...props }) => {
       <meta name="twitter:card" content="summary_large_image" />
       {meta.image && <meta name="twitter:image" content={meta.image} />}
       {/* post */}
-      {meta.type === 'Post' && (
+      {meta.type === "Post" && (
         <>
           <meta property="article:published_time" content={meta.date} />
           <meta property="article:author" content={CONFIG.profile.name} />

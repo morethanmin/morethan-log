@@ -1,6 +1,6 @@
-import CONFIG from 'morethan-log.config'
-import Image from 'next/image'
-import React from 'react'
+import CONFIG from "site.config"
+import Image from "next/image"
+import React from "react"
 
 type Props = {
   className?: string

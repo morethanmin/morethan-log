@@ -1,10 +1,10 @@
-import PostDetail from '@containers/PostDetail'
-import { getAllPosts, getPostBlocks } from '@libs/notion'
-import Layout from '@components/Layout'
-import CONFIG from '../../morethan-log.config'
-import { NextPageWithLayout } from './_app'
-import { TPost } from '../types'
-import CustomError from '../containers/CustomError'
+import PostDetail from "@containers/PostDetail"
+import { getAllPosts, getPostBlocks } from "@libs/notion"
+import Layout from "@components/Layout"
+import CONFIG from "../../site.config"
+import { NextPageWithLayout } from "./_app"
+import { TPost } from "../types"
+import CustomError from "../containers/CustomError"
 
 export async function getStaticPaths() {
   const posts = await getAllPosts({ includePages: true })
@@ -56,14 +56,14 @@ PostDetailPage.getLayout = function getlayout(page) {
       return {
         title: CONFIG.blog.title,
         description: CONFIG.blog.description,
-        type: 'website',
+        type: "website",
         url: CONFIG.link,
       }
     }
     return {
       title: page.props.post.title || CONFIG.blog.title,
       date: new Date(
-        page.props.post.date?.start_date || page.props.post.createdTime || ''
+        page.props.post.date?.start_date || page.props.post.createdTime || ""
       ).toISOString(),
       image: getImage(),
       description: page.props.post.summary,

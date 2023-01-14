@@ -1,10 +1,10 @@
-import CONFIG from 'morethan-log.config'
-import { NotionAPI } from 'notion-client'
-import { idToUuid } from 'notion-utils'
-import getAllPageIds from './getAllPageIds'
-import getPageProperties from './getPageProperties'
-import filterPublishedPosts from './filterPublishedPosts'
-import { TPosts } from '@/src/types'
+import CONFIG from "site.config"
+import { NotionAPI } from "notion-client"
+import { idToUuid } from "notion-utils"
+import getAllPageIds from "./getAllPageIds"
+import getPageProperties from "./getPageProperties"
+import filterPublishedPosts from "./filterPublishedPosts"
+import { TPosts } from "@/src/types"
 
 /**
  * @param {{ includePages: boolean }} - false: posts only / true: include pages
@@ -23,8 +23,8 @@ export async function getAllPosts({ includePages = false }) {
 
   // Check Type
   if (
-    rawMetadata?.type !== 'collection_view_page' &&
-    rawMetadata?.type !== 'collection_view'
+    rawMetadata?.type !== "collection_view_page" &&
+    rawMetadata?.type !== "collection_view"
   ) {
     return []
   } else {

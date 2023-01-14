@@ -1,10 +1,10 @@
-import { TPost } from '@/src/types'
-import CONFIG from 'morethan-log.config'
-import dynamic from 'next/dynamic'
+import { TPost } from "@/src/types"
+import CONFIG from "site.config"
+import dynamic from "next/dynamic"
 
 const UtterancesComponent = dynamic(
   () => {
-    return import('@components/Utterances')
+    return import("@components/Utterances")
   },
   { ssr: false }
 )

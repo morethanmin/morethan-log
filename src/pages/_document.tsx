@@ -1,6 +1,6 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document'
-import CONFIG from 'morethan-log.config'
-import CJK from '@libs/cjk'
+import Document, { Html, Head, Main, NextScript } from "next/document"
+import CONFIG from "site.config"
+import CJK from "@libs/cjk"
 
 class MyDocument extends Document {
   render() {
@@ -24,7 +24,7 @@ class MyDocument extends Document {
               crossOrigin="anonymous"
             />
           </>
-          {['zh', 'ja', 'ko'].includes(
+          {["zh", "ja", "ko"].includes(
             CONFIG.lang.slice(0, 2).toLocaleLowerCase()
           ) && (
             <>
@@ -63,7 +63,7 @@ class MyDocument extends Document {
             href="/feed"
           ></link>
           {/* theme setting */}
-          <meta name="theme-color" content={'#f1f3f5'} />
+          <meta name="theme-color" content={"#f1f3f5"} />
 
           {/* google search console */}
           {CONFIG.googleSearchConsole.enable === true && (
