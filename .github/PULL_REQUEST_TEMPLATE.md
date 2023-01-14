@@ -21,5 +21,5 @@ https://github.com/morethanmin/morethan-log/issues/XX
 
 ## PR Checklist
 
-- [ ] I have read the [Contributing Guide](https://github.com/morethanmin/morethan-log/blob/main/.github/CONTRIBUTING.md)
+- [ ] I have read the [Contributing Guide](https://github.com/morethanmin/morethan-log/blob/main/.github/docs/CONTRIBUTING.md)
 - [ ] I have written documents and tests, if needed.
