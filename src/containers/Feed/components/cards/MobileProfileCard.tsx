@@ -1,10 +1,10 @@
-import CONFIG from 'morethan-log.config'
+import CONFIG from "notes.config";
 import Image from 'next/image'
 import React from 'react'
 
 type Props = {
-  className?: string
-}
+  className?: string;
+};
 
 const MobileProfileCard: React.FC<Props> = () => {
   return (
@@ -73,7 +73,7 @@ const MobileProfileCard: React.FC<Props> = () => {
         </div> */}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default MobileProfileCard
+export default MobileProfileCard;

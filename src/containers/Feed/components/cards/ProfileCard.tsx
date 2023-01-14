@@ -1,10 +1,10 @@
-import CONFIG from 'morethan-log.config'
+import CONFIG from "notes.config";
 import Image from 'next/image'
 import React from 'react'
 
 type Props = {
-  className?: string
-}
+  className?: string;
+};
 
 const ProfileCard: React.FC<Props> = ({ className }) => {
   return (
@@ -23,7 +23,7 @@ const ProfileCard: React.FC<Props> = ({ className }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ProfileCard
+export default ProfileCard;

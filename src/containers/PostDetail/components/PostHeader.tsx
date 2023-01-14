@@ -1,4 +1,4 @@
-import CONFIG from '@/morethan-log.config'
+import CONFIG from "@/notes.config";
 import Tag from '@components/Tag'
 import { TPost } from '@/src/types'
 import { formatDate } from '@/src/libs/utils'
@@ -6,8 +6,8 @@ import Image from 'next/image'
 import React from 'react'
 
 type Props = {
-  data: TPost
-}
+  data: TPost;
+};
 
 const PostHeader: React.FC<Props> = ({ data }) => {
   return (
@@ -62,7 +62,7 @@ const PostHeader: React.FC<Props> = ({ data }) => {
         </nav>
       )}
     </>
-  )
-}
+  );
+};
 
-export default PostHeader
+export default PostHeader;

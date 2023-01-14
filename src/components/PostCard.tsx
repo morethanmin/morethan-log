@@ -1,13 +1,13 @@
 import Link from 'next/link'
-import CONFIG from 'morethan-log.config'
+import CONFIG from "notes.config";
 import { formatDate } from '@/src/libs/utils'
 import Tag from './Tag'
 import { TPost } from '../types'
 import Image from 'next/image'
 
 type Props = {
-  post: TPost
-}
+  post: TPost;
+};
 
 const PostCard: React.FC<Props> = ({ post }) => {
   if (post.thumbnail) {
@@ -76,7 +76,7 @@ const PostCard: React.FC<Props> = ({ post }) => {
         </article>
       </a>
     </Link>
-  )
-}
+  );
+};
 
-export default PostCard
+export default PostCard;

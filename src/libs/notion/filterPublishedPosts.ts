@@ -1,8 +1,8 @@
-// import CONFIG from 'morethan-log.config'
-const current = new Date()
-const tomorrow = new Date(current)
-tomorrow.setDate(tomorrow.getDate() + 1)
-tomorrow.setHours(0, 0, 0, 0)
+// import CONFIG from 'notes.config'
+const current = new Date();
+const tomorrow = new Date(current);
+tomorrow.setDate(tomorrow.getDate() + 1);
+tomorrow.setHours(0, 0, 0, 0);
 
 export default function filterPublishedPosts({
   posts,
@@ -25,9 +25,9 @@ export default function filterPublishedPosts({
       return (
         post.title &&
         post.slug &&
-        post?.status?.[0] === 'Published' &&
+        post?.status?.[0] === "Published" &&
         postDate < tomorrow
-      )
-    })
-  return publishedPosts
+      );
+    });
+  return publishedPosts;
 }

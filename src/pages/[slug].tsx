@@ -1,17 +1,17 @@
 import PostDetail from '@containers/PostDetail'
 import { getAllPosts, getPostBlocks } from '@libs/notion'
 import Layout from '@components/Layout'
-import CONFIG from '../../morethan-log.config'
+import CONFIG from "../../notes.config";
 import { NextPageWithLayout } from './_app'
 import { TPost } from '../types'
 import CustomError from '../containers/CustomError'
 
 export async function getStaticPaths() {
-  const posts = await getAllPosts({ includePages: true })
+  const posts = await getAllPosts({ includePages: true });
   return {
     paths: posts.map((row) => `/${row.slug}`),
     fallback: true,
-  }
+  };
 }
 
 export async function getStaticProps({ params: { slug } }: any) {
@@ -23,7 +23,7 @@ export async function getStaticProps({ params: { slug } }: any) {
     return {
       props: { post, blockMap },
       revalidate: 1,
-    }
+    };
   } catch (error) {
     return {
       props: {},
@@ -33,9 +33,9 @@ export async function getStaticProps({ params: { slug } }: any) {
 }
 
 type Props = {
-  post: TPost
-  blockMap: any
-}
+  post: TPost;
+  blockMap: any;
+};
 
 const PostDetailPage: NextPageWithLayout<Props> = ({ post, blockMap }) => {
   if (!post) return <CustomError />
@@ -75,7 +75,7 @@ PostDetailPage.getLayout = function getlayout(page) {
     <Layout metaConfig={getMetaConfig()} fullWidth={page.props.post?.fullWidth}>
       {page}
     </Layout>
-  )
-}
+  );
+};
 
-export default PostDetailPage
+export default PostDetailPage;

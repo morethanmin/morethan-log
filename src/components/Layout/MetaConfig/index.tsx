@@ -1,19 +1,19 @@
-import CONFIG from 'morethan-log.config'
-import Head from 'next/head'
+import CONFIG from "notes.config";
+import Head from "next/head";
 
 export type MetaConfigProps = {
-  title: string
-  description: string
-  type: 'Website' | 'Post' | 'Page' | string
-  date?: string
-  image?: string
-  url: string
-}
+  title: string;
+  description: string;
+  type: "Website" | "Post" | "Page" | string;
+  date?: string;
+  image?: string;
+  url: string;
+};
 
 const MetaConfig: React.FC<MetaConfigProps> = ({ ...props }) => {
   const meta = {
     ...props,
-  }
+  };
 
   return (
     <Head>
@@ -21,7 +21,7 @@ const MetaConfig: React.FC<MetaConfigProps> = ({ ...props }) => {
       <meta name="robots" content="follow, index" />
       <meta charSet="UTF-8" />
       {CONFIG.seo.keywords && (
-        <meta name="keywords" content={CONFIG.seo.keywords.join(', ')} />
+        <meta name="keywords" content={CONFIG.seo.keywords.join(", ")} />
       )}
       <meta name="description" content={meta.description} />
       {/* og */}
@@ -30,21 +30,35 @@ const MetaConfig: React.FC<MetaConfigProps> = ({ ...props }) => {
       <meta property="og:description" content={meta.description} />
       <meta property="og:url" content={meta.url} />
       {CONFIG.lang && <meta property="og:locale" content={CONFIG.lang} />}
-      {meta.image && <meta property="og:image" content={meta.image} />}
+      {CONFIG.ogImageGenerateURL && (
+        <meta
+          property="og:image"
+          content={`${CONFIG.ogImageGenerateURL}/${encodeURIComponent(
+            meta.title
+          )}.png?theme=dark&md=1&fontSize=125px&images=https%3A%2F%2Fnotes-kvaishak.vercel.app%2Flogo.png`}
+        />
+      )}
       {/* twitter */}
       <meta name="twitter:title" content={meta.title} />
       <meta name="twitter:description" content={meta.description} />
       <meta name="twitter:card" content="summary_large_image" />
-      {meta.image && <meta name="twitter:image" content={meta.image} />}
+      {CONFIG.ogImageGenerateURL && (
+        <meta
+          name="twitter:image"
+          content={`${CONFIG.ogImageGenerateURL}/${encodeURIComponent(
+            meta.title
+          )}.png?theme=dark&md=1&fontSize=125px&images=https%3A%2F%2Fnotes-kvaishak.vercel.app%2Flogo.png`}
+        />
+      )}
       {/* post */}
-      {meta.type === 'Post' && (
+      {meta.type === "Post" && (
         <>
           <meta property="article:published_time" content={meta.date} />
           <meta property="article:author" content={CONFIG.profile.name} />
         </>
       )}
     </Head>
-  )
-}
+  );
+};
 
-export default MetaConfig
+export default MetaConfig;

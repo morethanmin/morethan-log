@@ -1,4 +1,4 @@
-import CONFIG from 'morethan-log.config'
+import CONFIG from 'notes.config'
 import { useEffect } from 'react'
 
 //TODO: useRef?
@@ -9,7 +9,7 @@ type Props = {
 
 const Utterances: React.FC<Props> = ({ issueTerm }) => {
   useEffect(() => {
-    const theme = 'github-light'
+    const theme = "github-light";
     // 'github-dark'
     const script = document.createElement('script')
     const anchor = document.getElementById('comments')
@@ -26,16 +26,16 @@ const Utterances: React.FC<Props> = ({ issueTerm }) => {
     })
     anchor.appendChild(script)
     return () => {
-      anchor.innerHTML = ''
-    }
-  })
+      anchor.innerHTML = "";
+    };
+  });
   return (
     <>
       <div id="comments" className="md:-ml-16">
         <div className="utterances-frame"></div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Utterances
+export default Utterances;
