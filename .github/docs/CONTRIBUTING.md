@@ -9,21 +9,21 @@ To set up a development environment, please follow these steps:
 
 1. Clone your repo
 
-```sh
-git clone [YOUR_REPOSITORY_URL]
-```
+   ```sh
+   git clone [YOUR_REPOSITORY_URL]
+   ```
 
 2. Install all the packages.
 
-```sh
+   ```sh
    yarn add
-```
+   ```
 
 3. Start the development Server.
 
-```sh
+   ```sh
    yarn dev
-```
+   ```
 
 ### Commit message rules
 
@@ -31,7 +31,7 @@ Consider following the below format for the commit message:
 
 Commit Type : `feat|fix|perf|refactor|test|ci|docs|build|chore`
 
-** Examples **
+**Examples**
 
 - feat: when create new feature.
 - style: when styling a this application.
@@ -58,4 +58,4 @@ Please try to create bug reports that are:
 4. Commit your changes (`git commit -m 'feat: add amazing_feature'`). Please follow the specification mentioned above for your commit messages.
 5. Push to the branch (`git push origin feat/amazing_feature`).
 6. [Open a Pull Request](https://github.com/morethanmin/morethan-log/compare?expand=1).
-7. Make sure to fill in the required details in the Pull Request template to make it easier for the reviewers.
+7. Make sure to fill in the all the details in the Pull Request to make it easier for the reviewers.
