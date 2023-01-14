@@ -52,6 +52,7 @@ async function getPageProperties(
         }
         case 'person': {
           const rawUsers = val.flat()
+
           const users = []
           for (let i = 0; i < rawUsers.length; i++) {
             if (rawUsers[i][0][1]) {
@@ -61,9 +62,11 @@ async function getPageProperties(
                 res?.recordMapWithRoles?.notion_user?.[userId[1]]?.value
               const user = {
                 id: resValue?.id,
-                first_name: resValue?.given_name,
-                last_name: resValue?.family_name,
-                profile_photo: resValue?.profile_photo,
+                name:
+                  resValue?.name ||
+                  `${resValue?.family_name}${resValue?.given_name}` ||
+                  undefined,
+                profile_photo: resValue?.profile_photo || null,
               }
               users.push(user)
             }

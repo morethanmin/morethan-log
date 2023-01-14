@@ -4,25 +4,25 @@ import {
   Code,
   Collection,
   CollectionRow,
-} from 'react-notion-x'
-import CommentBox from '@containers/PostDetail/components/CommentBox'
-import Footer from './components/PostFooter'
-import PostHeader from './components/PostHeader'
-import { TPost } from '@/src/types'
+} from "react-notion-x";
+import CommentBox from "@containers/PostDetail/components/CommentBox";
+import Footer from "./components/PostFooter";
+import PostHeader from "./components/PostHeader";
+import { TPost } from "@/src/types";
 
 const mapPageUrl = (id: string) => {
-  return 'https://www.notion.so/' + id.replace(/-/g, '')
-}
+  return "https://www.notion.so/" + id.replace(/-/g, "");
+};
 
 type Props = {
-  blockMap: any
-  data: TPost
-}
+  blockMap: any;
+  data: TPost;
+};
 
 const PostDetail: React.FC<Props> = ({ blockMap, data }) => {
   return (
     <div
-      className={`m-auto max-w-4xl bg-white dark:bg-zinc-700 rounded-3xl py-12 px-6 shadow-md`}
+      className={`m-auto max-w-4xl bg-white dark:bg-zinc-700 rounded-3xl py-12 px-6 mb-8 shadow-md`}
     >
       <article className="m-auto max-w-2xl">
         <PostHeader data={data} />
@@ -40,7 +40,7 @@ const PostDetail: React.FC<Props> = ({ blockMap, data }) => {
             />
           </div>
         )}
-        {data.type[0] !== 'Page' && (
+        {data.type[0] !== "Page" && (
           <>
             <Footer />
             <CommentBox data={data} />
@@ -48,7 +48,7 @@ const PostDetail: React.FC<Props> = ({ blockMap, data }) => {
         )}
       </article>
     </div>
-  )
-}
+  );
+};
 
-export default PostDetail
+export default PostDetail;
