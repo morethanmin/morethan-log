@@ -1,6 +1,6 @@
-import CONFIG from '@/morethan-log.config'
-import Link from 'next/link'
-import React from 'react'
+import CONFIG from "@/site.config"
+import Link from "next/link"
+import React from "react"
 
 const d = new Date()
 const y = d.getFullYear()
@@ -14,7 +14,7 @@ const Footer: React.FC<Props> = ({ className }) => {
   return (
     <div className={className}>
       <a
-        href={'https://github.com/morethanmin/morethan-log'}
+        href={"https://github.com/morethanmin/morethan-log"}
         target="_blank"
         className="text-gray-500 text-sm mt-3"
         rel="noreferrer"

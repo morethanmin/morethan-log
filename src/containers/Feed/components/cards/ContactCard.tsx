@@ -1,11 +1,11 @@
-import CONFIG from 'morethan-log.config'
-import React from 'react'
+import CONFIG from "site.config"
+import React from "react"
 import {
   AiOutlineInstagram,
   AiOutlineGithub,
   AiOutlineMail,
   AiFillLinkedin,
-} from 'react-icons/ai'
+} from "react-icons/ai"
 
 const ContactCard: React.FC = () => {
   return (

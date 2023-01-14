@@ -1,9 +1,8 @@
-import Layout from '@components/Layout'
-import Feed from '@containers/Feed'
-import CONFIG from '../../morethan-log.config'
-import { NextPageWithLayout } from './_app'
-import { TPosts, TTags } from '../types'
-import CustomError from '../containers/CustomError'
+import Layout from "@components/Layout"
+import CONFIG from "../../site.config"
+import { NextPageWithLayout } from "./_app"
+import { TPosts, TTags } from "../types"
+import CustomError from "../containers/CustomError"
 
 type Props = {
   tags: TTags
@@ -20,7 +19,7 @@ NotFoundPage.getLayout = function getlayout(page) {
       metaConfig={{
         title: CONFIG.blog.title,
         description: CONFIG.blog.description,
-        type: 'website',
+        type: "website",
         url: CONFIG.link,
       }}
     >
