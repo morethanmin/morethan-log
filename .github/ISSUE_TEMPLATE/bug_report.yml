@@ -27,19 +27,11 @@ body:
     validations:
       required: true
   - type: input
-    id: version
+    id: browser
     attributes:
-      label: Version
-      description: What version of massCode are you running?
-      placeholder: e.g. 2.0.0, 2.1.0-beta.6
-    validations:
-      required: true
-  - type: input
-    id: os
-    attributes:
-      label: OS
-      description: What version of OS are you using?
-      placeholder: e.g. macOS Monterey 12.1, Windows 10
+      label: Browser
+      description: What Browser are you using and on Which OS?
+      placeholder: e.g. Google Chrome v109, Windows 10
     validations:
       required: true
   - type: checkboxes
@@ -48,9 +40,7 @@ body:
       label: Validations
       description: Before submitting the issue, please make sure you do the following
       options:
-        - label: Follow our [Code of Conduct](https://github.com/massCodeIO/massCode/blob/master/CODE_OF_CONDUCT.md)
+        - label: Follow our [Code of Conduct](https://github.com/morethanmin/morethan-log/blob/main/.github/CODE_OF_CONDUCT.md)
           required: true
-        - label: Check that there isn't [already an issue](https://github.com/massCodeIO/massCode/issues) that reports the same bug to avoid creating a duplicate.
-          required: true
-        - label: Check that this is a concrete bug. For Q&A open a [GitHub Discussion](https://github.com/massCodeIO/massCode/discussions).
+        - label: Check that there isn't [already an issue](https://github.com/morethanmin/morethan-log/issues) that reports the same bug to avoid creating a duplicate.
           required: true
