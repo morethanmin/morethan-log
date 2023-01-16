@@ -14,7 +14,7 @@
 }
 
 .notion-toggle{
-  @apply w-full !important;
+  @apply w-full;
 }
 
 .notion-list li {
