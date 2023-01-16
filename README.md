@@ -40,7 +40,7 @@ Static Blog and Resume using Notion and Next.js, deployed on Vercel.
 
 ## Contributing
 
-Check out the contributing readme here [Contributing Guide](./github/docs/CONTRIBUTING.md)
+Check out the contributing readme here [Contributing Guide](.github/CONTRIBUTING.md)
 
 ## License
 
