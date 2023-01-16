@@ -14,7 +14,7 @@ const Footer: React.FC<Props> = ({ className }) => {
   return (
     <div className={className}>
       <a
-        href={"https://github.com/morethanmin/morethan-log"}
+        href={`https://github.com/${CONFIG.profile.github}`}
         target="_blank"
         className="text-gray-500 text-sm mt-3"
         rel="noreferrer"
