@@ -1,5 +1,5 @@
 name: "\U0001F41E Bug report"
-description: Report an issue with massCode
+description: Report an issue.
 title: "[Bug]: "
 labels: [pending triage]
 body:

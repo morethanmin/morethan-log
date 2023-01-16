@@ -48,6 +48,8 @@ Please try to create bug reports that are:
 - _Unique._ Do not duplicate existing opened issues.
 - _Scoped to a Single Bug._ One bug per report.
 
+If you have any great ideas of Feature Request, please avoid adding it to the Issues section in Github and instead [start a new Discussion on Github](https://github.com/morethanmin/morethan-log/discussions/categories/ideas). This allows the maintainers and the member a common place to discuss about the Request. Make sure to check if your request or idea has already been discussed or closed to avoid duplication.
+
 **Even better: Submit a pull request with a fix or new feature!**
 
 ### How to submit a Pull Request
@@ -58,4 +60,4 @@ Please try to create bug reports that are:
 4. Commit your changes (`git commit -m 'feat: add amazing_feature'`). Please follow the specification mentioned above for your commit messages.
 5. Push to the branch (`git push origin feat/amazing_feature`).
 6. [Open a Pull Request](https://github.com/morethanmin/morethan-log/compare?expand=1).
-7. Make sure to fill in the all the details in the Pull Request to make it easier for the reviewers.
+7. Make sure to fill in the all the details in the Pull Request to make it easier for the reviewers. Make sure to refer to any discussion or Issues that your PR is fixing.
