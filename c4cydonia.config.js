@@ -3,7 +3,7 @@ const CONFIG = {
   profile: {
     name: 'c4cydonia',
     image: '/avatar.svg',  // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
-    discription: 'frontend developer',
+    discription: 'Software engineer',
     linkedin: 'gustavo-leyva-b9493846',
     email: 'ovatleyva@gmail.com',
     github: 'gusleyva',
@@ -18,7 +18,7 @@ const CONFIG = {
   // blog setting
   blog: {
     title: 'c4cydonia',
-    description: 'welcome to c4cydonia',
+    description: 'Welcome to c4cydonia',
     theme: 'auto' // ['light', 'dark', 'auto']
   },
 
@@ -29,7 +29,7 @@ const CONFIG = {
   postsPerPage: 10,
   ogImageGenerateURL: 'https://og-image-korean.vercel.app', // The link to generate OG image, don't end with a slash
   seo: {
-    keywords: ['Blog', 'Website', 'Notion'],
+    keywords: ['Blog', 'Website', 'Notion','Java', 'java', 'Software', 'Engineer', 'Development', 'Programming'],
   },
 
   // notion configuration
