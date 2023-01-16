@@ -36,7 +36,11 @@ Static Blog and Resume using Notion and Next.js, deployed on Vercel.
 3. Customize `site.config.js`
 4. Deploy on Vercel, set following environment variables
    - NOTION_PAGE_ID (Required): The ID of the Notion page you previously shared to the web, usually has 32 digits after your workspace address. (ex. quasar-season-ed5.notion.site/`[NOTION_PAGE_ID]`?v=[VERSION_ID])
-   - <img width="465" alt="image" src="https://user-images.githubusercontent.com/72514247/206605805-c2552dc7-cb7b-414e-adbd-3bccdf0d47e8.png">
+     <img width="465" alt="image" src="https://user-images.githubusercontent.com/72514247/206605805-c2552dc7-cb7b-414e-adbd-3bccdf0d47e8.png">
+
+## Contributing
+
+Check out the contributing readme here [Contributing Guide](./github/docs/CONTRIBUTING.md)
 
 ## License
 
