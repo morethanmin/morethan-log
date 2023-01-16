@@ -1,63 +1,64 @@
 const CONFIG = {
-  // profile setting (required)
+  // profile setting
   profile: {
-    name: 'morethanmin',
-    image: '/avatar.svg',  // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
-    role: 'frontend developer',
-    bio: 'I develop everything using node.',
-    email: 'morethanmin.dev@gmail.com',
-    linkedin: 'morethanmin',
-    github: 'morethanmin',
-    instagram: '',
+    name: "Vaishak Kaippanchery",
+    image: "/profile.png",
+    role: "Senior Software Engineer",
+    bio: "Working at Fintech in Berlin, Prev worked on building collaborative design tool @Zoho",
+    linkedin: "kvaishak",
+    email: "hi.kvaishak@gmail.com",
+    github: "kvaishak",
+    instagram: "",
   },
   projects: [
     {
-      name: `morethanmin's blog`,
-      href: 'https://morethanmin.com'
-    }
+      name: "kvaishak.com",
+      href: "https://kvaishak.com/",
+    },
   ],
-  // blog setting (required)
+  // blog setting
   blog: {
-    title: 'morethan-log',
-    description: 'welcome to morethan-log!',
-    theme: 'light' // ['light', 'dark', 'auto']
+    title: "Notes",
+    description: "welcome to my Notes!",
+    theme: "auto", // ['light', 'dark', 'auto']
   },
 
-  // CONFIG configration (required)
-  link: 'https://morethan-log.vercel.app',
+  // CONFIG configration
+  link: "https://notes-kvaishak.vercel.app",
   since: 2022, // If leave this empty, current year will be used.
-  lang: 'en-US', // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES', 'ko-KR']
-  ogImageGenerateURL: 'https://og-image-korean.vercel.app', // The link to generate OG image, don't end with a slash
+  lang: "en-US", // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES', 'ko-KR']
+  postsPerPage: 10,
+  ogImageGenerateURL: "https://og-image.vercel.app", // The link to generate OG image, don't end with a slash
   seo: {
-    keywords: ['Blog', 'Website', 'Notion'],
+    keywords: ["Blog", "Website", "Notion"],
   },
 
-  // notion configuration (required)
+  // notion configuration
   notionConfig: {
     pageId: process.env.NOTION_PAGE_ID,
   },
 
-  // plugin configuration (optional)
+  // plugin configuration
   googleAnalytics: {
     enable: false,
     config: {
-      measurementId: process.env.GOOGLE_MEASUREMENT_ID || ''
-    }
+      measurementId: process.env.GOOGLE_MEASUREMENT_ID || "",
+    },
   },
   googleSearchConsole: {
     enable: false,
     config: {
-      siteVerification: process.env.GOOGLE_SITE_VERIFICATION || ''
-    }
+      siteVerification: process.env.GOOGLE_SITE_VERIFICATION || "",
+    },
   },
   utterances: {
-    enable: true,
+    enable: false,
     config: {
-      repo: 'morethanmin/morethan-log',
-      'issue-term': 'og:title',
-      label: '💬 Utterances',
-    }
+      repo: "kvaishak/notes",
+      "issue-term": "og:title",
+      label: "💬 Utterances",
+    },
   },
-  isProd: process.env.VERCEL_ENV === 'production' // distinguish between development and production environment (ref: https://vercel.com/docs/environment-variables#system-environment-variables)
+  isProd: process.env.VERCEL_ENV === "production", // distinguish between development and production environment (ref: https://vercel.com/docs/environment-variables#system-environment-variables)
 }
 module.exports = CONFIG

@@ -1,7 +1,7 @@
-import { NotionAPI } from 'notion-client'
+import { NotionAPI } from "notion-client";
 
 export async function getPostBlocks(id: string) {
-  const api = new NotionAPI()
-  const pageBlock = await api.getPage(id)
-  return pageBlock
+  const api = new NotionAPI();
+  const pageBlock = await api.getPage(id);
+  return pageBlock;
 }
