@@ -13,6 +13,10 @@
   @apply my-1;
 }
 
+.notion-toggle{
+  @apply w-full;
+}
+
 .notion-list li {
   @apply py-0;
 }
