@@ -45,6 +45,10 @@ Next.js static blog using Notion as a Content Management System (CMS). Supports 
 
 Check out the [Contributing Guide](.github/CONTRIBUTING.md).
 
+## Support
+
+morethan-log is an MIT-licensed open source project. It can grow thanks to the sponsors and support from the amazing backers.
+
 ## License
 
 The MIT License.

@@ -16,7 +16,7 @@ const Layout: React.FC<Props> = ({
   return (
     <div>
       <MetaConfig {...metaConfig} />
-      <div className={`wrapper font-sans`}>
+      <div className={`wrapper`}>
         {metaConfig.type !== "Paper" && <Header fullWidth={fullWidth} />}
         <main
           className={`m-auto flex-grow w-full transition-all max-w-6xl px-4 ${
