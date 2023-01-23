@@ -1,5 +1,5 @@
 import PostDetail from "@containers/PostDetail"
-import { getAllPosts, getPostBlocks } from "@libs/notion"
+import { getPosts, getPostBlocks, filterPosts } from "@libs/notion"
 import Layout from "@components/Layout"
 import CONFIG from "../../site.config"
 import { NextPageWithLayout } from "./_app"
@@ -7,16 +7,21 @@ import { TPost } from "../types"
 import CustomError from "../containers/CustomError"
 
 export async function getStaticPaths() {
-  const posts = await getAllPosts({ includePages: true })
+  const posts = await getPosts()
+  const filteredPost = filterPosts(posts, {
+    acceptStatus: ["Public", "PublicOnDetail"],
+  })
+
   return {
-    paths: posts.map((row) => `/${row.slug}`),
+    paths: filteredPost.map((row) => `/${row.slug}`),
     fallback: true,
   }
 }
 
 export async function getStaticProps({ params: { slug } }: any) {
   try {
-    const posts = await getAllPosts({ includePages: true })
+    //includePages: true
+    const posts = await getPosts()
     const post = posts.find((t) => t.slug === slug)
     const blockMap = await getPostBlocks(post?.id!)
 

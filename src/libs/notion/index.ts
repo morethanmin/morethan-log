@@ -1,3 +1,4 @@
-export { getAllPosts } from './getAllPosts'
-export { getAllTagsFromPosts } from './getAllTagsFromPosts'
-export { getPostBlocks } from './getPostBlocks'
+export { getPosts } from "./getPosts"
+export { getAllTagsFromPosts } from "./getAllTagsFromPosts"
+export { getPostBlocks } from "./getPostBlocks"
+export { filterPosts } from "./filterPosts"
