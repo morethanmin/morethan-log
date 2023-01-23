@@ -1,4 +1,4 @@
-import { getAllPosts, getAllTagsFromPosts } from "@libs/notion"
+import { getPosts, getAllTagsFromPosts, filterPosts } from "@libs/notion"
 import Layout from "@components/Layout"
 import Feed from "@containers/Feed"
 import CONFIG from "../../site.config"
@@ -7,16 +7,16 @@ import { TPosts, TTags } from "../types"
 
 export async function getStaticProps() {
   try {
-    const posts = await getAllPosts({ includePages: false })
-
-    const tags = getAllTagsFromPosts(posts)
+    const posts = await getPosts()
+    const filteredPost = filterPosts(posts)
+    const tags = getAllTagsFromPosts(filteredPost)
     return {
       props: {
         tags: {
-          All: posts.length,
+          All: filteredPost.length,
           ...tags,
         },
-        posts,
+        posts: filteredPost,
       },
       revalidate: 1,
     }
