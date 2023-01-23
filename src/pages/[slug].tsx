@@ -1,4 +1,4 @@
-import PostDetail from "@containers/PostDetail"
+import Detail from "@/src/containers/Detail"
 import { getPosts, getPostBlocks, filterPosts } from "@libs/notion"
 import Layout from "@components/Layout"
 import CONFIG from "../../site.config"
@@ -10,6 +10,7 @@ export async function getStaticPaths() {
   const posts = await getPosts()
   const filteredPost = filterPosts(posts, {
     acceptStatus: ["Public", "PublicOnDetail"],
+    acceptType: ["Paper", "Post", "Page"],
   })
 
   return {
@@ -42,12 +43,12 @@ type Props = {
   blockMap: any
 }
 
-const PostDetailPage: NextPageWithLayout<Props> = ({ post, blockMap }) => {
+const DetailPage: NextPageWithLayout<Props> = ({ post, blockMap }) => {
   if (!post) return <CustomError />
-  return <PostDetail blockMap={blockMap} data={post} />
+  return <Detail blockMap={blockMap} data={post} />
 }
 
-PostDetailPage.getLayout = function getlayout(page) {
+DetailPage.getLayout = function getlayout(page) {
   const getImage = () => {
     if (page.props?.post.thumbnail) return page.props?.post.thumbnail
     if (CONFIG.ogImageGenerateURL)
@@ -83,4 +84,4 @@ PostDetailPage.getLayout = function getlayout(page) {
   )
 }
 
-export default PostDetailPage
+export default DetailPage

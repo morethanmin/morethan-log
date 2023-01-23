@@ -1,5 +1,5 @@
 export type TPostStstus = "Private" | "Public" | "PublicOnDetail"
-export type TPostType = "Post" | "Page"
+export type TPostType = "Post" | "Paper" | "Page"
 
 export type TPost = {
   id: string
