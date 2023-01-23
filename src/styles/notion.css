@@ -1,6 +1,7 @@
 /* NOTION CSS OVERRIDE */
 
 .notion {
+  font-family: Pretendard, Roboto, sans-serif;
   @apply text-gray-600 dark:text-gray-300;
   overflow-wrap: break-word;
 }
@@ -13,7 +14,7 @@
   @apply my-1;
 }
 
-.notion-toggle{
+.notion-toggle {
   @apply w-full;
 }
 
@@ -51,7 +52,7 @@ svg + .notion-page-title-text {
   @apply text-gray-900;
 }
 
-pre[class*='language-'] {
+pre[class*="language-"] {
   line-height: inherit;
 }
 

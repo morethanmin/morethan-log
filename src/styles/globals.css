@@ -1,43 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@font-face {
-  font-family: 'IBM Plex Sans';
-  font-weight: 100 900;
-  font-display: swap;
-  font-style: normal;
-  font-named-instance: 'Regular';
-  src: url('/fonts/IBMPlexSansVar-Roman.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'IBM Plex Sans';
-  font-weight: 100 900;
-  font-display: swap;
-  font-style: italic;
-  font-named-instance: 'Italic';
-  src: url('/fonts/IBMPlexSansVar-Italic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Source Serif';
-  font-weight: 100 900;
-  font-display: swap;
-  font-style: normal;
-  font-named-instance: 'Regular';
-  src: url('/fonts/SourceSerif.var.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Source Serif';
-  font-weight: 100 900;
-  font-display: swap;
-  font-style: italic;
-  font-named-instance: 'Italic';
-  src: url('/fonts/SourceSerif-Italic.var.woff2') format('woff2');
-}
 
 html {
+  font-family: Pretendard, Roboto, sans-serif;
   --scrollbarBG: #ffffff00;
   --thumbBG: #b8b8b8;
 }
