@@ -69,7 +69,9 @@ const PostCard: React.FC<Props> = ({ post }) => {
             <div className="flex gap-2">
               {post.tags &&
                 post.tags.map((tag: string, idx: number) => (
-                  <Tag key={idx}>{tag}</Tag>
+                  <div key={idx} className="flex items-center gap-1">
+                    <Tag tag_id={idx}>{tag}</Tag>
+                  </div>
                 ))}
             </div>
           </div>
