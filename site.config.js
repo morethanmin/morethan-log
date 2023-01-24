@@ -1,10 +1,10 @@
 const CONFIG = {
   // profile setting (required)
   profile: {
-    name: 'morethanmin',
-    image: '/jhk0530.png', //avatar.svg,  // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
+    name: 'jhk0530',
+    image: '/jhk0530.png',
     role: 'Cat-Holic',
-    bio: 'I develop everything using node.',
+    bio: 'CRAN author, 글쓰기로 수익낸 작가, 데이터 했던 사람, 츄르짜개',
     email: 'hwanistic@gmail.com',
     linkedin: 'jinhwan-kim',
     github: 'jhk0530',
