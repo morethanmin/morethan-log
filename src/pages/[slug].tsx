@@ -6,8 +6,8 @@ import { NextPageWithLayout } from "./_app"
 import { TPost } from "../types"
 import CustomError from "../containers/CustomError"
 
-export async function getStaticPaths() {
-  const posts = await getPosts()
+export async function getStaticPaths({ locales }: { locales: string[]}) {
+  const posts = await getPosts(locales[0])
   const filteredPost = filterPosts(posts, {
     acceptStatus: ["Public", "PublicOnDetail"],
     acceptType: ["Paper", "Post", "Page"],
@@ -19,10 +19,10 @@ export async function getStaticPaths() {
   }
 }
 
-export async function getStaticProps({ params: { slug } }: any) {
+export async function getStaticProps({ params: { slug }, locale }: any) {
   try {
     //includePages: true
-    const posts = await getPosts()
+    const posts = await getPosts(locale)
     const post = posts.find((t) => t.slug === slug)
     const blockMap = await getPostBlocks(post?.id!)
 

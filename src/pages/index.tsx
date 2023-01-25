@@ -4,10 +4,11 @@ import Feed from "@containers/Feed"
 import CONFIG from "../../site.config"
 import { NextPageWithLayout } from "./_app"
 import { TPosts, TTags } from "../types"
+import { injectIntl } from "react-intl"
 
-export async function getStaticProps() {
+export async function getStaticProps({ locale }: any) {
   try {
-    const posts = await getPosts()
+    const posts = await getPosts(locale)
     const filteredPost = filterPosts(posts)
     const tags = getAllTagsFromPosts(filteredPost)
     return {

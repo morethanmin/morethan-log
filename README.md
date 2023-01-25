@@ -28,6 +28,11 @@ Next.js static blog using Notion as a Content Management System (CMS). Supports 
 - Your profile information can be updated through Config. (`site.config.js`)
 - Plugins support includes, Google Analytics, Search Console and also Commenting using Github Issues(Utterances).
 
+**🌎 Internationalization**
+- Supports multiple languages. (English, Arabic)
+- Can be easily extended to support more languages.
+
+
 ## Getting Started
 
 1. Star this repo.
@@ -37,9 +42,15 @@ Next.js static blog using Notion as a Content Management System (CMS). Supports 
 5. Clone your forked repo and then customize `site.config.js` based on your preference.
 6. Deploy on Vercel, with the following environment variables.
 
-   - `NOTION_PAGE_ID` (Required): The Notion page Id got from the Share to Web URL.
+   - `NOTION_PAGE_ID_{LANG}` (Required): The Notion page Id got from the Share to Web URL.
    - `GOOGLE_MEASUREMENT_ID` : For Google analytics Plugin.
    - `GOOGLE_SITE_VERIFICATION` : For Google search console Plugin.
+
+## Add a new language
+- Add a new language in `./src/locales` folder with the same structure as `en.json`.
+- Add a new language in `Next.config.js` with the same structure as `en`.
+- Dubplicate Notion template and share to web.
+- Add the new Notion page Id in `./src/locals/index.ts` with the same structure as `en` and chnage last part of the key to the new language code.
 
 ## Contributing
 
