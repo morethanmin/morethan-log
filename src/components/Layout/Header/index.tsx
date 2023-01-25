@@ -3,6 +3,7 @@ import CONFIG from "site.config"
 import NavBar from "./NavBar"
 import Logo from "./Logo"
 import ThemeToggle from "./ThemeToggle"
+import LocaleSwitcher from "./LocaleSwitcher"
 
 type Props = {
   fullWidth: boolean
@@ -23,6 +24,7 @@ const Header: React.FC<Props> = ({ fullWidth }) => {
       <div className={`flex gap-3 items-center`}>
         <ThemeToggle />
         <NavBar />
+        <LocaleSwitcher />
       </div>
     </div>
   )
