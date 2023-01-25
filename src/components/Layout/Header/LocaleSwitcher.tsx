@@ -25,13 +25,14 @@ const LocaleSwitcher: React.FC<Props> = () => {
   }
 
   const currentLocale = useRouter().locale
+  if (langs.length === 1 || langs.length === 0) return null
   return (
     <select
       className="bg-transparent border-none"
       onChange={handleSelect}
       defaultValue={currentLocale}
     >
-      {langs.map((lang) => (
+      {langs.map((lang: any) => (
         <option key={lang.code} value={lang.code}>
           {lang.name}
         </option>

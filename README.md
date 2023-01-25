@@ -29,9 +29,9 @@ Next.js static blog using Notion as a Content Management System (CMS). Supports 
 - Plugins support includes, Google Analytics, Search Console and also Commenting using Github Issues(Utterances).
 
 **🌎 Internationalization**
+
 - Supports multiple languages. (English, Arabic)
 - Can be easily extended to support more languages.
-
 
 ## Getting Started
 
@@ -47,10 +47,19 @@ Next.js static blog using Notion as a Content Management System (CMS). Supports 
    - `GOOGLE_SITE_VERIFICATION` : For Google search console Plugin.
 
 ## Add a new language
+
 - Add a new language in `./src/locales` folder with the same structure as `en.json`.
 - Add a new language in `Next.config.js` with the same structure as `en`.
 - Dubplicate Notion template and share to web.
 - Add the new Notion page Id in `./src/locals/index.ts` with the same structure as `en` and chnage last part of the key to the new language code.
+
+**Note:** if you dont set on `./src/locales/index.ts`->`NOTION_PAGE_ID_{LANG}` environment variable, it will use `NOTION_PAGE_ID` environment variable from `set.config.js`.
+
+### Disable Multi language
+- uncomment insaid array on file `./src/locales/index.ts` and set you default language on `next.config.js` file.
+- set `NOTION_PAGE_ID` environment variable from `set.config.js`.
+
+
 
 ## Contributing
 
