@@ -24,8 +24,9 @@ const ThemeToggle: React.FC<Props> = () => {
 
   if (CONFIG.blog.theme !== 'auto') return null
   return (
+    // {theme === 'dark' ? 'light' : 'dark'}
     <div className={`cursor-pointer dark:text-gray-50`} onClick={handleClick}>
-      {theme}
+      <img src={ theme === 'dark' ? 'icon-light.png' : 'icon-dark.png' } alt="Theme color" className="w-6 h-6" />
     </div>
   )
 }

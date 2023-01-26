@@ -75,7 +75,7 @@ const Feed: React.FC<Props> = ({ tags, posts }) => {
         <TagsMenu data={tags} />
       </div>
       {/* center */}
-      <div className="col-span-14 md:col-span-12  lg:col-span-9 ">
+      <div className="col-span-12 md:col-span-10  lg:col-span-7 ">
         {/* search */}
         <div className="p-1 mb-3 dark:text-white">🔎 Search</div>
         <input

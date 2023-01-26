@@ -3,6 +3,7 @@ const CONFIG = {
   profile: {
     name: 'c4cydonia',
     image: '/avatar.svg',  // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
+    image_light: '/avatar-left.svg',
     discription: 'Software engineer',
     linkedin: 'gustavo-leyva-b9493846',
     email: 'ovatleyva@gmail.com',
@@ -11,8 +12,8 @@ const CONFIG = {
   },
   projects: [
     {
-      name: 'Untilled',
-      href: 'https://untilled.web.app'
+      name: 'c4cydonia',
+      href: '#'
     }
   ],
   // blog setting
