@@ -4,7 +4,7 @@ import { idToUuid } from "notion-utils"
 import getAllPageIds from "./getAllPageIds"
 import getPageProperties from "./getPageProperties"
 import { TPosts } from "@/src/types"
-import lang from "@/src/locales"
+import {language} from "@/src/locales"
 
 /**
  * @param {{ includePages: boolean }} - false: posts only / true: include pages
@@ -12,11 +12,11 @@ import lang from "@/src/locales"
 
 export async function getPosts(local:string) {
   let id;
-  if (lang.length === 0) {
+  if (language.length === 0) {
     id = CONFIG.notionConfig.pageId as string
   }
   else {
-    id = lang.find((item:any) => item.code === local)?.NOTION_PAGE_ID as string
+    id = language.find((item:any) => item.code === local)?.NOTION_PAGE_ID as string
   }
   const api = new NotionAPI()
   const response = await api.getPage(id)

@@ -24,6 +24,7 @@ export async function getStaticProps({ params: { slug }, locale }: any) {
     //includePages: true
     const posts = await getPosts(locale)
     const post = posts.find((t) => t.slug === slug)
+    if (!post) return { redirect: { destination: "/", permanent: false } } // post not found redirect to home page support i18n, some times user change locale and post not found
     const blockMap = await getPostBlocks(post?.id!)
 
     return {

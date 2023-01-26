@@ -11,7 +11,7 @@ import { ReactElement, ReactNode } from "react"
 import { AppProps } from "next/app"
 import { useRouter } from "next/router"
 import { IntlProvider } from "react-intl"
-import langs from "../locales"
+import {language} from "@/src/locales"
 
 export type NextPageWithLayout<PageProps = {}> = NextPage<PageProps> & {
   getLayout?: (page: ReactElement) => ReactNode
@@ -24,7 +24,7 @@ type AppPropsWithLayout = AppProps & {
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout || ((page) => page)
   const { locale } = useRouter() as any
-  const mesg = langs.find((lang: any) => lang.code === locale)
+  const mesg = language.find((lang: any) => lang.code === locale)
   useThemeEffect()
   useGtagEffect()
 

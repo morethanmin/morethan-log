@@ -1,4 +1,4 @@
-export default [
+export const language = [
   {
     code: "en", // locale code
     iso: "en-US", // iso code
