@@ -45,12 +45,27 @@ Next.js static blog using Notion as a Content Management System (CMS). Supports 
 
 Check out the [Contributing Guide](.github/CONTRIBUTING.md).
 
+### Contributors
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
 ## Support
 
 morethan-log is an MIT-licensed open source project. It can grow thanks to the sponsors and support from the amazing backers.
 
+### Sponsors
+
+<p>
+<a href="https://github.com/siyeons"><img src="https://avatars.githubusercontent.com/u/35549653?v=4" width="50px" alt="siyeons" /></a>&nbsp;&nbsp;
+</p>
+
 ## License
 
-The MIT License.
-
-> This projects is based on [nobelium](https://github.com/craigary/nobelium).
+The [MIT License](LICENSE).
