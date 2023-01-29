@@ -65,12 +65,22 @@ Next.js static blog using Notion as a Content Management System (CMS). Supports 
 
 Check out the [Contributing Guide](.github/CONTRIBUTING.md).
 
+### Contributors
+
+<p>
+<a href="https://github.com/kvaishak"><img src="https://avatars.githubusercontent.com/u/25531121?v=4" width="50px" alt="kvaishak" /></a>&nbsp;&nbsp;<a href="https://github.com/jhk0530"><img src="https://avatars.githubusercontent.com/u/6457691?s=120&v=4" width="50px" alt="jhk0530" /></a>&nbsp;&nbsp;<a href="https://github.com/i99dev"><img src="https://avatars.githubusercontent.com/u/10709888?s=120&v=4" width="50px" alt="i99dev" /></a>&nbsp;&nbsp;<a href="https://github.com/JaeSang1998"><img src="https://avatars.githubusercontent.com/u/58258782?s=120&v=4" width="50px" alt="JaeSang1998" /></a>&nbsp;&nbsp;<a href="https://github.com/vaishak-kaippanchery-liqid"><img src="https://avatars.githubusercontent.com/u/93523060?s=120&v=4" width="50px" alt="vaishak-kaippanchery-liqid" /></a>&nbsp;&nbsp;
+</p>
+
 ## Support
 
 morethan-log is an MIT-licensed open source project. It can grow thanks to the sponsors and support from the amazing backers.
 
+### Sponsors
+
+<p>
+<a href="https://github.com/siyeons"><img src="https://avatars.githubusercontent.com/u/35549653?v=4" width="50px" alt="siyeons" /></a>&nbsp;&nbsp;
+</p>
+
 ## License
 
-The MIT License.
-
-> This projects is based on [nobelium](https://github.com/craigary/nobelium).
+The [MIT License](LICENSE).
