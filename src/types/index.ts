@@ -11,7 +11,7 @@ export type TPost = {
   author?: {
     id: string
     name: string
-    profile_photo: string
+    profile_photo?: string
   }[]
   title: string
   status: TPostStstus[]
