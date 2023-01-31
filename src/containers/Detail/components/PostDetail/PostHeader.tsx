@@ -23,7 +23,7 @@ const PostHeader: React.FC<Props> = ({ data }) => {
                 <div className="flex items-center gap-2">
                   <Image
                     className="rounded-full"
-                    src={data.author[0].profile_photo}
+                    src={data.author[0].profile_photo || CONFIG.profile.image}
                     alt="profile_photo"
                     width={24}
                     height={24}
