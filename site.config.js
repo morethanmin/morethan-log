@@ -12,14 +12,14 @@ const CONFIG = {
   },
   projects: [
     {
-      name: `morethan-log`,
-      href: 'https://github.com/morethanmin/morethan-log'
+      name: `zak`,
+      href: 'https://spyhichkas.github.io/morethan-log/'
     }
   ],
   // blog setting (required)
   blog: {
-    title: 'morethan-log',
-    description: 'welcome to morethan-log!',
+    title: 'zak',
+    description: 'welcome to ZAK!',
     theme: 'light' // ['light', 'dark', 'auto']
   },
 
