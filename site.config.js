@@ -2,7 +2,7 @@ const CONFIG = {
   // profile setting (required)
   profile: {
     name: 'Jonathan Chiang',
-    image: '/avatar.svg',  // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
+    image: '/avatar.jpg',  // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
     role: 'Software engineer',
     bio: 'Interested in ML and computer graphics. Currently working for Max Tegmark @ Improve the News.',
     email: 'jonathan.chiang@mail.utoronto.ca',
@@ -12,8 +12,8 @@ const CONFIG = {
   },
   projects: [
     {
-      name: `morethan-log`,
-      href: 'https://github.com/morethanmin/morethan-log'
+      name: `CS:GO Cheat`,
+      href: 'https://github.com/szge/WhateverYouWant'
     }
   ],
   // blog setting (required)
