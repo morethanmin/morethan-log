@@ -4,7 +4,7 @@ const CONFIG = {
     name: 'Jonathan Chiang',
     image: '/avatar.svg',  // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
     role: 'Software engineer',
-    bio: 'Interested in ML methods, value alignment, and computer graphics. Currently working for Max Tegmark @ Improve the News.',
+    bio: 'Interested in ML and computer graphics. Currently working for Max Tegmark @ Improve the News.',
     email: 'jonathan.chiang@mail.utoronto.ca',
     linkedin: 'https://www.linkedin.com/in/jonathan-chiang-4323091ab/',
     github: 'https://github.com/szge',
@@ -18,7 +18,7 @@ const CONFIG = {
   ],
   // blog setting (required)
   blog: {
-    title: 'AI Alignment blog',
+    title: 'AI Alignment Blog',
     description: 'A space for all things related to the value alignment problem for artifically intelligent agents.',
     theme: 'light' // ['light', 'dark', 'auto']
   },
@@ -54,7 +54,7 @@ const CONFIG = {
   utterances: {
     enable: true,
     config: {
-      repo: 'morethanmin/morethan-log',
+      repo: 'szge/jonathanchiang.ca',
       'issue-term': 'og:title',
       label: '💬 Utterances',
     }
