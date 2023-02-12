@@ -12,13 +12,13 @@ const CONFIG = {
   },
   projects: [
     {
-      name: `morethan-log`,
-      href: 'https://spyhichkas.github.io/morethan-log/'
+      name: `Wordpress Docker`,
+      href: 'https://github.com/spyhichkas/Wordpress'
     }
   ],
   // blog setting (required)
   blog: {
-    title: 'spyhickas-site',
+    title: 'Devops',
     description: 'welcome to My Site',
     theme: 'light' // ['light', 'dark', 'auto']
   },
@@ -53,7 +53,7 @@ const CONFIG = {
   utterances: {
     enable: true,
     config: {
-      repo: 'morethanmin/morethan-log',
+      repo: 'spyhichkas/morethan-log',
       'issue-term': 'og:title',
       label: '💬 Utterances',
     }
