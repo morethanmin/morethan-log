@@ -53,7 +53,7 @@ const CONFIG = {
   utterances: {
     enable: true,
     config: {
-      repo: 'morethan/morethan-log',
+      repo: 'morethanmin/morethan-log',
       'issue-term': 'og:title',
       label: '💬 Utterances',
     }
