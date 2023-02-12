@@ -1,6 +1,5 @@
 import CONFIG from "site.config"
 import { NotionAPI } from "notion-client"
-import { idToUuid } from "notion-utils"
 import getAllPageIds from "./getAllPageIds"
 import getPageProperties from "./getPageProperties"
 import { TPosts } from "@/src/types"
@@ -13,17 +12,17 @@ export async function getPosts() {
   let id = CONFIG.notionConfig.pageId as string
   const api = new NotionAPI()
   const response = await api.getPage(id)
-  id = idToUuid(id)
   const collection = Object.values(response.collection)[0]?.value
   const block = response.block
   const schema = collection?.schema
-
-  const rawMetadata = block[id].value
+  // console.log(block)
+  // const rawMetadata = block[id].value
 
   // Check Type
   if (
-    rawMetadata?.type !== "collection_view_page" &&
-    rawMetadata?.type !== "collection_view"
+    // rawMetadata?.type !== "collection_view_page" &&
+    // rawMetadata?.type !== "collection_view"
+    false
   ) {
     return []
   } else {
