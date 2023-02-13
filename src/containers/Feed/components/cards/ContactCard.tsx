@@ -5,6 +5,7 @@ import {
   AiOutlineGithub,
   AiOutlineMail,
   AiFillLinkedin,
+  AiOutlineSkype,
 } from "react-icons/ai"
 
 const ContactCard: React.FC = () => {
@@ -21,6 +22,17 @@ const ContactCard: React.FC = () => {
           >
             <AiOutlineGithub className="text-2xl" />
             <div className="text-sm">github</div>
+          </a>
+        )}
+        {CONFIG.profile.skype && (
+          <a
+            href={`https://skype.com/${CONFIG.profile.github}`}
+            rel="noreferrer"
+            target="_blank"
+            className="p-3 hover:bg-gray-100 dark:hover:bg-zinc-700 rounded-2xl cursor-pointer flex items-center gap-3 text-gray-500 dark:text-white hover:text-black dark:hover:text-white "
+          >
+            <AiOutlineGithub className="text-2xl" />
+            <div className="text-sm">skype</div>
           </a>
         )}
         {CONFIG.profile.instagram && (
