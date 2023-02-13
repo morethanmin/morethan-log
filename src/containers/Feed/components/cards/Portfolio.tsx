@@ -19,7 +19,7 @@ const Portfolio: React.FC<Props> = ({ className }) => {
           <div className="text-sm mb-4 text-gray-500 dark:text-gray-400">
             {CONFIG.portfolio.description}
           </div>
-          <div className="text-sm mb-2">{CONFIG.profile.caption}</div>
+          <div className="text-sm mb-2">{CONFIG.portfolio.caption}</div>
         </div>
       </div>
     </div>
