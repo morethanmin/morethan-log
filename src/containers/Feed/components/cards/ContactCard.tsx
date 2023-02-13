@@ -7,7 +7,7 @@ import {
   AiFillLinkedin,
   AiOutlineSkype,
 } from "react-icons/ai"
-import { GrDocker } from "react/gr"
+import { GrDocker } from "react-icons/gr"
 
 const ContactCard: React.FC = () => {
   return (
