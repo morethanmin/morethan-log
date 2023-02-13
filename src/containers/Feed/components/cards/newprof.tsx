@@ -26,4 +26,4 @@ const ProfileCard: React.FC<Props> = ({ className }) => {
   )
 }
 
-export default ProfileCard
+export default newprof
