@@ -7,6 +7,7 @@ import {
   AiFillLinkedin,
   AiOutlineSkype,
 } from "react-icons/ai"
+import GrDocker from "react/gr"
 
 const ContactCard: React.FC = () => {
   return (
@@ -32,6 +33,17 @@ const ContactCard: React.FC = () => {
             className="p-3 hover:bg-gray-100 dark:hover:bg-zinc-700 rounded-2xl cursor-pointer flex items-center gap-3 text-gray-500 dark:text-white hover:text-black dark:hover:text-white "
           >
             <AiOutlineSkype className="text-2xl" />
+            <div className="text-sm">skype</div>
+          </a>
+        )}
+        {CONFIG.profile.docker && (
+          <a
+            href={`https://hub.docker.com/${CONFIG.profile.docker}`}
+            rel="noreferrer"
+            target="_blank"
+            className="p-3 hover:bg-gray-100 dark:hover:bg-zinc-700 rounded-2xl cursor-pointer flex items-center gap-3 text-gray-500 dark:text-white hover:text-black dark:hover:text-white "
+          >
+            <GrDocker className="text-2xl" />
             <div className="text-sm">skype</div>
           </a>
         )}
