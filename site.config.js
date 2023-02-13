@@ -10,8 +10,9 @@ const CONFIG = {
     linkedin: 'zakery1369',
     medium: 'zakery1369',
     dev: 'zakery1369',
+    twitter: 'zakery1369',
     telegram: 'zakery1369',
-    skype: 'zakery1369',
+    skype: 'lf6899W3qgrd',
     email: 'zakery1369@gmail.com',
   },
   // portfolio setting (required)
