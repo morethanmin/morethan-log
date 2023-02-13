@@ -10,6 +10,7 @@ const CONFIG = {
     github: 'spyhichkas',
     instagram: 'spyhichkas',
   },
+  // portfolio setting (required)
   portfolio: {
     name: 'Zakery1369',
     image: '/avatar.svg',  // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
