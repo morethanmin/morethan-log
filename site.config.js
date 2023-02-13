@@ -6,9 +6,9 @@ const CONFIG = {
     role: 'Devops',
     bio: 'I Am DevOps Engineer',
     name1: 'Portfolio',
-    image: '/avatar.svg',  // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
-    role: 'My Portfolio',
-    bio: 'Please see my Portfolio',
+    image1: '/avatar.svg',  // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
+    role1: 'My Portfolio',
+    bio1: 'Please see my Portfolio',
     email: 'spyhichkas021@gmail.com',
     linkedin: 'nadaram',
     github: 'spyhichkas',
