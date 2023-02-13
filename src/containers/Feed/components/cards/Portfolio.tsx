@@ -6,7 +6,7 @@ type Props = {
   className?: string
 }
 
-const ProfileCard: React.FC<Props> = ({ className }) => {
+const Portfolio: React.FC<Props> = ({ className }) => {
   return (
     <div className={className}>
       <div className="p-1 mb-3 dark:text-white">💻 Portfolio</div>
