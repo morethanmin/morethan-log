@@ -9,7 +9,7 @@ const CONFIG = {
     docker: 'zakery1369',    
     linkedin: 'zakery1369',
     medium: 'zakery1369',
-    dev: 'zakerey1369',
+    dev: 'zakery1369',
     telegram: 'zakery1369',
     skype: 'zakery1369',
     email: 'zakery1369@gmail.com',
