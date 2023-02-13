@@ -9,7 +9,7 @@ const CONFIG = {
     linkedin: 'nadaram',
     github: 'spyhichkas',
     instagram: 'spyhichkas',
-    skype: 'spyhichkas';
+    skype: 'spyhichkas',
   },
   // portfolio setting (required)
   portfolio: {
