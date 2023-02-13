@@ -60,7 +60,18 @@ const ContactCard: React.FC = () => {
             className="p-3 hover:bg-gray-100 dark:hover:bg-zinc-700 rounded-2xl cursor-pointer flex items-center gap-3 text-gray-500 dark:text-white hover:text-black dark:hover:text-white "
           >
             <FaDev className="text-2xl" />
-            <div className="text-sm">dev</div>
+            <div className="text-sm">dev.to</div>
+          </a>
+        )}
+        {CONFIG.profile.twitter && (
+          <a
+            href={`https://twitter.com/${CONFIG.profile.twitter}`}
+            rel="noreferrer"
+            target="_blank"
+            className="p-3 hover:bg-gray-100 dark:hover:bg-zinc-700 rounded-2xl cursor-pointer flex items-center gap-3 text-gray-500 dark:text-white hover:text-black dark:hover:text-white"
+          >
+            <FaTelegramPlane className="text-2xl" />
+            <div className="text-sm">twitter</div>
           </a>
         )}
         {CONFIG.profile.telegram && (
@@ -76,7 +87,7 @@ const ContactCard: React.FC = () => {
         )}
         {CONFIG.profile.skype && (
           <a
-            href={`https://skype:${CONFIG.profile.skype}?chat`}
+            href={`https://join.skype.com/invite/${CONFIG.profile.skype}`}
             rel="noreferrer"
             target="_blank"
             className="p-3 hover:bg-gray-100 dark:hover:bg-zinc-700 rounded-2xl cursor-pointer flex items-center gap-3 text-gray-500 dark:text-white hover:text-black dark:hover:text-white "
