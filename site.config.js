@@ -23,6 +23,12 @@ const CONFIG = {
       href: 'https://github.com/spyhichkas/Wordpress'
     }
   ],
+  projects2: [
+    {
+      name: `Wordpress`,
+      href: 'https://github.com/spyhichkas/Wordpress'
+    }
+  ],
   // blog setting (required)
   blog: {
     title: 'Devops',
