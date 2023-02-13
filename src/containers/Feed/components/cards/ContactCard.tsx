@@ -5,7 +5,7 @@ import {
   AiOutlineGithub,
   AiOutlineMail,
   AiFillLinkedin,
-  TfiSkype,
+  AiFillSkype,
 } from "react-icons/ai"
 
 const ContactCard: React.FC = () => {
