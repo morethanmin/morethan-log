@@ -5,14 +5,18 @@ const CONFIG = {
     image: '/avatar.svg',  // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
     role: 'Devops',
     bio: 'I Am DevOps Engineer',
-    name1: 'Portfolio',
-    image1: '/avatar.svg',  // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
-    role1: 'My Portfolio',
-    bio1: 'Please see my Portfolio',
     email: 'spyhichkas021@gmail.com',
     linkedin: 'nadaram',
     github: 'spyhichkas',
     instagram: 'spyhichkas',
+  },
+const CONFIG = {
+  // profile setting (required)
+  portfolio: {
+    name: 'Zakery1369',
+    image: '/avatar.svg',  // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
+    description: 'My Portfolio',
+    caption: 'Please see my portfolio',
   },
   projects: [
     {
