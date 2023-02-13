@@ -10,6 +10,7 @@ const CONFIG = {
     github: 'spyhichkas',
     instagram: 'spyhichkas',
     skype: 'spyhichkas',
+    docker: 'spyhichkas',
   },
   // portfolio setting (required)
   portfolio: {
