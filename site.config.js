@@ -17,10 +17,10 @@ const CONFIG = {
   },
   // portfolio setting (required)
   portfolio: {
-    name: 'Zakery1369',
+    name: 'Mohammad Zakery',
     image: '/badge.png',  // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
-    description: 'My Portfolio',
-    caption: 'Please see my portfolio',
+    description: 'My Certifications',
+    caption: 'Linux Engineer',
   },
   projects: [
     {
