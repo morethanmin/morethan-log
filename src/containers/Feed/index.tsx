@@ -29,7 +29,7 @@ const Feed: React.FC<Props> = ({ tags, posts }) => {
       </div>
       <div className="hidden lg:block lg:col-span-3">
         <Cards.ProfileCard />
-        <Cards.ProfileCard />
+        <Cards.Portfolio />
         <Cards.ServiceCard />
         <Cards.ContactCard />
         <Footer className="pt-4" />
