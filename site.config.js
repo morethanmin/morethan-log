@@ -36,7 +36,7 @@ const CONFIG = {
   ],
   // blog setting (required)
   blog: {
-    title: 'Devops',
+    title: 'Zakops',
     description: 'welcome to My Site',
     theme: 'light' // ['light', 'dark', 'auto']
   },
