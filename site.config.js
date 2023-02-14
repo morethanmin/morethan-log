@@ -15,10 +15,10 @@ const CONFIG = {
     skype: 'lf6899W3qgrd',
     email: 'zakery1369@gmail.com',
   },
-  // portfolio setting (required)
-  portfolio: {
+  // Certificates setting (required)
+  Certificates: {
     name: 'Mohammad Zakery',
-    image: '/badge.png',  // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
+    image: '/badge.png',  
     description: 'My Certifications',
     caption: 'Linux Engineer',
   },
