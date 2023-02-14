@@ -71,7 +71,7 @@ const CONFIG = {
   utterances: {
     enable: true,
     config: {
-      repo: 'spyhichkas/morethan-log',
+      repo: 'zakops-com/zakops.com',
       'issue-term': 'og:title',
       label: '💬 Utterances',
     }
