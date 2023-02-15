@@ -18,7 +18,8 @@ const CONFIG = {
   // Certificates setting (required)
   Certificates: {
     name: 'Mohammad Zakery',
-    image: '/badge.png',  
+    image: '/badge.png', 
+    image2: '/badge.png',
     description: 'My Certifications',
     caption: 'Linux Engineer',
   },
@@ -43,11 +44,11 @@ const CONFIG = {
 
   // CONFIG configration (required)
   link: 'https://zak-black.vercel.app/',
-  since: 2021, // If leave this empty, current year will be used.
+  since: 2020, // If leave this empty, current year will be used.
   lang: 'en-US', // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES', 'ko-KR']
   ogImageGenerateURL: 'https://og-image-korean.vercel.app', // The link to generate OG image, don't end with a slash
   seo: {
-    keywords: ['Blog', 'Website', 'Notion'],
+    keywords: ['zakops', 'zakops.com', 'Devops'],
   },
 
   // notion configuration (required)
