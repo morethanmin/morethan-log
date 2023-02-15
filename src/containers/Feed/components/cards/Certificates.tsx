@@ -13,6 +13,7 @@ const Certificates: React.FC<Props> = ({ className }) => {
       <div className="w-full md:p-4 lg:p-4 rounded-2xl bg-white dark:bg-zinc-700 mb-9">
         <div className="relative w-full after:content-[''] after:block after:pb-[100%]">
           <Image src={CONFIG.Certificates.image} layout="fill" alt="Certificates" />
+          <br></br>
           <Image src={CONFIG.Certificates.image2} layout="fill" alt="Certificates" />
         </div>
         <div className="bg-white p-2 flex flex-col items-center dark:bg-zinc-700 dark:text-white">
