@@ -19,7 +19,7 @@ const CONFIG = {
   Certificates: {
     name: 'Mohammad Zakery',
     image: '/badge.png', 
-    image2: '/badge.png',
+    image2: '/avatar.svg',
     description: 'My Certifications',
     caption: 'Linux Engineer',
   },
