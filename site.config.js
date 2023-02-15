@@ -18,8 +18,8 @@ const CONFIG = {
   // Certificates setting (required)
   Certificates: {
     name: 'Mohammad Zakery',
-    image: '/LPIC2.png', 
-    image2: '/ibm.pdf',
+    image: '/ibm.pdf', 
+    image2: '/LPIC2.png',
     description: 'My Certifications',
     caption: 'Linux Engineer',
   },
