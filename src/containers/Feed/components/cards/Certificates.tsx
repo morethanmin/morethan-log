@@ -9,7 +9,7 @@ type Props = {
 const Certificates: React.FC<Props> = ({ className }) => {
   return (
     <div className={className}>
-      <div className="p-1 mb-3 dark:text-white">🖺 Certificates</div>
+      <div className="p-1 mb-3 dark:text-white"> 🖺 Certificates</div>
       <div className="w-full md:p-4 lg:p-4 rounded-2xl bg-white dark:bg-zinc-700 mb-9">
         <div className="relative w-full after:content-[''] after:block after:pb-[100%]">
           <Image src={CONFIG.Certificates.image} layout="fill" alt="Certificates" />
