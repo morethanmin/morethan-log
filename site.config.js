@@ -7,7 +7,7 @@ const CONFIG = {
     bio: 'Interested in ML and computer graphics. Currently working for Max Tegmark @ Improve the News.',
     email: 'jonathan.chiang@mail.utoronto.ca',
     linkedin: 'https://www.linkedin.com/in/jonathan-chiang-4323091ab/',
-    github: 'https://github.com/szge',
+    github: 'szge',
     instagram: '',
   },
   projects: [

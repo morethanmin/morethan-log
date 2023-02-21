@@ -8,8 +8,8 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "build": "cross-env NOTION_PAGE_ID=https://pinnate-turret-320.notion.site/76099ff7772c46edb4fd457f0a6676b0?v=5da3f5c9b4474822bd8212a2369316d1 next build",
+    "start": "cross-env NOTION_PAGE_ID=https://pinnate-turret-320.notion.site/76099ff7772c46edb4fd457f0a6676b0?v=5da3f5c9b4474822bd8212a2369316d1 next start",
     "postbuild": "next-sitemap --config next-sitemap.config.js",
     "lint": "next lint"
   },
@@ -29,6 +29,7 @@
     "react-notion-x": "^4.11.0"
   },
   "devDependencies": {
+    "@next/env": "^13.1.6",
     "@types/gtag.js": "^0.0.12",
     "@types/node": "^18.11.15",
     "@types/react": "^18.0.26",
@@ -45,6 +46,7 @@
     "next-sitemap": "^3.1.32",
     "postcss": "^8.3.11",
     "prettier": "^2.7.1",
+    "sharp": "^0.31.3",
     "tailwindcss": "^3.1.4",
     "typescript": "^4.9.4"
   }
