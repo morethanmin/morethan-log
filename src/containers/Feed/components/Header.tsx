@@ -8,7 +8,18 @@ type Props = {
   tags: TTags
 }
 
-const Header: React.FC<Props> = ({ tags }) => {
+export const PinnedHeader: React.FC<Props> = ({ tags }) => {
+  return tags["Pinned"] == undefined ? null :
+  (
+    <div className="flex border-b border-gray-300 mb-4 justify-between items-center ">
+      <div className="text-xl font-bold my-2 dark:text-white">
+        📌 Pinned Posts
+      </div>
+    </div>
+  )
+}
+
+export const PostHeader: React.FC<Props> = ({ tags }) => {
   const router = useRouter()
 
   const currentTag = `${router.query.tag || ``}` || 'All'
@@ -55,4 +66,4 @@ const Header: React.FC<Props> = ({ tags }) => {
   )
 }
 
-export default Header
+export default PostHeader

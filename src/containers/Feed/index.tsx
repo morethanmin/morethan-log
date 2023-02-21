@@ -5,7 +5,7 @@ import * as Lists from './components/lists'
 
 import { TPosts, TTags } from '@custeomTypes/index'
 import SearchInput from './components/SearchInput'
-import PostHeader from './components/Header'
+import { PinnedHeader, PostHeader } from './components/Header'
 import Footer from './components/Footer'
 
 type Props = {
@@ -21,6 +21,8 @@ const Feed: React.FC<Props> = ({ tags, posts }) => {
       <Lists.TagList className="hidden lg:block col-span-2" data={tags} />
       <div className="col-span-12 lg:col-span-7">
         <Cards.MobileProfileCard />
+        <PinnedHeader tags={tags} />
+        <Lists.PinnedPostList q={q} posts={posts} tags={tags} />
         <SearchInput value={q} onChange={(e) => setQ(e.target.value)} />
         <Lists.TagList className="block lg:hidden" data={tags} />
         <PostHeader tags={tags} />

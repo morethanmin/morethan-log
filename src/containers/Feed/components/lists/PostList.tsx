@@ -9,7 +9,42 @@ type Props = {
   posts: TPosts
 }
 
-const PostList: React.FC<Props> = ({ q, posts, tags }) => {
+export const PinnedPostList: React.FC<Props> = ({ q, posts, tags }) => {
+  const [filteredPosts, setFilteredPosts] = useState(posts)
+
+  useEffect(() => {
+    setFilteredPosts(() => {
+      let filteredPosts = posts
+      // keyword
+      filteredPosts = filteredPosts.filter((post) => {
+        const tagContent = post.tags ? post.tags.join(' ') : ''
+        const searchContent = post.title + post.summary + tagContent
+        return searchContent.toLowerCase().includes(q.toLowerCase())
+      })
+
+      filteredPosts = filteredPosts.filter(
+        (post) => post && post.tags && post.tags.includes("Pinned")
+      )
+
+      return filteredPosts
+    })
+  }, [q])
+
+  return (
+    <>
+      <div className="my-2">
+        {!filteredPosts.length && (
+          null
+        )}
+        {filteredPosts.slice(0, 1).map((post) => (
+          <PostCard key={post.slug} post={post} />
+        ))}
+      </div>
+    </>
+  )
+}
+
+export const PostList: React.FC<Props> = ({ q, posts, tags }) => {
   const router = useRouter()
   const [filteredPosts, setFilteredPosts] = useState(posts)
 
