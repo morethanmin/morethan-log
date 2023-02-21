@@ -1,33 +1,33 @@
 const CONFIG = {
   // profile setting (required)
   profile: {
-    name: 'Jonathan Chiang',
-    image: '/avatar.jpg',  // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
-    role: 'Software engineer',
-    bio: 'Interested in ML and computer graphics. Currently working for Max Tegmark @ Improve the News.',
-    email: 'jonathan.chiang@mail.utoronto.ca',
-    linkedin: 'https://www.linkedin.com/in/jonathan-chiang-4323091ab/',
-    github: 'szge',
-    instagram: '',
+    name: "morethanmin",
+    image: "/avatar.svg", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
+    role: "frontend developer",
+    bio: "I develop everything using node.",
+    email: "morethanmin.dev@gmail.com",
+    linkedin: "morethanmin",
+    github: "morethanmin",
+    instagram: "",
   },
   projects: [
     {
-      name: `CS:GO Cheat`,
-      href: 'https://github.com/szge/WhateverYouWant'
-    }
+      name: `morethan-log`,
+      href: "https://github.com/morethanmin/morethan-log",
+    },
   ],
   // blog setting (required)
   blog: {
-    title: 'AI Alignment Blog',
-    description: 'A space for all things related to the value alignment problem for artifically intelligent agents.',
-    theme: 'light' // ['light', 'dark', 'auto']
+    title: "morethan-log",
+    description: "welcome to morethan-log!",
+    theme: "light", // ['light', 'dark', 'auto']
   },
 
   // CONFIG configration (required)
-  link: 'https://jonathanchiang-ca.vercel.app',
-  since: 2023, // If leave this empty, current year will be used.
-  lang: 'en-US', // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES', 'ko-KR']
-  ogImageGenerateURL: 'https://og-image-korean.vercel.app', // The link to generate OG image, don't end with a slash
+  link: "https://morethan-log.vercel.app",
+  since: 2022, // If leave this empty, current year will be used.
+  lang: "en-US", // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES', 'ko-KR']
+  ogImageGenerateURL: "https://og-image-korean.vercel.app", // The link to generate OG image, don't end with a slash
   seo: {
     keywords: ["Blog", "Website", "Notion"],
   },
@@ -35,7 +35,6 @@ const CONFIG = {
   // notion configuration (required)
   notionConfig: {
     pageId: process.env.NOTION_PAGE_ID,
-    // pageId: "https://pinnate-turret-320.notion.site/76099ff7772c46edb4fd457f0a6676b0?v=5da3f5c9b4474822bd8212a2369316d1"
   },
 
   // plugin configuration (optional)
@@ -54,10 +53,10 @@ const CONFIG = {
   utterances: {
     enable: true,
     config: {
-      repo: 'szge/jonathanchiang.ca',
-      'issue-term': 'og:title',
-      label: '💬 Utterances',
-    }
+      repo: "morethanmin/morethan-log",
+      "issue-term": "og:title",
+      label: "💬 Utterances",
+    },
   },
   cusdis: {
     enable: false,

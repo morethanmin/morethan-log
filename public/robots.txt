@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://jonathanchiang-ca.vercel.app
+Host: https://morethan-log.vercel.app
 
 # Sitemaps
-Sitemap: https://jonathanchiang-ca.vercel.app/sitemap.xml
+Sitemap: https://morethan-log.vercel.app/sitemap.xml
