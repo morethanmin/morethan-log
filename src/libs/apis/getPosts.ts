@@ -1,8 +1,8 @@
 import CONFIG from "site.config"
 import { NotionAPI } from "notion-client"
 import { idToUuid } from "notion-utils"
-import getAllPageIds from "./getAllPageIds"
-import getPageProperties from "./getPageProperties"
+import getAllPageIds from "../utils/notion/getAllPageIds"
+import getPageProperties from "../utils/notion/getPageProperties"
 import { TPosts } from "@/src/types"
 
 /**

@@ -1,18 +1,18 @@
-import { TTags } from '@/src/types'
-import { useRouter } from 'next/router'
-import React from 'react'
+import { TCategories, TTags } from "@/src/types"
+import { useRouter } from "next/router"
+import React from "react"
 
-type TOrder = 'asc' | 'desc'
+type TOrder = "asc" | "desc"
 
 type Props = {
-  tags: TTags
+  data: TCategories
 }
 
-const Header: React.FC<Props> = ({ tags }) => {
+const Header: React.FC<Props> = ({ data }) => {
   const router = useRouter()
 
-  const currentTag = `${router.query.tag || ``}` || 'All'
-  const currentOrder = `${router.query.order || ``}` || ('desc' as TOrder)
+  const currentCategory = `${router.query.category || ``}` || "📂 All"
+  const currentOrder = `${router.query.order || ``}` || ("desc" as TOrder)
 
   const handleClickOrderBy = (value: TOrder) => {
     router.push({
@@ -26,27 +26,29 @@ const Header: React.FC<Props> = ({ tags }) => {
   return (
     <div className="flex border-b border-gray-300 mb-4 justify-between items-center ">
       <div className="text-xl font-bold my-2 dark:text-white">
-        {currentTag} Posts{' '}
-        <span className="text-sm align-text-top">({tags[currentTag]})</span>
+        {currentCategory} Posts{" "}
+        <span className="text-sm align-text-top">
+          ({data[currentCategory]})
+        </span>
       </div>
       <div className={`flex text-sm gap-2  `}>
         <a
           className={`cursor-pointer ${
-            currentOrder === 'desc'
-              ? 'text-black font-bold dark:text-white'
-              : 'text-gray-500 dark:text-gray-400'
+            currentOrder === "desc"
+              ? "text-black font-bold dark:text-white"
+              : "text-gray-500 dark:text-gray-400"
           }`}
-          onClick={() => handleClickOrderBy('desc')}
+          onClick={() => handleClickOrderBy("desc")}
         >
           Desc
         </a>
         <a
           className={`cursor-pointer ${
-            currentOrder === 'asc'
-              ? 'text-black font-bold dark:text-white'
-              : 'text-gray-500 dark:text-gray-400'
+            currentOrder === "asc"
+              ? "text-black font-bold dark:text-white"
+              : "text-gray-500 dark:text-gray-400"
           }`}
-          onClick={() => handleClickOrderBy('asc')}
+          onClick={() => handleClickOrderBy("asc")}
         >
           Asc
         </a>
