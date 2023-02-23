@@ -8,7 +8,7 @@ export const COLOR_SET: { [key: string]: string } = {
   5: "bg-teal-100",
   6: "bg-green-200",
   7: "bg-yellow-100",
-  8: "bg-orange-200",
+  8: "bg-sky-200",
   9: "bg-red-200",
   A: "bg-stone-200",
   B: "bg-slate-200",
