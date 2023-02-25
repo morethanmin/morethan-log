@@ -71,11 +71,11 @@ const PostCard: React.FC<Props> = ({ data }) => {
                 )}
               </div>
             </div>
-            <main className="mb-4">
+            <div className="mb-4">
               <p className="hidden md:block leading-8 text-gray-700 dark:text-gray-300">
                 {data.summary}
               </p>
-            </main>
+            </div>
             <div className="flex gap-2">
               {data.tags &&
                 data.tags.map((tag: string, idx: number) => (
