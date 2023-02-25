@@ -1,40 +1,30 @@
-import { TTags } from '@customTypes/index'
-import { useRouter } from 'next/router'
-import React from 'react'
+import { TTags } from "@customTypes/index"
+import { useRouter } from "next/router"
+import React from "react"
 
 type Props = {
   className?: string
   data: TTags
 }
 
-const TagList: React.FC<Props> = ({ className, data }) => {
+const CategoryList: React.FC<Props> = ({ className, data }) => {
   const router = useRouter()
-  const currentTag = router.query.tag || undefined
+  const currentTag = router.query.tag || "All"
 
   const handleClickTag = (value: any) => {
-    // delete
-    if (currentTag === value) {
-      router.push({
-        query: {
-          ...router.query,
-          tag: undefined,
-        },
-      })
-    }
-    // add
-    else {
-      router.push({
-        query: {
-          ...router.query,
-          tag: value,
-        },
-      })
-    }
+    router.push({
+      query: {
+        ...router.query,
+        category: value,
+      },
+    })
   }
 
   return (
     <div className={className}>
-      <div className="hidden lg:block p-1 mb-3 dark:text-white">🏷️ Tags</div>
+      <div className="hidden lg:block p-1 mb-3 dark:text-white">
+        📁 Categories
+      </div>
       <ul className="cursor-pointer gap-1 flex mobile-x-scroll lg:block mb-6">
         {Object.keys(data).map((key) => (
           <li
@@ -53,4 +43,4 @@ const TagList: React.FC<Props> = ({ className, data }) => {
   )
 }
 
-export default TagList
+export default CategoryList
