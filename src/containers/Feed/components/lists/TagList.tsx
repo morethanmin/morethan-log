@@ -1,6 +1,6 @@
-import { TTags } from "@custeomTypes/index"
-import { useRouter } from "next/router"
-import React from "react"
+import { TTags } from '@customTypes/index'
+import { useRouter } from 'next/router'
+import React from 'react'
 
 type Props = {
   className?: string
