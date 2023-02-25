@@ -3,7 +3,7 @@ import { useState } from 'react'
 import * as Cards from './components/cards'
 import * as Lists from './components/lists'
 
-import { TPosts, TTags } from '@custeomTypes/index'
+import { TPosts, TTags } from '@customTypes/index'
 import SearchInput from './components/SearchInput'
 import PostHeader from './components/Header'
 import Footer from './components/Footer'

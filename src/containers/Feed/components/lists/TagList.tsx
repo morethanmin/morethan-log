@@ -1,4 +1,4 @@
-import { TTags } from '@custeomTypes/index'
+import { TTags } from '@customTypes/index'
 import { useRouter } from 'next/router'
 import React from 'react'
 
