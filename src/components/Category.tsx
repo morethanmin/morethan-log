@@ -18,12 +18,18 @@ export const getColorClassByName = (name: string): string => {
 type Props = {
   className?: string
   children: string
+  readOnly?: boolean
 }
 
-const Category: React.FC<Props> = ({ className, children }) => {
+const Category: React.FC<Props> = ({
+  readOnly = false,
+  className,
+  children,
+}) => {
   const router = useRouter()
 
   const handleClick = (value: string) => {
+    if (readOnly) return
     router.push(`/?category=${value}`)
   }
   return (
@@ -31,7 +37,8 @@ const Category: React.FC<Props> = ({ className, children }) => {
       onClick={() => handleClick(children)}
       className={[
         getColorClassByName(children),
-        "opacity-80 px-2 py-1 text-sm rounded-full w-fit cursor-pointer",
+        !readOnly ? "cursor-pointer" : "",
+        "opacity-90 px-2 py-1 text-sm rounded-full w-fit",
         className,
       ].join(" ")}
     >

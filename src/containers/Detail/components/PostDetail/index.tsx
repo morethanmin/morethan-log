@@ -29,7 +29,14 @@ const PostDetail: React.FC<Props> = ({ blockMap, data }) => {
       className={`m-auto max-w-4xl bg-white dark:bg-zinc-700 rounded-3xl py-12 px-6 shadow-md`}
     >
       <article className=" m-auto max-w-2xl">
-        {category && <Category className="mb-2">{category}</Category>}
+        {category && (
+          <Category
+            className="mb-2"
+            readOnly={data.status?.[0] === "PublicOnDetail"}
+          >
+            {category}
+          </Category>
+        )}
         {data.type[0] === "Post" && <PostHeader data={data} />}
         {blockMap && (
           <div className="-mt-4">
