@@ -55,7 +55,22 @@ class SelectPropertyHandler extends PropertyHandler {
 }
 
 class PersonPropertyHandler extends PropertyHandler {
-  api = new NotionAPI()
+  private readonly api = new NotionAPI()
+
+  async getUserValue(userId: string[]) {
+    const res: any = await this.api.getUsers(userId)
+
+    const resValue = res?.recordMapWithRoles?.notion_user?.[userId[1]]?.value
+
+    return {
+      id: resValue?.id,
+      name:
+        resValue?.name ||
+        `${resValue?.family_name}${resValue?.given_name}` ||
+        undefined,
+      profile_photo: resValue?.profile_photo || null,
+    }
+  }
 
   async parse(val: any) {
     const rawUsers: any[] = val.flat()
@@ -64,19 +79,7 @@ class PersonPropertyHandler extends PropertyHandler {
     for (const element of rawUsers) {
       if (element[0][1]) {
         const userId = element[0]
-        const res: any = await this.api.getUsers(userId)
-
-        const resValue =
-          res?.recordMapWithRoles?.notion_user?.[userId[1]]?.value
-
-        const user = {
-          id: resValue?.id,
-          name:
-            resValue?.name ||
-            `${resValue?.family_name}${resValue?.given_name}` ||
-            undefined,
-          profile_photo: resValue?.profile_photo || null,
-        }
+        const user = await this.getUserValue(userId)
 
         users.push(user)
       }

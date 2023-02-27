@@ -1,5 +1,5 @@
 import { BlockMap, CollectionPropertySchemaMap } from "notion-types"
-import PropertyHandler from "./PropertyHandler"
+import PropertyHandler from "./propertyHandler"
 
 async function getPageProperties(
   id: string,
