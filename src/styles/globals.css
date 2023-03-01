@@ -36,7 +36,7 @@ body::-webkit-scrollbar-thumb {
 
 .sticky-nav {
   position: sticky;
-  z-index: 10;
+  z-index: 40;
   top: -1px;
   backdrop-filter: blur(5px);
   transition: all 0.5s cubic-bezier(0.4, 0, 0, 1);

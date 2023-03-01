@@ -1,7 +1,7 @@
-import { getTextContent, getDateValue } from 'notion-utils'
-import { NotionAPI } from 'notion-client'
-import { BlockMap, CollectionPropertySchemaMap } from 'notion-types'
-import { customMapImageUrl } from './customMapImageUrl'
+import { getTextContent, getDateValue } from "notion-utils"
+import { NotionAPI } from "notion-client"
+import { BlockMap, CollectionPropertySchemaMap } from "notion-types"
+import { customMapImageUrl } from "./customMapImageUrl"
 
 async function getPageProperties(
   id: string,
@@ -10,7 +10,7 @@ async function getPageProperties(
 ) {
   const api = new NotionAPI()
   const rawProperties = Object.entries(block?.[id]?.value?.properties || [])
-  const excludeProperties = ['date', 'select', 'multi_select', 'person', 'file']
+  const excludeProperties = ["date", "select", "multi_select", "person", "file"]
   const properties: any = {}
   for (let i = 0; i < rawProperties.length; i++) {
     const [key, val]: any = rawProperties[i]
@@ -19,7 +19,7 @@ async function getPageProperties(
       properties[schema[key].name] = getTextContent(val)
     } else {
       switch (schema[key]?.type) {
-        case 'file': {
+        case "file": {
           try {
             const Block = block?.[id].value
             const url: string = val[0][1][0][1]
@@ -30,27 +30,27 @@ async function getPageProperties(
           }
           break
         }
-        case 'date': {
+        case "date": {
           const dateProperty: any = getDateValue(val)
           delete dateProperty.type
           properties[schema[key].name] = dateProperty
           break
         }
-        case 'select': {
+        case "select": {
           const selects = getTextContent(val)
           if (selects[0]?.length) {
-            properties[schema[key].name] = selects.split(',')
+            properties[schema[key].name] = selects.split(",")
           }
           break
         }
-        case 'multi_select': {
+        case "multi_select": {
           const selects = getTextContent(val)
           if (selects[0]?.length) {
-            properties[schema[key].name] = selects.split(',')
+            properties[schema[key].name] = selects.split(",")
           }
           break
         }
-        case 'person': {
+        case "person": {
           const rawUsers = val.flat()
 
           const users = []
