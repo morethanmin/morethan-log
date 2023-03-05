@@ -1,7 +1,7 @@
 const CONFIG = {
   // profile setting (required)
   profile: {
-    name: "doyoonsong",
+    name: "doyoon song",
     image: "/avatar.svg", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
     role: "backend & data engineer",
     bio: "방금 벼락친거 아니다... 그거 나야...",
@@ -24,7 +24,7 @@ const CONFIG = {
   },
 
   // CONFIG configration (required)
-  link: "https://morethan-log.vercel.app",
+  link: "https://doyoonlog.vercel.app/",
   since: 2023, // If leave this empty, current year will be used.
   lang: "ko-KR", // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES', 'ko-KR']
   ogImageGenerateURL: "https://og-image-korean.vercel.app", // The link to generate OG image, don't end with a slash
@@ -51,9 +51,9 @@ const CONFIG = {
     },
   },
   utterances: {
-    enable: false,
+    enable: true,
     config: {
-      repo: "morethanmin/morethan-log",
+      repo: "SongDerrick/doyoonlog",
       "issue-term": "og:title",
       label: "💬 Utterances",
     },
