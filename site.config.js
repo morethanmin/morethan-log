@@ -11,7 +11,10 @@ const CONFIG = {
     instagram: "doyo_onee",
   },
   projects: [
-
+    {
+      name: `SongDerrick`,
+      href: "https://github.com/SongDerrick",
+    },
   ],
   // blog setting (required)
   blog: {
