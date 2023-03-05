@@ -4,22 +4,19 @@ const CONFIG = {
     name: "doyoon song",
     image: "/avatar.svg", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
     role: "backend developer",
-    bio: "벼락친거 아니다... 그거 나야...",
+    bio: "방금 벼락친거 아니다... 그거 나야...",
     email: "sd990307@gm.gist.ac.kr",
     linkedin: "",
     github: "SongDerrick",
     instagram: "doyo_onee",
   },
   projects: [
-    {
-      name: `SongDerrick`,
-      href: "https://github.com/SongDerrick",
-    },
+
   ],
   // blog setting (required)
   blog: {
-    title: "morethan-log",
-    description: "welcome to morethan-log!",
+    title: "doyoon's blog",
+    description: "welcome to doyoon's blog!",
     theme: "light", // ['light', 'dark', 'auto']
   },
 
