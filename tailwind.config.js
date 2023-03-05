@@ -13,6 +13,9 @@ module.exports = {
           DEFAULT: '#18181B'
         }
       },
+      fontFamily: {
+        autography: ["Autography", "cursive"]
+      }
     }
   },
   variants: {
