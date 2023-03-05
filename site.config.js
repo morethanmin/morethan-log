@@ -4,7 +4,7 @@ const CONFIG = {
     name: "doyoon song",
     image: "/avatar.svg", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
     role: "backend & data engineer",
-    bio: "방금 벼락친거 아니다... 그거 나야...",
+    bio: "Student Developer",
     email: "sd990307@gm.gist.ac.kr",
     linkedin: "",
     github: "SongDerrick",
@@ -29,7 +29,7 @@ const CONFIG = {
   lang: "ko-KR", // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES', 'ko-KR']
   ogImageGenerateURL: "https://og-image-korean.vercel.app", // The link to generate OG image, don't end with a slash
   seo: {
-    keywords: ["Blog", "Website", "Notion"],
+    keywords: ["Doyoon", "Website", "Notion", "Developer", "GIST"],
   },
 
   // notion configuration (required)
