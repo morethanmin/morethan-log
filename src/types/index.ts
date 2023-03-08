@@ -1,4 +1,4 @@
-export type TPostStstus = "Private" | "Public" | "PublicOnDetail"
+export type TPostStatus = "Private" | "Public" | "PublicOnDetail"
 export type TPostType = "Post" | "Paper" | "Page"
 
 export type TPost = {
@@ -15,7 +15,7 @@ export type TPost = {
     profile_photo?: string
   }[]
   title: string
-  status: TPostStstus[]
+  status: TPostStatus[]
   createdTime: string
   fullWidth: boolean
   thumbnail?: string
