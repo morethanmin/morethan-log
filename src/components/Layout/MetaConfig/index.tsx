@@ -43,6 +43,7 @@ const MetaConfig: React.FC<MetaConfigProps> = ({ ...props }) => {
           <meta property="article:author" content={CONFIG.profile.name} />
         </>
       )}
+      <meta name="naver-site-verification" content="f82eacb9373f60fedeffc3c8805fbb741301c6d3" />
     </Head>
   )
 }
