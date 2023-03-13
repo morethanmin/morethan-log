@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import CONFIG from "site.config"
-import { ThemeType } from "@custeomTypes/index"
+import { ThemeType } from "@customTypes/index"
 
 export const getTheme: () => ThemeType = () => {
   const themeConfig = CONFIG.blog.theme as "auto" & ThemeType

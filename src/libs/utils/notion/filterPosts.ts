@@ -1,7 +1,7 @@
-import { TPosts, TPostStstus, TPostType } from "@/src/types"
+import { TPosts, TPostStatus, TPostType } from "@/src/types"
 
 type Options = {
-  acceptStatus?: TPostStstus[]
+  acceptStatus?: TPostStatus[]
   acceptType?: TPostType[]
 }
 

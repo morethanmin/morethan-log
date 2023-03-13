@@ -26,9 +26,9 @@
       "@libs/*": ["src/libs/*"],
       "@pages/*": ["src/pages/*"],
       "@styles/*": ["src/styles/*"],
-      "@custeomTypes/*": ["src/types/*"]
+      "@customTypes/*": ["src/types/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/libs/plugin/gtag.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/libs/gtag.ts"],
   "exclude": ["node_modules"]
 }

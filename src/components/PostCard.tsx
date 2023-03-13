@@ -4,51 +4,61 @@ import { formatDate } from "@/src/libs/utils"
 import Tag from "./Tag"
 import { TPost } from "../types"
 import Image from "next/image"
+import Category from "./Category"
 
 type Props = {
-  post: TPost
+  data: TPost
 }
 
-const PostCard: React.FC<Props> = ({ post }) => {
-  if (post.thumbnail) {
-  }
+const PostCard: React.FC<Props> = ({ data }) => {
+  const category = (data.category && data.category?.[0]) || undefined
+
   return (
-    <Link href={`/${post.slug}`}>
+    <Link href={`/${data.slug}`}>
       <a>
         <article
-          key={post.id}
-          className="overflow-hidden mb-6 md:mb-8 rounded-2xl bg-white dark:bg-zinc-700 hover:shadow-lg transition-shadow "
+          key={data.id}
+          className="relative overflow-hidden mb-6 md:mb-8 rounded-2xl bg-white dark:bg-zinc-700 hover:shadow-lg transition-shadow "
         >
-          {post.thumbnail && (
+          {category && (
+            <Category className="absolute top-4 left-4 z-10">
+              {category}
+            </Category>
+          )}
+          {data.thumbnail && (
             <div className="relative w-full pb-[66%] lg:pb-[50%] bg-gray-200 dark:bg-zinc-700 ">
               <Image
-                src={post.thumbnail}
+                src={data.thumbnail}
                 className="object-cover"
                 layout="fill"
-                alt={post.title}
+                alt={data.title}
               />
             </div>
           )}
-          <div className="p-4">
+          <div
+            className={["p-4", !data.thumbnail && category ? "pt-14" : ""].join(
+              " "
+            )}
+          >
             <header className="flex flex-col justify-between md:flex-row md:items-baseline">
               <h2 className="text-lg md:text-xl font-medium mb-2 cursor-pointer text-black dark:text-gray-100">
-                {post.title}
+                {data.title}
               </h2>
             </header>
             <div className="flex items-center gap-2 mb-4">
-              {/* {post.author && post.author[0] && (
+              {/* {data.author && data.author[0] && (
                 <>
                   <div className="flex items-center gap-1">
                     <Image
                       className="rounded-full"
-                      src={post.author[0].profile_photo}
+                      src={data.author[0].profile_photo}
                       alt="profile_photo"
                       loader={imageLoader}
                       width={20}
                       height={20}
                     />
                     <div className="text-sm text-gray-500 dark:text-gray-400">
-                      {`${post.author[0].last_name}${post.author[0].first_name}`}
+                      {`${data.author[0].last_name}${data.author[0].first_name}`}
                     </div>
                   </div>
                   <div className="self-stretch w-px my-1 bg-gray-300"></div>
@@ -56,19 +66,19 @@ const PostCard: React.FC<Props> = ({ post }) => {
               )} */}
               <div className="text-sm text-gray-500 dark:text-gray-400 md:ml-0">
                 {formatDate(
-                  post?.date?.start_date || post.createdTime,
+                  data?.date?.start_date || data.createdTime,
                   CONFIG.lang
                 )}
               </div>
             </div>
-            <main className="mb-4">
+            <div className="mb-4">
               <p className="hidden md:block leading-8 text-gray-700 dark:text-gray-300">
-                {post.summary}
+                {data.summary}
               </p>
-            </main>
+            </div>
             <div className="flex gap-2">
-              {post.tags &&
-                post.tags.map((tag: string, idx: number) => (
+              {data.tags &&
+                data.tags.map((tag: string, idx: number) => (
                   <Tag key={idx}>{tag}</Tag>
                 ))}
             </div>
