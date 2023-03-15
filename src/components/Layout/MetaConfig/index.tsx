@@ -44,6 +44,8 @@ const MetaConfig: React.FC<MetaConfigProps> = ({ ...props }) => {
         </>
       )}
       <meta name="naver-site-verification" content="f82eacb9373f60fedeffc3c8805fbb741301c6d3" />
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3089466321833604"
+     crossorigin="anonymous"></script>
     </Head>
   )
 }
