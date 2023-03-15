@@ -22,7 +22,7 @@ class MyDocument extends Document {
             rel="alternate"
             type="application/rss+xml"
             title="RSS 2.0"
-            href="/rss.xml"
+            href="/feed"
           ></link>
           {/* theme setting */}
           <meta name="theme-color" content={"#f1f3f5"} />
