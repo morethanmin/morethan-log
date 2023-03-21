@@ -1,9 +1,11 @@
 import React from "react"
 import Link from "next/link"
 import CONFIG from "site.config"
-type Props = {}
+type Props = {
+  title: String
+}
 
-const Logo: React.FC<Props> = () => {
+const Logo: React.FC<Props> = ({ title }) => {
   return (
     <Link href="/">
       <a aria-label={CONFIG.blog.title}>
@@ -14,7 +16,10 @@ const Logo: React.FC<Props> = () => {
               alt="Erics' blog"
               src={CONFIG.staticResources.Logo}
             ></img>{" "}
-            {CONFIG.blog.title}
+            <div>
+              {CONFIG.blog.title}/
+              {title && <span className="header-title">{title}</span>}
+            </div>
           </div>
         </div>
       </a>

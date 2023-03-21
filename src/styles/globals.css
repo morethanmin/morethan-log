@@ -107,6 +107,10 @@ nav {
     transition: all 0.5s cubic-bezier(0.4, 0, 0, 1);
     display: flex;
     align-items: center;
+    font-weight: 500;
+  }
+  .header-title{
+    font-weight: 400;
   }
   .sticky-nav-full .header-name {
     opacity: 1;

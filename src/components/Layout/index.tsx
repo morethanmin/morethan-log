@@ -3,21 +3,26 @@ import PropTypes from "prop-types"
 import MetaConfig, { MetaConfigProps } from "./MetaConfig"
 
 type Props = {
+  title: String
   children: React.ReactNode
   metaConfig: MetaConfigProps
   fullWidth?: boolean
 }
 
 const Layout: React.FC<Props> = ({
+  title,
   children,
   metaConfig,
   fullWidth = false,
 }) => {
+  console.log('Layout title is',title)
   return (
     <div>
       <MetaConfig {...metaConfig} />
       <div className={`wrapper`}>
-        {metaConfig.type !== "Paper" && <Header fullWidth={fullWidth} />}
+        {metaConfig.type !== "Paper" && (
+          <Header title={title} fullWidth={fullWidth} />
+        )}
         <main
           className={`m-auto flex-grow w-full transition-all max-w-6xl px-4 ${
             fullWidth && "px-4 md:px-24"
