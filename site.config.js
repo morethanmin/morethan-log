@@ -5,9 +5,9 @@ const CONFIG = {
     image: "/avatar.svg", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
     role: "frontend developer",
     bio: "I develop everything using node.",
-    email: "morethanmin.dev@gmail.com",
+    email: "ghkagg@outlook.com",
     linkedin: "morethanmin",
-    github: "morethanmin",
+    github: "Lanbasara",
     instagram: "",
   },
   projects: [
@@ -18,9 +18,9 @@ const CONFIG = {
   ],
   // blog setting (required)
   blog: {
-    title: "morethan-log",
+    title: "Eric's Blog",
     description: "welcome to morethan-log!",
-    theme: "light", // ['light', 'dark', 'auto']
+    theme: "auto", // ['light', 'dark', 'auto']
   },
 
   // CONFIG configration (required)
