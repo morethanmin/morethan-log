@@ -56,6 +56,16 @@ body::-webkit-scrollbar-thumb {
   opacity: 1;
   /* opacity: 0; */
   overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.header-name > .header-logo {
+  height: 24px;
+  font-size: 24px;
+  position: relative;
+  top: 3px;
+  margin-right: 5px;
 }
 
 .sticky-nav-full .nav {
@@ -94,9 +104,9 @@ nav {
     @apply max-w-full border-b border-opacity-50 border-gray-200 dark:border-gray-600 dark:border-opacity-50;
   }
   .header-name {
-    display: block;
-    /* opacity: 0; */
     transition: all 0.5s cubic-bezier(0.4, 0, 0, 1);
+    display: flex;
+    align-items: center;
   }
   .sticky-nav-full .header-name {
     opacity: 1;

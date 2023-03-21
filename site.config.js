@@ -64,6 +64,9 @@ const CONFIG = {
       appid: "", // Embed Code -> data-app-id value
     },
   },
+  staticResources: {
+    Logo: "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b8253eb8-92b3-4e4c-a29a-fbd47de01a0d/logo-no-background.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230321%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230321T095005Z&X-Amz-Expires=86400&X-Amz-Signature=3f57f87032643c29fe3a6e6f78fee9f5b22c46b516e09f172606175e05648dcb&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22logo-no-background.svg%22&x-id=GetObject",
+  },
   isProd: process.env.VERCEL_ENV === "production", // distinguish between development and production environment (ref: https://vercel.com/docs/environment-variables#system-environment-variables)
 }
 module.exports = CONFIG
