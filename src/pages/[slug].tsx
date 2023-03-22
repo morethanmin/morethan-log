@@ -6,6 +6,9 @@ import { NextPageWithLayout } from "@pages/_app"
 import { TPost } from "../types"
 import CustomError from "@containers/CustomError"
 import { getPostBlocks, getPosts } from "@libs/apis"
+import PostContext from "@/src/hooks/usePost"
+import { getPageTableOfContents, uuidToId } from "notion-utils"
+import { PageBlock } from "notion-types"
 
 export async function getStaticPaths() {
   const posts = await getPosts()
@@ -26,9 +29,21 @@ export async function getStaticProps({ params: { slug } }: any) {
     const posts = await getPosts()
     const post = posts.find((t) => t.slug === slug)
     const blockMap = await getPostBlocks(post?.id!)
+    const keys = Object.keys(blockMap?.block || {})
+    const block = blockMap?.block?.[keys[0]]?.value as PageBlock
+    const tableOfContent =
+      getPageTableOfContents(block, blockMap)?.map((item) => {
+        const { id, text, indentLevel } = item
+        console.log("item is", item)
+        return {
+          id: uuidToId(id),
+          text,
+          indentLevel,
+        }
+      }) || []
 
     return {
-      props: { post, blockMap },
+      props: { post, blockMap, tableOfContent },
       revalidate: 1,
     }
   } catch (error) {
@@ -42,15 +57,23 @@ export async function getStaticProps({ params: { slug } }: any) {
 type Props = {
   post: TPost
   blockMap: any
+  tableOfContent: any
 }
 
-const DetailPage: NextPageWithLayout<Props> = ({ post, blockMap }) => {
+const DetailPage: NextPageWithLayout<Props> = ({
+  post,
+  blockMap,
+  tableOfContent,
+}) => {
   if (!post) return <CustomError />
   return <Detail blockMap={blockMap} data={post} />
 }
 
 DetailPage.getLayout = function getlayout(page) {
-  const { props : {post : { title = "" }}} = page
+  const {
+    props: { post = {}, tableOfContent },
+  } = page
+
   const getImage = () => {
     if (page.props?.post.thumbnail) return page.props?.post.thumbnail
     if (CONFIG.ogImageGenerateURL)
@@ -80,15 +103,16 @@ DetailPage.getLayout = function getlayout(page) {
     }
   }
 
-  console.log('DetailPage title is',title,'page is',page.props)
   return (
-    <Layout
-      title={title}
-      metaConfig={getMetaConfig()}
-      fullWidth={page.props.post?.fullWidth}
-    >
-      {page}
-    </Layout>
+    <PostContext.Provider value={{ post }}>
+      <Layout
+        tableOfContent={tableOfContent}
+        metaConfig={getMetaConfig()}
+        fullWidth={page.props.post?.fullWidth}
+      >
+        {page}
+      </Layout>
+    </PostContext.Provider>
   )
 }
 

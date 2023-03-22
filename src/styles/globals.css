@@ -34,6 +34,25 @@ body::-webkit-scrollbar-thumb {
   flex-direction: column;
 }
 
+.post-main-container{
+  display: flex;
+}
+
+.post-table-of-content{
+  margin-right: 2rem;
+}
+
+.blog-logo-title{
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.header-title{
+  font-weight: 400;
+  font-size: 1rem;
+  margin-left: 10px;
+}
+
 .sticky-nav {
   position: sticky;
   z-index: 40;
@@ -111,6 +130,8 @@ nav {
   }
   .header-title{
     font-weight: 400;
+    font-size: 1rem;
+    margin-left: 10px;
   }
   .sticky-nav-full .header-name {
     opacity: 1;

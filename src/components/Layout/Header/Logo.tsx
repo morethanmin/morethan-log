@@ -1,11 +1,12 @@
-import React from "react"
+import React, { useContext } from "react"
+import PostContext from "@/src/hooks/usePost"
 import Link from "next/link"
 import CONFIG from "site.config"
-type Props = {
-  title: String
-}
+type Props = {}
 
-const Logo: React.FC<Props> = ({ title }) => {
+const Logo: React.FC<Props> = () => {
+  const { post = {} } = useContext(PostContext)
+  const { title = "" } = post || {}
   return (
     <Link href="/">
       <a aria-label={CONFIG.blog.title}>
@@ -16,9 +17,9 @@ const Logo: React.FC<Props> = ({ title }) => {
               alt="Erics' blog"
               src={CONFIG.staticResources.Logo}
             ></img>{" "}
-            <div>
-              {CONFIG.blog.title}/
-              {title && <span className="header-title">{title}</span>}
+            <div className="blog-logo-title">
+              {CONFIG.blog.title}
+              {title && <span className="header-title">{`${title}`}</span>}
             </div>
           </div>
         </div>
