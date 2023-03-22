@@ -30,4 +30,8 @@ export type TCategories = {
   [category: string]: number
 }
 
+export type TDates = {
+  [date: string]: number
+}
+
 export type ThemeType = "dark" | "light"

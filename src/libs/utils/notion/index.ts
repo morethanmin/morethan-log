@@ -1,2 +1,5 @@
-export { getAllSelectItemsFromPosts } from "./getAllSelectItemsFromPosts"
+export {
+  getAllSelectItemsFromPosts,
+  getDatesFromPosts,
+} from "./getAllSelectItemsFromPosts"
 export { filterPosts } from "./filterPosts"

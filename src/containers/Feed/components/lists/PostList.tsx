@@ -2,7 +2,7 @@ import PostCard from "@components/PostCard"
 import { TPosts } from "@/src/types"
 import { useRouter } from "next/router"
 import React, { useEffect, useState } from "react"
-import { DEFAULT_CATEGORY } from "@/src/constants"
+import { DEFAULT_CATEGORY, DEFAULT_DATE } from "@/src/constants"
 
 type Props = {
   q: string
@@ -15,6 +15,7 @@ const PostList: React.FC<Props> = ({ q, posts }) => {
 
   const currentTag = `${router.query.tag || ``}` || undefined
   const currentCategory = `${router.query.category || ``}` || DEFAULT_CATEGORY
+  const currentDate = `${router.query.date || ``}` || DEFAULT_DATE
   const currentOrder = `${router.query.order || ``}` || "desc"
 
   useEffect(() => {
@@ -41,6 +42,15 @@ const PostList: React.FC<Props> = ({ q, posts }) => {
             post && post.category && post.category.includes(currentCategory)
         )
       }
+
+      // date
+      if (currentDate !== DEFAULT_DATE) {
+        filteredPosts = filteredPosts.filter(
+          (post) =>
+            post && post.date && post.date.start_date.includes(currentDate)
+        )
+      }
+
       // order
       if (currentOrder !== "desc") {
         filteredPosts = filteredPosts.reverse()
@@ -48,7 +58,15 @@ const PostList: React.FC<Props> = ({ q, posts }) => {
 
       return filteredPosts
     })
-  }, [q, currentTag, currentCategory, currentOrder, setFilteredPosts, posts])
+  }, [
+    q,
+    currentTag,
+    currentCategory,
+    currentDate,
+    currentOrder,
+    setFilteredPosts,
+    posts,
+  ])
 
   return (
     <>

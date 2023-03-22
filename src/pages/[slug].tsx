@@ -34,7 +34,6 @@ export async function getStaticProps({ params: { slug } }: any) {
     const tableOfContent =
       getPageTableOfContents(block, blockMap)?.map((item) => {
         const { id, text, indentLevel } = item
-        console.log("item is", item)
         return {
           id: uuidToId(id),
           text,

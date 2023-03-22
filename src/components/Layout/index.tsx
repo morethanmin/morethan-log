@@ -17,7 +17,6 @@ const Layout: React.FC<Props> = ({
   fullWidth = false,
   tableOfContent,
 }) => {
-  console.log("tableOfContent is", tableOfContent)
   return (
     <div>
       <MetaConfig {...metaConfig} />
