@@ -12,8 +12,8 @@ const CONFIG = {
   },
   projects: [
     {
-      name: `SongDerrick`,
-      href: "https://github.com/SongDerrick",
+      name: `Web crawler and Automation Program`,
+      href: "https://doyoonsong.vercel.app/pythoncrawler",
     },
   ],
   // blog setting (required)
