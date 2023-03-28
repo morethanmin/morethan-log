@@ -31,7 +31,7 @@ const TagList: React.FC<Props> = ({ className, data }) => {
       })
     }
   }
-
+  console.log(data);
   return (
     <div className={className}>
       <div className="hidden lg:block p-1 mb-3 dark:text-white">🏷️ Tags</div>
