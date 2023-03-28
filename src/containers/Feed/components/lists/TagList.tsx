@@ -45,7 +45,7 @@ const TagList: React.FC<Props> = ({ className, data }) => {
             }`}
             onClick={() => handleClickTag(key)}
           >
-            <a>{key}({val})</a>
+            <a>{key} ({val})</a>
           </li>
         ))}
       </ul>
