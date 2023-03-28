@@ -35,7 +35,7 @@ const CategoryList: React.FC<Props> = ({ className, data }) => {
             }`}
             onClick={() => handleClickTag(key)}
           >
-            <a>{key}</a>
+            <a>{key} ({data})</a>
           </li>
         ))}
       </ul>
