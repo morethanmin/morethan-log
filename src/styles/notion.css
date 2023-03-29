@@ -72,7 +72,7 @@ pre[class*="language-"] {
 .notion-page {
   @apply w-auto;
   @apply px-0;
-  @apply overflow-scroll;
+  @apply overflow-auto;
 }
 .notion-quote {
   padding: 0.2em 0.9em;
