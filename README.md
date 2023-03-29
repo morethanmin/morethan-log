@@ -38,8 +38,8 @@ Next.js static blog using Notion as a Content Management System (CMS). Supports 
 6. Deploy on Vercel, with the following environment variables.
 
    - `NOTION_PAGE_ID` (Required): The Notion page Id got from the Share to Web URL.
-   - `GOOGLE_MEASUREMENT_ID` : For Google analytics Plugin.
-   - `GOOGLE_SITE_VERIFICATION` : For Google search console Plugin.
+   - `NEXT_PUBLIC_GOOGLE_MEASUREMENT_ID` : For Google analytics Plugin.
+   - `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` : For Google search console Plugin.
 
 ## Contributing
 
