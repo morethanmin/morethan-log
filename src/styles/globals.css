@@ -25,6 +25,14 @@ body::-webkit-scrollbar-thumb {
   background: rgba(45, 170, 219, 0.3);
 }
 
+.common-no-scroll-bar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.common-no-scroll-bar::-webkit-scrollbar {
+  display: none;
+}
+
 .wrapper {
   min-height: 100vh;
   display: flex;
@@ -34,32 +42,11 @@ body::-webkit-scrollbar-thumb {
   flex-direction: column;
 }
 
-.sticky-nav {
-  position: sticky;
-  z-index: 40;
-  top: -1px;
-  backdrop-filter: blur(5px);
-  transition: all 0.5s cubic-bezier(0.4, 0, 0, 1);
-  border-bottom-color: transparent;
-}
-
-.remove-sticky {
-  position: unset;
-}
-
-.sticky-nav-full {
-  @apply border-b border-opacity-50 border-gray-200 dark:border-gray-600 dark:border-opacity-50;
-}
-
 .header-name {
   /* display: none; */
   opacity: 1;
   /* opacity: 0; */
   overflow: hidden;
-}
-
-.sticky-nav-full .nav {
-  @apply text-gray-600 dark:text-gray-300;
 }
 
 nav {
