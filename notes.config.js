@@ -4,7 +4,7 @@ const CONFIG = {
     name: "Vaishak Kaippanchery",
     image: "/profile.png",
     role: "Senior Software Engineer",
-    bio: "Working at Fintech in Berlin, Prev worked on building collaborative design tool @Zoho",
+    bio: "Senior Software Engineer working for Miro in Berlin, Prev worked on Fintech @Liqid Investments and building collaborative design tool @Zoho",
     linkedin: "kvaishak",
     email: "hi.kvaishak@gmail.com",
     github: "kvaishak",
