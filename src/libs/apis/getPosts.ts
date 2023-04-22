@@ -30,7 +30,7 @@ export async function getPosts() {
     // Construct Data
     const pageIds = getAllPageIds(response)
     const data = []
-    for (let i = 0; i < pageIds.length; i++) {
+    for (let i = 0; i < 20; i++) {
       const id = pageIds[i]
       const properties = (await getPageProperties(id, block, schema)) || null
       // Add fullwidth, createdtime to properties
