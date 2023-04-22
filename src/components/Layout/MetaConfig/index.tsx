@@ -1,4 +1,4 @@
-import CONFIG from "site.config"
+import { CONFIG } from "site.config"
 import Head from "next/head"
 
 export type MetaConfigProps = {

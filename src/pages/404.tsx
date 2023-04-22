@@ -1,5 +1,5 @@
 import Layout from "@components/Layout"
-import CONFIG from "../../site.config"
+import { CONFIG } from "../../site.config"
 import { NextPageWithLayout } from "./_app"
 import { TPosts, TTags } from "../types"
 import CustomError from "../containers/CustomError"

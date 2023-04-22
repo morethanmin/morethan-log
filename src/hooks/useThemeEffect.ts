@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import CONFIG from "site.config"
+import { CONFIG } from "site.config"
 import { ThemeType } from "@customTypes/index"
 
 export const getTheme: () => ThemeType = () => {

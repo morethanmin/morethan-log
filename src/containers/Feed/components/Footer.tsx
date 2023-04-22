@@ -1,4 +1,4 @@
-import CONFIG from "@/site.config"
+import { CONFIG } from "@/site.config"
 import Link from "next/link"
 import React from "react"
 

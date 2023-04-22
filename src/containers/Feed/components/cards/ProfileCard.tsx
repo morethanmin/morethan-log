@@ -1,4 +1,4 @@
-import CONFIG from "site.config"
+import { CONFIG } from "site.config"
 import Image from "next/image"
 import React from "react"
 

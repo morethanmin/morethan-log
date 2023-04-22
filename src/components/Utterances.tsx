@@ -1,4 +1,4 @@
-import CONFIG from "site.config"
+import { CONFIG } from "site.config"
 import { useEffect } from "react"
 
 //TODO: useRef?

@@ -1,4 +1,4 @@
-import CONFIG from "@/site.config"
+import { CONFIG } from "@/site.config"
 import { ThemeType } from "@/src/types"
 import { getTheme } from "@hooks/useThemeEffect"
 import React, { useEffect, useState } from "react"

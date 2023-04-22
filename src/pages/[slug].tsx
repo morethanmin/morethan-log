@@ -1,7 +1,7 @@
 import Detail from "@containers/Detail"
 import { filterPosts } from "@/src/libs/utils/notion"
 import Layout from "@components/Layout"
-import CONFIG from "@/site.config"
+import { CONFIG } from "@/site.config"
 import { NextPageWithLayout } from "@pages/_app"
 import { TPost } from "../types"
 import CustomError from "@containers/CustomError"
