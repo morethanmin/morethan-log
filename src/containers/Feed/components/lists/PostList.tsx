@@ -81,13 +81,13 @@ const PostList: React.FC<Props> = ({ q, posts }) => {
       </div>
 
       {/* Render pagination */}
-      <div>
+      <div className="flex justify-center">
         {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
           <button
             key={page}
             onClick={() => handlePageChange(page)}
             className={`mx-1 ${
-              currentPage === page ? "font-bold" : "text-blue-500"
+              currentPage === page ? "font-bold text-gray-500 dark:text-white hover:bg-[#FFC288] dark:hover:bg-zinc-800" : "text-gray-500 dark:text-white hover:bg-[#FFC288] dark:hover:bg-zinc-800"
             }`}
           >
             {page}
