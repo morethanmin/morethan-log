@@ -1,9 +1,10 @@
-import CONFIG from "site.config"
+import { CONFIG } from "site.config"
 import { NotionAPI } from "notion-client"
 import { idToUuid } from "notion-utils"
-import getAllPageIds from "../utils/notion/getAllPageIds"
-import getPageProperties from "../utils/notion/getPageProperties"
-import { TPosts } from "@/src/types"
+
+import getAllPageIds from "@libs/utils/notion/getAllPageIds"
+import getPageProperties from "@libs/utils/notion/getPageProperties"
+import { TPosts } from "@customTypes/index"
 
 /**
  * @param {{ includePages: boolean }} - false: posts only / true: include pages
@@ -12,6 +13,7 @@ import { TPosts } from "@/src/types"
 export async function getPosts() {
   let id = CONFIG.notionConfig.pageId as string
   const api = new NotionAPI()
+
   const response = await api.getPage(id)
   id = idToUuid(id)
   const collection = Object.values(response.collection)[0]?.value
@@ -49,6 +51,7 @@ export async function getPosts() {
       const dateB: any = new Date(b?.date?.start_date || b.createdTime)
       return dateB - dateA
     })
+
     return data as TPosts
   }
 }

@@ -4,7 +4,7 @@ import {
 } from "@/src/libs/utils/notion"
 import Layout from "@components/Layout"
 import Feed from "@containers/Feed"
-import CONFIG from "../../site.config"
+import { CONFIG } from "../../site.config"
 import { NextPageWithLayout } from "./_app"
 import { TCategories, TPosts, TTags } from "../types"
 import { getPosts } from "../libs/apis"
@@ -31,7 +31,7 @@ export async function getStaticProps() {
       revalidate: 1,
     }
   } catch (error) {
-    return
+    throw error
   }
 }
 

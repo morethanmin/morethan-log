@@ -1,4 +1,4 @@
-import { NotionAPI } from 'notion-client'
+import { NotionAPI } from "notion-client"
 
 export async function getPostBlocks(id: string) {
   const api = new NotionAPI()

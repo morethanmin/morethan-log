@@ -29,6 +29,6 @@
       "@customTypes/*": ["src/types/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/libs/gtag.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "site.config.js"],
   "exclude": ["node_modules"]
 }

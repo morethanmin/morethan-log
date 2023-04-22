@@ -1,6 +1,6 @@
 import React from "react"
 import Link from "next/link"
-import CONFIG from "site.config"
+import { CONFIG } from "site.config"
 
 type Props = {}
 
