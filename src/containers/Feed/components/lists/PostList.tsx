@@ -58,6 +58,7 @@ const PostList: React.FC<Props> = ({ q, posts }) => {
   // Handle pagination
   const handlePageChange = (page: number) => {
     setCurrentPage(page)
+    window.scrollTo(0, 0) // Scroll to top of the page
   }
 
   // Calculate the index of the last post on the current page
@@ -86,7 +87,7 @@ const PostList: React.FC<Props> = ({ q, posts }) => {
           <button
             key={page}
             onClick={() => handlePageChange(page)}
-            className={`mx-1 ${
+            className={`mx-2 ${
               currentPage === page ? "font-bold text-gray-500 dark:text-white hover:bg-[#FFC288] dark:hover:bg-zinc-800" : "text-gray-500 dark:text-white hover:bg-[#FFC288] dark:hover:bg-zinc-800"
             }`}
           >
