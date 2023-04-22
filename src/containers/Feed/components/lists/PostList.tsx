@@ -11,7 +11,9 @@ type Props = {
 
 const PostList: React.FC<Props> = ({ q, posts }) => {
   const router = useRouter()
+  const [currentPage, setCurrentPage] = useState(1)
   const [filteredPosts, setFilteredPosts] = useState(posts)
+  const postsPerPage = 20
 
   const currentTag = `${router.query.tag || ``}` || undefined
   const currentCategory = `${router.query.category || ``}` || DEFAULT_CATEGORY
@@ -50,16 +52,49 @@ const PostList: React.FC<Props> = ({ q, posts }) => {
     })
   }, [q, currentTag, currentCategory, currentOrder, setFilteredPosts, posts])
 
+  // Calculate total number of pages
+  const totalPages = Math.ceil(filteredPosts.length / postsPerPage)
+
+  // Handle pagination
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page)
+  }
+
+  // Calculate the index of the last post on the current page
+  const indexOfLastPost = currentPage * postsPerPage
+
+  // Calculate the index of the first post on the current page
+  const indexOfFirstPost = indexOfLastPost - postsPerPage
+
+  // Get the current posts to display on the current page
+  const currentPosts = filteredPosts.slice(indexOfFirstPost, indexOfLastPost)
+
   return (
     <>
       <div className="my-2">
-        {!filteredPosts.length && (
+        {!currentPosts.length && (
           <p className="text-gray-500 dark:text-gray-300">Nothing! 😺</p>
         )}
-        {filteredPosts.slice(0, 20).map((post) => (
+        {currentPosts.map((post) => (
           <PostCard key={post.id} data={post} />
         ))}
       </div>
+
+      {/* Render pagination */}
+      <div>
+        {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+          <button
+            key={page}
+            onClick={() => handlePageChange(page)}
+            className={`mx-1 ${
+              currentPage === page ? "font-bold" : "text-blue-500"
+            }`}
+          >
+            {page}
+          </button>
+        ))}
+      </div>
+
     </>
   )
 }
