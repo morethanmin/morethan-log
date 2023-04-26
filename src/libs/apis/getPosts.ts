@@ -6,11 +6,24 @@ import getAllPageIds from "@libs/utils/notion/getAllPageIds"
 import getPageProperties from "@libs/utils/notion/getPageProperties"
 import { TPosts } from "@customTypes/index"
 
+declare global {
+  var notionDatas: { TPosts: TPosts; savedDate: Date }
+}
+
 /**
  * @param {{ includePages: boolean }} - false: posts only / true: include pages
  */
 
 export async function getPosts() {
+  if (global?.notionDatas) {
+    const saved = global.notionDatas.savedDate
+    const now = new Date()
+    const diff = (now.getTime() - saved.getTime()) / 1000
+    if (diff < 60 * 60) {
+      return global.notionDatas.TPosts
+    }
+  }
+
   let id = CONFIG.notionConfig.pageId as string
   const api = new NotionAPI()
 
@@ -51,6 +64,8 @@ export async function getPosts() {
       const dateB: any = new Date(b?.date?.start_date || b.createdTime)
       return dateB - dateA
     })
+
+    global.notionDatas = { TPosts: data, savedDate: new Date() }
 
     return data as TPosts
   }
