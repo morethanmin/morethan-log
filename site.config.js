@@ -15,7 +15,7 @@ const CONFIG = {
       name: ``,
       href: "",
     },
-  ],
+  ], // projects에 나중에 가재하고싶으면 바꾸면 될듯, 지금은 주석처리해둠
   // blog setting (required)
   blog: {
     title: "mia-log✏️",
