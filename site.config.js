@@ -10,12 +10,12 @@ const CONFIG = {
     github: "GyeongmiLee",
     instagram: "",
   },
-  // projects: [
-  //   {
-  //     name: `morethan-log를 참조합니다`,
-  //     href: "https://github.com/morethanmin/morethan-log",
-  //   },
-  // ],
+  projects: [
+    {
+      name: `morethan-log를 참조합니다`,
+      href: "https://github.com/morethanmin/morethan-log",
+    },
+  ],
   // blog setting (required)
   blog: {
     title: "mia-log",
