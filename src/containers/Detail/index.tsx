@@ -3,10 +3,6 @@ import useMermaidEffect from "./hooks/useMermaidEffect"
 import PostDetail from "./components/PostDetail"
 import PageDetail from "./components/PageDetail"
 
-const mapPageUrl = (id: string) => {
-  return "https://www.notion.so/" + id.replace(/-/g, "")
-}
-
 type Props = {
   blockMap: any
   data: TPost

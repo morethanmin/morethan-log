@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html {
-  font-family: Pretendard, Roboto, sans-serif;
+  font-family: "Pretendard", "Roboto", sans-serif;
   --scrollbarBG: #ffffff00;
   --thumbBG: #b8b8b8;
 }
@@ -49,11 +49,6 @@ body::-webkit-scrollbar-thumb {
   overflow: hidden;
 }
 
-nav {
-  flex-wrap: wrap;
-  line-height: 1.5em;
-}
-
 .article-tags::-webkit-scrollbar {
   width: 0 !important;
 }
@@ -88,13 +83,6 @@ nav {
   .sticky-nav-full .header-name {
     opacity: 1;
     @apply dark:text-gray-300 text-gray-600;
-  }
-}
-
-@supports not (backdrop-filter: none) {
-  .sticky-nav {
-    backdrop-filter: none;
-    @apply bg-day bg-opacity-90 dark:bg-night dark:bg-opacity-90;
   }
 }
 
