@@ -18,7 +18,7 @@ const CONFIG = {
   ],
   // blog setting (required)
   blog: {
-    title: "karistin,
+    title: "karistin",
     description: "welcome to karistin-log!",
     theme: "light", // ['light', 'dark', 'auto']
   },
