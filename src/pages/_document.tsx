@@ -1,5 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from "next/document"
-import { CONFIG } from "site.config"
+import CONFIG from "site.config"
+import CJK from "@libs/cjk"
 
 class MyDocument extends Document {
   render() {
@@ -11,12 +12,16 @@ class MyDocument extends Document {
             as="font"
             href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css"
           />
-          <link rel="icon" href="/favicon.ico" />
-          <link
-            rel="apple-touch-icon"
-            sizes="192x192"
-            href="/apple-touch-icon.png"
-          ></link>
+          
+                <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+	      	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+	      	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000" />
+	      	<link rel="manifest" href="/site.webmanifest" />
+	      	<meta name="msapplication-config" content="/browserconfig.xml" />
+	      	<meta name="msapplication-TileColor" content="#050b15" />
+	      	<meta name="theme-color" content="#ffffff" />
           <link
             rel="alternate"
             type="application/rss+xml"
@@ -36,7 +41,7 @@ class MyDocument extends Document {
             </>
           )}
         </Head>
-        <body className="bg-slate-100 dark:bg-black">
+        <body className="bg-day dark:bg-night">
           <Main />
           <NextScript />
         </body>

@@ -1,4 +1,4 @@
-import { CONFIG } from "site.config"
+import { cusdis, link } from "site.config"
 import { ReactCusdis } from "react-cusdis"
 import { useCallback, useEffect, useState } from "react"
 
@@ -39,11 +39,11 @@ const Cusdis: React.FC<Props> = ({ id, slug, title }) => {
         <ReactCusdis
           key={value}
           attrs={{
-            host: CONFIG.cusdis.config.host,
-            appId: CONFIG.cusdis.config.appid,
+            host: cusdis.config.host,
+            appId: cusdis.config.appid,
             pageId: id,
             pageTitle: title,
-            pageUrl: `${CONFIG.link}/${slug}`,
+            pageUrl: `${link}/${slug}`,
             theme: document.documentElement.classList.contains("dark")
               ? "dark"
               : "light",
@@ -52,6 +52,6 @@ const Cusdis: React.FC<Props> = ({ id, slug, title }) => {
       </div>
     </>
   )
-}
+ }
 
 export default Cusdis
