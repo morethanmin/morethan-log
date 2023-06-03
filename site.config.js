@@ -1,35 +1,54 @@
 const CONFIG = {
   // profile setting (required)
   profile: {
-    name: "morethanmin",
-    image: "/avatar.svg", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
-    role: "frontend developer",
-    bio: "I develop everything using node.",
-    email: "morethanmin.dev@gmail.com",
-    linkedin: "morethanmin",
-    github: "morethanmin",
-    instagram: "",
+    name: 'Zak',
+    image: '/avatar.png',  // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
+    role: 'Devops',
+    bio: 'I Am DevOps Engineer',
+    github: 'zakery1369',
+    docker: 'zakery1369',    
+    linkedin: 'zakery1369',
+    medium: 'zakery1369',
+    dev: 'zakery1369',
+    twitter: 'zakery1369',
+    telegram: 'zakery1369',
+    skype: 'lf6899W3qgrd',
+    email: 'zakery1369@gmail.com',
+  },
+  // Certificates setting (required)
+  Certificates: {
+    name: 'Mohammad Zakery',
+    image: '/ibm.pdf', 
+    image2: '/LPIC2.png',
+    description: 'My Certifications',
+    caption: 'Linux Engineer',
   },
   projects: [
     {
-      name: `morethan-log`,
-      href: "https://github.com/morethanmin/morethan-log",
-    },
+      name: `Wordpress Docker`,
+      href: 'https://github.com/spyhichkas/Wordpress'
+    }
+  ],
+  projects2: [
+    {
+      name: `Wordpress`,
+      href: 'https://github.com/spyhichkas/Wordpress'
+    }
   ],
   // blog setting (required)
   blog: {
-    title: "morethan-log",
-    description: "welcome to morethan-log!",
-    theme: "auto", // ['light', 'dark', 'auto']
+    title: 'Zakops',
+    description: 'welcome to My Site',
+    theme: 'light' // ['light', 'dark', 'auto']
   },
 
   // CONFIG configration (required)
-  link: "https://morethan-log.vercel.app",
-  since: 2022, // If leave this empty, current year will be used.
-  lang: "en-US", // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES', 'ko-KR']
-  ogImageGenerateURL: "https://og-image-korean.vercel.app", // The link to generate OG image, don't end with a slash
+  link: 'https://zak-black.vercel.app/',
+  since: 2020, // If leave this empty, current year will be used.
+  lang: 'en-US', // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES', 'ko-KR']
+  ogImageGenerateURL: 'https://og-image-korean.vercel.app', // The link to generate OG image, don't end with a slash
   seo: {
-    keywords: ["Blog", "Website", "Notion"],
+    keywords: ['zakops', 'zakops.com', 'Devops'],
   },
 
   // notion configuration (required)
@@ -41,31 +60,31 @@ const CONFIG = {
   googleAnalytics: {
     enable: false,
     config: {
-      measurementId: process.env.NEXT_PUBLIC_GOOGLE_MEASUREMENT_ID || "",
-    },
+      measurementId: process.env.GOOGLE_MEASUREMENT_ID || ''
+    }
   },
   googleSearchConsole: {
     enable: false,
     config: {
-      siteVerification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",
-    },
+      siteVerification: process.env.GOOGLE_SITE_VERIFICATION || ''
+    }
   },
   utterances: {
-    enable: true,
-    config: {
-      repo: "morethanmin/morethan-log",
-      "issue-term": "og:title",
-      label: "💬 Utterances",
-    },
-  },
-  cusdis: {
     enable: false,
     config: {
+      repo: 'zakops-com/zakops.com',
+      'issue-term': 'og:title',
+      label: '💬 Utterances',
+    }
+  },
+  cusdis: {
+    enable: true,
+    config: {
       host: "https://cusdis.com",
-      appid: "", // Embed Code -> data-app-id value
+      appid: "fa09e320-9c40-4a30-a6c7-4eb94efe4584", // Embed Code -> data-app-id value
     },
   },
-  isProd: process.env.VERCEL_ENV === "production", // distinguish between development and production environment (ref: https://vercel.com/docs/environment-variables#system-environment-variables)
+  
+  isProd: process.env.VERCEL_ENV === 'production' // distinguish between development and production environment (ref: https://vercel.com/docs/environment-variables#system-environment-variables)
 }
-
-module.exports = { CONFIG }
+module.exports = CONFIG
