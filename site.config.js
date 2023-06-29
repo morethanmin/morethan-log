@@ -6,7 +6,9 @@ const CONFIG = {
     role: "student",
     bio: "OK.",
     email: "eungyeom_ha@yonsei.ac.kr",
+    linkedin: "morethanmin",
     github: "poori-nuna",
+    
     instagram: "",
   },
   projects: [
