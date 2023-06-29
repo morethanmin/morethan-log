@@ -2,23 +2,26 @@ const CONFIG = {
   // profile setting (required)
   profile: {
     name: "yujimin",
-    image: "/avatar2.png", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
+    image: "/avatar.svg", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
     role: "frontend developer",
     bio: "근심걱정 없이 살자",
     email: "zzzzm1n126@gmail.com",
-    linkedin: " ",
     github: "wlals1126",
     instagram: "y.novtwentysix",
   },
   projects: [
     {
-      name: `min-log`,
+      name: `Minlog`,
       href: "https://github.com/morethanmin/morethan-log",
+    },
+    {
+      name: "Tream",
+      href: "https://github.com/2023-DGSW-tream/Tream-front",
     },
   ],
   // blog setting (required)
   blog: {
-    title: "min-log",
+    title: "jimin's blog",
     description: "welcome to min-log!",
     theme: "auto", // ['light', 'dark', 'auto']
   },
