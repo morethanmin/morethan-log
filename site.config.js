@@ -2,9 +2,9 @@ const CONFIG = {
   // profile setting (required)
   profile: {
     name: "poori-nuna",
-    image: "/avatar.svg", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
-    role: "푸리누나",
-    bio: "It's OK.",
+    image: "/notion-avatar-1688102646895.png", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
+    role: "푸리누나✌(-‿-)✌",
+    bio: "When life gives you lemons, make lemonade!🍋",
     email: "eungyeom_ha@yonsei.ac.kr",
     linkedin: "",
     github: "poori-nuna",
@@ -18,8 +18,8 @@ const CONFIG = {
   ],
   // blog setting (required)
   blog: {
-    title: "poori-nuna-blog",
-    description: "Welcome to myblog!",
+    title: "Poori Nuna Blog",
+    description: "Welcome to my blog!",
     theme: "auto", // ['light', 'dark', 'auto']
   },
 
