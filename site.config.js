@@ -53,7 +53,7 @@ const CONFIG = {
   utterances: {
     enable: true,
     config: {
-      repo: "poori-nuna/morethan-log",
+      repo: "poori-nuna/my-log",
       "issue-term": "og:title",
       label: "💬 Utterances",
     },
