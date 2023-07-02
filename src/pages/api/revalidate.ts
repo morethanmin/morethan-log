@@ -1,7 +1,9 @@
 import { getPosts } from "@/src/libs/apis"
 import { NextApiRequest, NextApiResponse } from "next"
 
-// https://<your-site.com>/api/revalidate?secret=<token>
+// for all path revalidate, https://<your-site.com>/api/revalidate?secret=<token>
+// for specific path revalidate, https://<your-site.com>/api/revalidate?secret=<token>&path=<path>
+// example, https://<your-site.com>/api/revalidate?secret=이것은_키&path=feed
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
