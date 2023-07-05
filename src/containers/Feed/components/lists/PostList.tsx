@@ -13,7 +13,7 @@ const PostList: React.FC<Props> = ({ q, posts }) => {
   const router = useRouter()
   const [currentPage, setCurrentPage] = useState(1)
   const [filteredPosts, setFilteredPosts] = useState(posts)
-  const postsPerPage = 20
+  const postsPerPage = 15
 
   const currentTag = `${router.query.tag || ``}` || undefined
   const currentCategory = `${router.query.category || ``}` || DEFAULT_CATEGORY
