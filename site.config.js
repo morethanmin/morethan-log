@@ -10,15 +10,15 @@ const CONFIG = {
     github: "lionleeee",
     instagram: "",
   },
-  projects: [
-    {
-      name: `morethan-log`,
-      href: "https://github.com/morethanmin/morethan-log",
-    },
+  //projects: [
+    //{
+      //name: `morethan-log`,
+      //href: "https://github.com/morethanmin/morethan-log",
+    //},
   ],
   // blog setting (required)
   blog: {
-    title: "lion-lee dev blog",
+    title: "매일매일을 특별하게",
     description: "Welcome to the shoveling blog",
     theme: "auto", // ['light', 'dark', 'auto']
   },
@@ -53,7 +53,7 @@ const CONFIG = {
   utterances: {
     enable: true,
     config: {
-      repo: "morethanmin/morethan-log",
+      repo: "lionleeee/morethan-log",
       "issue-term": "og:title",
       label: "💬 Utterances",
     },
