@@ -15,6 +15,14 @@ const CONFIG = {
       name: `Web crawler and Automation Program`,
       href: "https://doyoonsong.vercel.app/pythoncrawler",
     },
+    {
+      name: `Data Collecting Platform for ARC Problems`,
+      href: "https://doyoonsong.vercel.app/ARC_project",
+    },
+    {
+      name: `Android Application with three tab structures`,
+      href: "https://github.com/SongDerrick/molcamp_week_1",
+    }
   ],
   // blog setting (required)
   blog: {
