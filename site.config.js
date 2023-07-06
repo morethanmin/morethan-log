@@ -1,14 +1,14 @@
 const CONFIG = {
   // profile setting (required)
   profile: {
-    name: "JunYoung",
+    name: "준영",
     image: "/avatar2.svg", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
-    role: "Android Developer",
-    bio: "All of my thing is Android.",
+    role: "안드로이드 개발자",
+    bio: "안드로이드 개발에 진심인 사람",
     email: "jypjun12@gmail.com",
-    linkedin: "junyoung-park",
     github: "JunYou-Park",
     instagram: "",
+    linkedin: "",
   },
   projects: [
     {
@@ -18,7 +18,7 @@ const CONFIG = {
   ],
   // blog setting (required)
   blog: {
-    title: "JunYoung's Notion",
+    title: "JunYoung's Blog",
     description: "welcome to my blog!",
     theme: "auto", // ['light', 'dark', 'auto']
   },
