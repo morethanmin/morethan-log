@@ -24,7 +24,7 @@ const CONFIG = {
   },
 
   // CONFIG configration (required)
-  link: "https://spice-wallet-d31.notion.site/9ba8724a75de4d17aa0412c336128713?v=273e77beeb3a4bc2ae27746e483d6850&pvs=4",
+  link: "https://morethan-log-1.vercel.app",
   since: 2023, // If leave this empty, current year will be used.
   lang: "ko-KR", // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES', 'ko-KR']
   ogImageGenerateURL: "https://og-image-korean.vercel.app", // The link to generate OG image, don't end with a slash
@@ -34,7 +34,7 @@ const CONFIG = {
 
   // notion configuration (required)
   notionConfig: {
-    pageId: process.env.9ba8724a75de4d17aa0412c336128713
+    pageId: process.env.NOTION_PAGE_ID,
   },
 
   // plugin configuration (optional)
