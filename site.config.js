@@ -4,7 +4,7 @@ const CONFIG = {
     name: "JunYoung",
     image: "/avatar.svg", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
     role: "frontend developer",
-    bio: "I develop everything using node.",
+    bio: "I'm Android Developer.",
     email: "jypjun12@gmail.com",
     linkedin: "morethanmin",
     github: "https://github.com/JunYou-Park",
@@ -18,8 +18,8 @@ const CONFIG = {
   ],
   // blog setting (required)
   blog: {
-    title: "morethan-JunYoung",
-    description: "welcome to morethan-log!",
+    title: "JunYoung's Notion Blog",
+    description: "welcome to my blog!",
     theme: "auto", // ['light', 'dark', 'auto']
   },
 
@@ -53,7 +53,7 @@ const CONFIG = {
   utterances: {
     enable: false,
     config: {
-      repo: "morethanmin/morethan-log",
+      repo: "JunYou-Park/morethan-log-1",
       "issue-term": "og:title",
       label: "💬 Utterances",
     },
