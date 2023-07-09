@@ -1,5 +1,5 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
   "regions": ["icn1"]
 }
