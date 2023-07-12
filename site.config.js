@@ -12,8 +12,8 @@ const CONFIG = {
   },
   projects: [
     {
-      name: `notion blog`,
-      href: "https://spice-wallet-d31.notion.site/9ba8724a75de4d17aa0412c336128713?v=273e77beeb3a4bc2ae27746e483d6850&pvs=4",
+      name: `tistory`,
+      href: "https://junyoeng.tistory.com/",
     },
   ],
   // blog setting (required)
