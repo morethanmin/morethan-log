@@ -1,4 +1,3 @@
-import { NotionRenderer } from "react-notion-x"
 import dynamic from "next/dynamic"
 import { TPost } from "src/types"
 import React from "react"
@@ -8,6 +7,10 @@ import CommentBox from "./CommentBox"
 import Category from "src/components/Category"
 import Image from "next/image"
 import Link from "next/link"
+const NotionRenderer = dynamic(
+  () => import("react-notion-x").then((m) => m.NotionRenderer),
+  { ssr: false }
+)
 
 const Code = dynamic(() =>
   import("react-notion-x/build/third-party/code").then(async (m) => {

@@ -1,21 +1,33 @@
+import styled from "@emotion/styled"
 import Link from "next/link"
 
 const NavBar: React.FC = () => {
   const links = [{ id: 1, name: "About", to: "/about" }]
   return (
-    <div className="flex-shrink-0">
-      <ul className="flex flex-row">
+    <StyledWrapper className="">
+      <ul>
         {links.map((link) => (
-          <li
-            key={link.id}
-            className="block ml-4 text-black text-gray-500 dark:text-white nav"
-          >
+          <li key={link.id}>
             <Link href={link.to}>{link.name}</Link>
           </li>
         ))}
       </ul>
-    </div>
+    </StyledWrapper>
   )
 }
 
 export default NavBar
+
+const StyledWrapper = styled.div`
+  flex-shrink: 0;
+  ul {
+    display: flex;
+    flex-direction: row;
+    li {
+      display: block;
+      margin-left: 1rem;
+      color: #000000;
+      color: #6b7280;
+    }
+  }
+`

@@ -32,14 +32,6 @@ body::-webkit-scrollbar-thumb {
 .common-no-scroll-bar::-webkit-scrollbar {
   display: none;
 }
-
-.header-name {
-  /* display: none; */
-  opacity: 1;
-  /* opacity: 0; */
-  overflow: hidden;
-}
-
 .article-tags::-webkit-scrollbar {
   width: 0 !important;
 }
@@ -60,21 +52,6 @@ body::-webkit-scrollbar-thumb {
 
 .mobile-x-scroll {
   overflow-x: scroll;
-}
-
-@media (max-width: 768px) {
-  .sticky-nav-full {
-    @apply max-w-full border-b border-opacity-50 border-gray-200 dark:border-gray-600 dark:border-opacity-50;
-  }
-  .header-name {
-    display: block;
-    /* opacity: 0; */
-    transition: all 0.5s cubic-bezier(0.4, 0, 0, 1);
-  }
-  .sticky-nav-full .header-name {
-    opacity: 1;
-    @apply dark:text-gray-300 text-gray-600;
-  }
 }
 
 @media (min-width: 768px) {
