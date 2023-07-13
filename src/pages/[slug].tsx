@@ -1,11 +1,10 @@
-import Detail from "@containers/Detail"
-import { filterPosts } from "@/src/libs/utils/notion"
-import Layout from "@components/Layout"
-import { CONFIG } from "@/site.config"
-import { NextPageWithLayout } from "@pages/_app"
-import { TPost } from "../types"
-import CustomError from "@containers/CustomError"
-import { getPostBlocks, getPosts } from "@libs/apis"
+import Detail from "src/containers/Detail"
+import { filterPosts } from "src/libs/utils/notion"
+import Layout from "src/components/Layout"
+import { CONFIG } from "site.config"
+import { NextPageWithLayout, TPost } from "../types"
+import CustomError from "src/containers/CustomError"
+import { getPostBlocks, getPosts } from "src/libs/apis"
 
 export async function getStaticPaths() {
   const posts = await getPosts()
@@ -24,7 +23,7 @@ export async function getStaticProps({ params: { slug } }: any) {
   try {
     //includePages: true
     const posts = await getPosts()
-    const post = posts.find((t) => t.slug === slug)
+    const post = posts.find((t: any) => t.slug === slug)
     const blockMap = await getPostBlocks(post?.id!)
 
     return {

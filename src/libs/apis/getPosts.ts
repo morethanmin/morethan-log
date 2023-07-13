@@ -2,8 +2,8 @@ import { CONFIG } from "site.config"
 import { NotionAPI } from "notion-client"
 import { idToUuid } from "notion-utils"
 
-import getAllPageIds from "@libs/utils/notion/getAllPageIds"
-import getPageProperties from "@libs/utils/notion/getPageProperties"
+import getAllPageIds from "src/libs/utils/notion/getAllPageIds"
+import getPageProperties from "src/libs/utils/notion/getPageProperties"
 import { TPosts } from "@customTypes/index"
 
 declare global {

@@ -1,22 +1,13 @@
-import 'prismjs/themes/prism.css'
-import 'react-notion-x/src/styles.css'
-import 'katex/dist/katex.min.css'
-import '@styles/globals.css'
-import '@styles/notion.css'
-import useThemeEffect from '@hooks/useThemeEffect'
-import useGtagEffect from '@hooks/useGtagEffect'
-import Scripts from '@components/Scripts'
-import { NextPage } from 'next'
-import { ReactElement, ReactNode } from 'react'
-import { AppProps } from 'next/app'
+import "prismjs/themes/prism.css"
+import "react-notion-x/src/styles.css"
+import "katex/dist/katex.min.css"
 
-export type NextPageWithLayout<PageProps = {}> = NextPage<PageProps> & {
-  getLayout?: (page: ReactElement) => ReactNode
-}
-
-type AppPropsWithLayout = AppProps & {
-  Component: NextPageWithLayout
-}
+import "src/styles/globals.css"
+import "src/styles/notion.css"
+import useThemeEffect from "src/hooks/useThemeEffect"
+import useGtagEffect from "src/hooks/useGtagEffect"
+import Scripts from "src/components/Scripts"
+import { AppPropsWithLayout } from "../types"
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout || ((page) => page)

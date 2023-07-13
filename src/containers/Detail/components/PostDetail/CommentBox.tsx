@@ -1,16 +1,16 @@
-import { TPost } from "@/src/types"
+import { TPost } from "src/types"
 import { CONFIG } from "site.config"
 import dynamic from "next/dynamic"
 
 const UtterancesComponent = dynamic(
   () => {
-    return import("@components/Utterances")
+    return import("src/components/Utterances")
   },
   { ssr: false }
 )
 const CusdisComponent = dynamic(
   () => {
-    return import("@components/Cusdis")
+    return import("src/components/Cusdis")
   },
   { ssr: false }
 )

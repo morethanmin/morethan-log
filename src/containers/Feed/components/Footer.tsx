@@ -1,5 +1,4 @@
-import { CONFIG } from "@/site.config"
-import Link from "next/link"
+import { CONFIG } from "site.config"
 import React from "react"
 
 const d = new Date()

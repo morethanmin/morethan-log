@@ -1,8 +1,8 @@
-import PostCard from "@components/PostCard"
-import { TPosts } from "@/src/types"
 import { useRouter } from "next/router"
 import React, { useEffect, useState } from "react"
-import { DEFAULT_CATEGORY } from "@/src/constants"
+import PostCard from "src/components/PostCard"
+import { DEFAULT_CATEGORY } from "src/constants"
+import { TPosts } from "src/types"
 
 type Props = {
   q: string

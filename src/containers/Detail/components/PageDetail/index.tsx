@@ -1,5 +1,5 @@
 import { NotionRenderer } from "react-notion-x"
-import { TPost } from "@/src/types"
+import { TPost } from "src/types"
 import React from "react"
 import dynamic from "next/dynamic"
 import Link from "next/link"

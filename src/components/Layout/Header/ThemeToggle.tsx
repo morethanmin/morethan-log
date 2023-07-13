@@ -1,7 +1,7 @@
-import { CONFIG } from "@/site.config"
-import { ThemeType } from "@/src/types"
-import { getTheme } from "@hooks/useThemeEffect"
 import React, { useEffect, useState } from "react"
+import { CONFIG } from "site.config"
+import { getTheme } from "src/hooks/useThemeEffect"
+import { ThemeType } from "src/types"
 
 type Props = {}
 

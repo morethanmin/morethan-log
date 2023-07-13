@@ -1,4 +1,4 @@
-import { TPost } from "@/src/types"
+import { TPost } from "src/types"
 import useMermaidEffect from "./hooks/useMermaidEffect"
 import PostDetail from "./components/PostDetail"
 import PageDetail from "./components/PageDetail"

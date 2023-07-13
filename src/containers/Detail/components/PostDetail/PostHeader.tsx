@@ -1,7 +1,7 @@
-import { CONFIG } from "@/site.config"
-import Tag from "@components/Tag"
-import { TPost } from "@/src/types"
-import { formatDate } from "@/src/libs/utils"
+import { CONFIG } from "site.config"
+import Tag from "src/components/Tag"
+import { TPost } from "src/types"
+import { formatDate } from "src/libs/utils"
 import Image from "next/image"
 import React from "react"
 
@@ -54,7 +54,7 @@ const PostHeader: React.FC<Props> = ({ data }) => {
               <Image
                 src={data.thumbnail}
                 className="object-cover"
-                layout="fill"
+                fill
                 alt={data.title}
               />
             </div>
