@@ -18,10 +18,12 @@ export const getTheme: () => ThemeType = () => {
 
 const useThemeEffect = () => {
   useEffect(() => {
-    if (typeof document !== "object") return
     if (getTheme() === "dark") {
+      console.log("dark")
+
       document.documentElement.classList.add("dark")
     } else {
+      console.log("light")
       document.documentElement.classList.remove("dark")
     }
   }, [])

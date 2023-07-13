@@ -4,7 +4,7 @@ import { idToUuid } from "notion-utils"
 
 import getAllPageIds from "src/libs/utils/notion/getAllPageIds"
 import getPageProperties from "src/libs/utils/notion/getPageProperties"
-import { TPosts } from "@customTypes/index"
+import { TPosts } from "src/types"
 
 declare global {
   var notionDatas: { TPosts: TPosts; savedDate: Date }

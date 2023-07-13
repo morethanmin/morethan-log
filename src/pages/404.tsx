@@ -1,7 +1,7 @@
 import Layout from "src/layouts/Layout"
 import { CONFIG } from "../../site.config"
 import { NextPageWithLayout, TPosts, TTags } from "../types"
-import CustomError from "../containers/CustomError"
+import CustomError from "../routes/CustomError"
 
 type Props = {
   tags: TTags

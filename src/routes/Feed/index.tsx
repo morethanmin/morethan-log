@@ -3,10 +3,10 @@ import { useState } from "react"
 import * as Cards from "./components/cards"
 import * as Lists from "./components/lists"
 
-import { TCategories, TPosts, TTags } from "@customTypes/index"
 import SearchInput from "./components/SearchInput"
 import { FeedHeader } from "./components/FeedHeader"
 import Footer from "./components/Footer"
+import { TCategories, TPosts, TTags } from "src/types"
 
 type Props = {
   categories: TCategories

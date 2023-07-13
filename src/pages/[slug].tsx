@@ -1,9 +1,9 @@
-import Detail from "src/containers/Detail"
+import Detail from "src/routes/Detail"
 import { filterPosts } from "src/libs/utils/notion"
 import Layout from "src/layouts/Layout"
 import { CONFIG } from "site.config"
 import { NextPageWithLayout, TPost } from "../types"
-import CustomError from "src/containers/CustomError"
+import CustomError from "src/routes/CustomError"
 import { getPostBlocks, getPosts } from "src/libs/apis"
 
 export async function getStaticPaths() {
