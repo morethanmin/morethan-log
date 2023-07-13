@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   return (
     <>
       <Scripts />
-      {getLayout(<Component {...pageProps} />)}
+      <>{getLayout(<Component {...pageProps} />)}</>
     </>
   )
 }

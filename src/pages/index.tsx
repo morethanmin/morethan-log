@@ -1,5 +1,5 @@
 import { getAllSelectItemsFromPosts, filterPosts } from "src/libs/utils/notion"
-import Layout from "src/components/Layout"
+import Layout from "src/layouts/Layout"
 import Feed from "src/containers/Feed"
 import { CONFIG } from "../../site.config"
 import { NextPageWithLayout, TCategories, TPosts, TTags } from "../types"

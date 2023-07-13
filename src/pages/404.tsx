@@ -1,4 +1,4 @@
-import Layout from "src/components/Layout"
+import Layout from "src/layouts/Layout"
 import { CONFIG } from "../../site.config"
 import { NextPageWithLayout, TPosts, TTags } from "../types"
 import CustomError from "../containers/CustomError"
