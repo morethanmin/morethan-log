@@ -7,16 +7,21 @@ const ServiceCard: React.FC = () => {
   return (
     <>
       <div className="p-1 mb-3 dark:text-white">🌟 Service</div>
-      <ul className="rounded-2xl mb-9 bg-white dark:bg-zinc-700 p-1 flex flex-col">
-        <a
-          href={`${CONFIG.projects[0].href}`}
-          rel="noreferrer"
-          target="_blank"
-          className="p-3 hover:bg-gray-100 dark:hover:bg-zinc-700 rounded-2xl cursor-pointer flex items-center gap-3 text-gray-500 dark:text-white hover:text-black dark:hover:text-white"
-        >
-          <AiFillCodeSandboxCircle className="text-2xl" />
-          <div className="text-sm">{CONFIG.projects[0].name}</div>
-        </a>
+      <ul className="flex flex-col p-1 bg-white rounded-2xl mb-9 dark:bg-zinc-700">
+        {CONFIG.projects.map((project) => {
+          return (
+            <a
+              key={project.name}
+              href={`${project.href}`}
+              rel="noreferrer"
+              target="_blank"
+              className="flex items-center gap-3 p-3 text-gray-500 cursor-pointer hover:bg-gray-100 dark:hover:bg-zinc-700 rounded-2xl dark:text-white hover:text-black dark:hover:text-white"
+            >
+              <AiFillCodeSandboxCircle className="text-2xl" />
+              <div className="text-sm">{project.name}</div>
+            </a>
+          )
+        })}
       </ul>
     </>
   )
