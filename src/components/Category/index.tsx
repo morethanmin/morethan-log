@@ -1,6 +1,7 @@
 import { useRouter } from "next/router"
 import React from "react"
-import { COLOR_SET } from "../constants"
+import { COLOR_SET } from "./constants"
+import styled from "@emotion/styled"
 
 export const getColorClassByName = (name: string): string => {
   try {
@@ -33,18 +34,29 @@ const Category: React.FC<Props> = ({
     router.push(`/?category=${value}`)
   }
   return (
-    <div
+    <StyledWrapper
       onClick={() => handleClick(children)}
-      className={[
-        getColorClassByName(children),
-        !readOnly ? "cursor-pointer" : "",
-        "opacity-90 px-2 py-1 text-sm rounded-full w-fit",
-        className,
-      ].join(" ")}
+      css={{
+        backgroundColor: getColorClassByName(children),
+        cursor: readOnly ? "default" : "pointer",
+      }}
+      className={className}
     >
       {children}
-    </div>
+    </StyledWrapper>
   )
 }
 
 export default Category
+
+const StyledWrapper = styled.div`
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: 9999px;
+  width: fit-content;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  opacity: 0.9;
+`

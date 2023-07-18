@@ -7,6 +7,7 @@ import SearchInput from "./components/SearchInput"
 import { FeedHeader } from "./components/FeedHeader"
 import Footer from "./components/Footer"
 import { TCategories, TPosts, TTags } from "src/types"
+import styled from "@emotion/styled"
 
 type Props = {
   categories: TCategories
@@ -25,7 +26,7 @@ const Feed: React.FC<Props> = ({ categories, tags, posts }) => {
   //     display: none;
   // }
   return (
-    <div className="block md:grid grid-cols-12 gap-6">
+    <StyledWrapper className="block md:grid grid-cols-12 gap-6">
       <div
         className="common-no-scroll-bar sticky top-[73px] hidden lg:block col-span-2 overflow-scroll"
         style={{
@@ -54,8 +55,10 @@ const Feed: React.FC<Props> = ({ categories, tags, posts }) => {
         <Cards.ContactCard />
         <Footer className="pt-4" />
       </div>
-    </div>
+    </StyledWrapper>
   )
 }
 
 export default Feed
+
+const StyledWrapper = styled.div``

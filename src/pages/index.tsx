@@ -4,7 +4,7 @@ import Feed from "src/routes/Feed"
 import { CONFIG } from "../../site.config"
 import { NextPageWithLayout, TCategories, TPosts, TTags } from "../types"
 import { getPosts } from "../libs/apis"
-import { DEFAULT_CATEGORY } from "../constants"
+import { DEFAULT_CATEGORY } from "../components/Category"
 
 export async function getStaticProps() {
   try {
