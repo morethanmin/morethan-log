@@ -68,7 +68,7 @@ const StyledWrapper = styled.div`
     display: flex;
     margin-bottom: 1.5rem;
     gap: 0.25rem;
-
+    overflow: scroll;
     @media (min-width: 1024px) {
       display: block;
     }
@@ -83,6 +83,7 @@ const StyledWrapper = styled.div`
       font-size: 0.875rem;
       line-height: 1.25rem;
       color: #6b7280;
+      flex-shrink: 0;
       cursor: pointer;
 
       :hover {

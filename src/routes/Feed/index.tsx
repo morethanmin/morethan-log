@@ -1,18 +1,16 @@
 import { useState } from "react"
 
-import SearchInput from "./components/SearchInput"
-import { FeedHeader } from "./components/FeedHeader"
-import Footer from "./components/Footer"
+import SearchInput from "./SearchInput"
+import { FeedHeader } from "./FeedHeader"
+import Footer from "./Footer"
 import { TCategories, TPosts, TTags } from "src/types"
 import styled from "@emotion/styled"
 import TagList from "./TagList"
-import { PostList } from "./components/lists"
-import {
-  ContactCard,
-  MobileProfileCard,
-  ProfileCard,
-  ServiceCard,
-} from "./components/cards"
+import MobileProfileCard from "./MobileProfileCard"
+import ProfileCard from "./ProfileCard"
+import ServiceCard from "./ServiceCard"
+import ContactCard from "./ContactCard"
+import PostList from "./PostList"
 
 type Props = {
   categories: TCategories
@@ -41,7 +39,9 @@ const Feed: React.FC<Props> = ({ categories, tags, posts }) => {
         </div>
         <FeedHeader categories={categories} />
         <PostList q={q} posts={posts} />
-        <Footer className="footer" />
+        <div className="footer">
+          <Footer />
+        </div>
       </div>
       <div
         className="rt"
@@ -52,7 +52,9 @@ const Feed: React.FC<Props> = ({ categories, tags, posts }) => {
         <ProfileCard />
         <ServiceCard />
         <ContactCard />
-        <Footer className="footer" />
+        <div className="footer">
+          <Footer />
+        </div>
       </div>
     </StyledWrapper>
   )
@@ -103,11 +105,7 @@ const StyledWrapper = styled.div`
     }
 
     > .footer {
-      display: block;
-      display: flex;
       padding-bottom: 2rem;
-      justify-content: center;
-
       @media (min-width: 1024px) {
         display: none;
       }

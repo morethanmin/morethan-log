@@ -5,6 +5,7 @@ import Tag from "./Tag"
 import { TPost } from "../types"
 import Image from "next/image"
 import Category from "./Category"
+import styled from "@emotion/styled"
 
 type Props = {
   data: TPost
@@ -14,66 +15,35 @@ const PostCard: React.FC<Props> = ({ data }) => {
   const category = (data.category && data.category?.[0]) || undefined
 
   return (
-    <Link href={`/${data.slug}`}>
-      <article
-        key={data.id}
-        className="relative overflow-hidden mb-6 md:mb-8 rounded-2xl bg-white dark:bg-zinc-700 hover:shadow-lg transition-shadow "
-      >
-        {category && (
-          <Category className="absolute top-4 left-4 z-10">{category}</Category>
-        )}
+    <StyledWrapper href={`/${data.slug}`}>
+      <article>
+        {category && <Category className="category">{category}</Category>}
         {data.thumbnail && (
-          <div className="relative w-full pb-[66%] lg:pb-[50%] bg-gray-200 dark:bg-zinc-700 ">
+          <div className="thumbnail">
             <Image
               src={data.thumbnail}
-              className="object-cover"
               fill
               alt={data.title}
+              css={{ objectFit: "cover" }}
             />
           </div>
         )}
-        <div
-          className={["p-4", !data.thumbnail && category ? "pt-14" : ""].join(
-            " "
-          )}
-        >
-          <header className="flex flex-col justify-between md:flex-row md:items-baseline">
-            <h2 className="text-lg md:text-xl font-medium mb-2 cursor-pointer text-black dark:text-gray-100">
-              {data.title}
-            </h2>
+        <div data-thumb={!!data.thumbnail} className="content">
+          <header className="top">
+            <h2>{data.title}</h2>
           </header>
-          <div className="flex items-center gap-2 mb-4">
-            {/* {data.author && data.author[0] && (
-                <>
-                  <div className="flex items-center gap-1">
-                    <Image
-                      className="rounded-full"
-                      src={data.author[0].profile_photo}
-                      alt="profile_photo"
-                      loader={imageLoader}
-                      width={20}
-                      height={20}
-                    />
-                    <div className="text-sm text-gray-500 dark:text-gray-400">
-                      {`${data.author[0].last_name}${data.author[0].first_name}`}
-                    </div>
-                  </div>
-                  <div className="self-stretch w-px my-1 bg-gray-300"></div>
-                </>
-              )} */}
-            <div className="text-sm text-gray-500 dark:text-gray-400 md:ml-0">
+          <div className="date">
+            <div className="content">
               {formatDate(
                 data?.date?.start_date || data.createdTime,
                 CONFIG.lang
               )}
             </div>
           </div>
-          <div className="mb-4">
-            <p className="hidden md:block leading-8 text-gray-700 dark:text-gray-300">
-              {data.summary}
-            </p>
+          <div className="summary">
+            <p>{data.summary}</p>
           </div>
-          <div className="flex gap-2">
+          <div className="tags">
             {data.tags &&
               data.tags.map((tag: string, idx: number) => (
                 <Tag key={idx}>{tag}</Tag>
@@ -81,8 +51,108 @@ const PostCard: React.FC<Props> = ({ data }) => {
           </div>
         </div>
       </article>
-    </Link>
+    </StyledWrapper>
   )
 }
 
 export default PostCard
+
+const StyledWrapper = styled(Link)`
+  article {
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 1.5rem;
+    border-radius: 1rem;
+    background-color: #ffffff;
+    transition-property: box-shadow;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+
+    @media (min-width: 768px) {
+      margin-bottom: 2rem;
+    }
+
+    :hover {
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+    > .category {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      z-index: 10;
+    }
+
+    > .thumbnail {
+      position: relative;
+      width: 100%;
+      background-color: #e5e7eb;
+      padding-bottom: 66%;
+
+      @media (min-width: 1024px) {
+        padding-bottom: 50%;
+      }
+    }
+    > .content {
+      padding: 1rem;
+
+      [data-thumb="false"] & {
+        padding-top: 3.5rem;
+      }
+      > .top {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @media (min-width: 768px) {
+          flex-direction: row;
+          align-items: baseline;
+        }
+        h2 {
+          margin-bottom: 0.5rem;
+          font-size: 1.125rem;
+          line-height: 1.75rem;
+          font-weight: 500;
+          color: #000000;
+          cursor: pointer;
+
+          @media (min-width: 768px) {
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+          }
+        }
+      }
+      > .date {
+        display: flex;
+        margin-bottom: 1rem;
+        gap: 0.5rem;
+        align-items: center;
+        .content {
+          font-size: 0.875rem;
+          line-height: 1.25rem;
+          color: #6b7280;
+
+          @media (min-width: 768px) {
+            margin-left: 0;
+          }
+        }
+      }
+      > .summary {
+        margin-bottom: 1rem;
+        p {
+          display: none;
+          line-height: 2rem;
+          color: #374151;
+
+          @media (min-width: 768px) {
+            display: block;
+          }
+        }
+      }
+      > .tags {
+        display: flex;
+        gap: 0.5rem;
+      }
+    }
+  }
+`
