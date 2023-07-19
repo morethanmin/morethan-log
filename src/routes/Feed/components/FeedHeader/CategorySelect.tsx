@@ -1,9 +1,9 @@
-import { DEFAULT_CATEGORY } from "src/components/Category"
 import useDropdown from "src/hooks/useDropdown"
 import { TCategories } from "src/types"
 import { useRouter } from "next/router"
 import React from "react"
 import { MdExpandMore } from "react-icons/md"
+import { DEFAULT_CATEGORY } from "src/constants"
 
 type Props = {
   data: TCategories

@@ -48,7 +48,7 @@ const DetailPage: NextPageWithLayout<Props> = ({ post, blockMap }) => {
   return <Detail blockMap={blockMap} data={post} />
 }
 
-DetailPage.getLayout = function getlayout(page) {
+DetailPage.getLayout = (page) => {
   const getImage = () => {
     if (page.props?.post.thumbnail) return page.props?.post.thumbnail
     if (CONFIG.ogImageGenerateURL)
