@@ -69,6 +69,14 @@ const StyledWrapper = styled.div`
     margin-bottom: 1.5rem;
     gap: 0.25rem;
     overflow: scroll;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    ::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+
     @media (min-width: 1024px) {
       display: block;
     }

@@ -4,6 +4,7 @@ import { useRouter } from "next/router"
 import React from "react"
 import { MdExpandMore } from "react-icons/md"
 import { DEFAULT_CATEGORY } from "src/constants"
+import styled from "@emotion/styled"
 
 type Props = {
   data: TCategories
@@ -24,19 +25,15 @@ const CategorySelect: React.FC<Props> = ({ data }) => {
     })
   }
   return (
-    <div className="relative">
-      <div
-        ref={dropdownRef}
-        className="text-xl font-bold my-2 dark:text-white flex gap-1 items-center cursor-pointer"
-        onClick={handleOpen}
-      >
+    <StyledWrapper>
+      <div ref={dropdownRef} className="wrapper" onClick={handleOpen}>
         {currentCategory} Posts <MdExpandMore />
       </div>
       {opened && (
-        <div className="absolute bg-white z-40 p-1 rounded-xl shadow-md">
+        <div className="content">
           {Object.keys(data).map((key, idx) => (
             <div
-              className="whitespace-nowrap hover:bg-gray-200 p-1 px-2 rounded-xl text-sm cursor-pointer"
+              className="item"
               key={idx}
               onClick={() => handleOptionClick(key)}
             >
@@ -45,8 +42,46 @@ const CategorySelect: React.FC<Props> = ({ data }) => {
           ))}
         </div>
       )}
-    </div>
+    </StyledWrapper>
   )
 }
 
 export default CategorySelect
+
+const StyledWrapper = styled.div`
+  position: relative;
+  > .wrapper {
+    display: flex;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    gap: 0.25rem;
+    align-items: center;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  > .content {
+    position: absolute;
+    z-index: 40;
+    padding: 0.25rem;
+    border-radius: 0.75rem;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    > .item {
+      padding: 0.25rem;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+      border-radius: 0.75rem;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      white-space: nowrap;
+      cursor: pointer;
+
+      :hover {
+        background-color: #e5e7eb;
+      }
+    }
+  }
+`

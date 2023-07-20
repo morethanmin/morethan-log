@@ -1,29 +1,79 @@
 import { CONFIG } from "site.config"
 import Image from "next/image"
 import React from "react"
+import styled from "@emotion/styled"
 
-type Props = {
-  className?: string
-}
+type Props = {}
 
-const ProfileCard: React.FC<Props> = ({ className }) => {
+const ProfileCard: React.FC<Props> = () => {
   return (
-    <div className={className}>
-      <div className="p-1 mb-3 dark:text-white">💻 Profile</div>
-      <div className="rounded-2xl bg-white dark:bg-zinc-700 w-full md:p-4 lg:p-4 mb-9">
-        <div className="relative w-full after:content-[''] after:block after:pb-[100%]">
+    <StyledWrapper>
+      <div className="title">💻 Profile</div>
+      <div className="content">
+        <div className="top">
           <Image src={CONFIG.profile.image} fill alt="" />
         </div>
-        <div className="bg-white p-2 flex flex-col items-center dark:bg-zinc-700 dark:text-white">
-          <div className=" text-xl italic font-bold">{CONFIG.profile.name}</div>
-          <div className="text-sm mb-4 text-gray-500 dark:text-gray-400">
-            {CONFIG.profile.role}
-          </div>
+        <div className="mid">
+          <div className=" name">{CONFIG.profile.name}</div>
+          <div className="role">{CONFIG.profile.role}</div>
           <div className="text-sm mb-2">{CONFIG.profile.bio}</div>
         </div>
       </div>
-    </div>
+    </StyledWrapper>
   )
 }
 
 export default ProfileCard
+
+const StyledWrapper = styled.div`
+  > .title {
+    padding: 0.25rem;
+    margin-bottom: 0.75rem;
+  }
+  > .content {
+    margin-bottom: 2.25rem;
+    border-radius: 1rem;
+    width: 100%;
+    background-color: #ffffff;
+
+    @media (min-width: 768px) {
+      padding: 1rem;
+    }
+    @media (min-width: 1024px) {
+      padding: 1rem;
+    }
+    .top {
+      position: relative;
+      width: 100%;
+      &:after {
+        content: "";
+        display: block;
+        padding-bottom: 100%;
+      }
+    }
+    .mid {
+      display: flex;
+      padding: 0.5rem;
+      flex-direction: column;
+      align-items: center;
+      background-color: #ffffff;
+      .name {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+        font-style: italic;
+        font-weight: 700;
+      }
+      .role {
+        margin-bottom: 1rem;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        color: #6b7280;
+      }
+      .bio {
+        margin-bottom: 0.5rem;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+      }
+    }
+  }
+`
