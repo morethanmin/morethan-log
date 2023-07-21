@@ -7,6 +7,7 @@ import CommentBox from "./CommentBox"
 import Category from "src/components/Category"
 import Image from "next/image"
 import Link from "next/link"
+import styled from "@emotion/styled"
 const NotionRenderer = dynamic(
   () => import("react-notion-x").then((m) => m.NotionRenderer),
   { ssr: false }
@@ -84,21 +85,19 @@ const PostDetail: React.FC<Props> = ({ blockMap, data }) => {
   const category = (data.category && data.category?.[0]) || undefined
 
   return (
-    <div
-      className={`m-auto max-w-4xl bg-white dark:bg-zinc-700 rounded-3xl py-12 px-6 shadow-md`}
-    >
-      <article className=" m-auto max-w-2xl">
+    <StyledWrapper>
+      <article>
         {category && (
-          <Category
-            className="mb-2"
-            readOnly={data.status?.[0] === "PublicOnDetail"}
-          >
-            {category}
-          </Category>
+          <div css={{ marginBottom: "0.5rem" }}>
+            <Category readOnly={data.status?.[0] === "PublicOnDetail"}>
+              {category}
+            </Category>
+          </div>
         )}
         {data.type[0] === "Post" && <PostHeader data={data} />}
         {blockMap && (
-          <div className="-mt-4">
+          <div>
+            {/* // TODO: renderer move to components */}
             <NotionRenderer
               recordMap={blockMap}
               components={{
@@ -121,8 +120,25 @@ const PostDetail: React.FC<Props> = ({ blockMap, data }) => {
           </>
         )}
       </article>
-    </div>
+    </StyledWrapper>
   )
 }
 
 export default PostDetail
+
+const StyledWrapper = styled.div`
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  border-radius: 1.5rem;
+  max-width: 56rem;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  margin: 0 auto;
+  > article {
+    margin: 0 auto;
+    max-width: 42rem;
+  }
+`

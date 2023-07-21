@@ -17,16 +17,11 @@ export const getColorClassByName = (name: string): string => {
 }
 
 type Props = {
-  className?: string
   children: string
   readOnly?: boolean
 }
 
-const Category: React.FC<Props> = ({
-  readOnly = false,
-  className,
-  children,
-}) => {
+const Category: React.FC<Props> = ({ readOnly = false, children }) => {
   const router = useRouter()
 
   const handleClick = (value: string) => {
@@ -40,7 +35,6 @@ const Category: React.FC<Props> = ({
         backgroundColor: getColorClassByName(children),
         cursor: readOnly ? "default" : "pointer",
       }}
-      className={className}
     >
       {children}
     </StyledWrapper>

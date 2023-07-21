@@ -1,6 +1,7 @@
 import { CONFIG } from "site.config"
 import { ReactCusdis } from "react-cusdis"
 import { useCallback, useEffect, useState } from "react"
+import styled from "@emotion/styled"
 
 type Props = {
   id: string
@@ -35,7 +36,7 @@ const Cusdis: React.FC<Props> = ({ id, slug, title }) => {
 
   return (
     <>
-      <div id="comments" className="mt-10">
+      <StyledWrapper id="comments">
         <ReactCusdis
           key={value}
           attrs={{
@@ -49,9 +50,13 @@ const Cusdis: React.FC<Props> = ({ id, slug, title }) => {
               : "light",
           }}
         />
-      </div>
+      </StyledWrapper>
     </>
   )
 }
 
 export default Cusdis
+
+const StyledWrapper = styled.div`
+  margin-top: 2.5rem;
+`

@@ -17,7 +17,11 @@ const PostCard: React.FC<Props> = ({ data }) => {
   return (
     <StyledWrapper href={`/${data.slug}`}>
       <article>
-        {category && <Category className="category">{category}</Category>}
+        {category && (
+          <div className="category">
+            <Category>{category}</Category>
+          </div>
+        )}
         {data.thumbnail && (
           <div className="thumbnail">
             <Image

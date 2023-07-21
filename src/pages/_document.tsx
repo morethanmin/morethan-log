@@ -36,7 +36,8 @@ class MyDocument extends Document {
             </>
           )}
         </Head>
-        <body className="bg-slate-100 dark:bg-black">
+        {/* // TODO: move to global styles */}
+        <body style={{ backgroundColor: "rgb(241 245 249)" }}>
           <Main />
           <NextScript />
         </body>

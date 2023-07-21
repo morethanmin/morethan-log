@@ -1,5 +1,6 @@
 import { CONFIG } from "site.config"
 import { useEffect } from "react"
+import styled from "@emotion/styled"
 
 //TODO: useRef?
 
@@ -31,11 +32,17 @@ const Utterances: React.FC<Props> = ({ issueTerm }) => {
   })
   return (
     <>
-      <div id="comments" className="md:-ml-16">
+      <StyledWrapper id="comments">
         <div className="utterances-frame"></div>
-      </div>
+      </StyledWrapper>
     </>
   )
 }
 
 export default Utterances
+
+const StyledWrapper = styled.div`
+  @media (min-width: 768px) {
+    margin-left: -4rem;
+  }
+`

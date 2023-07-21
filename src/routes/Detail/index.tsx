@@ -1,7 +1,7 @@
 import { TPost } from "src/types"
 import useMermaidEffect from "./hooks/useMermaidEffect"
-import PostDetail from "./components/PostDetail"
-import PageDetail from "./components/PageDetail"
+import PostDetail from "./PostDetail"
+import PageDetail from "./PageDetail"
 
 type Props = {
   blockMap: any

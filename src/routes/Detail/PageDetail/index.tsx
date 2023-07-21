@@ -4,6 +4,7 @@ import React from "react"
 import dynamic from "next/dynamic"
 import Link from "next/link"
 import Image from "next/image"
+import styled from "@emotion/styled"
 const Code = dynamic(() =>
   import("react-notion-x/build/third-party/code").then((m) => m.Code)
 )
@@ -39,7 +40,7 @@ type Props = {
 
 const PageDetail: React.FC<Props> = ({ blockMap, data }) => {
   return (
-    <div className="m-auto max-w-4xl">
+    <StyledWrapper>
       <NotionRenderer
         recordMap={blockMap}
         components={{
@@ -53,8 +54,13 @@ const PageDetail: React.FC<Props> = ({ blockMap, data }) => {
         }}
         mapPageUrl={mapPageUrl}
       />
-    </div>
+    </StyledWrapper>
   )
 }
 
 export default PageDetail
+
+const StyledWrapper = styled.div`
+  margin: 0 auto;
+  max-width: 56rem;
+`

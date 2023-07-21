@@ -1,3 +1,4 @@
+import styled from "@emotion/styled"
 import React, { useEffect, useState } from "react"
 import { CONFIG } from "site.config"
 import { getTheme } from "src/hooks/useThemeEffect"
@@ -25,10 +26,14 @@ const ThemeToggle: React.FC<Props> = () => {
 
   if (CONFIG.blog.theme !== "auto") return null
   return (
-    <div className={`cursor-pointer dark:text-gray-50`} onClick={handleClick}>
+    <StyledWrapper onClick={handleClick}>
       {theme === "light" ? "☀️" : "🌙"}
-    </div>
+    </StyledWrapper>
   )
 }
 
 export default ThemeToggle
+
+const StyledWrapper = styled.div`
+  cursor: pointer;
+`
