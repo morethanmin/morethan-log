@@ -29,6 +29,10 @@ export const Global = () => {
           cursor: pointer;
         }
 
+        ul {
+          padding: 0;
+        }
+
         // init button
         button {
           all: unset;

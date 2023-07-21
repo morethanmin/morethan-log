@@ -4,6 +4,7 @@ import useScheme from "src/hooks/useScheme"
 import Header from "./Header"
 import styled from "@emotion/styled"
 import Scripts from "src/layouts/RootLayout/Scripts"
+import useGtagEffect from "./useGtagEffect"
 
 type Props = {
   children: ReactNode
@@ -11,6 +12,7 @@ type Props = {
 
 const RootLayout = ({ children }: Props) => {
   const [scheme] = useScheme()
+  useGtagEffect()
   return (
     <ThemeProvider scheme={scheme}>
       <Scripts />
