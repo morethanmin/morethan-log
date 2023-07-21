@@ -1,6 +1,6 @@
 import { useRouter } from "next/router"
 import React, { useEffect, useState } from "react"
-import PostCard from "src/components/PostCard"
+import PostCard from "src/routes/Feed/PostList/PostCard"
 import { DEFAULT_CATEGORY } from "src/constants"
 import { TPosts } from "src/types"
 

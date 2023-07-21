@@ -1,10 +1,10 @@
 import Detail from "src/routes/Detail"
 import { filterPosts } from "src/libs/utils/notion"
-import Layout from "src/layouts/Layout"
 import { CONFIG } from "site.config"
 import { NextPageWithLayout, TPost } from "../types"
 import CustomError from "src/routes/CustomError"
-import { getPostBlocks, getPosts } from "src/libs/apis"
+import { getPostBlocks, getPosts } from "src/apis"
+import MetaConfig from "src/components/MetaConfig"
 
 export async function getStaticPaths() {
   const posts = await getPosts()
@@ -78,9 +78,10 @@ DetailPage.getLayout = (page) => {
     }
   }
   return (
-    <Layout metaConfig={getMetaConfig()} fullWidth={page.props.post?.fullWidth}>
+    <>
+      <MetaConfig {...getMetaConfig()} />
       {page}
-    </Layout>
+    </>
   )
 }
 

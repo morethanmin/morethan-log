@@ -1,7 +1,7 @@
-import Layout from "src/layouts/Layout"
 import { CONFIG } from "../../site.config"
 import { NextPageWithLayout, TPosts, TTags } from "../types"
 import CustomError from "../routes/CustomError"
+import MetaConfig from "src/components/MetaConfig"
 
 type Props = {
   tags: TTags
@@ -12,18 +12,19 @@ const NotFoundPage: NextPageWithLayout<Props> = () => {
   return <CustomError />
 }
 
-NotFoundPage.getLayout = function getlayout(page) {
+NotFoundPage.getLayout = (page) => {
   return (
-    <Layout
-      metaConfig={{
-        title: CONFIG.blog.title,
-        description: CONFIG.blog.description,
-        type: "website",
-        url: CONFIG.link,
-      }}
-    >
+    <>
+      <MetaConfig
+        {...{
+          title: CONFIG.blog.title,
+          description: CONFIG.blog.description,
+          type: "website",
+          url: CONFIG.link,
+        }}
+      />
       {page}
-    </Layout>
+    </>
   )
 }
 

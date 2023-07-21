@@ -4,13 +4,13 @@ import dynamic from "next/dynamic"
 
 const UtterancesComponent = dynamic(
   () => {
-    return import("src/components/Utterances")
+    return import("src/routes/Detail/PostDetail/CommentBox/Utterances")
   },
   { ssr: false }
 )
 const CusdisComponent = dynamic(
   () => {
-    return import("src/components/Cusdis")
+    return import("src/routes/Detail/PostDetail/CommentBox/Cusdis")
   },
   { ssr: false }
 )
