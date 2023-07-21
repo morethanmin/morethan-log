@@ -37,7 +37,7 @@ class MyDocument extends Document {
           )}
         </Head>
         {/* // TODO: move to global styles */}
-        <body style={{ backgroundColor: "rgb(241 245 249)" }}>
+        <body>
           <Main />
           <NextScript />
         </body>

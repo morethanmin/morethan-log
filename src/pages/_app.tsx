@@ -1,24 +1,20 @@
-import "prismjs/themes/prism.css"
-import "react-notion-x/src/styles.css"
-import "katex/dist/katex.min.css"
-
-import "src/styles/globals.css"
-import "src/styles/notion.css"
-import useThemeEffect from "src/hooks/useThemeEffect"
 import useGtagEffect from "src/hooks/useGtagEffect"
 import Scripts from "src/components/Scripts"
 import { AppPropsWithLayout } from "../types"
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+import RootLayout from "src/layouts/RootLayout"
+
+const queryClient = new QueryClient()
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout || ((page) => page)
-  useThemeEffect()
   useGtagEffect()
 
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
       <Scripts />
-      <>{getLayout(<Component {...pageProps} />)}</>
-    </>
+      <RootLayout>{getLayout(<Component {...pageProps} />)}</RootLayout>
+    </QueryClientProvider>
   )
 }
 

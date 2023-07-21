@@ -36,17 +36,17 @@ const TagList: React.FC<Props> = ({ data }) => {
   return (
     <StyledWrapper>
       <div className="top">🏷️ Tags</div>
-      <ul>
+      <div className="list">
         {Object.keys(data).map((key) => (
-          <li
+          <a
             key={key}
             data-active={key === currentTag}
             onClick={() => handleClickTag(key)}
           >
-            <a>{key}</a>
-          </li>
+            {key}
+          </a>
         ))}
-      </ul>
+      </div>
     </StyledWrapper>
   )
 }
@@ -64,7 +64,7 @@ const StyledWrapper = styled.div`
     }
   }
 
-  ul {
+  .list {
     display: flex;
     margin-bottom: 1.5rem;
     gap: 0.25rem;
@@ -81,7 +81,8 @@ const StyledWrapper = styled.div`
       display: block;
     }
 
-    li {
+    a {
+      display: block;
       padding: 0.25rem;
       padding-left: 1rem;
       padding-right: 1rem;
