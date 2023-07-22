@@ -14,9 +14,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@radix-ui/colors": "^1.0.0",
+    "@tanstack/react-query": "^4.29.19",
     "axios": ">=0.21.1",
+    "cookies-next": "^2.1.2",
     "mermaid": "^9.3.0",
-    "next": "^13.4.7",
+    "next": "^13.4.9",
     "notion-client": "^6.16.0",
     "notion-types": "^6.16.0",
     "notion-utils": "^6.16.0",
@@ -37,7 +42,6 @@
     "next-sitemap": "^3.1.32",
     "postcss": "^8.3.11",
     "prettier": "^2.7.1",
-    "tailwindcss": "^3.2.7",
     "typescript": "^4.9.4"
   }
 }

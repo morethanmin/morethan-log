@@ -1,11 +1,10 @@
-import Detail from "@containers/Detail"
-import { filterPosts } from "@/src/libs/utils/notion"
-import Layout from "@components/Layout"
-import { CONFIG } from "@/site.config"
-import { NextPageWithLayout } from "@pages/_app"
-import { TPost } from "../types"
-import CustomError from "@containers/CustomError"
-import { getPostBlocks, getPosts } from "@libs/apis"
+import Detail from "src/routes/Detail"
+import { filterPosts } from "src/libs/utils/notion"
+import { CONFIG } from "site.config"
+import { NextPageWithLayout, TPost } from "../types"
+import CustomError from "src/routes/CustomError"
+import { getPostBlocks, getPosts } from "src/apis"
+import MetaConfig from "src/components/MetaConfig"
 
 export async function getStaticPaths() {
   const posts = await getPosts()
@@ -24,7 +23,7 @@ export async function getStaticProps({ params: { slug } }: any) {
   try {
     //includePages: true
     const posts = await getPosts()
-    const post = posts.find((t) => t.slug === slug)
+    const post = posts.find((t: any) => t.slug === slug)
     const blockMap = await getPostBlocks(post?.id!)
 
     return {
@@ -49,7 +48,7 @@ const DetailPage: NextPageWithLayout<Props> = ({ post, blockMap }) => {
   return <Detail blockMap={blockMap} data={post} />
 }
 
-DetailPage.getLayout = function getlayout(page) {
+DetailPage.getLayout = (page) => {
   const getImage = () => {
     if (page.props?.post.thumbnail) return page.props?.post.thumbnail
     if (CONFIG.ogImageGenerateURL)
@@ -79,9 +78,10 @@ DetailPage.getLayout = function getlayout(page) {
     }
   }
   return (
-    <Layout metaConfig={getMetaConfig()} fullWidth={page.props.post?.fullWidth}>
+    <>
+      <MetaConfig {...getMetaConfig()} />
       {page}
-    </Layout>
+    </>
   )
 }
 

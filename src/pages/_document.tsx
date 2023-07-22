@@ -23,9 +23,6 @@ class MyDocument extends Document {
             title="RSS 2.0"
             href="/feed"
           ></link>
-          {/* theme setting */}
-          <meta name="theme-color" content={"#f1f3f5"} />
-
           {/* google search console */}
           {CONFIG.googleSearchConsole.enable === true && (
             <>
@@ -36,7 +33,8 @@ class MyDocument extends Document {
             </>
           )}
         </Head>
-        <body className="bg-slate-100 dark:bg-black">
+        {/* // TODO: move to global styles */}
+        <body>
           <Main />
           <NextScript />
         </body>

@@ -1,14 +1,10 @@
-import {
-  getAllSelectItemsFromPosts,
-  filterPosts,
-} from "@/src/libs/utils/notion"
-import Layout from "@components/Layout"
-import Feed from "@containers/Feed"
+import { getAllSelectItemsFromPosts, filterPosts } from "src/libs/utils/notion"
+import Feed from "src/routes/Feed"
 import { CONFIG } from "../../site.config"
-import { NextPageWithLayout } from "./_app"
-import { TCategories, TPosts, TTags } from "../types"
-import { getPosts } from "../libs/apis"
-import { DEFAULT_CATEGORY } from "../constants"
+import { NextPageWithLayout, TCategories, TPosts, TTags } from "../types"
+import { getPosts } from "../apis"
+import { DEFAULT_CATEGORY } from "src/constants"
+import MetaConfig from "src/components/MetaConfig"
 
 export async function getStaticProps() {
   try {
@@ -47,16 +43,17 @@ const FeedPage: NextPageWithLayout<Props> = ({ categories, tags, posts }) => {
 
 FeedPage.getLayout = function getlayout(page) {
   return (
-    <Layout
-      metaConfig={{
-        title: CONFIG.blog.title,
-        description: CONFIG.blog.description,
-        type: "website",
-        url: CONFIG.link,
-      }}
-    >
+    <>
+      <MetaConfig
+        {...{
+          title: CONFIG.blog.title,
+          description: CONFIG.blog.description,
+          type: "website",
+          url: CONFIG.link,
+        }}
+      />
       {page}
-    </Layout>
+    </>
   )
 }
 
