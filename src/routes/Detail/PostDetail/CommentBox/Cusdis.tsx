@@ -2,6 +2,8 @@ import { CONFIG } from "site.config"
 import { ReactCusdis } from "react-cusdis"
 import { useCallback, useEffect, useState } from "react"
 import styled from "@emotion/styled"
+import useScheme from "src/hooks/useScheme"
+import { useRouter } from "next/router"
 
 type Props = {
   id: string
@@ -11,6 +13,7 @@ type Props = {
 
 const Cusdis: React.FC<Props> = ({ id, slug, title }) => {
   const [value, setValue] = useState(0)
+  const [scheme] = useScheme()
 
   const onDocumentElementChange = useCallback(() => {
     setValue((value) => value + 1)
@@ -45,9 +48,7 @@ const Cusdis: React.FC<Props> = ({ id, slug, title }) => {
             pageId: id,
             pageTitle: title,
             pageUrl: `${CONFIG.link}/${slug}`,
-            theme: document.documentElement.classList.contains("dark")
-              ? "dark"
-              : "light",
+            theme: scheme,
           }}
         />
       </StyledWrapper>
