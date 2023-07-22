@@ -66,7 +66,8 @@ const StyledWrapper = styled.div`
     z-index: 40;
     padding: 0.25rem;
     border-radius: 0.75rem;
-    background-color: #ffffff;
+    background-color: ${({ theme }) => theme.colors.gray2};
+    color: ${({ theme }) => theme.colors.gray10};
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
       0 2px 4px -1px rgba(0, 0, 0, 0.06);
     > .item {
@@ -80,7 +81,7 @@ const StyledWrapper = styled.div`
       cursor: pointer;
 
       :hover {
-        background-color: #e5e7eb;
+        background-color: ${({ theme }) => theme.colors.gray4};
       }
     }
   }

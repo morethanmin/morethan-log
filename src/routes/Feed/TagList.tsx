@@ -91,19 +91,19 @@ const StyledWrapper = styled.div`
       border-radius: 0.75rem;
       font-size: 0.875rem;
       line-height: 1.25rem;
-      color: #6b7280;
+      color: ${({ theme }) => theme.colors.gray10};
       flex-shrink: 0;
       cursor: pointer;
 
       :hover {
-        background-color: #e5e7eb;
+        background-color: ${({ theme }) => theme.colors.gray4};
       }
       &[data-active="true"] {
-        color: #000000;
-        background-color: #ffffff;
+        color: ${({ theme }) => theme.colors.gray12};
+        background-color: ${({ theme }) => theme.colors.gray4};
 
         :hover {
-          background-color: #ffffff;
+          background-color: ${({ theme }) => theme.colors.gray4};
         }
       }
     }

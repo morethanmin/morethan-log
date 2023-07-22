@@ -29,12 +29,7 @@ const StyledWrapper = styled.div`
   position: sticky;
   top: 0;
   margin-bottom: 0.5rem;
-  border-color: #f3f4f6;
-  background-color: #ffffff;
-  transition-property: background-color, border-color, color, fill, stroke,
-    opacity, box-shadow, transform;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 300ms;
+  background-color: ${({ theme }) => theme.colors.gray2};
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 
   @media (min-width: 768px) {

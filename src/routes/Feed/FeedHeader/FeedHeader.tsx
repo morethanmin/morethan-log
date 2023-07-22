@@ -24,6 +24,5 @@ const StyledWrapper = styled.div`
   margin-bottom: 1rem;
   justify-content: space-between;
   align-items: center;
-  border-bottom-width: 1px;
-  border-color: #d1d5db;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.gray6};
 `

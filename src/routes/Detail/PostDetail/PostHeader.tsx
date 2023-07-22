@@ -29,7 +29,7 @@ const PostHeader: React.FC<Props> = ({ data }) => {
                   />
                   <div className="">{data.author[0].name}</div>
                 </div>
-                <div className="authorName"></div>
+                <div className="hr"></div>
               </>
             )}
             <div className="date">
@@ -71,11 +71,10 @@ const StyledWrapper = styled.div`
     font-size: 1.875rem;
     line-height: 2.25rem;
     font-weight: 700;
-    color: #000000;
   }
   nav {
     margin-top: 1.5rem;
-    color: #6b7280;
+    color: ${({ theme }) => theme.colors.gray11};
     > .top {
       display: flex;
       margin-bottom: 0.75rem;
@@ -86,12 +85,12 @@ const StyledWrapper = styled.div`
         gap: 0.5rem;
         align-items: center;
       }
-      .authorName {
+      .hr {
         margin-top: 0.25rem;
         margin-bottom: 0.25rem;
         align-self: stretch;
         width: 1px;
-        background-color: #d1d5db;
+        background-color: ${({ theme }) => theme.colors.gray10};
       }
       .date {
         margin-right: 0.5rem;
@@ -119,7 +118,7 @@ const StyledWrapper = styled.div`
       margin-bottom: 1.75rem;
       border-radius: 1.5rem;
       width: 100%;
-      background-color: #e5e7eb;
+      background-color: ${({ theme }) => theme.colors.gray4};
       padding-bottom: 66%;
 
       @media (min-width: 1024px) {

@@ -2,11 +2,9 @@ import styled from "@emotion/styled"
 import Image from "next/image"
 import React from "react"
 
-type Props = {
-  errorType?: "NOT_FOUND" | "UNKNOWN"
-}
+type Props = {}
 
-const CustomError: React.FC<Props> = ({ errorType }) => {
+const CustomError: React.FC<Props> = () => {
   return (
     <StyledWrapper>
       <div className="wrapper">
@@ -32,9 +30,6 @@ const StyledWrapper = styled.div`
   padding-bottom: 3rem;
   border-radius: 1.5rem;
   max-width: 56rem;
-  background-color: #ffffff;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
   .wrapper {
     display: flex;
     padding-top: 5rem;
@@ -51,7 +46,7 @@ const StyledWrapper = styled.div`
     > .text {
       font-size: 1.875rem;
       line-height: 2.25rem;
-      color: #6b7280;
+      color: ${({ theme }) => theme.colors.gray11};
     }
   }
 `

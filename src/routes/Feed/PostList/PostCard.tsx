@@ -67,7 +67,8 @@ const StyledWrapper = styled(Link)`
     position: relative;
     margin-bottom: 1.5rem;
     border-radius: 1rem;
-    background-color: #ffffff;
+    background-color: ${({ theme }) =>
+      theme.scheme === "light" ? theme.colors.gray1 : theme.colors.gray4};
     transition-property: box-shadow;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 300ms;
@@ -90,7 +91,7 @@ const StyledWrapper = styled(Link)`
     > .thumbnail {
       position: relative;
       width: 100%;
-      background-color: #e5e7eb;
+      background-color: ${({ theme }) => theme.colors.gray2};
       padding-bottom: 66%;
 
       @media (min-width: 1024px) {
@@ -117,7 +118,7 @@ const StyledWrapper = styled(Link)`
           font-size: 1.125rem;
           line-height: 1.75rem;
           font-weight: 500;
-          color: #000000;
+
           cursor: pointer;
 
           @media (min-width: 768px) {
@@ -134,8 +135,7 @@ const StyledWrapper = styled(Link)`
         .content {
           font-size: 0.875rem;
           line-height: 1.25rem;
-          color: #6b7280;
-
+          color: ${({ theme }) => theme.colors.gray10};
           @media (min-width: 768px) {
             margin-left: 0;
           }
@@ -146,7 +146,7 @@ const StyledWrapper = styled(Link)`
         p {
           display: none;
           line-height: 2rem;
-          color: #374151;
+          color: ${({ theme }) => theme.colors.gray11};
 
           @media (min-width: 768px) {
             display: block;

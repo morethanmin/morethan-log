@@ -26,8 +26,7 @@ const StyledWrapper = styled.div`
     li {
       display: block;
       margin-left: 1rem;
-      color: #000000;
-      color: #6b7280;
+      color: ${({ theme }) => theme.colors.gray11};
     }
   }
 `

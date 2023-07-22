@@ -70,19 +70,19 @@ const StyledWrapper = styled.div`
   padding: 0.25rem;
   flex-direction: column;
   border-radius: 1rem;
-  background-color: #ffffff;
+  background-color: ${({ theme }) => theme.colors.gray3};
   a {
     display: flex;
     padding: 0.75rem;
     gap: 0.75rem;
     align-items: center;
     border-radius: 1rem;
-    color: #6b7280;
+    color: ${({ theme }) => theme.colors.gray11};
     cursor: pointer;
 
     :hover {
-      color: #000000;
-      background-color: #f3f4f6;
+      color: ${({ theme }) => theme.colors.gray12};
+      background-color: ${({ theme }) => theme.colors.gray5};
     }
     .icon {
       font-size: 1.5rem;

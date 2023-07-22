@@ -46,11 +46,12 @@ const StyledWrapper = styled.div`
   line-height: 1.25rem;
   a {
     cursor: pointer;
-    color: #6b7280;
+    color: ${({ theme }) => theme.colors.gray10};
 
     &[data-active="true"] {
       font-weight: 700;
-      color: #000000;
+
+      color: ${({ theme }) => theme.colors.gray12};
     }
   }
 `

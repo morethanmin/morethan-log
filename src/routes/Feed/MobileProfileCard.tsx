@@ -48,7 +48,7 @@ const StyledWrapper = styled.div`
     padding: 0.5rem;
     margin-bottom: 1rem;
     border-radius: 1rem;
-    background-color: #ffffff;
+    background-color: ${({ theme }) => theme.colors.gray5};
     > .wrapper {
       display: flex;
       gap: 0.5rem;
@@ -65,7 +65,7 @@ const StyledWrapper = styled.div`
           margin-bottom: 0.5rem;
           font-size: 0.875rem;
           line-height: 1.25rem;
-          color: #6b7280;
+          color: ${({ theme }) => theme.colors.gray11};
         }
         > .btm {
           font-size: 0.875rem;

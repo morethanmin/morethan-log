@@ -12,6 +12,4 @@ const Logo = () => {
 
 export default Logo
 
-const StyledWrapper = styled(Link)`
-  color: #000000;
-`
+const StyledWrapper = styled(Link)``
