@@ -2,12 +2,15 @@ import { CONFIG } from "site.config"
 import React from "react"
 import { AiFillCodeSandboxCircle } from "react-icons/ai"
 import styled from "@emotion/styled"
+import { Emoji } from "src/components/Emoji"
 
 const ServiceCard: React.FC = () => {
   if (!CONFIG.projects) return null
   return (
     <>
-      <StyledTitle>🌟 Service</StyledTitle>
+      <StyledTitle>
+        <Emoji>🌟</Emoji> Service
+      </StyledTitle>
       <StyledWrapper>
         <a href={`${CONFIG.projects[0].href}`} rel="noreferrer" target="_blank">
           <AiFillCodeSandboxCircle className="icon" />
@@ -31,7 +34,8 @@ const StyledWrapper = styled.div`
   margin-bottom: 2.25rem;
   flex-direction: column;
   border-radius: 1rem;
-  background-color: ${({ theme }) => theme.colors.gray3};
+  background-color: ${({ theme }) =>
+    theme.scheme === "light" ? "white" : theme.colors.gray4};
   > a {
     display: flex;
     padding: 0.75rem;
