@@ -10,9 +10,7 @@ const NavBar: React.FC = () => {
             key={link.id}
             className="block ml-4 text-black text-gray-500 dark:text-white nav"
           >
-            <Link href={link.to}>
-              <a>{link.name}</a>
-            </Link>
+            <Link href={link.to}>{link.name}</Link>
           </li>
         ))}
       </ul>
