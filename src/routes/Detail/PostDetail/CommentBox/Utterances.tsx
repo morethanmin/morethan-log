@@ -1,6 +1,7 @@
 import { CONFIG } from "site.config"
 import { useEffect } from "react"
 import styled from "@emotion/styled"
+import useScheme from "src/hooks/useScheme"
 
 //TODO: useRef?
 
@@ -9,9 +10,10 @@ type Props = {
 }
 
 const Utterances: React.FC<Props> = ({ issueTerm }) => {
+  const [scheme] = useScheme()
+
   useEffect(() => {
-    const theme = "github-light"
-    // 'github-dark'
+    const theme = scheme === "light" ? "github-light" : "github-dark"
     const script = document.createElement("script")
     const anchor = document.getElementById("comments")
     if (!anchor) return
@@ -29,7 +31,7 @@ const Utterances: React.FC<Props> = ({ issueTerm }) => {
     return () => {
       anchor.innerHTML = ""
     }
-  })
+  }, [scheme])
   return (
     <>
       <StyledWrapper id="comments">
