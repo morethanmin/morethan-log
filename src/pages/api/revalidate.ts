@@ -1,5 +1,5 @@
-import { getPosts } from "@/src/libs/apis"
 import { NextApiRequest, NextApiResponse } from "next"
+import { getPosts } from "../../apis"
 
 // for all path revalidate, https://<your-site.com>/api/revalidate?secret=<token>
 // for specific path revalidate, https://<your-site.com>/api/revalidate?secret=<token>&path=<path>
