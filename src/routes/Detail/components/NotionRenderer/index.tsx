@@ -4,9 +4,17 @@ import Link from "next/link"
 import { ExtendedRecordMap } from "notion-types"
 import useScheme from "src/hooks/useScheme"
 
-import "prismjs/themes/prism.css"
+// core styles shared by all of react-notion-x (required)
 import "react-notion-x/src/styles.css"
+
+// used for code syntax highlighting (optional)
+import "prismjs/themes/prism-tomorrow.css"
+
+// used for rendering equations (optional)
+
+import "katex/dist/katex.min.css"
 import { FC } from "react"
+import styled from "@emotion/styled"
 
 const _NotionRenderer = dynamic(
   () => import("react-notion-x").then((m) => m.NotionRenderer),
@@ -84,21 +92,30 @@ type Props = {
 const NotionRenderer: FC<Props> = ({ recordMap }) => {
   const [scheme] = useScheme()
   return (
-    <_NotionRenderer
-      darkMode={scheme === "dark"}
-      recordMap={recordMap}
-      components={{
-        Code,
-        Collection,
-        Equation,
-        Modal,
-        Pdf,
-        nextImage: Image,
-        nextLink: Link,
-      }}
-      mapPageUrl={mapPageUrl}
-    />
+    <StyledWrapper>
+      <_NotionRenderer
+        darkMode={scheme === "dark"}
+        recordMap={recordMap}
+        components={{
+          Code,
+          Collection,
+          Equation,
+          Modal,
+          Pdf,
+          nextImage: Image,
+          nextLink: Link,
+        }}
+        mapPageUrl={mapPageUrl}
+      />
+    </StyledWrapper>
   )
 }
 
 export default NotionRenderer
+
+const StyledWrapper = styled.div`
+  /* // TODO: why render? */
+  .notion-collection-page-properties {
+    display: none !important;
+  }
+`
