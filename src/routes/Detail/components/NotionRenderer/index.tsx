@@ -118,4 +118,7 @@ const StyledWrapper = styled.div`
   .notion-collection-page-properties {
     display: none !important;
   }
+  .notion-page {
+    padding: 0;
+  }
 `
