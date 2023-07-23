@@ -1,6 +1,6 @@
 import { CONFIG } from "../../site.config"
 import { NextPageWithLayout, TPosts, TTags } from "../types"
-import CustomError from "../routes/CustomError"
+import CustomError from "../routes/Error"
 import MetaConfig from "src/components/MetaConfig"
 
 type Props = {

@@ -1,6 +1,6 @@
 import styled from "@emotion/styled"
-import Image from "next/image"
 import React from "react"
+import { Emoji } from "src/components/Emoji"
 
 type Props = {}
 
@@ -10,8 +10,7 @@ const CustomError: React.FC<Props> = () => {
       <div className="wrapper">
         <div className="top">
           <div>4</div>
-          {/* // TODO: use next.js fonts emoji */}
-          <Image src="/images/error.png" width={60} height={60} alt="error" />
+          <Emoji>🤔</Emoji>
           <div>4</div>
         </div>
         <div className="text">Post not found</div>
