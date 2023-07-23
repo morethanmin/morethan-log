@@ -4,8 +4,8 @@ const CONFIG = {
     name: "Doopal",
     image: "/images/cat.png", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
     role: "두팔이 뭐해?",
-    bio: "두팔이 공부중 🤸‍♀️
-    email: "zidoopal2.dev@gmail.com",
+    bio: "두팔이 공부중 🤸‍♀️",
+    email: "zidoopal2@gmail.com",
     linkedin: "",
     github: "zidoopal",
     instagram: "",
