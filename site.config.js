@@ -19,7 +19,7 @@ const CONFIG = {
   // blog setting (required)
   blog: {
     title: "Doopal-log",
-    description: "Welcome to morethan-log!",
+    description: "Hi, there :)",
     theme: "auto", // ['light', 'dark', 'auto']
   },
 
