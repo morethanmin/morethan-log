@@ -61,7 +61,7 @@ const CONFIG = {
   cusdis: {
     enable: false,
     config: {
-      host: "",
+      host: "https://cusdis.com",
       appid: "", // Embed Code -> data-app-id value
     },
   },
