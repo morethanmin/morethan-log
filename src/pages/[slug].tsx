@@ -2,7 +2,7 @@ import Detail from "src/routes/Detail"
 import { filterPosts } from "src/libs/utils/notion"
 import { CONFIG } from "site.config"
 import { NextPageWithLayout, TPost } from "../types"
-import CustomError from "src/routes/CustomError"
+import CustomError from "src/routes/Error"
 import { getPostBlocks, getPosts } from "src/apis"
 import MetaConfig from "src/components/MetaConfig"
 
