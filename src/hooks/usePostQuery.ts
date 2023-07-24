@@ -8,8 +8,6 @@ const usePostQuery = () => {
     enabled: false,
   })
 
-  if (!data) throw new Error("Posts data is not found")
-
   return data
 }
 

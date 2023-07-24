@@ -1,4 +1,5 @@
 import Detail from "src/routes/Detail"
+import { filterPosts } from "src/libs/utils/notion"
 import { CONFIG } from "site.config"
 import { NextPageWithLayout } from "../types"
 import CustomError from "src/routes/Error"
@@ -9,12 +10,19 @@ import { queryClient } from "src/libs/react-query"
 import { queryKey } from "src/constants/queryKey"
 import { dehydrate } from "@tanstack/react-query"
 import usePostQuery from "src/hooks/usePostQuery"
+import { FilterPostsOptions } from "src/libs/utils/notion/filterPosts"
+
+const filter: FilterPostsOptions = {
+  acceptStatus: ["Public", "PublicOnDetail"],
+  acceptType: ["Paper", "Post", "Page"],
+}
 
 export const getStaticPaths = async () => {
   const posts = await getPosts()
+  const filteredPost = filterPosts(posts, filter)
 
   return {
-    paths: posts.map((row) => `/${row.slug}`),
+    paths: filteredPost.map((row) => `/${row.slug}`),
     fallback: true,
   }
 }
@@ -23,12 +31,15 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const slug = context.params?.slug
 
   const posts = await getPosts()
-  const post = posts.find((t: any) => t.slug === slug)
-  const recordMap = await getRecordMap(post?.id!)
+  const feedPosts = filterPosts(posts)
+  await queryClient.prefetchQuery(queryKey.posts(), () => feedPosts)
 
-  await queryClient.prefetchQuery(queryKey.posts(), () => posts)
+  const detailPosts = filterPosts(posts, filter)
+  const postDetail = detailPosts.find((t: any) => t.slug === slug)
+  const recordMap = await getRecordMap(postDetail?.id!)
+
   await queryClient.prefetchQuery(queryKey.post(), () => ({
-    ...post,
+    ...postDetail,
     recordMap,
   }))
 

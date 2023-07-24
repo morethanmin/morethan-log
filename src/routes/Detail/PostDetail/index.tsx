@@ -11,6 +11,9 @@ type Props = {}
 
 const PostDetail: React.FC<Props> = () => {
   const data = usePostQuery()
+
+  if (!data) return null
+
   const category = (data.category && data.category?.[0]) || undefined
 
   return (

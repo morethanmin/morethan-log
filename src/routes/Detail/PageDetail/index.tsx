@@ -6,6 +6,8 @@ type Props = {}
 
 const PageDetail: React.FC<Props> = () => {
   const data = usePostQuery()
+
+  if (!data) return null
   return (
     <StyledWrapper>
       <NotionRenderer recordMap={data.recordMap} />

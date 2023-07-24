@@ -10,6 +10,7 @@ const Detail: React.FC<Props> = () => {
   const data = usePostQuery()
   useMermaidEffect()
 
+  if (!data) return null
   return (
     <StyledWrapper data-type={data.type}>
       {data.type[0] === "Page" && <PageDetail />}
