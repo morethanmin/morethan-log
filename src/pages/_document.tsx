@@ -28,7 +28,6 @@ class MyDocument extends Document {
             </>
           )}
         </Head>
-        {/* // TODO: move to global styles */}
         <body>
           <Main />
           <NextScript />

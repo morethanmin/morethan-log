@@ -48,44 +48,33 @@ export const getStaticProps: GetStaticProps<Props> = async (context) => {
 
 const DetailPage: NextPageWithLayout<Props> = ({ post, recordMap }) => {
   if (!post || !recordMap) return <CustomError />
-  return <Detail recordMap={recordMap} data={post} />
+
+  const image =
+    post.thumbnail ??
+    CONFIG.ogImageGenerateURL ??
+    `${CONFIG.ogImageGenerateURL}/${encodeURIComponent(post.title)}.png`
+
+  const date = post.date?.start_date || post.createdTime || ""
+
+  const meta = {
+    title: post.title,
+    date: new Date(date).toISOString(),
+    image: image,
+    description: post.summary || "",
+    type: post.type[0],
+    url: `${CONFIG.link}/${post.slug}`,
+  }
+
+  return (
+    <>
+      <MetaConfig {...meta} />
+      <Detail recordMap={recordMap} data={post} />
+    </>
+  )
 }
 
 DetailPage.getLayout = (page) => {
-  const getImage = () => {
-    if (page.props?.post.thumbnail) return page.props?.post.thumbnail
-    if (CONFIG.ogImageGenerateURL)
-      return `${CONFIG.ogImageGenerateURL}/${encodeURIComponent(
-        page.props?.post.title
-      )}.png?theme=dark&md=1&fontSize=125px&images=https%3A%2F%2Fmorethan-log.vercel.app%2Flogo-for-dark-bg.svg`
-  }
-
-  const getMetaConfig = () => {
-    if (!page.props.post) {
-      return {
-        title: CONFIG.blog.title,
-        description: CONFIG.blog.description,
-        type: "website",
-        url: CONFIG.link,
-      }
-    }
-    return {
-      title: page.props.post.title || CONFIG.blog.title,
-      date: new Date(
-        page.props.post.date?.start_date || page.props.post.createdTime || ""
-      ).toISOString(),
-      image: getImage(),
-      description: page.props.post.summary,
-      type: page.props.post.type[0],
-      url: `${CONFIG.link}/${page.props.post.slug}`,
-    }
-  }
-  return (
-    <>
-      <MetaConfig {...getMetaConfig()} />
-      {page}
-    </>
-  )
+  return <>{page}</>
 }
 
 export default DetailPage

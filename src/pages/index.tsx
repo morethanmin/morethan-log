@@ -38,21 +38,17 @@ type Props = {
 }
 
 const FeedPage: NextPageWithLayout<Props> = ({ categories, tags, posts }) => {
-  return <Feed categories={categories} tags={tags} posts={posts} />
-}
+  const meta = {
+    title: CONFIG.blog.title,
+    description: CONFIG.blog.description,
+    type: "website",
+    url: CONFIG.link,
+  }
 
-FeedPage.getLayout = function getlayout(page) {
   return (
     <>
-      <MetaConfig
-        {...{
-          title: CONFIG.blog.title,
-          description: CONFIG.blog.description,
-          type: "website",
-          url: CONFIG.link,
-        }}
-      />
-      {page}
+      <MetaConfig {...meta} />
+      <Feed categories={categories} tags={tags} posts={posts} />
     </>
   )
 }
