@@ -1,53 +1,49 @@
 import Detail from "src/routes/Detail"
-import { filterPosts } from "src/libs/utils/notion"
 import { CONFIG } from "site.config"
-import { NextPageWithLayout, TPost } from "../types"
+import { NextPageWithLayout } from "../types"
 import CustomError from "src/routes/Error"
 import { getRecordMap, getPosts } from "src/apis"
 import MetaConfig from "src/components/MetaConfig"
-import { ExtendedRecordMap } from "notion-types"
 import { GetStaticProps } from "next"
+import { queryClient } from "src/libs/react-query"
+import { queryKey } from "src/constants/queryKey"
+import { dehydrate } from "@tanstack/react-query"
+import usePostQuery from "src/hooks/usePostQuery"
 
-export async function getStaticPaths() {
+export const getStaticPaths = async () => {
   const posts = await getPosts()
-  const filteredPost = filterPosts(posts, {
-    acceptStatus: ["Public", "PublicOnDetail"],
-    acceptType: ["Paper", "Post", "Page"],
-  })
 
   return {
-    paths: filteredPost.map((row) => `/${row.slug}`),
+    paths: posts.map((row) => `/${row.slug}`),
     fallback: true,
   }
 }
 
-type Props = {
-  post?: TPost
-  recordMap?: ExtendedRecordMap
-}
-
-export const getStaticProps: GetStaticProps<Props> = async (context) => {
+export const getStaticProps: GetStaticProps = async (context) => {
   const slug = context.params?.slug
 
-  try {
-    const posts = await getPosts()
-    const post = posts.find((t: any) => t.slug === slug)
-    const recordMap = await getRecordMap(post?.id!)
+  const posts = await getPosts()
+  const post = posts.find((t: any) => t.slug === slug)
+  const recordMap = await getRecordMap(post?.id!)
 
-    return {
-      props: { post, recordMap },
-      revalidate: CONFIG.revalidateTime,
-    }
-  } catch (error) {
-    return {
-      props: {},
-      revalidate: CONFIG.revalidateTime,
-    }
+  await queryClient.prefetchQuery(queryKey.posts(), () => posts)
+  await queryClient.prefetchQuery(queryKey.post(), () => ({
+    ...post,
+    recordMap,
+  }))
+
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient),
+    },
+    revalidate: CONFIG.revalidateTime,
   }
 }
 
-const DetailPage: NextPageWithLayout<Props> = ({ post, recordMap }) => {
-  if (!post || !recordMap) return <CustomError />
+const DetailPage: NextPageWithLayout = () => {
+  const post = usePostQuery()
+
+  if (!post) return <CustomError />
 
   const image =
     post.thumbnail ??
@@ -68,7 +64,7 @@ const DetailPage: NextPageWithLayout<Props> = ({ post, recordMap }) => {
   return (
     <>
       <MetaConfig {...meta} />
-      <Detail recordMap={recordMap} data={post} />
+      <Detail />
     </>
   )
 }

@@ -1,26 +1,19 @@
-import { TPost } from "src/types"
 import useMermaidEffect from "./hooks/useMermaidEffect"
 import PostDetail from "./PostDetail"
 import PageDetail from "./PageDetail"
 import styled from "@emotion/styled"
-import { ExtendedRecordMap } from "notion-types"
+import usePostQuery from "src/hooks/usePostQuery"
 
-type Props = {
-  recordMap: ExtendedRecordMap
-  data: TPost
-}
+type Props = {}
 
-const Detail: React.FC<Props> = ({ recordMap, data }) => {
+const Detail: React.FC<Props> = () => {
+  const data = usePostQuery()
   useMermaidEffect()
 
   return (
     <StyledWrapper data-type={data.type}>
-      {data.type[0] === "Page" && (
-        <PageDetail data={data} recordMap={recordMap} />
-      )}
-      {data.type[0] !== "Page" && (
-        <PostDetail data={data} blockMap={recordMap} />
-      )}
+      {data.type[0] === "Page" && <PageDetail />}
+      {data.type[0] !== "Page" && <PostDetail />}
     </StyledWrapper>
   )
 }

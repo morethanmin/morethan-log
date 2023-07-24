@@ -1,17 +1,14 @@
-import { TPost } from "src/types"
 import React from "react"
 import styled from "@emotion/styled"
 import NotionRenderer from "../components/NotionRenderer"
-import { ExtendedRecordMap } from "notion-types"
-type Props = {
-  recordMap: ExtendedRecordMap
-  data: TPost
-}
+import usePostQuery from "src/hooks/usePostQuery"
+type Props = {}
 
-const PageDetail: React.FC<Props> = ({ recordMap, data }) => {
+const PageDetail: React.FC<Props> = () => {
+  const data = usePostQuery()
   return (
     <StyledWrapper>
-      <NotionRenderer recordMap={recordMap} />
+      <NotionRenderer recordMap={data.recordMap} />
     </StyledWrapper>
   )
 }

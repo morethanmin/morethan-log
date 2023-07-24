@@ -2,16 +2,14 @@ import styled from "@emotion/styled"
 import { useRouter } from "next/router"
 import React from "react"
 import { Emoji } from "src/components/Emoji"
-import { TTags } from "src/types"
+import { useTagsQuery } from "src/hooks/useTagsQuery"
 
-type Props = {
-  className?: string
-  data: TTags
-}
+type Props = {}
 
-const TagList: React.FC<Props> = ({ data }) => {
+const TagList: React.FC<Props> = () => {
   const router = useRouter()
   const currentTag = router.query.tag || undefined
+  const data = useTagsQuery()
 
   const handleClickTag = (value: any) => {
     // delete

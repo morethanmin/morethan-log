@@ -1,7 +1,7 @@
 import { useQuery, useQueryClient } from "@tanstack/react-query"
 import { getCookie, setCookie } from "cookies-next"
 import { useEffect } from "react"
-import { queryKey } from "src/constants/queryKeys"
+import { queryKey } from "src/constants/queryKey"
 
 type Scheme = "light" | "dark"
 type SetScheme = (scheme: Scheme) => void

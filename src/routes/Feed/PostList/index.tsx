@@ -2,16 +2,16 @@ import { useRouter } from "next/router"
 import React, { useEffect, useState } from "react"
 import PostCard from "src/routes/Feed/PostList/PostCard"
 import { DEFAULT_CATEGORY } from "src/constants"
-import { TPosts } from "src/types"
+import usePostsQuery from "src/hooks/usePostsQuery"
 
 type Props = {
   q: string
-  posts: TPosts
 }
 
-const PostList: React.FC<Props> = ({ q, posts }) => {
+const PostList: React.FC<Props> = ({ q }) => {
   const router = useRouter()
-  const [filteredPosts, setFilteredPosts] = useState(posts)
+  const data = usePostsQuery()
+  const [filteredPosts, setFilteredPosts] = useState(data)
 
   const currentTag = `${router.query.tag || ``}` || undefined
   const currentCategory = `${router.query.category || ``}` || DEFAULT_CATEGORY
@@ -19,9 +19,9 @@ const PostList: React.FC<Props> = ({ q, posts }) => {
 
   useEffect(() => {
     setFilteredPosts(() => {
-      let filteredPosts = posts
+      let newFilteredPosts = data
       // keyword
-      filteredPosts = filteredPosts.filter((post) => {
+      newFilteredPosts = newFilteredPosts.filter((post) => {
         const tagContent = post.tags ? post.tags.join(" ") : ""
         const searchContent = post.title + post.summary + tagContent
         return searchContent.toLowerCase().includes(q.toLowerCase())
@@ -29,26 +29,28 @@ const PostList: React.FC<Props> = ({ q, posts }) => {
 
       // tag
       if (currentTag) {
-        filteredPosts = filteredPosts.filter(
+        newFilteredPosts = newFilteredPosts.filter(
           (post) => post && post.tags && post.tags.includes(currentTag)
         )
       }
 
       // category
       if (currentCategory !== DEFAULT_CATEGORY) {
-        filteredPosts = filteredPosts.filter(
+        newFilteredPosts = newFilteredPosts.filter(
           (post) =>
             post && post.category && post.category.includes(currentCategory)
         )
       }
       // order
       if (currentOrder !== "desc") {
-        filteredPosts = filteredPosts.reverse()
+        newFilteredPosts = newFilteredPosts.reverse()
       }
 
-      return filteredPosts
+      console.log(newFilteredPosts)
+
+      return newFilteredPosts
     })
-  }, [q, currentTag, currentCategory, currentOrder, setFilteredPosts, posts])
+  }, [q, currentTag, currentCategory, currentOrder, setFilteredPosts])
 
   return (
     <>

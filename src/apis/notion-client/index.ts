@@ -1,2 +1,2 @@
-export * from "./getPostBlocks"
+export * from "./getRecordMap"
 export * from "./getPosts"
