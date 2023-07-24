@@ -46,8 +46,6 @@ const PostList: React.FC<Props> = ({ q }) => {
         newFilteredPosts = newFilteredPosts.reverse()
       }
 
-      console.log(newFilteredPosts)
-
       return newFilteredPosts
     })
   }, [q, currentTag, currentCategory, currentOrder, setFilteredPosts])
