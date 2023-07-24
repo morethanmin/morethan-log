@@ -1,15 +1,16 @@
 import { AppPropsWithLayout } from "../types"
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+import { Hydrate, QueryClientProvider } from "@tanstack/react-query"
 import { RootLayout } from "src/layouts"
-
-const queryClient = new QueryClient()
+import { queryClient } from "src/libs/react-query"
 
 function App({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout || ((page) => page)
 
   return (
     <QueryClientProvider client={queryClient}>
-      <RootLayout>{getLayout(<Component {...pageProps} />)}</RootLayout>
+      <Hydrate state={pageProps.dehydratedState}>
+        <RootLayout>{getLayout(<Component {...pageProps} />)}</RootLayout>
+      </Hydrate>
     </QueryClientProvider>
   )
 }

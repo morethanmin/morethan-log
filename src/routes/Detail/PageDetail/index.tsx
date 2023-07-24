@@ -1,16 +1,16 @@
-import { TPost } from "src/types"
 import React from "react"
 import styled from "@emotion/styled"
 import NotionRenderer from "../components/NotionRenderer"
-type Props = {
-  blockMap: any
-  data: TPost
-}
+import usePostQuery from "src/hooks/usePostQuery"
+type Props = {}
 
-const PageDetail: React.FC<Props> = ({ blockMap, data }) => {
+const PageDetail: React.FC<Props> = () => {
+  const data = usePostQuery()
+
+  if (!data) return null
   return (
     <StyledWrapper>
-      <NotionRenderer recordMap={blockMap} />
+      <NotionRenderer recordMap={data.recordMap} />
     </StyledWrapper>
   )
 }

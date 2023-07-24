@@ -3,7 +3,6 @@ import { useState } from "react"
 import SearchInput from "./SearchInput"
 import { FeedHeader } from "./FeedHeader"
 import Footer from "./Footer"
-import { TCategories, TPosts, TTags } from "src/types"
 import styled from "@emotion/styled"
 import TagList from "./TagList"
 import MobileProfileCard from "./MobileProfileCard"
@@ -12,13 +11,9 @@ import ServiceCard from "./ServiceCard"
 import ContactCard from "./ContactCard"
 import PostList from "./PostList"
 
-type Props = {
-  categories: TCategories
-  tags: TTags
-  posts: TPosts
-}
+type Props = {}
 
-const Feed: React.FC<Props> = ({ categories, tags, posts }) => {
+const Feed: React.FC<Props> = () => {
   const [q, setQ] = useState("")
 
   return (
@@ -29,16 +24,16 @@ const Feed: React.FC<Props> = ({ categories, tags, posts }) => {
           height: "calc(100vh - 73px)",
         }}
       >
-        <TagList data={tags} />
+        <TagList />
       </div>
       <div className="mid">
         <MobileProfileCard />
         <SearchInput value={q} onChange={(e) => setQ(e.target.value)} />
         <div className="tags">
-          <TagList data={tags} />
+          <TagList />
         </div>
-        <FeedHeader categories={categories} />
-        <PostList q={q} posts={posts} />
+        <FeedHeader />
+        <PostList q={q} />
         <div className="footer">
           <Footer />
         </div>

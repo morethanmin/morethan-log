@@ -4,14 +4,12 @@ import CategorySelect from "./CategorySelect"
 import OrderButtons from "./OrderButtons"
 import styled from "@emotion/styled"
 
-type Props = {
-  categories: TCategories
-}
+type Props = {}
 
-const FeedHeader: React.FC<Props> = ({ categories }) => {
+const FeedHeader: React.FC<Props> = () => {
   return (
     <StyledWrapper>
-      <CategorySelect data={categories} />
+      <CategorySelect />
       <OrderButtons />
     </StyledWrapper>
   )

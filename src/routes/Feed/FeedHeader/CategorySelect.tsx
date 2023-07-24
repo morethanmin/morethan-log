@@ -5,13 +5,13 @@ import React from "react"
 import { MdExpandMore } from "react-icons/md"
 import { DEFAULT_CATEGORY } from "src/constants"
 import styled from "@emotion/styled"
+import { useCategoriesQuery } from "src/hooks/useCategoriesQuery"
 
-type Props = {
-  data: TCategories
-}
+type Props = {}
 
-const CategorySelect: React.FC<Props> = ({ data }) => {
+const CategorySelect: React.FC<Props> = () => {
   const router = useRouter()
+  const data = useCategoriesQuery()
   const [dropdownRef, opened, handleOpen] = useDropdown()
 
   const currentCategory = `${router.query.category || ``}` || DEFAULT_CATEGORY

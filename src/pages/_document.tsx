@@ -6,11 +6,6 @@ class MyDocument extends Document {
     return (
       <Html lang={CONFIG.lang}>
         <Head>
-          <link
-            rel="stylesheet"
-            as="font"
-            href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css"
-          />
           <link rel="icon" href="/favicon.ico" />
           <link
             rel="apple-touch-icon"
@@ -33,7 +28,6 @@ class MyDocument extends Document {
             </>
           )}
         </Head>
-        {/* // TODO: move to global styles */}
         <body>
           <Main />
           <NextScript />

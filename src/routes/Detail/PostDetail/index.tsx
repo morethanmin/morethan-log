@@ -1,4 +1,3 @@
-import { TPost } from "src/types"
 import React from "react"
 import PostHeader from "./PostHeader"
 import Footer from "./PostFooter"
@@ -6,13 +5,15 @@ import CommentBox from "./CommentBox"
 import Category from "src/components/Category"
 import styled from "@emotion/styled"
 import NotionRenderer from "../components/NotionRenderer"
+import usePostQuery from "src/hooks/usePostQuery"
 
-type Props = {
-  blockMap: any
-  data: TPost
-}
+type Props = {}
 
-const PostDetail: React.FC<Props> = ({ blockMap, data }) => {
+const PostDetail: React.FC<Props> = () => {
+  const data = usePostQuery()
+
+  if (!data) return null
+
   const category = (data.category && data.category?.[0]) || undefined
 
   return (
@@ -26,11 +27,9 @@ const PostDetail: React.FC<Props> = ({ blockMap, data }) => {
           </div>
         )}
         {data.type[0] === "Post" && <PostHeader data={data} />}
-        {blockMap && (
-          <div>
-            <NotionRenderer recordMap={blockMap} />
-          </div>
-        )}
+        <div>
+          <NotionRenderer recordMap={data.recordMap} />
+        </div>
         {data.type[0] === "Post" && (
           <>
             <Footer />

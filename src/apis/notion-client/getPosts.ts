@@ -6,24 +6,12 @@ import getAllPageIds from "src/libs/utils/notion/getAllPageIds"
 import getPageProperties from "src/libs/utils/notion/getPageProperties"
 import { TPosts } from "src/types"
 
-declare global {
-  var notionDatas: { TPosts: TPosts; savedDate: Date }
-}
-
 /**
  * @param {{ includePages: boolean }} - false: posts only / true: include pages
  */
 
-export async function getPosts() {
-  if (global?.notionDatas) {
-    const saved = global.notionDatas.savedDate
-    const now = new Date()
-    const diff = (now.getTime() - saved.getTime()) / 1000
-    if (diff < 60 * 60) {
-      return global.notionDatas.TPosts
-    }
-  }
-
+// TODO: react query를 사용해서 처음 불러온 뒤로는 해당데이터만 사용하도록 수정
+export const getPosts = async () => {
   let id = CONFIG.notionConfig.pageId as string
   const api = new NotionAPI()
 
@@ -65,8 +53,7 @@ export async function getPosts() {
       return dateB - dateA
     })
 
-    global.notionDatas = { TPosts: data, savedDate: new Date() }
-
-    return data as TPosts
+    const posts = data as TPosts
+    return posts
   }
 }
