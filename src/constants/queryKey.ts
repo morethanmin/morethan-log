@@ -3,5 +3,5 @@ export const queryKey = {
   posts: () => ["posts"],
   tags: () => ["tags"],
   categories: () => ["categories"],
-  post: () => ["post"],
+  post: (slug: string) => ["post", slug],
 }
