@@ -1,2 +1,1 @@
-export { getPosts } from "./getPosts"
-export { getPostBlocks } from "./getPostBlocks"
+export * from "./notion-client"

@@ -3,8 +3,10 @@ import { filterPosts } from "src/libs/utils/notion"
 import { CONFIG } from "site.config"
 import { NextPageWithLayout, TPost } from "../types"
 import CustomError from "src/routes/Error"
-import { getPostBlocks, getPosts } from "src/apis"
+import { getRecordMap, getPosts } from "src/apis"
 import MetaConfig from "src/components/MetaConfig"
+import { ExtendedRecordMap } from "notion-types"
+import { GetStaticProps } from "next"
 
 export async function getStaticPaths() {
   const posts = await getPosts()
@@ -19,15 +21,21 @@ export async function getStaticPaths() {
   }
 }
 
-export async function getStaticProps({ params: { slug } }: any) {
+type Props = {
+  post?: TPost
+  recordMap?: ExtendedRecordMap
+}
+
+export const getStaticProps: GetStaticProps<Props> = async (context) => {
+  const slug = context.params?.slug
+
   try {
-    //includePages: true
     const posts = await getPosts()
     const post = posts.find((t: any) => t.slug === slug)
-    const blockMap = await getPostBlocks(post?.id!)
+    const recordMap = await getRecordMap(post?.id!)
 
     return {
-      props: { post, blockMap },
+      props: { post, recordMap },
       revalidate: CONFIG.revalidateTime,
     }
   } catch (error) {
@@ -38,14 +46,9 @@ export async function getStaticProps({ params: { slug } }: any) {
   }
 }
 
-type Props = {
-  post: TPost
-  blockMap: any
-}
-
-const DetailPage: NextPageWithLayout<Props> = ({ post, blockMap }) => {
-  if (!post) return <CustomError />
-  return <Detail blockMap={blockMap} data={post} />
+const DetailPage: NextPageWithLayout<Props> = ({ post, recordMap }) => {
+  if (!post || !recordMap) return <CustomError />
+  return <Detail recordMap={recordMap} data={post} />
 }
 
 DetailPage.getLayout = (page) => {

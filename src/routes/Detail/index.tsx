@@ -3,22 +3,23 @@ import useMermaidEffect from "./hooks/useMermaidEffect"
 import PostDetail from "./PostDetail"
 import PageDetail from "./PageDetail"
 import styled from "@emotion/styled"
+import { ExtendedRecordMap } from "notion-types"
 
 type Props = {
-  blockMap: any
+  recordMap: ExtendedRecordMap
   data: TPost
 }
 
-const Detail: React.FC<Props> = ({ blockMap, data }) => {
+const Detail: React.FC<Props> = ({ recordMap, data }) => {
   useMermaidEffect()
 
   return (
     <StyledWrapper data-type={data.type}>
       {data.type[0] === "Page" && (
-        <PageDetail data={data} blockMap={blockMap} />
+        <PageDetail data={data} recordMap={recordMap} />
       )}
       {data.type[0] !== "Page" && (
-        <PostDetail data={data} blockMap={blockMap} />
+        <PostDetail data={data} blockMap={recordMap} />
       )}
     </StyledWrapper>
   )

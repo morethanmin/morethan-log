@@ -2,15 +2,16 @@ import { TPost } from "src/types"
 import React from "react"
 import styled from "@emotion/styled"
 import NotionRenderer from "../components/NotionRenderer"
+import { ExtendedRecordMap } from "notion-types"
 type Props = {
-  blockMap: any
+  recordMap: ExtendedRecordMap
   data: TPost
 }
 
-const PageDetail: React.FC<Props> = ({ blockMap, data }) => {
+const PageDetail: React.FC<Props> = ({ recordMap, data }) => {
   return (
     <StyledWrapper>
-      <NotionRenderer recordMap={blockMap} />
+      <NotionRenderer recordMap={recordMap} />
     </StyledWrapper>
   )
 }
