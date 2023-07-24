@@ -1,5 +1,4 @@
 import useDropdown from "src/hooks/useDropdown"
-import { TCategories } from "src/types"
 import { useRouter } from "next/router"
 import React from "react"
 import { MdExpandMore } from "react-icons/md"
