@@ -11,6 +11,8 @@ import ServiceCard from "./ServiceCard"
 import ContactCard from "./ContactCard"
 import PostList from "./PostList"
 
+const HEADER_HEIGHT = 73
+
 type Props = {}
 
 const Feed: React.FC<Props> = () => {
@@ -21,7 +23,7 @@ const Feed: React.FC<Props> = () => {
       <div
         className="lt"
         css={{
-          height: "calc(100vh - 73px)",
+          height: `calc(100vh - ${HEADER_HEIGHT}px)`,
         }}
       >
         <TagList />
@@ -41,7 +43,7 @@ const Feed: React.FC<Props> = () => {
       <div
         className="rt"
         css={{
-          height: "calc(100vh - 73px)",
+          height: `calc(100vh - ${HEADER_HEIGHT}px)`,
         }}
       >
         <ProfileCard />
@@ -58,12 +60,15 @@ const Feed: React.FC<Props> = () => {
 export default Feed
 
 const StyledWrapper = styled.div`
-  display: block;
   grid-template-columns: repeat(12, minmax(0, 1fr));
+
+  padding: 2rem 0;
+  display: grid;
   gap: 1.5rem;
 
-  @media (min-width: 768px) {
-    display: grid;
+  @media (max-width: 768px) {
+    display: block;
+    padding: 0.5rem 0;
   }
 
   > .lt {
@@ -71,7 +76,7 @@ const StyledWrapper = styled.div`
     overflow: scroll;
     position: sticky;
     grid-column: span 2 / span 2;
-    top: 73px;
+    top: ${HEADER_HEIGHT - 10}px;
 
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -117,7 +122,7 @@ const StyledWrapper = styled.div`
     display: none;
     overflow: scroll;
     position: sticky;
-    top: 73px;
+    top: ${HEADER_HEIGHT - 10}px;
 
     @media (min-width: 1024px) {
       display: block;
