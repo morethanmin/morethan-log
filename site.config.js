@@ -19,7 +19,7 @@ const CONFIG = {
   // blog setting (required)
   blog: {
     title: "Raccoon is studying",
-    description: "👻",
+    description: "",
   },
 
   // CONFIG configration (required)
