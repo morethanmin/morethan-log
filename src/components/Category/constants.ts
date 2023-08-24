@@ -1,4 +1,4 @@
-export const COLOR_SET: { [key: string]: string } = {
+export const COLOR_SET: Record<string, string> = {
   0: "rgb(186 230 253)",
   1: "rgb(254 205 211)",
   2: "rgb(245 208 254)",
