@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
     "postbuild": "next-sitemap --config next-sitemap.config.js",
     "lint": "next lint"
