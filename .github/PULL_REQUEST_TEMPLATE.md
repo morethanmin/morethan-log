@@ -1,5 +1,5 @@
 <!-- 1. Verify PR Title -->
-<!-- PR Title example: `[FIX | REFACTOR | FEAT | UPDATE | DOCUMENTATION] repair the page layout` -->
+<!-- PR Title example: `[fix | refactor | feat | update | documentation]: repair the page layout` -->
 
 <!-- 2. Provide Description of the changes -->
 
