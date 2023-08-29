@@ -57,7 +57,7 @@ const CONFIG = {
   utterances: {
     enable: false,
     config: {
-      repo: process.env.NEXT_PUBLIC_UTTERANCES_REPO,
+      repo: process.env.NEXT_PUBLIC_UTTERANCES_REPO || "",
       "issue-term": "og:title",
       label: "💬 Utterances",
     },
