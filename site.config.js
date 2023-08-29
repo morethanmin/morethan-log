@@ -1,25 +1,34 @@
 const CONFIG = {
   // profile setting (required)
   profile: {
-    name: "morethanmin",
+    name: "jiyeounPark",
     image: "/avatar.svg", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
-    role: "frontend developer",
-    bio: "I develop everything using node.",
-    email: "morethanmin.dev@gmail.com",
-    linkedin: "morethanmin",
-    github: "morethanmin",
+    role: "frontend development",
+    skills: `TypeScript, React, JavaScript, TailwindCSS, Styled-components, Sass, CSS 3, HTML 5, Figma, Sketch, XD, Photoshop, Zeplin`,
+    email: "jijiji941@gmail.com",
+    linkedin: "jiyeoun park",
+    github: "pajiyeee",
     instagram: "",
   },
   projects: [
     {
-      name: `morethan-log`,
-      href: "https://github.com/morethanmin/morethan-log",
+      name: `의료인 인증 미니앱`,
+      href: "https://bogun.careers",
     },
+    {
+      name: `muse 뮤지컬 티켓팅 웹 플랫폼`,
+      href: "https://github.com/pajiyeee/44-2nd-Chill-Play-frontend",
+    },
+        {
+      name: `4bsop 뷰티브랜드 웹서비스`,
+      href: "https://github.com/pajiyeee/44-1st-four-branch-frontend",
+    },
+    
   ],
   // blog setting (required)
   blog: {
-    title: "morethan-log",
-    description: "welcome to morethan-log!",
+    title: "Hi, I'm Jiyeoun",
+    description: "Studying Frontend Development Archive",
   },
 
   // CONFIG configration (required)
@@ -47,7 +56,7 @@ const CONFIG = {
     },
   },
   utterances: {
-    enable: true,
+    enable: false,
     config: {
       repo: process.env.NEXT_PUBLIC_UTTERANCES_REPO,
       "issue-term": "og:title",
