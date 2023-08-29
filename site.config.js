@@ -4,7 +4,7 @@ const CONFIG = {
     name: "jiyeounPark",
     image: "/avatar.svg", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
     role: "frontend development",
-    skills: `TypeScript, React, JavaScript, TailwindCSS, Styled-components, Sass, CSS 3, HTML 5, Figma, Sketch, XD, Photoshop, Zeplin`,
+    bio: `TypeScript, React, JavaScript, TailwindCSS, Styled-components, Sass, CSS 3, HTML 5, Figma, Sketch, XD, Photoshop, Zeplin`,
     email: "jijiji941@gmail.com",
     linkedin: "jiyeoun park",
     github: "pajiyeee",
@@ -19,11 +19,10 @@ const CONFIG = {
       name: `muse 뮤지컬 티켓팅 웹 플랫폼`,
       href: "https://github.com/pajiyeee/44-2nd-Chill-Play-frontend",
     },
-        {
+    {
       name: `4bsop 뷰티브랜드 웹서비스`,
       href: "https://github.com/pajiyeee/44-1st-four-branch-frontend",
     },
-    
   ],
   // blog setting (required)
   blog: {
