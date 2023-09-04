@@ -47,9 +47,9 @@ const CONFIG = {
     },
   },
   utterances: {
-    enable: false,
+    enable: true,
     config: {
-      repo: process.env.NEXT_PUBLIC_UTTERANCES_REPO || "",
+      repo: "seola0813/morethan-big",
       "issue-term": "og:title",
       label: "💬 Utterances",
     },
