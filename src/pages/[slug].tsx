@@ -58,7 +58,7 @@ const DetailPage: NextPageWithLayout = () => {
 
   const image =
     post.thumbnail ??
-    // CONFIG.ogImageGenerateURL ??
+    CONFIG.ogImageGenerateURL ??
     `${CONFIG.ogImageGenerateURL}/${encodeURIComponent(post.title)}.png`
 
   const date = post.date?.start_date || post.createdTime || ""
