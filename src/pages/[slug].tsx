@@ -57,7 +57,7 @@ const DetailPage: NextPageWithLayout = () => {
   if (!post) return <CustomError />
 
   const image =
-    post.thumbnail ??
+    // post.thumbnail ??
     CONFIG.ogImageGenerateURL ??
     `${CONFIG.ogImageGenerateURL}/${encodeURIComponent(post.title)}.png`
 
