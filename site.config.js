@@ -1,25 +1,25 @@
 const CONFIG = {
   // profile setting (required)
   profile: {
-    name: "Viki",
+    name: `${process.env.NEXT_PUBLIC_NICKNAME}`,
     image: "/avatar.svg", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
-    role: "frontend developer",
-    bio: "I develop everything using node.",
-    email: "morethanmin.dev@gmail.com",
-    linkedin: "morethanmin",
-    github: "morethanmin",
-    instagram: "",
+    role: `${process.env.NEXT_PUBLIC_PROFILE_ROLE}`,
+    bio: `${process.env.NEXT_PUBLIC_BLOG_BIO}`,
+    email: `${process.env.NEXT_PUBLIC_PROFILE_EMAIL}`,
+    linkedin: `${process.env.NEXT_PUBLIC_PROFILE_LINKEDIN}`,
+    github: `${process.env.NEXT_PUBLIC_PROFILE_GITHUB}`,
+    instagram: `${process.env.NEXT_PUBLIC_PROFILE_INSTAGRAM}`,
   },
   projects: [
     {
-      name: `morethan-log`,
-      href: "https://github.com/morethanmin/morethan-log",
+      name: `Side Projects`,
+      href: `https://github.com/${process.env.NEXT_PUBLIC_PROFILE_GITHUB}`,
     },
   ],
   // blog setting (required)
   blog: {
-    title: "Fossilized",
-    description: "welcome to Viki's Blog!",
+    title: `${process.env.NEXT_PUBLIC_BLOG_NAME}`,
+    description: `welcome to ${process.env.NEXT_PUBLIC_NICKNAME}'s Blog!`,
   },
 
   // CONFIG configration (required)
@@ -30,7 +30,7 @@ const CONFIG = {
 
   // notion configuration (required)
   notionConfig: {
-    pageId: process.env.NOTION_PAGE_ID,
+    pageId: process.env.NEXT_PUBLIC_NOTION_PAGE_ID,
   },
 
   // plugin configuration (optional)
