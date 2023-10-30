@@ -11,8 +11,8 @@ const CONFIG = {
     instagram: "nine_floor",
   },
   projects: [{
-    name: 'github',
-    href: 'https://github.com/ninefloor',
+    name: '',
+    href: '',
   }
   ],
   // blog setting (required)
