@@ -10,7 +10,10 @@ const CONFIG = {
     github: "ninefloor",
     instagram: "ninefloor",
   },
-  projects: [{}
+  projects: [{
+    name: 'github',
+    href: 'https://github.com/ninefloor',
+  }
   ],
   // blog setting (required)
   blog: {
