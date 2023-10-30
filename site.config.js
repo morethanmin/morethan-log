@@ -6,19 +6,19 @@ const CONFIG = {
     role: "Frontend Developer",
     bio: "뭐가 됐든 뭐가 되어서 뭐든 합니다.",
     email: "less0805@gmail.com",
-    linkedin: "ninefloor",
+    linkedin: "",
     github: "ninefloor",
-    instagram: "ninefloor",
+    instagram: "nine_floor",
   },
   projects: [{
-    name: 'github',
-    href: 'https://github.com/ninefloor',
+    name: '',
+    href: '',
   }
   ],
   // blog setting (required)
   blog: {
     title: "ninefloor deVlog",
-    description: "기록이 어려운 사람",
+    description: "기록이 어려운 개발자의 블로그",
     theme: 'light'
   },
 
