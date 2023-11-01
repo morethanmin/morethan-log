@@ -11,8 +11,8 @@ const CONFIG = {
     instagram: "nine_floor",
   },
   projects: [{
-    name: '',
-    href: '',
+    name: '코노플리 CONOPLI',
+    href: 'https://play.google.com/store/apps/details?id=com.conopli&pcampaignid=web_share',
   }
   ],
   // blog setting (required)
