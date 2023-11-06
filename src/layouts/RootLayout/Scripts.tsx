@@ -1,4 +1,5 @@
 import Script from "next/script"
+
 import { CONFIG } from "site.config"
 
 const Scripts: React.FC = () => (

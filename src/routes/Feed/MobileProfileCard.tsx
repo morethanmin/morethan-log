@@ -1,7 +1,8 @@
-import { CONFIG } from "site.config"
+import styled from "@emotion/styled"
 import Image from "next/image"
 import React from "react"
-import styled from "@emotion/styled"
+
+import { CONFIG } from "site.config"
 
 type Props = {
   className?: string

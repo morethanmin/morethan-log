@@ -1,5 +1,5 @@
-import { useEffect } from "react"
 import mermaid from "mermaid"
+import { useEffect } from "react"
 
 const useMermaidEffect = () => {
   useEffect(() => {

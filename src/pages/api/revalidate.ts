@@ -1,4 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next"
+
 import { getPosts } from "../../apis"
 
 // for all path revalidate, https://<your-site.com>/api/revalidate?secret=<token>

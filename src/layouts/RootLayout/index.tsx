@@ -1,9 +1,11 @@
-import React, { ReactNode } from "react"
-import { ThemeProvider } from "./ThemeProvider"
-import useScheme from "src/hooks/useScheme"
-import Header from "./Header"
 import styled from "@emotion/styled"
-import Scripts from "src/layouts/RootLayout/Scripts"
+import { ReactNode } from "react"
+
+import useScheme from "@/hooks/useScheme"
+import Scripts from "@/layouts/RootLayout/Scripts"
+
+import Header from "./Header"
+import { ThemeProvider } from "./ThemeProvider"
 import useGtagEffect from "./useGtagEffect"
 
 type Props = {

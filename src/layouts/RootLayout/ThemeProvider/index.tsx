@@ -1,6 +1,8 @@
 import { ThemeProvider as _ThemeProvider } from "@emotion/react"
+
+import { createTheme } from "@/styles"
+
 import { Global } from "./Global"
-import { createTheme } from "src/styles"
 
 type Props = {
   scheme: string

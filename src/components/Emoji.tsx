@@ -1,5 +1,5 @@
-import React, { ReactNode } from "react"
 import { Noto_Color_Emoji } from "next/font/google"
+import { ReactNode } from "react"
 
 const notoColorEmoji = Noto_Color_Emoji({
   weight: ["400"],

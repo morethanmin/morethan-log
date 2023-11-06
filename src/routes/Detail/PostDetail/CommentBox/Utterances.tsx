@@ -1,8 +1,9 @@
-import { CONFIG } from "site.config"
-import { useEffect } from "react"
 import styled from "@emotion/styled"
-import useScheme from "src/hooks/useScheme"
 import { useRouter } from "next/router"
+import { useEffect } from "react"
+
+import useScheme from "@/hooks/useScheme"
+import { CONFIG } from "site.config"
 
 //TODO: useRef?
 

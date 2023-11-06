@@ -1,11 +1,13 @@
-import React from "react"
-import PostHeader from "./PostHeader"
-import Footer from "./PostFooter"
-import CommentBox from "./CommentBox"
-import Category from "src/components/Category"
 import styled from "@emotion/styled"
-import NotionRenderer from "../components/NotionRenderer"
-import usePostQuery from "src/hooks/usePostQuery"
+import React from "react"
+
+import Category from "@/components/Category"
+import usePostQuery from "@/hooks/usePostQuery"
+import NotionRenderer from "@/routes/Detail/components/NotionRenderer"
+
+import CommentBox from "./CommentBox"
+import Footer from "./PostFooter"
+import PostHeader from "./PostHeader"
 
 type Props = {}
 

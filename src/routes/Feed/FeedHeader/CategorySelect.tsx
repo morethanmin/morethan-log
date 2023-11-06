@@ -1,10 +1,11 @@
-import useDropdown from "src/hooks/useDropdown"
+import styled from "@emotion/styled"
 import { useRouter } from "next/router"
 import React from "react"
 import { MdExpandMore } from "react-icons/md"
-import { DEFAULT_CATEGORY } from "src/constants"
-import styled from "@emotion/styled"
-import { useCategoriesQuery } from "src/hooks/useCategoriesQuery"
+
+import { DEFAULT_CATEGORY } from "@/constants"
+import { useCategoriesQuery } from "@/hooks/useCategoriesQuery"
+import useDropdown from "@/hooks/useDropdown"
 
 type Props = {}
 

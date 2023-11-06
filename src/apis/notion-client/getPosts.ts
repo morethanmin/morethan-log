@@ -1,10 +1,9 @@
-import { CONFIG } from "site.config"
 import { NotionAPI } from "notion-client"
 import { idToUuid } from "notion-utils"
 
-import getAllPageIds from "src/libs/utils/notion/getAllPageIds"
-import getPageProperties from "src/libs/utils/notion/getPageProperties"
-import { TPosts } from "src/types"
+import { getAllPageIds, getPageProperties } from "@/libs/utils/notion"
+import { TPosts } from "@/types"
+import { CONFIG } from "site.config"
 
 /**
  * @param {{ includePages: boolean }} - false: posts only / true: include pages

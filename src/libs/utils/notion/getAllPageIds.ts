@@ -1,10 +1,7 @@
-import { idToUuid } from "notion-utils"
 import { ExtendedRecordMap, ID } from "notion-types"
+import { idToUuid } from "notion-utils"
 
-export default function getAllPageIds(
-  response: ExtendedRecordMap,
-  viewId?: string
-) {
+export function getAllPageIds(response: ExtendedRecordMap, viewId?: string) {
   const collectionQuery = response.collection_query
   const views = Object.values(collectionQuery)[0]
 

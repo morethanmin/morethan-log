@@ -1,6 +1,7 @@
 import styled from "@emotion/styled"
 import React from "react"
-import { Emoji } from "src/components/Emoji"
+
+import { Emoji } from "@/components/Emoji"
 
 type Props = {}
 

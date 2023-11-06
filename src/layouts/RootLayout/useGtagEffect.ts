@@ -1,6 +1,7 @@
-import { useEffect } from "react"
 import { useRouter } from "next/router"
-import * as gtag from "src/libs/gtag"
+import { useEffect } from "react"
+
+import * as gtag from "@/libs/gtag"
 import { CONFIG } from "site.config"
 
 const useGtagEffect = () => {

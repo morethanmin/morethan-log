@@ -1,10 +1,11 @@
-import { CONFIG } from "site.config"
-import Tag from "src/components/Tag"
-import { TPost } from "src/types"
-import { formatDate } from "src/libs/utils"
+import styled from "@emotion/styled"
 import Image from "next/image"
 import React from "react"
-import styled from "@emotion/styled"
+
+import Tag from "@/components/Tag"
+import { formatDate } from "@/libs/utils"
+import { TPost } from "@/types"
+import { CONFIG } from "site.config"
 
 type Props = {
   data: TPost
