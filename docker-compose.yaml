@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  chis-blog:
+    container_name: chis-blog
+    restart: unless-stopped
+    image: node:18-alpine
+    volumes:
+      - .:/app
+    working_dir: /app
+    ports:
+      - "2564:3000"
+    env_file:
+      - .env
+    command: /bin/sh -c "yarn install && yarn build && yarn start"

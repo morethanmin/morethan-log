@@ -1,30 +1,48 @@
 const CONFIG = {
   // profile setting (required)
   profile: {
-    name: "morethanmin",
-    image: "/avatar.svg", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
-    role: "frontend developer",
-    bio: "I develop everything using node.",
-    email: "morethanmin.dev@gmail.com",
-    linkedin: "morethanmin",
-    github: "morethanmin",
+    name: "Chris Alves",
+    image: "/profile.png", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
+    role: "DevOps Engineer",
+    bio: "Rock Climber. Video Editor. Gamer.",
+    youtube: "ChisDev",
+    linkedin: "chrisae9",
+    github: "chrisae9",
+    typeracer: "chrisae9",
     instagram: "",
   },
+  // IMPORTANT: Import references to icons in src/routes/Feed/ServiceCard.tsx
   projects: [
     {
-      name: `morethan-log`,
-      href: "https://github.com/morethanmin/morethan-log",
+      name: 'Notion',
+      iconName: "SiNotion", // Icon name as string
+      href: "https://www.notion.so/2ad04a86b6a342118892ce0a2a9c6385?v=3c485ee359e84e0fbf9ced5d73c24637",
+    },
+    {
+      name: 'File Hosting',
+      iconName: "AiFillCloud", // Icon name as string
+      href: "https://share.chis.dev",
+    },
+    {
+      name: 'Discord Bot',
+      iconName: "AiFillRobot", // Icon name as string
+      href: 'https://discord.com/api/oauth2/authorize?client_id=724657775652634795&permissions=0&scope=bot%20applications.commands',
+    },
+    {
+      name: 'Phase10 Randomizer',
+      iconName: "CgCardClubs", // Icon name as string
+      href: "https://phase.chis.dev",
     },
   ],
   // blog setting (required)
   blog: {
-    title: "morethan-log",
-    description: "welcome to morethan-log!",
+    title: "Chis.Dev",
+    description: "Welcome to my blog!",
   },
 
   // CONFIG configration (required)
-  link: "https://morethan-log.vercel.app",
-  since: 2022, // If leave this empty, current year will be used.
+  link: "https://blog.chis.dev",
+  since: 2023, // If leave this empty, current year will be used.
   lang: "en-US", // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES', 'ko-KR']
   ogImageGenerateURL: "https://og-image-korean.vercel.app", // The link to generate OG image, don't end with a slash
 

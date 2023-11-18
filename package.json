@@ -1,10 +1,10 @@
 {
-  "name": "morethan-log",
+  "name": "chis-blog",
   "version": "1.3.0",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/morethanmin/morethan-log.git"
+    "url": "https://github.com/chrisae9/chis-blog.git"
   },
   "scripts": {
     "dev": "next dev",
@@ -21,7 +21,7 @@
     "axios": ">=0.21.1",
     "cookies-next": "^2.1.2",
     "mermaid": "^9.3.0",
-    "next": "^13.4.9",
+    "next": "^14.0.2",
     "notion-client": "^6.16.0",
     "notion-types": "^6.16.0",
     "notion-utils": "^6.16.0",
@@ -29,7 +29,8 @@
     "react-cusdis": "^2.1.3",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
-    "react-notion-x": "^6.16.0"
+    "react-notion-x": "^6.16.0",
+    "sharp": "^0.32.6"
   },
   "devDependencies": {
     "@types/gtag.js": "^0.0.12",

@@ -3,15 +3,16 @@ import React from "react"
 import {
   AiOutlineInstagram,
   AiOutlineGithub,
-  AiOutlineMail,
+  AiOutlineYoutube,
   AiFillLinkedin,
+  AiFillCar
 } from "react-icons/ai"
 import styled from "@emotion/styled"
 
 const ContactCard: React.FC = () => {
   return (
     <>
-      <StyledTitle>💬 Contact</StyledTitle>
+      <StyledTitle>💬 Socials</StyledTitle>
       <StyledWrapper>
         {CONFIG.profile.github && (
           <a
@@ -20,7 +21,7 @@ const ContactCard: React.FC = () => {
             target="_blank"
           >
             <AiOutlineGithub className="icon" />
-            <div className="name">github</div>
+            <div className="name">GitHub</div>
           </a>
         )}
         {CONFIG.profile.instagram && (
@@ -33,17 +34,6 @@ const ContactCard: React.FC = () => {
             <div className="name">instagram</div>
           </a>
         )}
-        {CONFIG.profile.email && (
-          <a
-            href={`mailto:${CONFIG.profile.email}`}
-            rel="noreferrer"
-            target="_blank"
-            css={{ overflow: "hidden" }}
-          >
-            <AiOutlineMail className="icon" />
-            <div className="name">email</div>
-          </a>
-        )}
         {CONFIG.profile.linkedin && (
           <a
             href={`https://www.linkedin.com/in/${CONFIG.profile.linkedin}`}
@@ -51,7 +41,28 @@ const ContactCard: React.FC = () => {
             target="_blank"
           >
             <AiFillLinkedin className="icon" />
-            <div className="name">linkedin</div>
+            <div className="name">LinkedIn</div>
+          </a>
+        )}
+        {CONFIG.profile.typeracer && (
+          <a
+            href={`https://data.typeracer.com/pit/profile?user=${CONFIG.profile.typeracer}`}
+            rel="noreferrer"
+            target="_blank"
+          >
+            <AiFillCar className="icon" />
+            <div className="name">TypeRacer</div>
+          </a>
+        )}
+        {CONFIG.profile.youtube && (
+          <a
+            href={`https://www.youtube.com/@${CONFIG.profile.youtube}`}
+            rel="noreferrer"
+            target="_blank"
+            css={{ overflow: "hidden" }}
+          >
+            <AiOutlineYoutube className="icon" />
+            <div className="name">YouTube</div>
           </a>
         )}
       </StyledWrapper>

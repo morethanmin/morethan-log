@@ -1,15 +1,29 @@
 import { CONFIG } from "site.config"
 import React from "react"
-import { AiFillCodeSandboxCircle } from "react-icons/ai"
+import { AiFillCloud, AiFillCodeSandboxCircle,AiFillRobot } from "react-icons/ai"
+import { CgCardClubs } from "react-icons/cg";
+import { SiNotion } from "react-icons/si";
 import styled from "@emotion/styled"
 import { Emoji } from "src/components/Emoji"
+import { IconType } from "react-icons"
 
 const ServiceCard: React.FC = () => {
+
+  // https://react-icons.github.io/react-icons/
+  const ICONS: { [key: string]: IconType } = {
+    "AiFillCodeSandboxCircle": AiFillCodeSandboxCircle,
+    "AiFillCloud": AiFillCloud,
+    "AiFillRobot": AiFillRobot,
+    "CgCardClubs": CgCardClubs,
+    "SiNotion": SiNotion,
+    // Add other icons as needed
+  };
+
   if (!CONFIG.projects) return null
   return (
     <>
       <StyledTitle>
-        <Emoji>🌟</Emoji> Service
+        <Emoji>🌟</Emoji> Links
       </StyledTitle>
       <StyledWrapper>
         {CONFIG.projects.map((project, idx) => (
@@ -19,8 +33,8 @@ const ServiceCard: React.FC = () => {
             rel="noreferrer"
             target="_blank"
           >
-            <AiFillCodeSandboxCircle className="icon" />
-            <div className="name">{CONFIG.projects[0].name}</div>
+            {React.createElement(ICONS[project.iconName], { className: "icon" })}
+            <div className="name">{project.name}</div>
           </a>
         ))}
       </StyledWrapper>
@@ -58,7 +72,7 @@ const StyledWrapper = styled.div`
     }
     .icon {
       font-size: 1.5rem;
-      line-height: 2rem;
+      line-height: 0rem;
     }
     .name {
       font-size: 0.875rem;
