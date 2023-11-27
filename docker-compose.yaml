@@ -4,12 +4,9 @@ services:
   chis-blog:
     container_name: chis-blog
     restart: unless-stopped
-    image: node:18-alpine
-    volumes:
-      - .:/app
-    working_dir: /app
+    build: .  # This tells Docker Compose to build an image using the Dockerfile in the current directory
     ports:
       - "2564:3000"
     env_file:
       - .env
-    command: /bin/sh -c "yarn install && yarn build && yarn start"
+    command: /bin/sh -c "yarn build && yarn start"

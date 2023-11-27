@@ -68,7 +68,7 @@ const DetailPage: NextPageWithLayout = () => {
     date: new Date(date).toISOString(),
     image: image,
     description: post.summary || "",
-    type: post.type[0] || "Post",
+    type: post.type[0],
     url: `${CONFIG.link}/${post.slug}`,
   }
 
