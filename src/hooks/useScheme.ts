@@ -1,36 +1,52 @@
-import { useQuery, useQueryClient } from "@tanstack/react-query"
-import { getCookie, setCookie } from "cookies-next"
-import { useEffect } from "react"
-import { queryKey } from "src/constants/queryKey"
+import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useEffect, useState } from "react";
+import { queryKey } from "src/constants/queryKey";
 
-type Scheme = "light" | "dark"
-type SetScheme = (scheme: Scheme) => void
+type Scheme = "light" | "dark";
+type SetScheme = (scheme: Scheme) => void;
 
 const useScheme = (): [Scheme, SetScheme] => {
-  const queryClient = useQueryClient()
+  const queryClient = useQueryClient();
 
-  const { data } = useQuery({
-    queryKey: queryKey.scheme(),
-    enabled: false,
-    initialData: "light",
-  })
+  // Use useState to manage the scheme state
+  const [scheme, setSchemeState] = useState<Scheme>('light');
 
-  const scheme = data === "light" ? "light" : "dark"
-
-  const setScheme = (scheme: "light" | "dark") => {
-    setCookie("scheme", scheme)
-
-    queryClient.setQueryData(queryKey.scheme(), scheme)
-  }
+  // Function to update the theme
+  const setScheme = (scheme: Scheme) => {
+    setSchemeState(scheme);
+    queryClient.setQueryData(queryKey.scheme(), scheme);
+  };
 
   useEffect(() => {
-    if (!window) return
+    // Check if window is defined
+    if (typeof window !== 'undefined') {
+      // Function to get the system theme
+      const getSystemTheme = (): Scheme => {
+        return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      };
 
-    const scheme = getCookie("scheme")
-    setScheme(scheme === "light" ? "light" : "dark")
-  }, [])
+      // Set the initial theme based on the system preference
+      setScheme(getSystemTheme());
 
-  return [scheme, setScheme]
-}
+      const updateScheme = (e: MediaQueryListEvent) => {
+        const newScheme = e.matches ? 'dark' : 'light';
+        setScheme(newScheme);
+      };
 
-export default useScheme
+      // Create a MediaQueryList object
+      const mediaQueryList = window.matchMedia('(prefers-color-scheme: dark)');
+
+      // Add listener for changes
+      mediaQueryList.addEventListener('change', updateScheme);
+
+      // Cleanup function
+      return () => {
+        mediaQueryList.removeEventListener('change', updateScheme);
+      };
+    }
+  }, []);
+
+  return [scheme, setScheme];
+};
+
+export default useScheme;

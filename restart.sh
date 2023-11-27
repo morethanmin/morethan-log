@@ -1,2 +1,2 @@
-# 0 3 * * * /usr/bin/docker restart chis-blog
+# 0 3 * * * /hdd/www/chis-blog/restart/sh
 /usr/bin/docker restart chis-blog
