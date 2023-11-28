@@ -9,7 +9,7 @@ const useScheme = (): [Scheme, SetScheme] => {
   const queryClient = useQueryClient();
 
   // Use useState to manage the scheme state
-  const [scheme, setSchemeState] = useState<Scheme>('light');
+  const [scheme, setSchemeState] = useState<Scheme>('dark');
 
   // Function to update the theme
   const setScheme = (scheme: Scheme) => {
