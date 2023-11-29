@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://blog.chis.dev
+Host: https://chis.dev
 
 # Sitemaps
-Sitemap: https://blog.chis.dev/sitemap.xml
+Sitemap: https://chis.dev/sitemap.xml
