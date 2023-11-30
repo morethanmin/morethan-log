@@ -13,17 +13,17 @@ const CONFIG = {
   projects: [
     {
       name: `morethan-log`,
-      href: "https://github.com/morethanmin/morethan-log",
-    },
+      href: "https://github.com/mostafaneegm",
+    },mostafa
   ],
   // blog setting (required)
   blog: {
-    title: "morethan-log",
-    description: "welcome to morethan-log!",
+    title: "mostafa-log",
+    description: "welcome to mostafa-log!",
   },
 
   // CONFIG configration (required)
-  link: "https://morethan-log.vercel.app",
+  link: "https://mostafanegm.notion.site/72ed9fadd1ee4fd7817fe52284ff2936?v=efb990bcb23744e686ff551691ab2429&pvs=4",
   since: 2022, // If leave this empty, current year will be used.
   lang: "en-US", // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES', 'ko-KR']
   ogImageGenerateURL: "https://og-image-korean.vercel.app", // The link to generate OG image, don't end with a slash
