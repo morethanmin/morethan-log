@@ -15,6 +15,10 @@ const CONFIG = {
       name: `dollHouse`,
       href: "https://github.com/GameRule17/dollHouse",
     },
+    {
+      name: `Battleship`,
+      href: "https://github.com/softeng2223-inf-uniba/progetto2223-dijkstra",
+    },
   ],
   // blog setting (required)
   blog: {
