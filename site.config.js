@@ -6,7 +6,7 @@ const CONFIG = {
     role: "Product Manager",
     bio: "Product Manager 입니다.",
     email: "hongsk5689@gmail.com",
-    linkedin: "https://www.linkedin.com/in/seok-kyu-hong-4a1411277/",
+    linkedin: "https://www.linkedin.com/in/seok-kyu-hong",
     github: "SeokKyuHong/",
     instagram: "",
   },
