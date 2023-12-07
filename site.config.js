@@ -12,8 +12,8 @@ const CONFIG = {
   },
   projects: [
     {
-      name: `기다려 올려줄게`,
-      href: "https://github.com/SeokKyuHong/",
+      name: `Resume.`,
+      href: "https://kyulog.vercel.app/resume",
     },
   ],
   // blog setting (required)
