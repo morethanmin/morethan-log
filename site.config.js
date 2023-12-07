@@ -19,7 +19,7 @@ const CONFIG = {
   blog: {
     title: "ninefloor deVlog",
     description: "기록이 어려운 개발자의 블로그",
-    theme: 'light'
+    theme: 'dark'
   },
 
   // CONFIG configration (required)
