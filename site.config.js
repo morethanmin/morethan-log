@@ -49,13 +49,13 @@ const CONFIG = {
   utterances: {
     enable: true,
     config: {
-      repo: process.env.NEXT_PUBLIC_UTTERANCES_REPO || "",
+      repo: process.env.NEXT_PUBLIC_UTTERANCES_REPO || "SeokKyuHong/morethan-log/",
       "issue-term": "og:title",
       label: "💬 Utterances",
     },
   },
   cusdis: {
-    enable: true,
+    enable: false,
     config: {
       host: "https://cusdis.com",
       appid: "4ea7dea3-bb16-4926-82ab-7d58c353d95a", // Embed Code -> data-app-id value
