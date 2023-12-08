@@ -12,7 +12,7 @@ type Props = {
   host: string
 }
 
-const Cusdis: React.FC<Props> = ({ id, slug, title }) => {
+const Cusdis: React.FC<Props> = ({ id, slug, title, host }) => {
   const [value, setValue] = useState(0)
   const [scheme] = useScheme()
 
