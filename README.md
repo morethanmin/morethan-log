@@ -10,7 +10,7 @@ Next.js static blog using Notion as a Content Management System (CMS). Supports 
 
 **📒 Writing posts using notion**
 
-- No need of commiting to Github for posting anything to your website.
+- No need of commiting to Github for posting anything to your website. 
 - Posts made on Notion are automaticaly updated on your site.
 
 **📄 Use as a page as resume**
