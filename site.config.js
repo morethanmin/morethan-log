@@ -4,10 +4,10 @@ const CONFIG = {
     name: "Seok-Kyu",
     image: "/avatar.svg", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
     role: "Product Manager",
-    bio: "Product Manager 입니다.",
+    bio: "아직도 크는 중",
     email: "hongsk5689@gmail.com",
     linkedin: "https://www.linkedin.com/in/seok-kyu-hong",
-    github: "SeokKyuHong/",
+    github: "SeokKyuHong",
     instagram: "",
   },
   projects: [
@@ -49,7 +49,7 @@ const CONFIG = {
   utterances: {
     enable: true,
     config: {
-      repo: process.env.NEXT_PUBLIC_UTTERANCES_REPO || "SeokKyuHong/morethan-log",
+      repo: process.env.NEXT_PUBLIC_UTTERANCES_REPO || "",
       "issue-term": "og:title",
       label: "💬 Utterances",
     },
