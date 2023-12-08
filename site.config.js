@@ -24,7 +24,7 @@ const CONFIG = {
 
   // CONFIG configration (required)
   link: "https://kyulog.vercel.app",
-  since: 2022, // If leave this empty, current year will be used.
+  since: 2023, // If leave this empty, current year will be used.
   lang: "ko-KR", // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES', 'ko-KR']
   ogImageGenerateURL: "https://og-image-korean.vercel.app", // The link to generate OG image, don't end with a slash
   seo: {
@@ -40,33 +40,30 @@ const CONFIG = {
   googleAnalytics: {
     enable: false,
     config: {
-      //measurementId: process.env.NEXT_PUBLIC_GOOGLE_MEASUREMENT_ID || "",
-      measurementId: "",
+      measurementId: process.env.NEXT_PUBLIC_GOOGLE_MEASUREMENT_ID || "",
     }
   },
   googleSearchConsole: {
     enable: false,
     config: {
-      //siteVerification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",
-      siteVerification: "",
+      siteVerification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",
     }
   },
   utterances: {
     enable: true,
     config: {
-      //repo: process.env.NEXT_PUBLIC_UTTERANCES_REPO || "SeokKyuHong/morethan-log",
-      repo: 'SeokKyuHong/morethan-log',
+      repo: process.env.NEXT_PUBLIC_UTTERANCES_REPO || "SeokKyuHong/morethan-log",
       'issue-term': 'og:title',
       label: '💬 Utterances',
     }
   },
-  // cusdis: {
-  //   enable: false,
-  //   config: { 
-  //     host: "https://cusdis.com",
-  //     appid: "4ea7dea3-bb16-4926-82ab-7d58c353d95a", // Embed Code -> data-app-id value
-  //   },
-  // },
+  cusdis: {
+    enable: false,
+    config: { 
+      host: "https://cusdis.com",
+      appid: "4ea7dea3-bb16-4926-82ab-7d58c353d95a", // Embed Code -> data-app-id value
+    },
+  },
   isProd: process.env.VERCEL_ENV === "production", // distinguish between development and production environment (ref: https://vercel.com/docs/environment-variables#system-environment-variables)
   revalidateTime: 21600 * 7, // revalidate time for [slug], index
 }
