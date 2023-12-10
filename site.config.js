@@ -13,17 +13,17 @@ const CONFIG = {
   projects: [
     {
       name: `Resume.`,
-      href: "https://kyulog.vercel.app/resume",
+      href: "https://kyu-log.vercel.app/resume",
     },
   ],
   // blog setting (required)
   blog: {
-    title: "kyulog",
+    title: "kyu-log",
     description: "welcome to kyulog!",
   },
 
   // CONFIG configration (required)
-  link: "https://kyulog.vercel.app",
+  link: "https://kyu-log.vercel.app",
   since: 2023, // If leave this empty, current year will be used.
   lang: "ko-KR", // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES', 'ko-KR']
   ogImageGenerateURL: "https://og-image-korean.vercel.app", // The link to generate OG image, don't end with a slash
