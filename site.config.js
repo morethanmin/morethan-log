@@ -19,7 +19,7 @@ const CONFIG = {
   // blog setting (required)
   blog: {
     title: "kyu-log",
-    description: "welcome to kyulog!",
+    description: "welcome to kyu-log!",
   },
 
   // CONFIG configration (required)
@@ -27,9 +27,6 @@ const CONFIG = {
   since: 2023, // If leave this empty, current year will be used.
   lang: "ko-KR", // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES', 'ko-KR']
   ogImageGenerateURL: "https://og-image-korean.vercel.app", // The link to generate OG image, don't end with a slash
-  seo: {
-    keywords: ['Blog', 'Website', 'Notion'],
-  },
   
   // notion configuration (required)
   notionConfig: {
@@ -61,7 +58,7 @@ const CONFIG = {
     enable: false,
     config: { 
       // host: "https://cusdis.com",
-      host: "",
+      host: "https://cusdis.com",
       appid: "", // Embed Code -> data-app-id value
     },
   },
