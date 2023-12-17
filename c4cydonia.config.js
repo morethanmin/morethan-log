@@ -20,7 +20,7 @@ const CONFIG = {
   blog: {
     title: 'c4cydonia',
     description: 'Welcome to c4cydonia',
-    theme: 'auto' // ['light', 'dark', 'auto']
+    theme: 'light' // ['light', 'dark', 'auto']
   },
 
   // CONFIG configration
