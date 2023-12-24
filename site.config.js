@@ -6,20 +6,20 @@ const CONFIG = {
     role: "frontend developer",
     bio: "I develop everything using node.",
     email: "parksangjun1363@gmail.com",
-    linkedin: "morethanmin",
+    linkedin: "",
     github: "ParkAward",
     instagram: "",
   },
   projects: [],
   // blog setting (required)
   blog: {
-    title: "More Than Log",
-    description: "일하지 않고 살기 위한 블로그",
+    title: "🌾 나눠먹기",
+    description: "🌾 나눠먹기",
   },
 
   // CONFIG configration (required)
   link: "https://morethan-log.vercel.app",
-  since: 2022, // If leave this empty, current year will be used.
+  since: 2023, // If leave this empty, current year will be used.
   lang: "ko-KR", // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES', 'ko-KR']
   ogImageGenerateURL: "https://og-image-korean.vercel.app", // The link to generate OG image, don't end with a slash
 
@@ -30,7 +30,7 @@ const CONFIG = {
 
   // plugin configuration (optional)
   googleAnalytics: {
-    enable: false,
+    enable: true,
     config: {
       measurementId: process.env.NEXT_PUBLIC_GOOGLE_MEASUREMENT_ID || "",
     },
