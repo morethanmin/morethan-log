@@ -1,14 +1,14 @@
 import {
-  gray,
   blue,
-  red,
-  green,
-  grayDark,
   blueDark,
-  redDark,
+  gray,
+  grayDark,
+  green,
   greenDark,
   indigo,
   indigoDark,
+  red,
+  redDark,
 } from "@radix-ui/colors"
 
 export type Colors = typeof colors.light & typeof colors.dark

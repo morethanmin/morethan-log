@@ -1,6 +1,7 @@
-import { DEFAULT_CATEGORY } from "src/constants"
+import { DEFAULT_CATEGORY } from "@/constants"
+import { getAllSelectItemsFromPosts } from "@/libs/utils/notion"
+
 import usePostsQuery from "./usePostsQuery"
-import { getAllSelectItemsFromPosts } from "src/libs/utils/notion"
 
 export const useCategoriesQuery = () => {
   const posts = usePostsQuery()

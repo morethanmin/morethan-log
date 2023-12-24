@@ -1,8 +1,11 @@
+import styled from "@emotion/styled"
 import dynamic from "next/dynamic"
 import Image from "next/image"
 import Link from "next/link"
 import { ExtendedRecordMap } from "notion-types"
-import useScheme from "src/hooks/useScheme"
+import { FC } from "react"
+
+import useScheme from "@/hooks/useScheme"
 
 // core styles shared by all of react-notion-x (required)
 import "react-notion-x/src/styles.css"
@@ -13,8 +16,6 @@ import "prismjs/themes/prism-tomorrow.css"
 // used for rendering equations (optional)
 
 import "katex/dist/katex.min.css"
-import { FC } from "react"
-import styled from "@emotion/styled"
 
 const _NotionRenderer = dynamic(
   () => import("react-notion-x").then((m) => m.NotionRenderer),

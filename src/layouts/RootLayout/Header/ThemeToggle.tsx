@@ -1,7 +1,8 @@
 import styled from "@emotion/styled"
 import React from "react"
-import { Emoji } from "src/components/Emoji"
-import useScheme from "src/hooks/useScheme"
+
+import { Emoji } from "@/components/Emoji"
+import useScheme from "@/hooks/useScheme"
 
 type Props = {}
 

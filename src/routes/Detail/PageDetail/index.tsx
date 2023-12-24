@@ -1,7 +1,9 @@
-import React from "react"
 import styled from "@emotion/styled"
-import NotionRenderer from "../components/NotionRenderer"
-import usePostQuery from "src/hooks/usePostQuery"
+import React from "react"
+
+import usePostQuery from "@/hooks/usePostQuery"
+import NotionRenderer from "@/routes/Detail/components/NotionRenderer"
+
 type Props = {}
 
 const PageDetail: React.FC<Props> = () => {

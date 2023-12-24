@@ -1,7 +1,11 @@
-import { Global as _Global, css, useTheme } from "@emotion/react"
+import {
+  Global as _Global,
+  ThemeProvider as _ThemeProvider,
+  css,
+  useTheme,
+} from "@emotion/react"
 
-import { ThemeProvider as _ThemeProvider } from "@emotion/react"
-import { pretendard } from "src/assets"
+import { pretendard } from "@/assets"
 
 export const Global = () => {
   const theme = useTheme()

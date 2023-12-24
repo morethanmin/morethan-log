@@ -1,11 +1,12 @@
-import Link from "next/link"
-import { CONFIG } from "site.config"
-import { formatDate } from "src/libs/utils"
-import Tag from "../../../components/Tag"
-import { TPost } from "../../../types"
-import Image from "next/image"
-import Category from "../../../components/Category"
 import styled from "@emotion/styled"
+import Image from "next/image"
+import Link from "next/link"
+
+import Category from "@/components/Category"
+import Tag from "@/components/Tag"
+import { formatDate } from "@/libs/utils"
+import { TPost } from "@/types"
+import { CONFIG } from "site.config"
 
 type Props = {
   data: TPost

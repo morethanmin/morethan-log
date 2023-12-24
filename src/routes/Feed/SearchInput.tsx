@@ -1,6 +1,7 @@
 import styled from "@emotion/styled"
-import React, { InputHTMLAttributes, ReactNode } from "react"
-import { Emoji } from "src/components/Emoji"
+import React, { InputHTMLAttributes } from "react"
+
+import { Emoji } from "@/components/Emoji"
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {}
 

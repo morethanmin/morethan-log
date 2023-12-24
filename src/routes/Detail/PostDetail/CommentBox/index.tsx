@@ -1,6 +1,7 @@
-import { TPost } from "src/types"
-import { CONFIG } from "site.config"
 import dynamic from "next/dynamic"
+
+import { TPost } from "@/types"
+import { CONFIG } from "site.config"
 
 const UtterancesComponent = dynamic(
   () => {

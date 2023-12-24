@@ -1,16 +1,18 @@
-import Detail from "src/routes/Detail"
-import { filterPosts } from "src/libs/utils/notion"
-import { CONFIG } from "site.config"
-import { NextPageWithLayout } from "../types"
-import CustomError from "src/routes/Error"
-import { getRecordMap, getPosts } from "src/apis"
-import MetaConfig from "src/components/MetaConfig"
 import { GetStaticProps } from "next"
-import { queryClient } from "src/libs/react-query"
-import { queryKey } from "src/constants/queryKey"
+
 import { dehydrate } from "@tanstack/react-query"
-import usePostQuery from "src/hooks/usePostQuery"
-import { FilterPostsOptions } from "src/libs/utils/notion/filterPosts"
+
+import { getPosts, getRecordMap } from "@/apis"
+import MetaConfig from "@/components/MetaConfig"
+import { queryKey } from "@/constants/queryKey"
+import usePostQuery from "@/hooks/usePostQuery"
+import { queryClient } from "@/libs/react-query"
+import { filterPosts } from "@/libs/utils/notion"
+import { FilterPostsOptions } from "@/libs/utils/notion/filterPosts"
+import Detail from "@/routes/Detail"
+import CustomError from "@/routes/Error"
+import { NextPageWithLayout } from "@/types"
+import { CONFIG } from "site.config"
 
 const filter: FilterPostsOptions = {
   acceptStatus: ["Public", "PublicOnDetail"],

@@ -1,4 +1,5 @@
 import { NextPage } from "next"
+
 import { AppProps } from "next/app"
 import { ExtendedRecordMap } from "notion-types"
 import { ReactElement, ReactNode } from "react"
