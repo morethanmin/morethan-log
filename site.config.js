@@ -10,7 +10,12 @@ const CONFIG = {
     github: "ParkAward",
     instagram: "",
   },
-  projects: [],
+  projects: [
+    {
+      name: "아직 미구현",
+      href: "",
+    },
+  ],
   // blog setting (required)
   blog: {
     title: "🌾 나눠먹기",
