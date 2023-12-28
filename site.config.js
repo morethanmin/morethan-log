@@ -2,7 +2,7 @@ const CONFIG = {
   // profile setting (required)
   profile: {
     name: `${process.env.NEXT_PUBLIC_NICKNAME}`,
-    image: "/avatar.svg", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
+    image: "/logo.png", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
     role: `${process.env.NEXT_PUBLIC_PROFILE_ROLE}`,
     bio: `${process.env.NEXT_PUBLIC_BLOG_BIO}`,
     email: `${process.env.NEXT_PUBLIC_PROFILE_EMAIL}`,
