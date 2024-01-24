@@ -17,6 +17,7 @@ const MetaConfig: React.FC<MetaConfigProps> = (props) => {
       <meta name="robots" content="follow, index" />
       <meta charSet="UTF-8" />
       <meta name="description" content={props.description} />
+      <meta name='impact-site-verification' value='67fa8ff5-4bcd-4fe1-9648-b6be38eaaec1'></meta>
       {/* og */}
       <meta property="og:type" content={props.type} />
       <meta property="og:title" content={props.title} />
