@@ -32,7 +32,7 @@ const PostCard: React.FC<Props> = ({ data }) => {
             />
           </div>
         )}
-        <div data-thumb={!!data.thumbnail} className="content">
+        <div data-thumb={!!data.thumbnail} data-category={!!category} className="content">
           <header className="top">
             <h2>{data.title}</h2>
           </header>
@@ -103,6 +103,9 @@ const StyledWrapper = styled(Link)`
 
       &[data-thumb="false"] {
         padding-top: 3.5rem;
+      }
+      &[data-category="false"] {
+        padding-top: 1.5rem;
       }
       > .top {
         display: flex;
