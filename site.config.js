@@ -3,8 +3,8 @@ const CONFIG = {
   profile: {
     name: "giho",
     image: "/profile.png", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
-    role: "DBA",
-    bio: "MySQL, MariaDB, Oracle",
+    role: "Database Administrator",
+    bio: "Aurora for MySQL 운영 중",
     email: "wasd92@naver.com",
     linkedin: "",
     github: "",
