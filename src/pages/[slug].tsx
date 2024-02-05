@@ -1,18 +1,25 @@
-import Detail from "@containers/Detail"
-import { filterPosts } from "@/src/libs/utils/notion"
-import Layout from "@components/Layout"
-import { CONFIG } from "@/site.config"
-import { NextPageWithLayout } from "@pages/_app"
-import { TPost } from "../types"
-import CustomError from "@containers/CustomError"
-import { getPostBlocks, getPosts } from "@libs/apis"
+import Detail from "src/routes/Detail"
+import { filterPosts } from "src/libs/utils/notion"
+import { CONFIG } from "site.config"
+import { NextPageWithLayout } from "../types"
+import CustomError from "src/routes/Error"
+import { getRecordMap, getPosts } from "src/apis"
+import MetaConfig from "src/components/MetaConfig"
+import { GetStaticProps } from "next"
+import { queryClient } from "src/libs/react-query"
+import { queryKey } from "src/constants/queryKey"
+import { dehydrate } from "@tanstack/react-query"
+import usePostQuery from "src/hooks/usePostQuery"
+import { FilterPostsOptions } from "src/libs/utils/notion/filterPosts"
 
-export async function getStaticPaths() {
+const filter: FilterPostsOptions = {
+  acceptStatus: ["Public", "PublicOnDetail"],
+  acceptType: ["Paper", "Post", "Page"],
+}
+
+export const getStaticPaths = async () => {
   const posts = await getPosts()
-  const filteredPost = filterPosts(posts, {
-    acceptStatus: ["Public", "PublicOnDetail"],
-    acceptType: ["Paper", "Post", "Page"],
-  })
+  const filteredPost = filterPosts(posts, filter)
 
   return {
     paths: filteredPost.map((row) => `/${row.slug}`),
@@ -20,69 +27,61 @@ export async function getStaticPaths() {
   }
 }
 
-export async function getStaticProps({ params: { slug } }: any) {
-  try {
-    //includePages: true
-    const posts = await getPosts()
-    const post = posts.find((t) => t.slug === slug)
-    const blockMap = await getPostBlocks(post?.id!)
+export const getStaticProps: GetStaticProps = async (context) => {
+  const slug = context.params?.slug
 
-    return {
-      props: { post, blockMap },
-      revalidate: 1,
-    }
-  } catch (error) {
-    return {
-      props: {},
-      revalidate: 1,
-    }
+  const posts = await getPosts()
+  const feedPosts = filterPosts(posts)
+  await queryClient.prefetchQuery(queryKey.posts(), () => feedPosts)
+
+  const detailPosts = filterPosts(posts, filter)
+  const postDetail = detailPosts.find((t: any) => t.slug === slug)
+  const recordMap = await getRecordMap(postDetail?.id!)
+
+  await queryClient.prefetchQuery(queryKey.post(`${slug}`), () => ({
+    ...postDetail,
+    recordMap,
+  }))
+
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient),
+    },
+    revalidate: CONFIG.revalidateTime,
   }
 }
 
-type Props = {
-  post: TPost
-  blockMap: any
-}
+const DetailPage: NextPageWithLayout = () => {
+  const post = usePostQuery()
 
-const DetailPage: NextPageWithLayout<Props> = ({ post, blockMap }) => {
   if (!post) return <CustomError />
-  return <Detail blockMap={blockMap} data={post} />
+
+  const image =
+    post.thumbnail ??
+    CONFIG.ogImageGenerateURL ??
+    `${CONFIG.ogImageGenerateURL}/${encodeURIComponent(post.title)}.png`
+
+  const date = post.date?.start_date || post.createdTime || ""
+
+  const meta = {
+    title: post.title,
+    date: new Date(date).toISOString(),
+    image: image,
+    description: post.summary || "",
+    type: post.type[0],
+    url: `${CONFIG.link}/${post.slug}`,
+  }
+
+  return (
+    <>
+      <MetaConfig {...meta} />
+      <Detail />
+    </>
+  )
 }
 
-DetailPage.getLayout = function getlayout(page) {
-  const getImage = () => {
-    if (page.props?.post.thumbnail) return page.props?.post.thumbnail
-    if (CONFIG.ogImageGenerateURL)
-      return `${CONFIG.ogImageGenerateURL}/${encodeURIComponent(
-        page.props?.post.title
-      )}.png?theme=dark&md=1&fontSize=125px&images=https%3A%2F%2Fmorethan-log.vercel.app%2Flogo-for-dark-bg.svg`
-  }
-
-  const getMetaConfig = () => {
-    if (!page.props.post) {
-      return {
-        title: CONFIG.blog.title,
-        description: CONFIG.blog.description,
-        type: "website",
-        url: CONFIG.link,
-      }
-    }
-    return {
-      title: page.props.post.title || CONFIG.blog.title,
-      date: new Date(
-        page.props.post.date?.start_date || page.props.post.createdTime || ""
-      ).toISOString(),
-      image: getImage(),
-      description: page.props.post.summary,
-      type: page.props.post.type[0],
-      url: `${CONFIG.link}/${page.props.post.slug}`,
-    }
-  }
-  return (
-    <Layout metaConfig={getMetaConfig()} fullWidth={page.props.post?.fullWidth}>
-      {page}
-    </Layout>
-  )
+DetailPage.getLayout = (page) => {
+  return <>{page}</>
 }
 
 export default DetailPage

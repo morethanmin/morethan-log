@@ -1,62 +1,39 @@
-import {
-  getAllSelectItemsFromPosts,
-  filterPosts,
-} from "@/src/libs/utils/notion"
-import Layout from "@components/Layout"
-import Feed from "@containers/Feed"
+import Feed from "src/routes/Feed"
 import { CONFIG } from "../../site.config"
-import { NextPageWithLayout } from "./_app"
-import { TCategories, TPosts, TTags } from "../types"
-import { getPosts } from "../libs/apis"
-import { DEFAULT_CATEGORY } from "../constants"
+import { NextPageWithLayout } from "../types"
+import { getPosts } from "../apis"
+import MetaConfig from "src/components/MetaConfig"
+import { queryClient } from "src/libs/react-query"
+import { queryKey } from "src/constants/queryKey"
+import { GetStaticProps } from "next"
+import { dehydrate } from "@tanstack/react-query"
+import { filterPosts } from "src/libs/utils/notion"
 
-export async function getStaticProps() {
-  try {
-    const posts = await getPosts()
-    const filteredPost = filterPosts(posts)
-    const tags = getAllSelectItemsFromPosts("tags", filteredPost)
-    const categories = getAllSelectItemsFromPosts("category", filteredPost)
+export const getStaticProps: GetStaticProps = async () => {
+  const posts = filterPosts(await getPosts())
+  await queryClient.prefetchQuery(queryKey.posts(), () => posts)
 
-    return {
-      props: {
-        tags: {
-          ...tags,
-        },
-        categories: {
-          [DEFAULT_CATEGORY]: filteredPost.length,
-          ...categories,
-        },
-        posts: filteredPost,
-      },
-      revalidate: 1,
-    }
-  } catch (error) {
-    throw error
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient),
+    },
+    revalidate: CONFIG.revalidateTime,
   }
 }
 
-type Props = {
-  categories: TCategories
-  tags: TTags
-  posts: TPosts
-}
+const FeedPage: NextPageWithLayout = () => {
+  const meta = {
+    title: CONFIG.blog.title,
+    description: CONFIG.blog.description,
+    type: "website",
+    url: CONFIG.link,
+  }
 
-const FeedPage: NextPageWithLayout<Props> = ({ categories, tags, posts }) => {
-  return <Feed categories={categories} tags={tags} posts={posts} />
-}
-
-FeedPage.getLayout = function getlayout(page) {
   return (
-    <Layout
-      metaConfig={{
-        title: CONFIG.blog.title,
-        description: CONFIG.blog.description,
-        type: "website",
-        url: CONFIG.link,
-      }}
-    >
-      {page}
-    </Layout>
+    <>
+      <MetaConfig {...meta} />
+      <Feed />
+    </>
   )
 }
 

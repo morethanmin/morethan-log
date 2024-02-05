@@ -1,3 +1,17 @@
+import { NextPage } from "next"
+import { AppProps } from "next/app"
+import { ExtendedRecordMap } from "notion-types"
+import { ReactElement, ReactNode } from "react"
+
+// TODO: refactor types
+export type NextPageWithLayout<PageProps = {}> = NextPage<PageProps> & {
+  getLayout?: (page: ReactElement) => ReactNode
+}
+
+export type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout
+}
+
 export type TPostStatus = "Private" | "Public" | "PublicOnDetail"
 export type TPostType = "Post" | "Paper" | "Page"
 
@@ -19,6 +33,10 @@ export type TPost = {
   createdTime: string
   fullWidth: boolean
   thumbnail?: string
+}
+
+export type PostDetail = TPost & {
+  recordMap: ExtendedRecordMap
 }
 
 export type TPosts = TPost[]
