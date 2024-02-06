@@ -19,11 +19,11 @@ const CONFIG = {
   // blog setting (required)
   blog: {
     title: `${process.env.NEXT_PUBLIC_BLOG_NAME}`,
-    description: `welcome to ${process.env.NEXT_PUBLIC_NICKNAME}'s Blog!`,
+    description: `${process.env.NEXT_PUBLIC_NICKNAME}'s Blog!`,
   },
 
   // CONFIG configration (required)
-  link: "https://vignesh-nandakumar.com",
+  link: `${process.env.NEXT_PUBLIC_URL}`,
   since: 2022, // If leave this empty, current year will be used.
   lang: "en-US", // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES', 'ko-KR']
   ogImageGenerateURL: "https://og-image-korean.vercel.app", // The link to generate OG image, don't end with a slash
