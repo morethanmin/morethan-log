@@ -6,7 +6,7 @@ const CONFIG = {
     role: "Database Administrator",
     bio: "Aurora for MySQL 운영 중",
     email: "wasd92@naver.com",
-    linkedin: "https://www.linkedin.com/in/성지호",
+    linkedin: "성지호",
     github: "",
     instagram: "",
   },
