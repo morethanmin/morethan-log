@@ -2,19 +2,21 @@ const CONFIG = {
   // profile setting (required)
   profile: {
     name: "kohek",
-    image: "/notion-avatar.svg", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
+    // image: "/notion-avatar.svg", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
+    image: "/avatar2.png", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
     role: "フロント バックエンド インフラエンジニア",
     bio: "Vue.js TypeScript AWS Lambdaを使用して開発しています。",
     email: "setdiagram.info@gmail.com",
     linkedin: "",
     github: "kohek-senbei",
     instagram: "",
+    twitter: "kohek8448871",
   },
   projects: [
-    // {
-    //   name: `notion-blog`,
-    //   href: "https://github.com/morethanmin/morethan-log",
-    // },
+    {
+      name: `notion-blog`,
+      href: "https://github.com/kohek-senbei/notion-blog",
+    },
     {
       name: `セット図メーカー`,
       href: "https://set-diagram.com",
@@ -23,7 +25,7 @@ const CONFIG = {
   // blog setting (required)
   blog: {
     title: "kohek-senbei-blog",
-    description: "welcome to kohek-senbei-blog!",
+    description: "はじめまして！ Vue/TypeScript/PHP/Lambda等を使用して業務しています。 文系出身 アラサー 未経験からエンジニア転職しました。学生時代にちょこっとバンドしていました。",
   },
 
   // CONFIG configration (required)
