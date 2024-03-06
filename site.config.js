@@ -18,8 +18,8 @@ const CONFIG = {
   ],
   // blog setting (required)
   blog: {
-    title: "Raccoon is studying",
-    description: "",
+    title: "제리차혁명",
+    description: "제리 이즈 스터딩",
   },
 
   // CONFIG configration (required)
