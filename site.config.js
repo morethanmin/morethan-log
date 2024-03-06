@@ -20,7 +20,7 @@ const CONFIG = {
   blog: {
     title: "nseria",
     description: "welcome to nseria",
-    theme: "light",
+    theme: "light", // ['light', 'dark', 'auto']
   },
 
   // CONFIG configration (required)
