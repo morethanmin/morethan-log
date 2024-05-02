@@ -1,9 +1,10 @@
 import { ThemeProvider as _ThemeProvider } from "@emotion/react"
 import { Global } from "./Global"
 import { createTheme } from "src/styles"
+import { SchemeType } from "src/types"
 
 type Props = {
-  scheme: string
+  scheme: SchemeType
   children?: React.ReactNode
 }
 
