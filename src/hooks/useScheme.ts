@@ -15,8 +15,6 @@ const useScheme = (): [SchemeType, SetScheme] => {
     initialData: "light" as SchemeType,
   })
 
-  const scheme = data === "light" ? "light" : "dark"
-
   const setScheme = (scheme: SchemeType) => {
     setCookie("scheme", scheme)
 
@@ -27,10 +25,10 @@ const useScheme = (): [SchemeType, SetScheme] => {
     if (!window) return
 
     const scheme = getCookie("scheme") as SchemeType
-    setScheme(scheme === "light" ? "light" : "dark")
+    setScheme(scheme || data)
   }, [])
 
-  return [scheme, setScheme]
+  return [data, setScheme]
 }
 
 export default useScheme

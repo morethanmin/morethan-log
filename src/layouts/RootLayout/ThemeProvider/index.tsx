@@ -9,9 +9,7 @@ type Props = {
 }
 
 export const ThemeProvider = ({ scheme, children }: Props) => {
-  const theme = createTheme({
-    scheme: scheme === "light" ? "light" : "dark",
-  })
+  const theme = createTheme({ scheme })
 
   return (
     <_ThemeProvider theme={theme}>
