@@ -26,7 +26,12 @@ const useScheme = (): [SchemeType, SetScheme] => {
     if (!window) return
 
     const scheme = getCookie("scheme") as SchemeType
-    setScheme(scheme || data)
+    const initialScheme = CONFIG.blog.followSystemTheme
+      ? window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light"
+      : data
+    setScheme(scheme || initialScheme)
   }, [])
 
   return [data, setScheme]
