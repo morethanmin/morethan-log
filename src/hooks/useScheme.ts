@@ -1,6 +1,7 @@
 import { useQuery, useQueryClient } from "@tanstack/react-query"
 import { getCookie, setCookie } from "cookies-next"
 import { useEffect } from "react"
+import { CONFIG } from "site.config"
 import { queryKey } from "src/constants/queryKey"
 import { SchemeType } from "src/types"
 
@@ -12,7 +13,7 @@ const useScheme = (): [SchemeType, SetScheme] => {
   const { data } = useQuery({
     queryKey: queryKey.scheme(),
     enabled: false,
-    initialData: "light" as SchemeType,
+    initialData: CONFIG.blog.scheme as SchemeType,
   })
 
   const setScheme = (scheme: SchemeType) => {
