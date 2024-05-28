@@ -1,29 +1,33 @@
 const CONFIG = {
   // profile setting (required)
   profile: {
-    name: "morethanmin",
+    name: "Kosrat",
     image: "/avatar.svg", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
-    role: "frontend developer",
+    role: "Mobile Developer & Team Lead",
     bio: "I develop everything using node.",
-    email: "morethanmin.dev@gmail.com",
-    linkedin: "morethanmin",
-    github: "morethanmin",
+    email: "kosrat.d.ahmad@gmail.com",
+    linkedin: "kosratahmad",
+    github: "kosratdev",
     instagram: "",
   },
   projects: [
     {
-      name: `morethan-log`,
-      href: "https://github.com/morethanmin/morethan-log",
+      name: `My Prayers - Android`,
+      href: "https://play.google.com/store/apps/details?id=com.kosratdahmad.myprayers",
+    },
+    {
+      name: `My Prayers - iOS`,
+      href: "https://apps.apple.com/us/app/my-prayers/id1390015257",
     },
   ],
   // blog setting (required)
   blog: {
-    title: "morethan-log",
-    description: "welcome to morethan-log!",
+    title: "Kosrat's Blog",
+    description: "Welcome to Kosrat's blog!",
   },
 
   // CONFIG configration (required)
-  link: "https://morethan-log.vercel.app",
+  link: "https://blog.kosrat.dev",
   since: 2022, // If leave this empty, current year will be used.
   lang: "en-US", // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES', 'ko-KR']
   ogImageGenerateURL: "https://og-image-korean.vercel.app", // The link to generate OG image, don't end with a slash
@@ -37,7 +41,7 @@ const CONFIG = {
   googleAnalytics: {
     enable: false,
     config: {
-      measurementId: process.env.NEXT_PUBLIC_GOOGLE_MEASUREMENT_ID || "",
+      measurementId: process.env.NEXT_PUBLIC_GOOGLE_MEASUREMENT_ID || "", 
     },
   },
   googleSearchConsole: {
