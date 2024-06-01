@@ -25,6 +25,19 @@ To set up a development environment, please follow these steps:
    yarn dev
    ```
 
+### Use Dockerfile
+1. Run setup command
+   ```sh
+   make setup NOTION_PAGE_ID='YOUR_NOTION_PAGE_ID'
+   ```
+
+2. Start the development Server.
+   ```sh
+   make dev
+   ```
+
+3. Open `localhost:8001` in your browser.
+
 ### Commit message rules
 
 Consider following the below format for the commit message:
