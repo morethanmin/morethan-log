@@ -2,22 +2,21 @@ import { useQuery, useQueryClient } from "@tanstack/react-query"
 import { getCookie, setCookie } from "cookies-next"
 import { useEffect } from "react"
 import { queryKey } from "src/constants/queryKey"
+import { CONFIG } from "site.config"
+import { SchemeType } from "src/types"
 
-type Scheme = "light" | "dark"
-type SetScheme = (scheme: Scheme) => void
+type SetScheme = (scheme: SchemeType) => void
 
-const useScheme = (): [Scheme, SetScheme] => {
+const useScheme = (): [SchemeType, SetScheme] => {
   const queryClient = useQueryClient()
 
   const { data } = useQuery({
     queryKey: queryKey.scheme(),
     enabled: false,
-    initialData: "light",
+    initialData: CONFIG.blog.scheme as SchemeType,
   })
 
-  const scheme = data === "light" ? "light" : "dark"
-
-  const setScheme = (scheme: "light" | "dark") => {
+  const setScheme = (scheme: SchemeType) => {
     setCookie("scheme", scheme)
 
     queryClient.setQueryData(queryKey.scheme(), scheme)
@@ -26,11 +25,16 @@ const useScheme = (): [Scheme, SetScheme] => {
   useEffect(() => {
     if (!window) return
 
-    const scheme = getCookie("scheme")
-    setScheme(scheme === "light" ? "light" : "dark")
+    const scheme = getCookie("scheme") as SchemeType
+    const initialScheme = CONFIG.blog.followSystemTheme
+        ? window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light"
+        : data
+    setScheme(scheme || initialScheme)
   }, [])
 
-  return [scheme, setScheme]
+  return [data, setScheme]
 }
 
 export default useScheme

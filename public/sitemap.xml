@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://sub-log.vercel.app</loc><lastmod>2024-06-03T03:28:08.692Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://sub-log.vercel.app/about-react</loc><lastmod>2024-06-03T03:28:08.692Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://sub-log.vercel.app/docs</loc><lastmod>2024-06-03T03:28:08.692Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://sub-log.vercel.app/hot-to-make-sitemap-in-next-js</loc><lastmod>2024-06-03T03:28:08.692Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://sub-log.vercel.app/apollo-gettings-started-mutate</loc><lastmod>2024-06-03T03:28:08.692Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://sub-log.vercel.app/resume</loc><lastmod>2024-06-03T03:28:08.692Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://sub-log.vercel.app/apollo-gettings-started-query</loc><lastmod>2024-06-03T03:28:08.692Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://sub-log.vercel.app/about-graphql</loc><lastmod>2024-06-03T03:28:08.692Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://sub-log.vercel.app/how-to-apply-ga-to-next.js</loc><lastmod>2024-06-03T03:28:08.692Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://sub-log.vercel.app/about-opensource-license</loc><lastmod>2024-06-03T03:28:08.692Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://sub-log.vercel.app/about</loc><lastmod>2024-06-03T03:28:08.692Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://sub-log.vercel.app</loc><lastmod>2024-06-03T06:31:08.533Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://sub-log.vercel.app/about-react</loc><lastmod>2024-06-03T06:31:08.534Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://sub-log.vercel.app/docs</loc><lastmod>2024-06-03T06:31:08.534Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://sub-log.vercel.app/hot-to-make-sitemap-in-next-js</loc><lastmod>2024-06-03T06:31:08.534Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://sub-log.vercel.app/apollo-gettings-started-mutate</loc><lastmod>2024-06-03T06:31:08.534Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://sub-log.vercel.app/resume</loc><lastmod>2024-06-03T06:31:08.534Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://sub-log.vercel.app/apollo-gettings-started-query</loc><lastmod>2024-06-03T06:31:08.534Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://sub-log.vercel.app/about-graphql</loc><lastmod>2024-06-03T06:31:08.534Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://sub-log.vercel.app/how-to-apply-ga-to-next.js</loc><lastmod>2024-06-03T06:31:08.534Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://sub-log.vercel.app/about-opensource-license</loc><lastmod>2024-06-03T06:31:08.534Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://sub-log.vercel.app/about</loc><lastmod>2024-06-03T06:31:08.534Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>
