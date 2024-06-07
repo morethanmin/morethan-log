@@ -16,10 +16,16 @@ To set up a development environment, please follow these steps:
 2. Install all the packages.
 
    ```sh
-   yarn add
+   yarn install
    ```
 
-3. Start the development Server.
+3. Create a `.env` file in the root directory and add the following environment variables.
+
+   ```sh
+   NOTION_PAGE_ID = "YOUR_NOTION_PAGE_ID"
+   ```
+
+4. Start the development Server.
 
    ```sh
    yarn dev
