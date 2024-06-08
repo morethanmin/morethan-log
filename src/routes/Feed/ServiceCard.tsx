@@ -1,16 +1,13 @@
-import { CONFIG } from "site.config"
+import styled from "@emotion/styled"
 import React from "react"
 import { AiFillCodeSandboxCircle } from "react-icons/ai"
-import styled from "@emotion/styled"
-import { Emoji } from "src/components/Emoji"
+import { CONFIG } from "site.config"
 
 const ServiceCard: React.FC = () => {
   if (!CONFIG.projects) return null
   return (
     <>
-      <StyledTitle>
-        <Emoji>🌟</Emoji> Service
-      </StyledTitle>
+      <StyledTitle>🌟 Service</StyledTitle>
       <StyledWrapper>
         {CONFIG.projects.map((project, idx) => (
           <a
