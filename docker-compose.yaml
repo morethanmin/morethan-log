@@ -10,3 +10,8 @@ services:
     env_file:
       - .env
     command: /bin/sh -c "yarn build && yarn start"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.blog.rule=Host(`chis.dev`)"
+      - "traefik.http.routers.blog.entrypoints=websecure"
+      - "traefik.http.routers.blog.tls.certresolver=cloudflare"
