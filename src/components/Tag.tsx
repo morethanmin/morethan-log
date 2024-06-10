@@ -22,7 +22,9 @@ const hashStringToColor = (str: string, colorsArray: string[]) => {
   for (let i = 0; i < str.length; i++) {
     hash = str.charCodeAt(i) + ((hash << 5) - hash)
   }
-  return colorsArray[Math.abs(hash) % colorsArray.length]
+  const index = Math.abs(hash) % colorsArray.length
+
+  return colorsArray[index]
 }
 
 const Tag: React.FC<Props> = ({ children }) => {
