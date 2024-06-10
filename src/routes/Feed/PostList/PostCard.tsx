@@ -54,9 +54,7 @@ const PostCard: React.FC<Props> = ({ data }) => {
           <div className="tags">
             {data.tags &&
               data.tags.map((tag: string, idx: number) => (
-                <Tag key={idx} tag_id={idx}>
-                  {tag}
-                </Tag>
+                <Tag key={idx}>{tag}</Tag>
               ))}
           </div>
         </div>

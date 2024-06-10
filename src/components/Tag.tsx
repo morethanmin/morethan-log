@@ -15,10 +15,17 @@ const colorArray = [
 
 type Props = {
   children: string
-  tag_id: number
 }
 
-const Tag: React.FC<Props> = ({ children, tag_id }) => {
+const hashStringToColor = (str: string, colorsArray: string[]) => {
+  let hash = 0
+  for (let i = 0; i < str.length; i++) {
+    hash = str.charCodeAt(i) + ((hash << 5) - hash)
+  }
+  return colorsArray[Math.abs(hash) % colorsArray.length]
+}
+
+const Tag: React.FC<Props> = ({ children }) => {
   const router = useRouter()
 
   const handleClick = (value: string) => {
@@ -26,7 +33,7 @@ const Tag: React.FC<Props> = ({ children, tag_id }) => {
   }
 
   const StyledTag = styled.div`
-    background-color: ${colorArray[tag_id % colorArray.length]};
+    background-color: ${hashStringToColor(children, colorArray)};
     color: ${colors.light.gray10};
     padding: 0.25rem 0.5rem;
     border-radius: 50px;
