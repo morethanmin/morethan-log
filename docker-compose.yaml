@@ -1,15 +1,13 @@
-version: '3.8'
-
 services:
   chis-blog:
     container_name: chis-blog
     restart: unless-stopped
-    build: .  # This tells Docker Compose to build an image using the Dockerfile in the current directory
+    build: .
     ports:
       - "2564:3000"
     env_file:
       - .env
-    command: /bin/sh -c "yarn build && yarn start"
+    command: /bin/sh -c "rm -f ./public/sitemap.xml && yarn build && yarn run start"
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.blog.rule=Host(`chis.dev`)"

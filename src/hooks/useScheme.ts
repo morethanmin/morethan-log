@@ -1,5 +1,5 @@
-import { useQuery, useQueryClient } from "@tanstack/react-query";
-import { useEffect, useState } from "react";
+import { useQueryClient } from "@tanstack/react-query";
+import { useEffect, useState, useCallback } from "react";
 import { queryKey } from "src/constants/queryKey";
 
 type Scheme = "light" | "dark";
@@ -11,11 +11,11 @@ const useScheme = (): [Scheme, SetScheme] => {
   // Use useState to manage the scheme state
   const [scheme, setSchemeState] = useState<Scheme>('dark');
 
-  // Function to update the theme
-  const setScheme = (scheme: Scheme) => {
+  // Function to update the theme, memoized with useCallback
+  const setScheme = useCallback((scheme: Scheme) => {
     setSchemeState(scheme);
     queryClient.setQueryData(queryKey.scheme(), scheme);
-  };
+  }, [queryClient]);
 
   useEffect(() => {
     // Check if window is defined
@@ -44,7 +44,7 @@ const useScheme = (): [Scheme, SetScheme] => {
         mediaQueryList.removeEventListener('change', updateScheme);
       };
     }
-  }, []);
+  }, [setScheme]);
 
   return [scheme, setScheme];
 };

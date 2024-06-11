@@ -32,14 +32,16 @@ Next.js static blog using Notion as a Content Management System (CMS). Supports 
 
 1. Star this repo.
 2. [Fork](https://github.com/morethanmin/morethan-log/fork) the repo to your Profile.
-3. Duplicate [this Notion template](https://quasar-season-ed5.notion.site/12c38b5f459d4eb9a759f92fba6cea36?v=2e7962408e3842b2a1a801bf3546edda), and Share to Web.
-4. Copy the Web Link and keep note of the Notion Page Id from the Link which will be in this format [username.notion.site/`NOTION_PAGE_ID`?v=`VERSION_ID`].
+3. Duplicate [this Notion template](https://morethanmin.notion.site/12c38b5f459d4eb9a759f92fba6cea36?v=2e7962408e3842b2a1a801bf3546edda), and Share to Web.
+4. Copy the Web Link and keep note of the Notion Page Id from the Link which will be in this format [username.notion.site/`NOTION_PAGE_ID`?v=`VERSION_ID`]. 
 5. Clone your forked repo and then customize `site.config.js` based on your preference.
 6. Deploy on Vercel, with the following environment variables.
 
-   - `NOTION_PAGE_ID` (Required): The Notion page Id got from the Share to Web URL.
+   - `NOTION_PAGE_ID` (Required): The Notion page Id got from the Share to Web URL. This is not the entire URL, but just the NOTION_PAGE_ID part as shown above.
    - `NEXT_PUBLIC_GOOGLE_MEASUREMENT_ID` : For Google analytics Plugin.
    - `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` : For Google search console Plugin.
+   - `NEXT_PUBLIC_NAVER_SITE_VERIFICATION` : For Naver search advisor Plugin.
+   - `NEXT_PUBLIC_UTTERANCES_REPO` : For Utterances Plugin.
 
 ## 10 Steps to build your own morethan-log (by 23.06.23)
 
@@ -83,6 +85,27 @@ Next.js static blog using Notion as a Content Management System (CMS). Supports 
    🥳 Congratulations. Now check out your blog
    
    <img src='https://github.com/jhk0530/morethan-log/assets/6457691/3876a273-a270-47ef-a2ad-663519d9e537' width = '500'>
+
+</details>
+
+## FAQ
+
+<details>
+   <summary> Click to see FAQ </summary>
+   Q1: If you finish making avatar.svg, How to make favicon.ico and apple-touch-icon.png?
+   
+   A1: check out https://www.favicon-generator.org/
+   
+   Q2: Is it necessary to set up a sitemap file?   
+   A2: The system will dynamically create a sitemap.xml, so there is no need for manual setup.
+
+   Q3: Why don’t Notion posts update automatically?   
+   A3: Please set the revalidateTime in site.config.js and observe how long it takes to update.
+   
+   Q4: What should be entered for NEXT_PUBLIC_GOOGLE_MEASUREMENT_ID and NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION in site.config.js?
+   A4: You can check https://github.com/morethanmin/morethan-log/issues/203. Please note that updates may take some time to take effect after setting.
+
+If you encounter any other issues, please feel free to add them to the GitHub README to assist future users. We look forward to your contributions!
 
 </details>
 

@@ -23,11 +23,11 @@ const CONFIG = {
       iconName: "AiFillCloud", // Icon name as string
       href: "https://share.chis.dev",
     },
-    {
-      name: 'Discord Bot',
-      iconName: "AiFillRobot", // Icon name as string
-      href: 'https://discord.com/api/oauth2/authorize?client_id=724657775652634795&permissions=0&scope=bot%20applications.commands',
-    },
+    // {
+    //   name: 'Discord Bot',
+    //   iconName: "AiFillRobot", // Icon name as string
+    //   href: 'https://discord.com/api/oauth2/authorize?client_id=724657775652634795&permissions=0&scope=bot%20applications.commands',
+    // },
     {
       name: 'Phase10 Randomizer',
       iconName: "CgCardClubs", // Icon name as string
@@ -62,6 +62,12 @@ const CONFIG = {
     enable: false,
     config: {
       siteVerification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",
+    },
+  },
+  naverSearchAdvisor: {
+    enable: false,
+    config: {
+      siteVerification: process.env.NEXT_PUBLIC_NAVER_SITE_VERIFICATION || "",
     },
   },
   utterances: {
