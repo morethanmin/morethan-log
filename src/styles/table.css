@@ -1,0 +1,44 @@
+.notion-table-of-contents {
+  position: fixed;
+  right: -75%;
+  top: 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 1800px) {
+  .notion-table-of-contents {
+    right: -80%;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .notion-table-of-contents {
+    position: static;
+  }
+}
+
+.notion-table-of-contents a {
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.notion-table-of-contents a:hover {
+  background: none;
+}
+
+.notion-table-of-contents span {
+  padding: 2px 2px;
+  line-height: 1.3;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 50%,
+    var(--bg-color-0) 50%
+  );
+  background-size: 200%;
+  transition: 0.35s;
+}
+
+.notion-table-of-contents span:hover {
+  background-position: -100% 0;
+}
