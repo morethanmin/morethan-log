@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://sub-log.vercel.app
-
-# Sitemaps
-Sitemap: https://sub-log.vercel.app/sitemap.xml
