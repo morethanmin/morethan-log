@@ -22,7 +22,7 @@ const _NotionRenderer = dynamic(
 )
 
 const Code = dynamic(() =>
-  import("react-notion-x/build/third-party/code").then(async (m) =>  m.Code )
+  import("react-notion-x/build/third-party/code").then(async (m) => m.Code)
 )
 
 const Collection = dynamic(() =>
@@ -85,5 +85,8 @@ const StyledWrapper = styled.div`
   }
   .notion-page {
     padding: 0;
+  }
+  .notion-list {
+    width: 100%;
   }
 `
