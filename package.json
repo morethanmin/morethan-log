@@ -20,7 +20,7 @@
     "@tanstack/react-query": "^4.29.19",
     "axios": ">=0.21.1",
     "cookies-next": "^2.1.2",
-    "mermaid": "^9.3.0",
+    "mermaid": "^10.9.1",
     "next": "^13.4.9",
     "notion-client": "^6.16.0",
     "notion-types": "^6.16.0",
