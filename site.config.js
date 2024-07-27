@@ -12,8 +12,8 @@ const CONFIG = {
   },
   projects: [
     {
-      name: `hakim-tech`,
-      href: "https://github.com/hbouzourdaz/hakim-tech/",
+      name: `Tiknuluǧit-ik by me`,
+      href: "https://tiknulugitik.netlify.app/",
     },
   ],
   // blog setting (required)
