@@ -56,7 +56,7 @@ const CONFIG = {
   utterances: {
     enable: true,
     config: {
-      repo: process.env.NEXT_PUBLIC_UTTERANCES_REPO || "https://github.com/hbouzourdaz/hakim-tech",
+      repo: process.env.NEXT_PUBLIC_UTTERANCES_REPO || "hbouzourdaz/hakim-tech",
       "issue-term": "og:title",
       label: "💬 Utterances",
     },
