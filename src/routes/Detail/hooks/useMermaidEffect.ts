@@ -1,5 +1,10 @@
 import mermaid from "mermaid"
 import { useEffect } from "react"
+
+/**
+ *  Wait for mermaid to be defined in the dom
+ *  Additionally, verify that the HTML CollectionOf has an array value.
+ */
 const waitForMermaid = (interval = 100, timeout = 5000) => {
   return new Promise<HTMLCollectionOf<Element>>((resolve, reject) => {
     const startTime = Date.now()
@@ -25,16 +30,15 @@ const useMermaidEffect = () => {
     })
     if (!document) return
     waitForMermaid()
-      .then((elements) => {
-        for (let i = 0; i < elements.length; i++) {
-          mermaid.render(
+      .then(async (elements) => {
+        const promises = Array.from(elements).map(async (element, i) => {
+          const svg = await mermaid.render(
             "mermaid" + i,
-            elements[i].textContent || "",
-            (svgCode: string) => {
-              elements[i].innerHTML = svgCode
-            }
-          )
-        }
+            element.textContent || ""
+          ).then(res => res.svg)
+          element.innerHTML = svg
+        })
+        await Promise.all(promises)
       })
       .catch((error) => {
         console.warn(error)
