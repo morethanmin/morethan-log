@@ -54,9 +54,9 @@ const CONFIG = {
     },
   },
   utterances: {
-    enable: false,
+    enable: true,
     config: {
-      repo: process.env.NEXT_PUBLIC_UTTERANCES_REPO || "",
+      repo: process.env.NEXT_PUBLIC_UTTERANCES_REPO || "https://github.com/hbouzourdaz/hakim-tech",
       "issue-term": "og:title",
       label: "💬 Utterances",
     },
