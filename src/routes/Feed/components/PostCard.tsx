@@ -1,11 +1,11 @@
+import styled from "@emotion/styled"
+import Image from "next/image"
 import Link from "next/link"
 import { CONFIG } from "site.config"
+import Category from "src/components/Category"
+import Tag from "src/components/Tag"
 import { formatDate } from "src/libs/utils"
-import Tag from "../../../components/Tag"
-import { TPost } from "../../../types"
-import Image from "next/image"
-import Category from "../../../components/Category"
-import styled from "@emotion/styled"
+import { TPost } from "src/types"
 
 type Props = {
   data: TPost
@@ -32,7 +32,11 @@ const PostCard: React.FC<Props> = ({ data }) => {
             />
           </div>
         )}
-        <div data-thumb={!!data.thumbnail} data-category={!!category} className="content">
+        <div
+          data-thumb={!!data.thumbnail}
+          data-category={!!category}
+          className="content"
+        >
           <header className="top">
             <h2>{data.title}</h2>
           </header>

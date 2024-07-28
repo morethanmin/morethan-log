@@ -1,8 +1,7 @@
-import { TCategories } from "src/types"
+import styled from "@emotion/styled"
 import React from "react"
 import CategorySelect from "./CategorySelect"
 import OrderButtons from "./OrderButtons"
-import styled from "@emotion/styled"
 
 type Props = {}
 

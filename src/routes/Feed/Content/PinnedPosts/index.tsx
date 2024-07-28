@@ -1,9 +1,9 @@
-import PostCard from "src/routes/Feed/PostList/PostCard"
-import React, { useMemo } from "react"
-import usePostsQuery from "src/hooks/usePostsQuery"
 import styled from "@emotion/styled"
-import { filterPosts } from "./filterPosts"
+import React, { useMemo } from "react"
 import { DEFAULT_CATEGORY } from "src/constants"
+import usePostsQuery from "src/hooks/usePostsQuery"
+import PostCard from "../../components/PostCard"
+import { filterPosts } from "./filterPosts"
 
 type Props = {
   q: string

@@ -55,6 +55,12 @@ const TagList: React.FC<Props> = () => {
 export default TagList
 
 const StyledWrapper = styled.div`
+  display: block;
+
+  @media (min-width: 1024px) {
+    display: none;
+  }
+
   .top {
     display: none;
     padding: 0.25rem;
