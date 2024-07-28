@@ -3,6 +3,7 @@ import Image from "next/image"
 import React from "react"
 import { CONFIG } from "site.config"
 import { Emoji } from "src/components/Emoji"
+import { respondMobile } from "src/styles"
 
 type Props = {}
 
@@ -39,11 +40,11 @@ const StyledWrapper = styled.div`
     width: 100%;
     background-color: ${({ theme }) =>
       theme.scheme === "light" ? "white" : theme.colors.gray4};
-    @media (min-width: 768px) {
-      padding: 1rem;
-    }
-    @media (min-width: 1024px) {
-      padding: 1rem;
+
+    padding: 1rem;
+
+    ${respondMobile} {
+      padding: 0;
     }
     .top {
       position: relative;

@@ -1,5 +1,5 @@
 export const variables = {
-  breakpoint: 960,
+  breakpoint: 1024,
   headerHeight: 56,
   paddingLg: 24,
   paddingMd: 20,

@@ -1,7 +1,8 @@
-import { CONFIG } from "site.config"
+import styled from "@emotion/styled"
 import Image from "next/image"
 import React from "react"
-import styled from "@emotion/styled"
+import { CONFIG } from "site.config"
+import { respondMobile } from "src/styles"
 
 type Props = {
   className?: string
@@ -34,10 +35,10 @@ const MobileProfileCard: React.FC<Props> = () => {
 export default MobileProfileCard
 
 const StyledWrapper = styled.div`
-  display: block;
+  display: none;
 
-  @media (min-width: 1024px) {
-    display: none;
+  ${respondMobile} {
+    display: block;
   }
 
   > .top {

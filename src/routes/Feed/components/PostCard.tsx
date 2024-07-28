@@ -5,6 +5,7 @@ import { CONFIG } from "site.config"
 import Category from "src/components/Category"
 import Tag from "src/components/Tag"
 import { formatDate } from "src/libs/utils"
+import { respondMobile } from "src/styles"
 import { TPost } from "src/types"
 
 type Props = {
@@ -77,10 +78,6 @@ const StyledWrapper = styled(Link)`
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 300ms;
 
-    @media (min-width: 768px) {
-      margin-bottom: 2rem;
-    }
-
     :hover {
       box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
         0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -96,10 +93,10 @@ const StyledWrapper = styled(Link)`
       position: relative;
       width: 100%;
       background-color: ${({ theme }) => theme.colors.gray2};
-      padding-bottom: 66%;
+      padding-bottom: 50%;
 
-      @media (min-width: 1024px) {
-        padding-bottom: 50%;
+      ${respondMobile} {
+        padding-bottom: 66%;
       }
     }
     > .content {
@@ -116,10 +113,6 @@ const StyledWrapper = styled(Link)`
         flex-direction: column;
         justify-content: space-between;
 
-        @media (min-width: 768px) {
-          flex-direction: row;
-          align-items: baseline;
-        }
         h2 {
           margin-bottom: 0.5rem;
           font-size: 1.125rem;
@@ -127,11 +120,6 @@ const StyledWrapper = styled(Link)`
           font-weight: 500;
 
           cursor: pointer;
-
-          @media (min-width: 768px) {
-            font-size: 1.25rem;
-            line-height: 1.75rem;
-          }
         }
       }
       > .date {
@@ -143,9 +131,6 @@ const StyledWrapper = styled(Link)`
           font-size: 0.875rem;
           line-height: 1.25rem;
           color: ${({ theme }) => theme.colors.gray10};
-          @media (min-width: 768px) {
-            margin-left: 0;
-          }
         }
       }
       > .summary {
@@ -154,10 +139,6 @@ const StyledWrapper = styled(Link)`
           display: none;
           line-height: 2rem;
           color: ${({ theme }) => theme.colors.gray11};
-
-          @media (min-width: 768px) {
-            display: block;
-          }
         }
       }
       > .tags {

@@ -1,21 +1,21 @@
 import { css } from "@emotion/react"
-import { HEADER_HEIGHT } from "../styles"
+import { respondMobile, variables } from "src/styles"
 
 export const wrapperStyle = css`
-  height: calc(100vh - ${HEADER_HEIGHT}px);
+  height: calc(100vh - ${variables.headerHeight + 16}px);
   scrollbar-width: none;
   -ms-overflow-style: none;
   &::-webkit-scrollbar {
     display: none;
   }
 
-  display: none;
+  display: block;
   overflow: scroll;
   position: sticky;
-  top: ${HEADER_HEIGHT - 10}px;
+  top: ${variables.headerHeight + 16 - 10}px;
+  grid-column: span 3 / span 3;
 
-  @media (min-width: 1024px) {
-    display: block;
-    grid-column: span 3 / span 3;
+  ${respondMobile} {
+    display: none;
   }
 `

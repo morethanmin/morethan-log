@@ -1,6 +1,5 @@
 import { css } from "@emotion/react"
-
-export const HEADER_HEIGHT = 73
+import { respondMobile } from "src/styles"
 
 export const wrapperStyle = css`
   display: grid;
@@ -8,8 +7,7 @@ export const wrapperStyle = css`
   padding: 2rem 0;
   gap: 1.5rem;
 
-  @media (max-width: 768px) {
+  ${respondMobile} {
     display: block;
-    padding: 0.5rem 0;
   }
 `

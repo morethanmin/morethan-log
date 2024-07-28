@@ -1,5 +1,5 @@
 import styled from "@emotion/styled"
-import React, { InputHTMLAttributes, ReactNode } from "react"
+import React, { InputHTMLAttributes } from "react"
 import { Emoji } from "src/components/Emoji"
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {}
@@ -25,9 +25,6 @@ export default SearchInput
 const StyledWrapper = styled.div`
   margin-bottom: 1rem;
 
-  @media (min-width: 768px) {
-    margin-bottom: 2rem;
-  }
   > .top {
     padding: 0.25rem;
     margin-bottom: 0.75rem;

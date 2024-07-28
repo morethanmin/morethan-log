@@ -3,10 +3,13 @@ import { useRouter } from "next/router"
 import React from "react"
 import { Emoji } from "src/components/Emoji"
 import { useTagsQuery } from "src/hooks/useTagsQuery"
+import { respondMobile } from "src/styles"
 
-type Props = {}
+type Props = {
+  className?: string
+}
 
-const TagList: React.FC<Props> = () => {
+const TagList: React.FC<Props> = ({ className }) => {
   const router = useRouter()
   const currentTag = router.query.tag || undefined
   const data = useTagsQuery()
@@ -33,7 +36,7 @@ const TagList: React.FC<Props> = () => {
   }
 
   return (
-    <StyledWrapper>
+    <StyledWrapper className={className}>
       <div className="top">
         <Emoji>🏷️</Emoji> Tags
       </div>
@@ -55,24 +58,17 @@ const TagList: React.FC<Props> = () => {
 export default TagList
 
 const StyledWrapper = styled.div`
-  display: block;
-
-  @media (min-width: 1024px) {
-    display: none;
-  }
-
   .top {
-    display: none;
+    display: block;
     padding: 0.25rem;
     margin-bottom: 0.75rem;
 
-    @media (min-width: 1024px) {
-      display: block;
+    ${respondMobile} {
+      display: none;
     }
   }
 
   .list {
-    display: flex;
     margin-bottom: 1.5rem;
     gap: 0.25rem;
     overflow: scroll;
@@ -84,8 +80,9 @@ const StyledWrapper = styled.div`
       height: 0;
     }
 
-    @media (min-width: 1024px) {
-      display: block;
+    display: block;
+    ${respondMobile} {
+      display: flex;
     }
 
     a {

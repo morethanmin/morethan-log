@@ -6,7 +6,7 @@ import MobileProfileCard from "./MobileProfileCard"
 import PinnedPosts from "./PinnedPosts"
 import PostList from "./PostList"
 import SearchInput from "./SearchInput"
-import { footerStyle, wrapperStyle } from "./styles"
+import { footerStyle, tagListStyle, wrapperStyle } from "./styles"
 
 const Content: FC = () => {
   const [q, setQ] = useState("")
@@ -15,7 +15,7 @@ const Content: FC = () => {
       <MobileProfileCard />
       <PinnedPosts q={q} />
       <SearchInput value={q} onChange={(e) => setQ(e.target.value)} />
-      <TagList />
+      <TagList css={tagListStyle} />
       <FeedHeader />
       <PostList q={q} />
       <Footer css={footerStyle} />

@@ -1,10 +1,11 @@
-import { CONFIG } from "site.config"
-import Tag from "src/components/Tag"
-import { TPost } from "src/types"
-import { formatDate } from "src/libs/utils"
+import styled from "@emotion/styled"
 import Image from "next/image"
 import React from "react"
-import styled from "@emotion/styled"
+import { CONFIG } from "site.config"
+import Tag from "src/components/Tag"
+import { formatDate } from "src/libs/utils"
+import { respondMobile } from "src/styles"
+import { TPost } from "src/types"
 
 type Props = {
   data: TPost
@@ -94,10 +95,6 @@ const StyledWrapper = styled.div`
       }
       .date {
         margin-right: 0.5rem;
-
-        @media (min-width: 768px) {
-          margin-left: 0;
-        }
       }
     }
     > .mid {
@@ -119,10 +116,10 @@ const StyledWrapper = styled.div`
       border-radius: 1.5rem;
       width: 100%;
       background-color: ${({ theme }) => theme.colors.gray4};
-      padding-bottom: 66%;
+      padding-bottom: 50%;
 
-      @media (min-width: 1024px) {
-        padding-bottom: 50%;
+      ${respondMobile} {
+        padding-bottom: 66%;
       }
     }
   }
