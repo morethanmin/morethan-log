@@ -59,7 +59,7 @@ const StyledWrapper = styled.div`
         > .top {
           font-size: 1.25rem;
           line-height: 1.75rem;
-          font-style: italic;
+          // font-style: italic;
           font-weight: 700;
         }
         > .mid {
