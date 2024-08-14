@@ -49,9 +49,11 @@ const useMermaidEffect = () => {
           .filter((elements) => elements.tagName === "PRE")
           .map(async (element, i) => {
             if (memoMermaid.get(i) !== undefined) {
-              const svg = await mermaid
-                .render("mermaid" + i, memoMermaid.get(i) || "")
-                .then((res) => res.svg)
+              const svg = await mermaid.render(
+                "mermaid" + i,
+                memoMermaid.get(i) || ""
+              )
+
               element.animate(
                 [
                   { easing: "ease-in", opacity: 0 },
@@ -62,9 +64,11 @@ const useMermaidEffect = () => {
               element.innerHTML = svg
               return
             }
-            const svg = await mermaid
-              .render("mermaid" + i, element.textContent || "")
-              .then((res) => res.svg)
+            const svg = await mermaid.render(
+              "mermaid" + i,
+              element.textContent || ""
+            )
+
             setMemoMermaid(memoMermaid.set(i, element.textContent ?? ""))
             element.innerHTML = svg
           })
