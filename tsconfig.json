@@ -14,21 +14,10 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
+    "jsxImportSource": "@emotion/react",
     "incremental": true,
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./*"],
-      "@components/*": ["src/components/*"],
-      "@containers/*": ["src/containers/*"],
-      "@constants/*": ["src/constants/*"],
-      "@contexts/*": ["src/contexts/*"],
-      "@hooks/*": ["src/hooks/*"],
-      "@libs/*": ["src/libs/*"],
-      "@pages/*": ["src/pages/*"],
-      "@styles/*": ["src/styles/*"],
-      "@customTypes/*": ["src/types/*"]
-    }
+    "baseUrl": "."
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/libs/gtag.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "site.config.js"],
   "exclude": ["node_modules"]
 }
