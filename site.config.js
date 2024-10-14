@@ -20,8 +20,7 @@ const CONFIG = {
   blog: {
     title: "ggumi-log",
     description: "welcome to ggumi-log!",
-    theme: "light", // ['light', 'dark', 'auto'],
-    scheme: "system"
+    theme: "light", // ['light', 'dark', 'auto']
   },
 
   // CONFIG configration (required)
