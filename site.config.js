@@ -18,9 +18,9 @@ const CONFIG = {
   ],
   // blog setting (required)
   blog: {
-    title: "morethan-log",
-    description: "welcome to morethan-log!",
-    scheme: "dark", // 'light' | 'dark' | 'system'
+    title: "ggumi-log",
+    description: "welcome to ggumi-log!",
+    scheme: "light", // ['light', 'dark', 'auto']
   },
 
   // CONFIG configration (required)
