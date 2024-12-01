@@ -3,8 +3,8 @@ const CONFIG = {
   profile: {
     name: "scriptie",
     image: "/malenia.jpeg", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
-    role: "Security Analyst",
-    bio: "Penetration Tester | Programmer",
+    role: "Programmer",
+    bio: "Not a prodigy, so I'll be ready a step ahead. Always",
     email: "noorit2515@gmail.com",
     linkedin: "",
     github: "scr1ptie",
@@ -18,7 +18,7 @@ const CONFIG = {
   ],
   // blog setting (required)
   blog: {
-    title: "scriptie's Crib",
+    title: "scriptie's crib",
     description: "welcome to scriptie's Blog!",
     scheme: "dark", // 'light' | 'dark' | 'system'
   },
