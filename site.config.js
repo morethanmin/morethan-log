@@ -6,9 +6,9 @@ const CONFIG = {
     role: "문 민 규",
     bio: "be happy",
     email: "mmk622@naver.com",
-    linkedin: "mmk622",
+    linkedin: "",
     github: "mmk622",
-    instagram: "",
+    instagram: "door_pushed_gyu",
   },
   projects: [
     {
