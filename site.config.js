@@ -1,7 +1,7 @@
 const CONFIG = {
   // profile setting (required)
   profile: {
-    name: "king_raccoon",
+    name: "Yunje Lee",
     image: "/avatar.svg", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
     role: "Malware Analyst and Digital Forensics Specialist focused on uncovering and mitigating cybersecurity threats",
     bio: "I'm currently aspiring to become a cybersecurity expert, with a particular interest in malware analysis and digital forensics!",
