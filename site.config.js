@@ -7,7 +7,7 @@ const CONFIG = {
     bio: "undergrad student",
     email: "sychaeee@g.skku.edu",
     linkedin: "",
-    github: "",
+    github: "chae-sy",
     instagram: "",
   },
   projects: [
