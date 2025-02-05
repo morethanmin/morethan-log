@@ -1,6 +1,6 @@
 .notion-table-of-contents {
     position: fixed;
-    right: -75%;
+    right: 10px;
     top: 80px;
     display: flex;
     flex-direction: column;
@@ -43,6 +43,3 @@
     background-position: -100% 0;
   }
 
-body {
-    border: 5px solid red;
-}
