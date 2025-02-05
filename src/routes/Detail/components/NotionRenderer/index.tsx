@@ -3,6 +3,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { ExtendedRecordMap } from "notion-types"
 import useScheme from "src/hooks/useScheme"
+import TableOfContents from "./TableOfContents"; // Adjust path if needed
 
 // core styles shared by all of react-notion-x (required)
 import "react-notion-x/src/styles.css"
@@ -58,6 +59,7 @@ const NotionRenderer: FC<Props> = ({ recordMap }) => {
   const [scheme] = useScheme()
   return (
     <StyledWrapper>
+      <TableOfContents recordMap={recordMap} />
       <_NotionRenderer
         darkMode={scheme === "dark"}
         recordMap={recordMap}
