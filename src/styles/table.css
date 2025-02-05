@@ -42,3 +42,7 @@
   .notion-table-of-contents span:hover {
     background-position: -100% 0;
   }
+
+body {
+    border: 5px solid red;
+}
