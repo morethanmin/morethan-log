@@ -13,7 +13,7 @@ const TableOfContents: React.FC<Props> = ({ recordMap }) => {
       const value = block.value;
       if (value?.type === "header" || value?.type === "sub_header" || value?.type === "sub_sub_header") {
         return {
-          id: value.id,
+          id: value.id.replace(/-/g, ""), // Remove all dashes
           text: value.properties?.title?.[0]?.[0] || "Untitled",
           type: value.type,
         };
