@@ -8,7 +8,7 @@
   
   @media screen and (max-width: 1800px) {
     .notion-table-of-contents {
-      right: -80%;
+      right: 10px;
     }
   }
   
