@@ -18,7 +18,7 @@ const ContactCard: React.FC = () => {
       <StyledWrapper>
         {CONFIG.profile.github && (
           <a
-            href={`https://github.com/${CONFIG.profile.github}`}
+            href={`https://github.com/0cars0903`}
             rel="noreferrer"
             target="_blank"
           >
@@ -38,7 +38,7 @@ const ContactCard: React.FC = () => {
         )}
         {CONFIG.profile.email && (
           <a
-            href={`mailto:${CONFIG.profile.email}`}
+            href={`mailto:thdwnsgml521@gmail.com`}
             rel="noreferrer"
             target="_blank"
             css={{ overflow: "hidden" }}
@@ -49,7 +49,7 @@ const ContactCard: React.FC = () => {
         )}
         {CONFIG.profile.linkedin && (
           <a
-            href={`https://www.linkedin.com/in/${CONFIG.profile.linkedin}`}
+            href={`https://www.linkedin.com/in/0cars0903`}
             rel="noreferrer"
             target="_blank"
           >
