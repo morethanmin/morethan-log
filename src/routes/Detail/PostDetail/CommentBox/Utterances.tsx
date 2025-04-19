@@ -15,7 +15,7 @@ const Utterances: React.FC<Props> = ({ issueTerm }) => {
   const router = useRouter()
 
   useEffect(() => {
-    const theme = scheme === "light" ? "github-light" : "github-dark"
+    const theme = `github-${scheme}`
     const script = document.createElement("script")
     const anchor = document.getElementById("comments")
     if (!anchor) return
@@ -25,7 +25,7 @@ const Utterances: React.FC<Props> = ({ issueTerm }) => {
     script.setAttribute("async", `true`)
     script.setAttribute("issue-term", issueTerm)
     script.setAttribute("theme", theme)
-    const config: { [key: string]: string } = CONFIG.utterances.config
+    const config: Record<string, string> = CONFIG.utterances.config
     Object.keys(config).forEach((key) => {
       script.setAttribute(key, config[key])
     })

@@ -20,7 +20,7 @@ const CONFIG = {
   blog: {
     title: "제리차혁명",
     description: "제리 이즈 스터딩",
-    scheme: "dark",
+    scheme: "dark", // 'light' | 'dark' | 'system'
   },
 
   // CONFIG configration (required)
@@ -47,10 +47,16 @@ const CONFIG = {
       siteVerification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",
     },
   },
+  naverSearchAdvisor: {
+    enable: false,
+    config: {
+      siteVerification: process.env.NEXT_PUBLIC_NAVER_SITE_VERIFICATION || "",
+    },
+  },
   utterances: {
     enable: false,
     config: {
-      repo: "king-raccoon/morethan-log",
+      repo: process.env.NEXT_PUBLIC_UTTERANCES_REPO || "",
       "issue-term": "og:title",
       label: "💬 Utterances",
     },
