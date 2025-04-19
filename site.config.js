@@ -20,6 +20,7 @@ const CONFIG = {
   blog: {
     title: "제리차혁명",
     description: "제리 이즈 스터딩",
+    scheme: "dark",
   },
 
   // CONFIG configration (required)
