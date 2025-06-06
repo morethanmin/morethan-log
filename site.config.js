@@ -27,7 +27,7 @@ const CONFIG = {
   blog: {
     title: "Private Cloud Blogs",
     description: "Burada Automation ve Orchestration hakkinda bilgi paylasıyorum.",
-    scheme: "dark", // 'light' | 'dark' | 'system'
+    scheme: "light", // 'light' | 'dark' | 'system'
   },
 
   // CONFIG configration (required)
