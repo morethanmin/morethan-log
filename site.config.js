@@ -9,10 +9,18 @@ const CONFIG = {
     linkedin: "",
     github: "",
     instagram: "",
+    twitter: "",
+    youtube: "",
+    facebook: "",
+    tiktok: "",
+    discord: "",
+    telegram: "",
+    twitch: "",
   },
   projects: [
     {
       name: `Private Cloud Blogs`,
+      href: "https://www.gayesuner.com",
     },
   ],
   // blog setting (required)
