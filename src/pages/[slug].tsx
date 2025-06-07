@@ -1,28 +1,28 @@
-import Detail from "src/routes/Detail"
-import { filterPosts } from "src/libs/utils/notion"
-import { CONFIG } from "site.config"
-import { NextPageWithLayout } from "../types"
-import CustomError from "src/routes/Error"
-import { getRecordMap, getPosts } from "src/apis"
-import MetaConfig from "src/components/MetaConfig"
-import { GetStaticProps } from "next"
-import { queryClient } from "src/libs/react-query"
-import { queryKey } from "src/constants/queryKey"
 import { dehydrate } from "@tanstack/react-query"
+import { GetStaticPaths, GetStaticProps } from "next"
+import { CONFIG } from "site.config"
+import { getPosts, getRecordMap } from "src/apis"
+import MetaConfig from "src/components/MetaConfig"
+import { queryKey } from "src/constants/queryKey"
 import usePostQuery from "src/hooks/usePostQuery"
+import { queryClient } from "src/libs/react-query"
+import { filterPosts } from "src/libs/utils/notion"
 import { FilterPostsOptions } from "src/libs/utils/notion/filterPosts"
+import Detail from "src/routes/Detail"
+import CustomError from "src/routes/Error"
+import { NextPageWithLayout } from "../types"
 
 const filter: FilterPostsOptions = {
   acceptStatus: ["Public", "PublicOnDetail"],
   acceptType: ["Paper", "Post", "Page"],
 }
 
-export const getStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await getPosts()
   const filteredPost = filterPosts(posts, filter)
 
   return {
-    paths: filteredPost.map((row) => /${row.slug}),
+    paths: filteredPost.map((row) => ({ params: { slug: row.slug } })),
     fallback: true,
   }
 }
@@ -36,9 +36,14 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   const detailPosts = filterPosts(posts, filter)
   const postDetail = detailPosts.find((t: any) => t.slug === slug)
-  const recordMap = await getRecordMap(postDetail?.id!)
 
-  await queryClient.prefetchQuery(queryKey.post(${slug}), () => ({
+  if (!postDetail) {
+    return { notFound: true }
+  }
+
+  const recordMap = await getRecordMap(postDetail.id)
+
+  await queryClient.prefetchQuery(queryKey.post(`${slug}`), () => ({
     ...postDetail,
     recordMap,
   }))
@@ -59,7 +64,7 @@ const DetailPage: NextPageWithLayout = () => {
   const image =
     post.thumbnail ??
     CONFIG.ogImageGenerateURL ??
-    ${CONFIG.ogImageGenerateURL}/${encodeURIComponent(post.title)}.png
+    `${CONFIG.ogImageGenerateURL}/${encodeURIComponent(post.title)}.png`
 
   const date = post.date?.start_date || post.createdTime || ""
 
@@ -69,7 +74,7 @@ const DetailPage: NextPageWithLayout = () => {
     image: image,
     description: post.summary || "",
     type: post.type[0],
-    url: ${CONFIG.link}/${post.slug},
+    url: `${CONFIG.link}/${post.slug}`,
   }
 
   return (
