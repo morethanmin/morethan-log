@@ -1,29 +1,27 @@
-import Detail from "src/routes/Detail"
-import { filterPosts } from "src/libs/utils/notion"
-import { CONFIG } from "site.config"
-import { NextPageWithLayout } from "../types"
-import CustomError from "src/routes/Error"
-import { getRecordMap, getPosts } from "src/apis"
-import MetaConfig from "src/components/MetaConfig"
-import { GetStaticProps } from "next"
-import { queryClient } from "src/libs/react-query"
-import { queryKey } from "src/constants/queryKey"
 import { dehydrate } from "@tanstack/react-query"
+import { GetStaticPaths, GetStaticProps } from "next"
+import { CONFIG } from "site.config"
+import { getPosts, getRecordMap } from "src/apis"
+import MetaConfig from "src/components/MetaConfig"
+import { queryKey } from "src/constants/queryKey"
 import usePostQuery from "src/hooks/usePostQuery"
+import { queryClient } from "src/libs/react-query"
+import { filterPosts } from "src/libs/utils/notion"
 import { FilterPostsOptions } from "src/libs/utils/notion/filterPosts"
+import Detail from "src/routes/Detail"
+import CustomError from "src/routes/Error"
+import { NextPageWithLayout } from "../types"
 
 const filter: FilterPostsOptions = {
   acceptStatus: ["Public", "PublicOnDetail"],
   acceptType: ["Paper", "Post", "Page"],
 }
 
-export const getStaticPaths = async () => {
-  const posts = await getPosts()
-  const filteredPost = filterPosts(posts, filter)
-
+// ✅ 빌드시 미리 생성하지 않고 요청 시 생성하도록 fallback 설정
+export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    paths: filteredPost.map((row) => `/${row.slug}`),
-    fallback: true,
+    paths: [],
+    fallback: "blocking",
   }
 }
 
@@ -36,7 +34,13 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   const detailPosts = filterPosts(posts, filter)
   const postDetail = detailPosts.find((t: any) => t.slug === slug)
-  const recordMap = await getRecordMap(postDetail?.id!)
+
+  // ✅ postDetail이 없으면 404 페이지 반환
+  if (!postDetail) {
+    return { notFound: true }
+  }
+
+  const recordMap = await getRecordMap(postDetail.id)
 
   await queryClient.prefetchQuery(queryKey.post(`${slug}`), () => ({
     ...postDetail,
