@@ -55,7 +55,7 @@
 //     max-width: 42rem;
 //   }
 // `
-// ✅ 수정 후 PostDetail/index.tsx
+
 import styled from "@emotion/styled"
 import React from "react"
 import Category from "src/components/Category"

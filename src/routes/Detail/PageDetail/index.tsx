@@ -20,14 +20,12 @@ import NotionRenderer from "../components/NotionRenderer"
 //   margin: 0 auto;
 //   max-width: 56rem;
 // `
-type Props = {
-  recordMap: any
-}
-
-const PageDetail: React.FC<Props> = ({ recordMap }) => {
+const PageDetail: React.FC = () => {
+  const data = usePostQuery()
+  if (!data) return null
   return (
     <StyledWrapper>
-      <NotionRenderer recordMap={recordMap} />
+      <NotionRenderer recordMap={data.recordMap} />
     </StyledWrapper>
   )
 }
