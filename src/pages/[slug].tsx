@@ -92,20 +92,12 @@
 // export default DetailPage
 
 import { dehydrate } from "@tanstack/react-query"
-import { GetStaticPaths, GetStaticProps } from "next"
+import { GetStaticProps } from "next"
 import { CONFIG } from "site.config"
 import { getPosts, getRecordMap } from "src/apis"
 import { queryKey } from "src/constants/queryKey"
 import { queryClient } from "src/libs/react-query"
 import { filterPosts } from "src/libs/utils/notion"
-
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  return {
-    paths: [], // 빈 배열이면 아무 페이지도 미리 생성하지 않음
-    fallback: 'blocking', // 요청 시 최초 생성 (ISR)
-  }
-}
 
 export const getStaticProps: GetStaticProps = async (context) => {
   try {
@@ -114,6 +106,11 @@ export const getStaticProps: GetStaticProps = async (context) => {
     const posts = await getPosts()
     const feedPosts = filterPosts(posts)
     await queryClient.prefetchQuery(queryKey.posts(), () => feedPosts)
+
+    const filter: FilterPostsOptions = {
+      acceptStatus: ["Public", "PublicOnDetail"],
+      acceptType: ["Paper", "Post", "Page"],
+    }
 
     const detailPosts = filterPosts(posts, filter)
     const postDetail = detailPosts.find((t: any) => t.slug === slug)
@@ -133,12 +130,10 @@ export const getStaticProps: GetStaticProps = async (context) => {
       props: {
         dehydratedState: dehydrate(queryClient),
       },
-      revalidate: CONFIG.revalidateTime, // ISR
+      revalidate: CONFIG.revalidateTime,
     }
   } catch (error) {
     console.error(`Error generating static props for slug: ${context.params?.slug}`, error)
-    return {
-      notFound: true,
-    }
+    return { notFound: true }
   }
 }
