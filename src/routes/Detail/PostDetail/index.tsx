@@ -67,8 +67,8 @@ import Category from "src/components/Category"
 import usePostQuery from "src/hooks/usePostQuery"
 import NotionRenderer from "../components/NotionRenderer"
 import CommentBox from "./CommentBox"
-import PostFooter from "./PostFooter"
-import PostHeader from "./PostHeader"
+import PostFooter from "./PostDetail/PostFooter"
+import PostHeader from "./PostDetail/PostHeader"
 
 type Props = {
   recordMap: any
