@@ -90,7 +90,15 @@
 // }
 
 // export default DetailPage
-// [slug].tsx
+
+import { dehydrate } from "@tanstack/react-query"
+import { GetStaticPaths, GetStaticProps } from "next"
+import { CONFIG } from "site.config"
+import { getPosts, getRecordMap } from "src/apis"
+import { queryKey } from "src/constants/queryKey"
+import { queryClient } from "src/libs/react-query"
+import { filterPosts } from "src/libs/utils/notion"
+
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
