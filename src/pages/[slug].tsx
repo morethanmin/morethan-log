@@ -94,7 +94,7 @@
 import { dehydrate } from "@tanstack/react-query"
 import { GetStaticPaths, GetStaticProps } from "next"
 import { CONFIG } from "site.config"
-import { getPosts, getRecordMap } from "src/apis"
+import { getPosts } from "src/apis"
 import MetaConfig from "src/components/MetaConfig"
 import { queryKey } from "src/constants/queryKey"
 import usePostQuery from "src/hooks/usePostQuery"
@@ -108,7 +108,7 @@ import { NextPageWithLayout } from "../types"
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: [],
-    fallback: "blocking",
+    fallback: "blocking", // 요청 시 페이지 생성
   }
 }
 
@@ -131,12 +131,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
     if (!postDetail) return { notFound: true }
 
-    const recordMap = await getRecordMap(postDetail.id)
-
-    await queryClient.prefetchQuery(queryKey.post(`${slug}`), () => ({
-      ...postDetail,
-      recordMap,
-    }))
+    await queryClient.prefetchQuery(queryKey.post(`${slug}`), () => postDetail) // recordMap 제거
 
     return {
       props: {
@@ -152,8 +147,18 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 const DetailPage: NextPageWithLayout = () => {
   const post = usePostQuery()
+  const [recordMap, setRecordMap] = useState<any>(null)
+
+  useEffect(() => {
+    if (post && !recordMap) {
+      import("src/apis/notion-client/getRecordMap").then(({ getRecordMap }) => {
+        getRecordMap(post.id).then(setRecordMap).catch(console.error)
+      })
+    }
+  }, [post])
 
   if (!post) return <CustomError />
+  if (!recordMap) return <div style={{ padding: "2rem" }}>로딩 중...</div>
 
   const image =
     post.thumbnail ??
@@ -174,7 +179,7 @@ const DetailPage: NextPageWithLayout = () => {
   return (
     <>
       <MetaConfig {...meta} />
-      <Detail />
+      <Detail recordMap={recordMap} />
     </>
   )
 }
