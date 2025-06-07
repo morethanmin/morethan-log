@@ -33,7 +33,7 @@
 // `
 
 import styled from "@emotion/styled"
-import usePostQuery from "../../../hooks/usePostQuery"
+import usePostQuery from "../../hooks/usePostQuery"
 import PageDetail from "./PageDetail"
 import PostDetail from "./PostDetail"
 
