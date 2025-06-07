@@ -93,6 +93,7 @@
 
 import { dehydrate } from "@tanstack/react-query"
 import { GetStaticPaths, GetStaticProps } from "next"
+import { useEffect, useState } from "react"
 import { CONFIG } from "site.config"
 import { getPosts } from "src/apis"
 import MetaConfig from "src/components/MetaConfig"
