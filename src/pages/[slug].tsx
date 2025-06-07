@@ -98,6 +98,7 @@ import { getPosts, getRecordMap } from "src/apis"
 import { queryKey } from "src/constants/queryKey"
 import { queryClient } from "src/libs/react-query"
 import { filterPosts } from "src/libs/utils/notion"
+import { FilterPostsOptions } from "src/libs/utils/notion/filterPosts"
 
 export const getStaticProps: GetStaticProps = async (context) => {
   try {
