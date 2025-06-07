@@ -58,61 +58,25 @@
 
 import styled from "@emotion/styled"
 import React from "react"
-import Category from "src/components/Category"
-import usePostQuery from "src/hooks/usePostQuery"
 import NotionRenderer from "../components/NotionRenderer"
-import CommentBox from "./CommentBox"
 import PostFooter from "./PostFooter"
-import PostHeader from "./PostHeader"
 
-const PostDetail: React.FC = () => {
-  const data = usePostQuery()
+interface Props {
+  recordMap: any
+}
 
-  if (!data) return null
-
-  const category = data.category?.[0]
-
+const PostDetail: React.FC<Props> = ({ recordMap }) => {
   return (
-    <StyledWrapper>
-      <article>
-        {category && (
-          <div css={{ marginBottom: "0.5rem" }}>
-            <Category readOnly={data.status?.[0] === "PublicOnDetail"}>
-              {category}
-            </Category>
-          </div>
-        )}
-        {data.type[0] === "Post" && <PostHeader data={data} />}
-        <div>
-          <NotionRenderer recordMap={data.recordMap} />
-        </div>
-        {data.type[0] === "Post" && (
-          <>
-            <PostFooter />
-            <CommentBox data={data} />
-          </>
-        )}
-      </article>
-    </StyledWrapper>
+    <Wrapper>
+      <NotionRenderer recordMap={recordMap} />
+      <PostFooter />
+    </Wrapper>
   )
 }
 
 export default PostDetail
 
-const StyledWrapper = styled.div`
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  border-radius: 1.5rem;
-  max-width: 56rem;
-  background-color: ${({ theme }) =>
-    theme.scheme === "light" ? "white" : theme.colors.gray4};
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+const Wrapper = styled.div`
   margin: 0 auto;
-  > article {
-    margin: 0 auto;
-    max-width: 42rem;
-  }
+  max-width: 56rem;
 `

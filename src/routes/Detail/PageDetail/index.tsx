@@ -1,7 +1,6 @@
-import { usePostQuery } from '@/hooks/usePostQuery'
-import styled from "@emotion/styled"
-import React from "react"
-import NotionRenderer from "../components/NotionRenderer"
+// import styled from "@emotion/styled"
+// import React from "react"
+// import NotionRenderer from "../components/NotionRenderer"
 
 // type Props = {}
 
@@ -22,12 +21,19 @@ import NotionRenderer from "../components/NotionRenderer"
 //   margin: 0 auto;
 //   max-width: 56rem;
 // `
-const PageDetail: React.FC = () => {
-  const data = usePostQuery()
-  if (!data) return null
+
+import styled from "@emotion/styled"
+import React from "react"
+import NotionRenderer from "../components/NotionRenderer"
+
+interface Props {
+  recordMap: any
+}
+
+const PageDetail: React.FC<Props> = ({ recordMap }) => {
   return (
     <StyledWrapper>
-      <NotionRenderer recordMap={data.recordMap} />
+      <NotionRenderer recordMap={recordMap} />
     </StyledWrapper>
   )
 }
