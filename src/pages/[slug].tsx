@@ -92,17 +92,30 @@
 // export default DetailPage
 
 import { dehydrate } from "@tanstack/react-query"
-import { GetStaticProps } from "next"
+import { GetStaticPaths, GetStaticProps } from "next"
 import { CONFIG } from "site.config"
 import { getPosts, getRecordMap } from "src/apis"
+import MetaConfig from "src/components/MetaConfig"
 import { queryKey } from "src/constants/queryKey"
+import usePostQuery from "src/hooks/usePostQuery"
 import { queryClient } from "src/libs/react-query"
 import { filterPosts } from "src/libs/utils/notion"
 import { FilterPostsOptions } from "src/libs/utils/notion/filterPosts"
+import Detail from "src/routes/Detail"
+import CustomError from "src/routes/Error"
+import { NextPageWithLayout } from "../types"
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  return {
+    paths: [],
+    fallback: "blocking",
+  }
+}
 
 export const getStaticProps: GetStaticProps = async (context) => {
   try {
     const slug = context.params?.slug
+    if (typeof slug !== "string") return { notFound: true }
 
     const posts = await getPosts()
     const feedPosts = filterPosts(posts)
@@ -116,9 +129,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     const detailPosts = filterPosts(posts, filter)
     const postDetail = detailPosts.find((t: any) => t.slug === slug)
 
-    if (!postDetail) {
-      return { notFound: true }
-    }
+    if (!postDetail) return { notFound: true }
 
     const recordMap = await getRecordMap(postDetail.id)
 
@@ -138,3 +149,36 @@ export const getStaticProps: GetStaticProps = async (context) => {
     return { notFound: true }
   }
 }
+
+const DetailPage: NextPageWithLayout = () => {
+  const post = usePostQuery()
+
+  if (!post) return <CustomError />
+
+  const image =
+    post.thumbnail ??
+    CONFIG.ogImageGenerateURL ??
+    `${CONFIG.ogImageGenerateURL}/${encodeURIComponent(post.title)}.png`
+
+  const date = post.date?.start_date || post.createdTime || ""
+
+  const meta = {
+    title: post.title,
+    date: new Date(date).toISOString(),
+    image,
+    description: post.summary || "",
+    type: post.type[0],
+    url: `${CONFIG.link}/${post.slug}`,
+  }
+
+  return (
+    <>
+      <MetaConfig {...meta} />
+      <Detail />
+    </>
+  )
+}
+
+DetailPage.getLayout = (page) => page
+
+export default DetailPage
