@@ -5,6 +5,8 @@
 // }
 // next.config.js
 
+// next.config.js
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -18,6 +20,7 @@ const nextConfig = {
         net: false,
         tls: false,
         dns: false,
+        http2: false, // ← 지금 추가해야 할 핵심 항목
       };
     }
     return config;
