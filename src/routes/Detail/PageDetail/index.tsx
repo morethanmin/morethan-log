@@ -1,6 +1,6 @@
 import styled from "@emotion/styled"
 import React from "react"
-import NotionRenderer from "../../components/NotionRenderer"
+import NotionRenderer from "../components/NotionRenderer"
 // type Props = {}
 
 // const PageDetail: React.FC<Props> = () => {
