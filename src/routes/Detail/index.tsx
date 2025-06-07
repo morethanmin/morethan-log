@@ -1,6 +1,6 @@
-import styled from "@emotion/styled"
-import PageDetail from "./PageDetail"
-import PostDetail from "./PostDetail"
+// import styled from "@emotion/styled"
+// import PageDetail from "./PageDetail"
+// import PostDetail from "./PostDetail"
 
 // type Props = {}
 
@@ -31,17 +31,22 @@ import PostDetail from "./PostDetail"
 //     background-color: ${({ theme }) => theme.colors.gray5};
 //   }
 // `
-type Props = {
-  recordMap: any
-}
 
-const Detail: React.FC<Props> = ({ recordMap }) => {
-  const data = recordMap.block[Object.keys(recordMap.block)[0]].value
+// ✅ 수정 후 Detail/index.tsx
+import styled from "@emotion/styled"
+import React from "react"
+import usePostQuery from "src/hooks/usePostQuery"
+import PageDetail from "./PageDetail"
+import PostDetail from "./PostDetail"
+
+const Detail: React.FC = () => {
+  const data = usePostQuery()
+  if (!data) return null
 
   return (
     <StyledWrapper data-type={data.type}>
-      {data.type[0] === "Page" && <PageDetail recordMap={recordMap} />}
-      {data.type[0] !== "Page" && <PostDetail recordMap={recordMap} />}
+      {data.type[0] === "Page" && <PageDetail />}
+      {data.type[0] !== "Page" && <PostDetail />}
     </StyledWrapper>
   )
 }
@@ -52,3 +57,4 @@ const StyledWrapper = styled.div`
   margin: 0 auto;
   max-width: 56rem;
 `
+
