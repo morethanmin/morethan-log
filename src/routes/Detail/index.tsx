@@ -32,7 +32,6 @@
 //   }
 // `
 
-// ✅ 수정 후 Detail/index.tsx
 import styled from "@emotion/styled"
 import React from "react"
 import usePostQuery from "src/hooks/usePostQuery"
@@ -45,8 +44,7 @@ const Detail: React.FC = () => {
 
   return (
     <StyledWrapper data-type={data.type}>
-      {data.type[0] === "Page" && <PageDetail />}
-      {data.type[0] !== "Page" && <PostDetail />}
+      {data.type[0] === "Page" ? <PageDetail /> : <PostDetail />}
     </StyledWrapper>
   )
 }
@@ -54,7 +52,9 @@ const Detail: React.FC = () => {
 export default Detail
 
 const StyledWrapper = styled.div`
-  margin: 0 auto;
-  max-width: 56rem;
+  padding: 2rem 0;
+  &[data-type="Paper"] { padding: 40px 0; }
+  code[class*="language-mermaid"], pre[class*="language-mermaid"] {
+    background-color: ${({ theme }) => theme.colors.gray5};
+  }
 `
-

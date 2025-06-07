@@ -180,7 +180,7 @@ const DetailPage: NextPageWithLayout = () => {
   return (
     <>
       <MetaConfig {...meta} />
-      <Detail recordMap={recordMap} />
+      <Detail />
     </>
   )
 }
