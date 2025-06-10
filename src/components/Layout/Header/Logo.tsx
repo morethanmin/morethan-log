@@ -1,8 +1,8 @@
-import React from 'react'
-import Link from 'next/link'
-import CONFIG from 'notes.config'
+import React from "react";
+import Link from "next/link";
+import CONFIG from "notes.config";
 
-type Props = {}
+type Props = {};
 
 const Logo: React.FC<Props> = () => {
   return (
@@ -15,7 +15,7 @@ const Logo: React.FC<Props> = () => {
         </div>
       </a>
     </Link>
-  )
-}
+  );
+};
 
-export default Logo
+export default Logo;

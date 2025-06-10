@@ -1,30 +1,31 @@
-import { useRouter } from 'next/router'
-import React from 'react'
+import { useRouter } from "next/router";
+import React from "react";
+import { RiArrowLeftLine, RiArrowUpLine } from "react-icons/ri";
 
-type Props = {}
+type Props = {};
 
 const Footer: React.FC<Props> = () => {
-  const router = useRouter()
+  const router = useRouter();
   return (
-    <div className="flex justify-between font-medium text-gray-500 dark:text-gray-400">
-      <a>
+    <div className="w-full flex justify-center pt-6">
+      <div className="flex gap-8 items-center">
         <button
-          onClick={() => router.push('/')}
-          className="mt-2 cursor-pointer hover:text-black dark:hover:text-gray-100"
+          onClick={() => router.push("/")}
+          aria-label="Back"
+          className="p-2 rounded-full text-gray-400 hover:text-black dark:hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-gray-300 dark:focus:ring-gray-600"
         >
-          ← Back
+          <RiArrowLeftLine className="text-2xl" />
         </button>
-      </a>
-      <a>
         <button
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="mt-2 cursor-pointer hover:text-black dark:hover:text-gray-100"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          aria-label="Top"
+          className="p-2 rounded-full text-gray-400 hover:text-black dark:hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-gray-300 dark:focus:ring-gray-600"
         >
-          ↑ Top
+          <RiArrowUpLine className="text-2xl" />
         </button>
-      </a>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

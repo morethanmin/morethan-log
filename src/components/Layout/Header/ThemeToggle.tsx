@@ -2,6 +2,7 @@ import CONFIG from "@/notes.config";
 import { ThemeType } from "@/src/types";
 import { getTheme } from "@hooks/useThemeEffect";
 import React, { useEffect, useState } from "react";
+import { RiSunLine, RiMoonLine } from "react-icons/ri";
 
 type Props = {};
 
@@ -26,7 +27,11 @@ const ThemeToggle: React.FC<Props> = () => {
   if (CONFIG.blog.theme !== "auto") return null;
   return (
     <div className={`cursor-pointer dark:text-gray-50`} onClick={handleClick}>
-      {theme === "light" ? "☀️" : "🌙"}
+      {theme === "light" ? (
+        <RiSunLine className="text-2xl" />
+      ) : (
+        <RiMoonLine className="text-2xl" />
+      )}
     </div>
   );
 };

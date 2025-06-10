@@ -4,16 +4,16 @@ const CONFIG = {
     name: "Vaishak Kaippanchery",
     image: "/profile.png",
     role: "Senior Software Engineer",
-    bio: "Senior Software Engineer working for Miro in Berlin, Prev worked on Fintech @Liqid Investments and building collaborative design tool @Zoho",
+    bio: "Prev worked on Fintech @Liqid Investments and building collaborative design tool @Zoho",
     linkedin: "kvaishak",
-    email: "hi.kvaishak@gmail.com",
+    email: "vaishak.kaippanchery@gmail.com",
     github: "kvaishak",
     instagram: "",
   },
   projects: [
     {
-      name: "kvaishak.com",
-      href: "https://kvaishak.com/",
+      name: "vaishak.de",
+      href: "https://vaishak.de/",
     },
   ],
   // blog setting

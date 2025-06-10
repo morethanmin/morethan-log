@@ -1,20 +1,20 @@
-import { useRef } from 'react'
-import CONFIG from 'notes.config'
-import NavBar from './NavBar'
-import Logo from './Logo'
-import ThemeToggle from './ThemeToggle'
+import { useRef } from "react";
+import CONFIG from "notes.config";
+import NavBar from "./NavBar";
+import Logo from "./Logo";
+import ThemeToggle from "./ThemeToggle";
 
 type Props = {
-  fullWidth: boolean
-}
+  fullWidth: boolean;
+};
 
 const Header: React.FC<Props> = ({ fullWidth }) => {
-  const navRef = useRef(null)
+  const navRef = useRef(null);
 
   return (
     <div
-      className={`sticky-nav m-auto w-full h-6 flex flex-row justify-between items-center mb-2 md:mb-6 py-8 bg-opacity-60 max-w-6xl px-4 ${
-        fullWidth && 'px-4 md:px-24'
+      className={`sticky-nav m-auto w-full h-6 flex flex-row justify-between items-center mb-2 md:mb-6 py-8 bg-opacity-60 max-w-7xl px-4 ${
+        fullWidth && "px-4 md:px-24"
       }`}
       id="sticky-nav"
       ref={navRef}
@@ -25,7 +25,7 @@ const Header: React.FC<Props> = ({ fullWidth }) => {
         <NavBar />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

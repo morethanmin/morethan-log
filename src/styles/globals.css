@@ -144,7 +144,6 @@ nav {
     @apply bg-day bg-opacity-90 dark:bg-night dark:bg-opacity-90;
   }
 }
-
 @media (min-width: 768px) {
   .mobile-x-scroll {
     overflow-x: hidden;
