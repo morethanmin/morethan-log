@@ -11,10 +11,14 @@ const CONFIG = {
     instagram: "",
   },
   projects: [
+    {
+      name: `notion-blog`,
+      href: "https://yuki-dev-blog.notion.site",
+    },
   ],
   // blog setting (required)
   blog: {
-    title: "Yuki-dev-log",
+    title: "Yuki's dev log",
     description: "주니어 개발자 Yuki의 개발 블로그입니다",
     scheme: "dark", // 'light' | 'dark' | 'system'
   },
