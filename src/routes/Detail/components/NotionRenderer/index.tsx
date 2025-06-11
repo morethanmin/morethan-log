@@ -95,6 +95,8 @@ const StyledWrapper = styled.div`
     display: block;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
   }
   .notion-simple-table > tbody,
   .notion-simple-table > thead {
@@ -105,5 +107,8 @@ const StyledWrapper = styled.div`
   .notion-simple-table th,
   .notion-simple-table td {
     white-space: nowrap;
+  }
+  .notion-quote {
+    font-size: 1rem;
   }
 `
