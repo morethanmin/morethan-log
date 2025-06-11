@@ -7,40 +7,6 @@ import styled from "@emotion/styled"
 import NotionRenderer from "../components/NotionRenderer"
 import usePostQuery from "src/hooks/usePostQuery"
 
-// 스크롤 프로그레스바 컴포넌트
-const ScrollProgressBar = () => {
-  const [progress, setProgress] = useState(0)
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight
-      const percent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0
-      setProgress(percent)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
-  return (
-    <ProgressBarWrapper>
-      <ProgressBarInner style={{ width: `${progress}%` }} />
-    </ProgressBarWrapper>
-  )
-}
-
-const ProgressBarWrapper = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 4px;
-  background: transparent;
-  z-index: 2000;
-`
-const ProgressBarInner = styled.div`
-  height: 100%;
-  background: #6366f1;
-  transition: width 0.2s;
-`
 
 type Props = {}
 
@@ -53,7 +19,6 @@ const PostDetail: React.FC<Props> = () => {
 
   return (
     <StyledWrapper>
-      <ScrollProgressBar />
       <article>
         {category && (
           <div css={{ marginBottom: "0.5rem" }}>

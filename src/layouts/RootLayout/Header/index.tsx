@@ -28,8 +28,13 @@ const StyledWrapper = styled.div`
   z-index: ${zIndexes.header};
   position: sticky;
   top: 0;
-  background-color: ${({ theme }) => theme.colors.gray2};
+  background-color: ${({ theme }) =>
+    theme.scheme === "dark"
+      ? "rgba(30,30,30,0.5)"
+      : "rgba(255,255,255,0.7)"};
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 
   .container {
     display: flex;
@@ -39,7 +44,7 @@ const StyledWrapper = styled.div`
     align-items: center;
     width: 100%;
     max-width: 1120px;
-    height: 3rem;
+    height: 4.5rem;
     margin: 0 auto;
     &[data-full-width="true"] {
       @media (min-width: 768px) {

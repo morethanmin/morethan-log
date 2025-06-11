@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect } from "react"
+import React, { ReactNode, useEffect, useRef, useState } from "react"
 import { ThemeProvider } from "./ThemeProvider"
 import useScheme from "src/hooks/useScheme"
 import Header from "./Header"
@@ -39,6 +39,8 @@ import 'prismjs/components/prism-swift.js'
 import 'prismjs/components/prism-wasm.js'
 import 'prismjs/components/prism-yaml.js'
 import "prismjs/components/prism-go.js"
+import useThrottle from "src/hooks/useThrottle"
+import { useRouter } from "next/router"
 
 type Props = {
   children: ReactNode
@@ -49,7 +51,44 @@ const RootLayout = ({ children }: Props) => {
   useGtagEffect()
   useEffect(() => {
     Prism.highlightAll();
-  }, []);
+  }, [])
+
+  // 스크롤 프로그레스바 관련
+  const router = useRouter()
+  const currentElementRef = useRef<HTMLDivElement | null>(null)
+  const [blogHeight, setBlogHeight] = useState(0)
+  const [throttleScrollY, setThrottleScrollY] = useState<number>(0)
+
+  const scrollThrottle = useThrottle(() => {
+    setThrottleScrollY(window.scrollY)
+  }, 100)
+
+  const getCurrentPercentage = () => {
+    if (router.asPath === "/") return 0
+    let percentage = Math.ceil((throttleScrollY / blogHeight) * 100)
+    if (percentage >= 90) {
+      percentage = 100
+    } else {
+      percentage = Math.ceil((throttleScrollY / blogHeight) * 100)
+    }
+    return percentage
+  }
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (!currentElementRef.current) return
+      const clientHeight =
+        currentElementRef.current.scrollHeight - window.innerHeight
+      setBlogHeight(clientHeight)
+    }
+    handleResize()
+    window.addEventListener("resize", handleResize)
+    window.addEventListener("scroll", scrollThrottle)
+    return () => {
+      window.removeEventListener("resize", handleResize)
+      window.removeEventListener("scroll", scrollThrottle)
+    }
+  }, [scrollThrottle])
 
   return (
     <ThemeProvider scheme={scheme}>
@@ -57,7 +96,11 @@ const RootLayout = ({ children }: Props) => {
       {/* // TODO: replace react query */}
       {/* {metaConfig.type !== "Paper" && <Header />} */}
       <Header fullWidth={false} />
-      <StyledMain>{children}</StyledMain>
+      {/* 네비게이션 바로 아래 스크롤 프로그레스바 */}
+      <ProgressBarWrapper>
+        <ProgressBarInner style={{ width: `${getCurrentPercentage()}%` }} />
+      </ProgressBarWrapper>
+      <StyledMain ref={currentElementRef}>{children}</StyledMain>
     </ThemeProvider>
   )
 }
@@ -70,3 +113,18 @@ const StyledMain = styled.main`
   max-width: 1120px;
   padding: 0 1rem;
 `
+const ProgressBarWrapper = styled.div`
+  position: sticky;
+  top: 4.5rem;
+  left: 0;
+  width: 100vw;
+  height: 3px;
+  background: transparent;
+  z-index: 2000;
+`
+const ProgressBarInner = styled.div`
+  height: 100%;
+  background: #6366f1;
+  transition: width 0.2s;
+`
+
