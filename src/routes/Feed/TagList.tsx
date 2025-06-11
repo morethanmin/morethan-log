@@ -44,7 +44,7 @@ const TagList: React.FC<Props> = () => {
             data-active={key === currentTag}
             onClick={() => handleClickTag(key)}
           >
-            {key}
+            {key} <span style={{ color: '#aaa' }}>({data[key]})</span>
           </a>
         ))}
       </div>
