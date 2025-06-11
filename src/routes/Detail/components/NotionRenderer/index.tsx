@@ -89,4 +89,21 @@ const StyledWrapper = styled.div`
   .notion-list {
     width: 100%;
   }
+  /* 모바일 테이블 가로 스크롤 */
+  .notion-simple-table {
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .notion-simple-table > tbody,
+  .notion-simple-table > thead {
+    display: table;
+    width: 100%;
+    min-width: max-content;
+  }
+  .notion-simple-table th,
+  .notion-simple-table td {
+    white-space: nowrap;
+  }
 `
