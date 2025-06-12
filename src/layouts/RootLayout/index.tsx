@@ -93,14 +93,16 @@ const RootLayout = ({ children }: Props) => {
   return (
     <ThemeProvider scheme={scheme}>
       <Scripts />
-      {/* // TODO: replace react query */}
-      {/* {metaConfig.type !== "Paper" && <Header />} */}
-      <Header fullWidth={false} />
-      {/* 네비게이션 바로 아래 스크롤 프로그레스바 */}
-      <ProgressBarWrapper>
-        <ProgressBarInner style={{ width: `${getCurrentPercentage()}%` }} />
-      </ProgressBarWrapper>
-      <StyledMain ref={currentElementRef}>{children}</StyledMain>
+      <div style={{ fontFamily: '"Noto Serif KR", "PingFang SC", "Microsoft YaHei", sans-serif' }}>
+        {/* // TODO: replace react query */}
+        {/* {metaConfig.type !== "Paper" && <Header />} */}
+        <Header fullWidth={false} />
+        {/* 네비게이션 바로 아래 스크롤 프로그레스바 */}
+        <ProgressBarWrapper>
+          <ProgressBarInner style={{ width: `${getCurrentPercentage()}%` }} />
+        </ProgressBarWrapper>
+        <StyledMain ref={currentElementRef}>{children}</StyledMain>
+      </div>
     </ThemeProvider>
   )
 }
