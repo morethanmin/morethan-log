@@ -9,6 +9,21 @@ import "react-notion-x/src/styles.css"
 
 // used for code syntax highlighting (optional)
 import "prismjs/themes/prism-tomorrow.css"
+// import "prismjs/components/prism-javascript"
+// import "prismjs/components/prism-typescript"
+// import "prismjs/components/prism-jsx"
+// import "prismjs/components/prism-tsx"
+// import "prismjs/components/prism-python"
+// import "prismjs/components/prism-markup"
+// import "prismjs/components/prism-bash"
+// import "prismjs/components/prism-json"
+// import "prismjs/components/prism-css"
+// import "prismjs/components/prism-scss"
+// import "prismjs/components/prism-java"
+// import "prismjs/components/prism-c"
+// import "prismjs/components/prism-cpp"
+// import "prismjs/components/prism-go"
+// import "prismjs/components/prism-rust"
 
 // used for rendering equations (optional)
 
@@ -113,5 +128,33 @@ const StyledWrapper = styled.div`
   }
   .notion-quote {
     font-size: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .notion-callout {
+    font-size: 1rem;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
+  /* 인라인 코드가 길어질 때 좌우 스크롤 처리 */
+  .notion-inline-code {
+    display: inline-block;
+    max-width: 100%;
+    overflow-x: auto;
+    vertical-align: middle;
+    white-space: pre;
+    -webkit-overflow-scrolling: touch;
+  }
+    
+  /* 공통 코드 블럭 스타일 (가독성 향상) */
+  .notion-code {
+    font-family: 'Fira Mono', 'Menlo', 'Monaco', 'Consolas', monospace;
+    font-size: 0.8em;
+    border-radius: 6px;
+    margin: 1em 0;
+    padding: 1em;
+    overflow-x: auto;
+    /* 혹시 border가 필요하면 아래 추가 */
+    /* border: 1px solidrgb(67, 63, 96); */
   }
 `
