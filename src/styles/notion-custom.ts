@@ -56,16 +56,43 @@ export const notionCustomStyles = css`
   }
   /* 최상위 리스트는 들여쓰기 없음 */
   .notion-list > ol,
-  .notion-list > ul {
+  .notion-list > ul,
+  .notion-list-numbered > ol,
+  .notion-list-numbered > ul {
     margin-left: 0 !important;
     padding-left: 1.3em !important;
   }
   /* 첫 번째 리스트 항목만 왼쪽 패딩 제거 */
   .notion-list > ol > li:first-child,
-  .notion-list > ul > li:first-child {
+  .notion-list > ul > li:first-child,
+  .notion-list-numbered > ol > li:first-child,
+  .notion-list-numbered > ul > li:first-child {
     padding-left: 0 !important;
   }
   .notion-hr {
     margin: 2em 0 !important;
   }
+  .notion-code,
+  .notion-inline-code {
+    font-family: 'Fira Mono', 'Menlo', 'Monaco', 'Consolas', monospace !important;
+  }
+  /* 나머지 텍스트에만 글로벌 폰트 적용 */
+  .notion-toggle,
+  .notion-toggle-button,
+  .notion-toggle-button-arrow,
+  .notion-toggle-button-arrow-opened,
+  .notion-toggle-content,
+  .notion-simple-table,
+  .notion-table-of-contents,
+  .notion-text,
+  .notion-list,
+  .notion-h1,
+  .notion-h2,
+  .notion-h3,
+  .notion-quote,
+  .notion-callout {
+    font-family: "Noto Serif KR", "PingFang SC", "Microsoft YaHei", sans-serif !important;
+  }
+
+
 `;
