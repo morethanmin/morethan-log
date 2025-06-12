@@ -51,4 +51,20 @@ export const notionCustomStyles = css`
     white-space: pre;
     -webkit-overflow-scrolling: touch;
   }
+  /* 최상위 리스트는 들여쓰기 없음 */
+  .notion-list > ol,
+  .notion-list > ul {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    list-style-position: inside !important;
+  }
+  /* 하위(subset) 리스트는 들여쓰기 적용 */
+  .notion-list ol ol,
+  .notion-list ul ul,
+  .notion-list ol ul,
+  .notion-list ul ol {
+    margin-left: 0 !important;
+    padding-left: 0.7em !important;
+    list-style-position: inside !important;
+  }
 `;
