@@ -106,7 +106,10 @@ const StyledWrapper = styled.div`
   }
   .notion-simple-table th,
   .notion-simple-table td {
-    white-space: nowrap;
+    white-space: pre-wrap;
+    word-break: break-word;
+    padding: 8px;
+    vertical-align: top;
   }
   .notion-quote {
     font-size: 1rem;
