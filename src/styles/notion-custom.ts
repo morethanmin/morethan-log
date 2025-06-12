@@ -18,6 +18,8 @@ export const notionCustomStyles = css`
     -webkit-overflow-scrolling: touch;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
+    border: none !important;
+    border-collapse: collapse !important;
   }
   .notion-simple-table > tbody,
   .notion-simple-table > thead {
@@ -31,6 +33,7 @@ export const notionCustomStyles = css`
     word-break: break-word;
     padding: 8px;
     vertical-align: top;
+    border: 1px solid #d1d5db !important;
   }
   .notion-quote {
     font-size: 1rem;
@@ -55,16 +58,14 @@ export const notionCustomStyles = css`
   .notion-list > ol,
   .notion-list > ul {
     margin-left: 0 !important;
-    padding-left: 0 !important;
-    list-style-position: inside !important;
+    padding-left: 1.3em !important;
   }
-  /* 하위(subset) 리스트는 들여쓰기 적용 */
-  .notion-list ol ol,
-  .notion-list ul ul,
-  .notion-list ol ul,
-  .notion-list ul ol {
-    margin-left: 0 !important;
-    padding-left: 0.7em !important;
-    list-style-position: inside !important;
+  /* 첫 번째 리스트 항목만 왼쪽 패딩 제거 */
+  .notion-list > ol > li:first-child,
+  .notion-list > ul > li:first-child {
+    padding-left: 0 !important;
+  }
+  .notion-hr {
+    margin: 2em 0 !important;
   }
 `;
