@@ -90,9 +90,17 @@ export const notionCustomStyles = css`
   .notion-h2,
   .notion-h3,
   .notion-quote,
-  .notion-callout {
-    font-family: "Noto Serif KR", "PingFang SC", "Microsoft YaHei", sans-serif !important;
+  .notion-callout,
+  .category,
+  .category * {
+    font-family: "Noto Serif KR", "PingFang SC", "Microsoft YaHei", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif !important;
   }
-
+  .notion-table-of-contents,
+  .notion-table-of-contents * {
+    font-size: 0.925em !important;
+    font-family: "Noto Serif KR", "PingFang SC", "Microsoft YaHei", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+  }
 
 `;
