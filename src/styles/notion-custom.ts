@@ -18,6 +18,8 @@ export const notionCustomStyles = css`
     -webkit-overflow-scrolling: touch;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
+    border: none !important;
+    border-collapse: collapse !important;
   }
   .notion-simple-table > tbody,
   .notion-simple-table > thead {
@@ -31,6 +33,7 @@ export const notionCustomStyles = css`
     word-break: break-word;
     padding: 8px;
     vertical-align: top;
+    border: 1px solid #d1d5db !important;
   }
   .notion-quote {
     font-size: 1rem;
