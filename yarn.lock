@@ -3426,6 +3426,11 @@ prettier@^2.7.1:
   resolved "https://registry.npmjs.org/prettier/-/prettier-2.7.1.tgz"
   integrity sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==
 
+prism-material-themes@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/prism-material-themes/-/prism-material-themes-1.0.5.tgz#7034e8196bfcca6cda930d5bdaf8fd2229149352"
+  integrity sha512-idTEXmj7rajdOWuiXybh/FrrT/Byg4YTr/q4FgmKNiXVpreNKU8AjpY8feF96Q1bvcblJ3DJnFNMX7tt7S1l1Q==
+
 prismjs@^1.27.0, prismjs@^1.30.0:
   version "1.30.0"
   resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.30.0.tgz#d9709969d9d4e16403f6f348c63553b19f0975a9"

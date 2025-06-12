@@ -3,34 +3,21 @@ import Image from "next/image"
 import Link from "next/link"
 import { ExtendedRecordMap } from "notion-types"
 import useScheme from "src/hooks/useScheme"
-import { FC } from "react"
+import { FC, useEffect } from "react"
 import { Global } from "@emotion/react"
 import { notionCustomStyles } from "src/styles/notion-custom"
 import styled from "@emotion/styled"
+
 
 // core styles shared by all of react-notion-x (required)
 import "react-notion-x/src/styles.css"
 
 // used for code syntax highlighting (optional)
-import "prismjs/themes/prism-tomorrow.css"
-// import "prismjs/components/prism-javascript"
-// import "prismjs/components/prism-typescript"
-// import "prismjs/components/prism-jsx"
-// import "prismjs/components/prism-tsx"
-// import "prismjs/components/prism-python"
-// import "prismjs/components/prism-markup"
-// import "prismjs/components/prism-bash"
-// import "prismjs/components/prism-json"
-// import "prismjs/components/prism-css"
-// import "prismjs/components/prism-scss"
-// import "prismjs/components/prism-java"
-// import "prismjs/components/prism-c"
-// import "prismjs/components/prism-cpp"
-// import "prismjs/components/prism-go"
-// import "prismjs/components/prism-rust"
+// import "prismjs/themes/prism-tomorrow.css"
+import 'prism-material-themes/themes/material-default.css';
+
 
 // used for rendering equations (optional)
-
 import "katex/dist/katex.min.css"
 
 const _NotionRenderer = dynamic(
@@ -73,6 +60,7 @@ type Props = {
 
 const NotionRenderer: FC<Props> = ({ recordMap }) => {
   const [scheme] = useScheme()
+
   return (
     <>
       <Global styles={notionCustomStyles} />

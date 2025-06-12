@@ -51,15 +51,4 @@ export const notionCustomStyles = css`
     white-space: pre;
     -webkit-overflow-scrolling: touch;
   }
-  /* 공통 코드 블럭 스타일 (가독성 향상) */
-  .notion-code {
-    font-family: 'Fira Mono', 'Menlo', 'Monaco', 'Consolas', monospace;
-    font-size: 0.8em;
-    border-radius: 6px;
-    margin: 1em 0;
-    padding: 1em;
-    overflow-x: auto;
-    /* 혹시 border가 필요하면 아래 추가 */
-    /* border: 1px solidrgb(67, 63, 96); */
-  }
 `;
