@@ -49,7 +49,7 @@ export const notionCustomStyles = css`
   }
   /* 테이블 셀 텍스트 크기 통일 */
   .notion-simple-table-cell {
-    font-size: 1rem !important;
+    font-size: 0.9rem !important;
     line-height: 1.5 !important;
   }
   .notion-quote {
