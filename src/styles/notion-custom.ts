@@ -47,6 +47,11 @@ export const notionCustomStyles = css`
     vertical-align: top;
     border: 1px solid #d1d5db !important;
   }
+  /* 테이블 셀 텍스트 크기 통일 */
+  .notion-simple-table-cell {
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+  }
   .notion-quote {
     font-size: 1rem;
     margin-top: 0.5rem;
