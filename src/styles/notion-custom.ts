@@ -1,6 +1,16 @@
 import { css } from "@emotion/react"
 
 export const notionCustomStyles = css`
+  /* 글로벌 폰트 설정 */
+  * {
+    -webkit-text-size-adjust: 100% !important;
+    -moz-text-size-adjust: 100% !important;
+    text-size-adjust: 100% !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+  }
+
+  /* 기본 레이아웃 */
   .notion-collection-page-properties {
     display: none !important;
   }
@@ -10,7 +20,8 @@ export const notionCustomStyles = css`
   .notion-list {
     width: 100%;
   }
-  /* 리스트 아이템 텍스트 줄바꿈 처리 */
+
+  /* 리스트 스타일 */
   .notion-list li {
     word-wrap: break-word;
     word-break: break-word;
@@ -22,7 +33,21 @@ export const notionCustomStyles = css`
     overflow-wrap: break-word;
     word-break: break-word;
   }
-  /* 모바일 테이블 가로 스크롤 */
+  .notion-list > ol,
+  .notion-list > ul,
+  .notion-list-numbered > ol,
+  .notion-list-numbered > ul {
+    margin-left: 0 !important;
+    padding-left: 1.3em !important;
+  }
+  .notion-list > ol > li:first-child,
+  .notion-list > ul > li:first-child,
+  .notion-list-numbered > ol > li:first-child,
+  .notion-list-numbered > ul > li:first-child {
+    padding-left: 0 !important;
+  }
+
+  /* 테이블 스타일 */
   .notion-simple-table {
     width: 100%;
     display: block;
@@ -47,51 +72,35 @@ export const notionCustomStyles = css`
     vertical-align: top;
     border: 1px solid #d1d5db !important;
   }
-  /* 테이블 셀 텍스트 크기 통일 - iOS/Android/Web 대응 */
+
+  /* 텍스트 요소 공통 스타일 */
+  .notion-quote,
+  .notion-callout,
+  .notion-table-of-contents,
+  .notion-table-of-contents *,
   .notion-simple-table-cell,
   .notion-simple-table-cell * {
-    font-size: 0.9rem !important;
-    line-height: 1.5 !important;
-    -webkit-text-size-adjust: 100% !important;
-    -moz-text-size-adjust: 100% !important;
-    text-size-adjust: 100% !important;
-    -webkit-font-smoothing: antialiased !important;
-    -moz-osx-font-smoothing: grayscale !important;
-    font-family: inherit !important;
-  }
-  .notion-simple-table-cell b,
-  .notion-simple-table-cell strong {
-    font-size: 0.9rem !important;
-    font-weight: 600 !important;
-  }
-  /* 웹 브라우저 테이블 셀 텍스트 크기 강제 */
-  @media screen {
-    .notion-simple-table-cell,
-    .notion-simple-table-cell * {
-      font-size: 0.9rem !important;
-      max-width: 100% !important;
-      box-sizing: border-box !important;
-    }
-  }
-  /* 안드로이드 테이블 셀 텍스트 크기 강제 */
-  @media screen and (-webkit-min-device-pixel-ratio:0) {
-    .notion-simple-table-cell,
-    .notion-simple-table-cell * {
-      font-size: 0.9rem !important;
-      -webkit-text-size-adjust: none !important;
-    }
-  }
-  .notion-quote {
     font-size: 1rem;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    line-height: 1.5;
   }
+
+  /* 특정 요소 스타일 */
+  .notion-quote,
   .notion-callout {
-    font-size: 1rem;
     margin-top: 0.8rem;
     margin-bottom: 0.8rem;
   }
-  /* 인라인 코드가 길어질 때 좌우 스크롤 처리 */
+  .notion-table-of-contents,
+  .notion-table-of-contents * {
+    font-size: 0.925em;
+    font-weight: 400;
+  }
+  .notion-simple-table-cell b,
+  .notion-simple-table-cell strong {
+    font-weight: 600;
+  }
+
+  /* 코드 스타일 */
   .notion-inline-code {
     display: inline-block;
     max-width: 100%;
@@ -100,29 +109,17 @@ export const notionCustomStyles = css`
     white-space: pre;
     -webkit-overflow-scrolling: touch;
   }
-  /* 최상위 리스트는 들여쓰기 없음 */
-  .notion-list > ol,
-  .notion-list > ul,
-  .notion-list-numbered > ol,
-  .notion-list-numbered > ul {
-    margin-left: 0 !important;
-    padding-left: 1.3em !important;
-  }
-  /* 첫 번째 리스트 항목만 왼쪽 패딩 제거 */
-  .notion-list > ol > li:first-child,
-  .notion-list > ul > li:first-child,
-  .notion-list-numbered > ol > li:first-child,
-  .notion-list-numbered > ul > li:first-child {
-    padding-left: 0 !important;
-  }
-  .notion-hr {
-    margin: 2em 0 !important;
-  }
   .notion-code,
   .notion-inline-code {
     font-family: 'Fira Mono', 'Menlo', 'Monaco', 'Consolas', monospace !important;
   }
-  /* 나머지 텍스트에만 글로벌 폰트 적용 */
+
+  /* 구분선 */
+  .notion-hr {
+    margin: 2em 0 !important;
+  }
+
+  /* 폰트 패밀리 설정 */
   .notion-toggle,
   .notion-toggle-button,
   .notion-toggle-button-arrow,
@@ -141,12 +138,29 @@ export const notionCustomStyles = css`
   .category * {
     font-family: "Noto Serif KR", "PingFang SC", "Microsoft YaHei", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif !important;
   }
-  .notion-table-of-contents,
-  .notion-table-of-contents * {
-    font-size: 0.925em !important;
-    font-family: "Noto Serif KR", "PingFang SC", "Microsoft YaHei", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif !important;
-    font-weight: 400 !important;
-    line-height: 1.5 !important;
+
+  /* 모바일 대응 */
+  @media screen and (max-width: 768px) {
+    .notion-quote,
+    .notion-callout,
+    .notion-table-of-contents,
+    .notion-table-of-contents *,
+    .notion-simple-table-cell,
+    .notion-simple-table-cell * {
+      font-size: 0.9rem !important;
+    }
   }
 
+  /* iOS/Android 특화 대응 */
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
+    .notion-quote,
+    .notion-callout,
+    .notion-table-of-contents,
+    .notion-table-of-contents *,
+    .notion-simple-table-cell,
+    .notion-simple-table-cell * {
+      font-size: 0.9rem !important;
+      -webkit-text-size-adjust: none !important;
+    }
+  }
 `;
