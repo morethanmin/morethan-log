@@ -10,6 +10,18 @@ export const notionCustomStyles = css`
   .notion-list {
     width: 100%;
   }
+  /* 리스트 아이템 텍스트 줄바꿈 처리 */
+  .notion-list li {
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+  }
+  .notion-list li > div {
+    width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
   /* 모바일 테이블 가로 스크롤 */
   .notion-simple-table {
     width: 100%;
