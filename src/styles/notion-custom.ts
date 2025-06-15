@@ -47,10 +47,39 @@ export const notionCustomStyles = css`
     vertical-align: top;
     border: 1px solid #d1d5db !important;
   }
-  /* 테이블 셀 텍스트 크기 통일 */
-  .notion-simple-table-cell {
+  /* 테이블 셀 텍스트 크기 통일 - iOS/Android/Web 대응 */
+  .notion-simple-table-cell,
+  .notion-simple-table-cell * {
     font-size: 0.9rem !important;
     line-height: 1.5 !important;
+    -webkit-text-size-adjust: 100% !important;
+    -moz-text-size-adjust: 100% !important;
+    text-size-adjust: 100% !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    font-family: inherit !important;
+  }
+  .notion-simple-table-cell b,
+  .notion-simple-table-cell strong {
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+  }
+  /* 웹 브라우저 테이블 셀 텍스트 크기 강제 */
+  @media screen {
+    .notion-simple-table-cell,
+    .notion-simple-table-cell * {
+      font-size: 0.9rem !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+    }
+  }
+  /* 안드로이드 테이블 셀 텍스트 크기 강제 */
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
+    .notion-simple-table-cell,
+    .notion-simple-table-cell * {
+      font-size: 0.9rem !important;
+      -webkit-text-size-adjust: none !important;
+    }
   }
   .notion-quote {
     font-size: 1rem;
