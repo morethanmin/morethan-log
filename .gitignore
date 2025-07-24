@@ -5,6 +5,10 @@
 /.pnp
 .pnp.js
 
+# env
+.env
+CLAUDE.md
+
 # testing
 /coverage
 
