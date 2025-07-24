@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import styled from "@emotion/styled"
 import { useRouter } from "next/router"
 import Link from "next/link"
@@ -13,6 +13,13 @@ const Categories: React.FC = () => {
   if (!posts || posts.length === 0) return <div>Loading...</div>
 
   const majorCategories: TMajorCategories = getMajorCategoriesFromPosts(posts)
+  
+  // 초기화 시 모든 카테고리를 펼친 상태로 설정
+  useEffect(() => {
+    if (Object.keys(majorCategories).length > 0) {
+      setExpandedCategories(new Set(Object.keys(majorCategories)))
+    }
+  }, [posts])
 
   const toggleCategory = (major: string) => {
     const newExpanded = new Set(expandedCategories)
@@ -84,7 +91,7 @@ const StyledWrapper = styled.div`
     text-align: center;
     
     h1 {
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: 700;
       margin-bottom: 0.5rem;
       color: ${({ theme }) => theme.colors.gray12};
@@ -92,7 +99,7 @@ const StyledWrapper = styled.div`
     
     p {
       color: ${({ theme }) => theme.colors.gray11};
-      font-size: 1.1rem;
+      font-size: 1rem;
     }
   }
 
@@ -107,8 +114,8 @@ const StyledWrapper = styled.div`
 
   .category-card {
     border: 1px solid ${({ theme }) => theme.colors.gray6};
-    border-radius: 12px;
-    padding: 1.5rem;
+    border-radius: 10px;
+    padding: 1rem;
     background: ${({ theme }) => theme.colors.gray2};
     transition: all 0.2s ease;
 
@@ -132,7 +139,7 @@ const StyledWrapper = styled.div`
       gap: 0.5rem;
       
       h2 {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         font-weight: 600;
         color: ${({ theme }) => theme.colors.gray12};
         margin: 0;
@@ -140,7 +147,7 @@ const StyledWrapper = styled.div`
       
       .count {
         color: ${({ theme }) => theme.colors.gray10};
-        font-size: 0.9rem;
+        font-size: 0.85rem;
       }
     }
     

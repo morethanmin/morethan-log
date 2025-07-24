@@ -1,6 +1,6 @@
 import styled from "@emotion/styled"
 import { useRouter } from "next/router"
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { Emoji } from "src/components/Emoji"
 import usePostsQuery from "src/hooks/usePostsQuery"
 import { getMajorCategoriesFromPosts } from "src/libs/utils/category"
@@ -13,6 +13,9 @@ const CategoryList: React.FC<Props> = () => {
   const currentCategory = router.query.category || undefined
   const posts = usePostsQuery()
   const majorCategories = posts && posts.length > 0 ? getMajorCategoriesFromPosts(posts) : {}
+  const [expandedCategories, setExpandedCategories] = useState<Set<string>>(new Set())
+
+  // 기본적으로 모든 카테고리는 접힌 상태로 시작
 
   const handleClickCategory = (value: any) => {
     // delete
@@ -37,6 +40,17 @@ const CategoryList: React.FC<Props> = () => {
     }
   }
 
+  const toggleCategory = (majorCategory: string, e: React.MouseEvent) => {
+    e.stopPropagation()
+    const newExpanded = new Set(expandedCategories)
+    if (newExpanded.has(majorCategory)) {
+      newExpanded.delete(majorCategory)
+    } else {
+      newExpanded.add(majorCategory)
+    }
+    setExpandedCategories(newExpanded)
+  }
+
   return (
     <StyledWrapper>
       <div className="top">
@@ -53,30 +67,45 @@ const CategoryList: React.FC<Props> = () => {
         </a>
         
         {/* 계층 구조로 카테고리 표시 */}
-        {Object.entries(majorCategories).map(([major, data]) => (
-          <div key={major} className="category-group">
-            {/* 대분류 */}
-            <a
-              data-active={currentCategory === major}
-              onClick={() => handleClickCategory(major)}
-              className="major-category"
-            >
-              📁 {major} <span style={{ color: '#aaa' }}>({data.count})</span>
-            </a>
-            
-            {/* 소분류들 */}
-            {Object.entries(data.minorCategories).map(([minor, count]) => (
+        {Object.entries(majorCategories).map(([major, data]) => {
+          const isExpanded = expandedCategories.has(major)
+          const hasMinorCategories = Object.keys(data.minorCategories).length > 0
+          
+          return (
+            <div key={major} className="category-group">
+              {/* 대분류 */}
               <a
-                key={`${major}/${minor}`}
-                data-active={currentCategory === `${major}/${minor}`}
-                onClick={() => handleClickCategory(`${major}/${minor}`)}
-                className="minor-category"
+                data-active={currentCategory === major}
+                onClick={() => handleClickCategory(major)}
+                className="major-category"
               >
-                {minor} <span style={{ color: '#aaa' }}>({count})</span>
+                {hasMinorCategories ? (
+                  <span 
+                    className={`toggle-icon ${!isExpanded ? 'collapsed' : ''}`}
+                    onClick={(e) => toggleCategory(major, e)}
+                    title={isExpanded ? '접기' : '펼쳐서 하위 카테고리 보기'}
+                  >
+                    {isExpanded ? '📂' : '📁'}
+                  </span>
+                ) : (
+                  '📁'
+                )} {major} <span style={{ color: '#aaa' }}>({data.count})</span>
               </a>
-            ))}
-          </div>
-        ))}
+              
+              {/* 소분류들 - 토글 상태에 따라 표시 */}
+              {isExpanded && Object.entries(data.minorCategories).map(([minor, count]) => (
+                <a
+                  key={`${major}/${minor}`}
+                  data-active={currentCategory === `${major}/${minor}`}
+                  onClick={() => handleClickCategory(`${major}/${minor}`)}
+                  className="minor-category"
+                >
+                  {minor} <span style={{ color: '#aaa' }}>({count})</span>
+                </a>
+              ))}
+            </div>
+          )
+        })}
       </div>
     </StyledWrapper>
   )
@@ -156,9 +185,36 @@ const StyledWrapper = styled.div`
 
       &.major-category {
         font-weight: 600;
+        display: flex;
+        align-items: center;
         
         @media (min-width: 1024px) {
           margin-top: 0.5rem;
+        }
+        
+        .toggle-icon {
+          margin-right: 0.25rem;
+          cursor: pointer;
+          display: inline-flex;
+          align-items: center;
+          position: relative;
+          
+          :hover {
+            opacity: 0.7;
+            transform: scale(1.1);
+          }
+          
+          &.collapsed:after {
+            content: "";
+            position: absolute;
+            right: -2px;
+            top: -2px;
+            width: 4px;
+            height: 4px;
+            background: ${({ theme }) => theme.colors.blue9};
+            border-radius: 50%;
+            opacity: 0.7;
+          }
         }
       }
 

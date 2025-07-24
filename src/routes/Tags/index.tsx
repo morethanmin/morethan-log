@@ -78,7 +78,7 @@ const StyledWrapper = styled.div`
     text-align: center;
     
     h1 {
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: 700;
       margin-bottom: 0.5rem;
       color: ${({ theme }) => theme.colors.gray12};
@@ -86,7 +86,7 @@ const StyledWrapper = styled.div`
     
     p {
       color: ${({ theme }) => theme.colors.gray11};
-      font-size: 1.1rem;
+      font-size: 1rem;
       margin-bottom: 2rem;
     }
   }
@@ -135,13 +135,13 @@ const StyledWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
+    padding: 0.5rem;
     background: ${({ theme }) => theme.colors.gray2};
     border: 1px solid ${({ theme }) => theme.colors.gray6};
-    border-radius: 12px;
+    border-radius: 10px;
     text-decoration: none;
     transition: all 0.2s ease;
-    min-height: 80px;
+    min-height: 50px;
 
     &:hover {
       border-color: ${({ theme }) => theme.colors.gray8};
@@ -155,7 +155,7 @@ const StyledWrapper = styled.div`
       
       .tag-name {
         display: block;
-        font-size: 1.1rem;
+        font-size: 1rem;
         font-weight: 600;
         color: ${({ theme }) => theme.colors.gray12};
         margin-bottom: 0.25rem;
@@ -163,7 +163,7 @@ const StyledWrapper = styled.div`
       }
       
       .tag-count {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         color: ${({ theme }) => theme.colors.gray10};
       }
     }
