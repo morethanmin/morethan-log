@@ -40,10 +40,10 @@ export const notionCustomStyles = css`
     margin-left: 0 !important;
     padding-left: 1.3em !important;
   }
-  .notion-list > ol > li:first-child,
-  .notion-list > ul > li:first-child,
-  .notion-list-numbered > ol > li:first-child,
-  .notion-list-numbered > ul > li:first-child {
+  .notion-list > ol > li:first-of-type,
+  .notion-list > ul > li:first-of-type,
+  .notion-list-numbered > ol > li:first-of-type,
+  .notion-list-numbered > ul > li:first-of-type {
     padding-left: 0 !important;
   }
 
