@@ -72,7 +72,7 @@ const CategoryList: React.FC<Props> = () => {
                 onClick={() => handleClickCategory(`${major}/${minor}`)}
                 className="minor-category"
               >
-                ┗ {minor} <span style={{ color: '#aaa' }}>({count})</span>
+                {minor} <span style={{ color: '#aaa' }}>({count})</span>
               </a>
             ))}
           </div>
@@ -165,10 +165,23 @@ const StyledWrapper = styled.div`
       &.minor-category {
         font-size: 0.8rem;
         color: ${({ theme }) => theme.colors.gray9};
+        position: relative;
         
         @media (min-width: 1024px) {
           margin-left: 1rem;
-          padding-left: 0.75rem;
+          padding-left: 1.75rem;
+        }
+
+        &::before {
+          content: "•";
+          margin-right: 0.5rem;
+          color: ${({ theme }) => theme.colors.gray7};
+          
+          @media (min-width: 1024px) {
+            position: absolute;
+            left: 1rem;
+            margin-right: 0;
+          }
         }
 
         &[data-active="true"] {
