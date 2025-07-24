@@ -65,7 +65,7 @@ const StyledWrapper = styled(Link)`
   article {
     overflow: hidden;
     position: relative;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     border-radius: 1rem;
     background-color: ${({ theme }) =>
       theme.scheme === "light" ? "white" : theme.colors.gray4};
@@ -74,7 +74,7 @@ const StyledWrapper = styled(Link)`
     transition-duration: 300ms;
 
     @media (min-width: 768px) {
-      margin-bottom: 2rem;
+      margin-bottom: 1.25rem;
     }
 
     :hover {
@@ -99,13 +99,13 @@ const StyledWrapper = styled(Link)`
       }
     }
     > .content {
-      padding: 1rem;
+      padding: 0.75rem;
 
       &[data-thumb="false"] {
-        padding-top: 3.5rem;
+        padding-top: 2.75rem;
       }
       &[data-category="false"] {
-        padding-top: 1.5rem;
+        padding-top: 1rem;
       }
       > .top {
         display: flex;
@@ -117,7 +117,7 @@ const StyledWrapper = styled(Link)`
           align-items: baseline;
         }
         h2 {
-          margin-bottom: 0.5rem;
+          margin-bottom: 0.25rem;
           font-size: 1.125rem;
           line-height: 1.75rem;
           font-weight: 500;
@@ -132,7 +132,7 @@ const StyledWrapper = styled(Link)`
       }
       > .date {
         display: flex;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
         gap: 0.5rem;
         align-items: center;
         .content {
@@ -145,7 +145,7 @@ const StyledWrapper = styled(Link)`
         }
       }
       > .summary {
-        margin-bottom: 1rem;
+        margin-bottom: 0.75rem;
         p {
           display: none;
           line-height: 2rem;
