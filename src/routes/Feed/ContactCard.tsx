@@ -6,6 +6,7 @@ import {
   AiOutlineInstagram,
   AiOutlineMail,
 } from "react-icons/ai"
+import { MdRssFeed } from "react-icons/md"
 import { CONFIG } from "site.config"
 import { Emoji } from "src/components/Emoji"
 
@@ -57,6 +58,14 @@ const ContactCard: React.FC = () => {
             <div className="name">linkedin</div>
           </a>
         )}
+        <a
+          href="/feed.xml"
+          rel="noreferrer"
+          target="_blank"
+        >
+          <MdRssFeed className="icon" />
+          <div className="name">rss</div>
+        </a>
       </StyledWrapper>
     </>
   )

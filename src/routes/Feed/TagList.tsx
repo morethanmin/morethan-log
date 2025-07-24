@@ -18,6 +18,7 @@ const TagList: React.FC<Props> = () => {
         query: {
           ...router.query,
           tag: undefined,
+          category: undefined, // 태그 해제 시 카테고리도 제거
         },
       })
     }
@@ -27,6 +28,7 @@ const TagList: React.FC<Props> = () => {
         query: {
           ...router.query,
           tag: value,
+          category: undefined, // 태그 선택 시 카테고리 필터링 제거
         },
       })
     }
