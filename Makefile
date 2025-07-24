@@ -12,3 +12,5 @@ dev:
 run:
 	docker run -it --rm -v $(PWD):/app morethan-log /bin/bash
 
+local:
+	npm run dev

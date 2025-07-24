@@ -118,14 +118,14 @@ const StyledWrapper = styled(Link)`
         }
         h2 {
           margin-bottom: 0.25rem;
-          font-size: 1.125rem;
-          line-height: 1.75rem;
+          font-size: 1rem;
+          line-height: 1.5rem;
           font-weight: 500;
 
           cursor: pointer;
 
           @media (min-width: 768px) {
-            font-size: 1.25rem;
+            font-size: 1.125rem;
             line-height: 1.75rem;
           }
         }
