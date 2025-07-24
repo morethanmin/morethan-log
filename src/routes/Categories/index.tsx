@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useMemo } from "react"
 import styled from "@emotion/styled"
 import { useRouter } from "next/router"
 import Link from "next/link"
@@ -10,16 +10,18 @@ const Categories: React.FC = () => {
   const posts = usePostsQuery()
   const [expandedCategories, setExpandedCategories] = useState<Set<string>>(new Set())
   
-  if (!posts || posts.length === 0) return <div>Loading...</div>
-
-  const majorCategories: TMajorCategories = getMajorCategoriesFromPosts(posts)
+  const majorCategories: TMajorCategories = useMemo(() => {
+    return posts && posts.length > 0 ? getMajorCategoriesFromPosts(posts) : {}
+  }, [posts])
   
   // 초기화 시 모든 카테고리를 펼친 상태로 설정
   useEffect(() => {
-    if (Object.keys(majorCategories).length > 0) {
+    if (posts && posts.length > 0 && Object.keys(majorCategories).length > 0) {
       setExpandedCategories(new Set(Object.keys(majorCategories)))
     }
-  }, [posts])
+  }, [posts, majorCategories])
+  
+  if (!posts || posts.length === 0) return <div>Loading...</div>
 
   const toggleCategory = (major: string) => {
     const newExpanded = new Set(expandedCategories)
