@@ -54,7 +54,7 @@ const Tags: React.FC = () => {
         
         {filteredTags.length === 0 && (
           <div className="no-results">
-            <p>No tags found matching "{searchTerm}"</p>
+            <p>No tags found matching &ldquo;{searchTerm}&rdquo;</p>
           </div>
         )}
       </div>

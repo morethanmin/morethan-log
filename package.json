@@ -33,7 +33,8 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
     "react-notion-x": "^7.4.2",
-    "react-syntax-highlighter": "^15.6.1"
+    "react-syntax-highlighter": "^15.6.1",
+    "@next/env": "^13.4.9"
   },
   "devDependencies": {
     "@types/gtag.js": "^0.0.12",
@@ -64,6 +65,9 @@
     "react-lazy-images": {
       "react": "$react",
       "react-dom": "$react-dom"
+    },
+    "react-intersection-observer": {
+      "react": "$react"
     }
   }
 }

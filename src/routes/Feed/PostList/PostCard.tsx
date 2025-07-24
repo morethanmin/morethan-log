@@ -22,7 +22,7 @@ const PostCard: React.FC<Props> = ({ data }) => {
         {categoryStr && (
           <div className="category">
             <Category>{categoryStr}</Category>
-            {category.minor && (
+            {category?.minor && (
               <div className="category-hierarchy">
                 <span className="major">{category.major}</span>
                 <span className="separator">/</span>
