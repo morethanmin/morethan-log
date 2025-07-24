@@ -31,6 +31,24 @@ const StyledWrapper = styled.div`
       display: block;
       margin-left: 1rem;
       color: ${({ theme }) => theme.colors.gray11};
+      
+      a {
+        font-size: 1rem;
+        text-decoration: none;
+        color: inherit;
+        
+        @media (max-width: 768px) {
+          font-size: 0.9rem;
+        }
+        
+        @media (max-width: 480px) {
+          font-size: 0.85rem;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        margin-left: 0.75rem;
+      }
     }
   }
 `
