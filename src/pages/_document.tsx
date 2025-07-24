@@ -15,9 +15,15 @@ class MyDocument extends Document {
           <link
             rel="alternate"
             type="application/rss+xml"
-            title="RSS 2.0"
-            href="/feed"
-          ></link>
+            title={`${CONFIG.blog.title} RSS Feed`}
+            href="/feed.xml"
+          />
+          <link
+            rel="alternate"
+            type="application/atom+xml"
+            title={`${CONFIG.blog.title} Atom Feed`}
+            href="/feed.xml"
+          />
           <link 
             href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&display=swap" 
             rel="stylesheet" 
