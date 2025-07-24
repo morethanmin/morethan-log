@@ -21,6 +21,9 @@ export const getMajorCategoriesFromPosts = (posts: TPost[]): TMajorCategories =>
   posts.forEach(post => {
     if (!post.category) return
 
+    // 포스트별로 대분류를 한 번만 카운트하기 위해 Set 사용
+    const majorCategoriesInPost = new Set<string>()
+    
     post.category.forEach(categoryStr => {
       const { major, minor } = parseCategoryHierarchy(categoryStr)
       
@@ -31,7 +34,8 @@ export const getMajorCategoriesFromPosts = (posts: TPost[]): TMajorCategories =>
         }
       }
 
-      majorCategories[major].count++
+      // 대분류를 Set에 추가 (중복 방지)
+      majorCategoriesInPost.add(major)
 
       if (minor) {
         if (!majorCategories[major].minorCategories[minor]) {
@@ -39,6 +43,11 @@ export const getMajorCategoriesFromPosts = (posts: TPost[]): TMajorCategories =>
         }
         majorCategories[major].minorCategories[minor]++
       }
+    })
+
+    // 포스트에 포함된 각 대분류의 카운트를 1씩 증가
+    majorCategoriesInPost.forEach(major => {
+      majorCategories[major].count++
     })
   })
 
