@@ -154,7 +154,7 @@ const StyledWrapper = styled.div`
 
   .view-all {
     display: inline-block;
-    color: ${({ theme }) => theme.colors.blue};
+    color: ${({ theme }) => theme.colors.blue9};
     text-decoration: none;
     font-weight: 500;
     font-size: 0.9rem;
