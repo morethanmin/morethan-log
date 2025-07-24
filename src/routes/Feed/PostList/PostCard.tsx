@@ -29,6 +29,7 @@ const PostCard: React.FC<Props> = ({ data }) => {
               fill
               alt={data.title}
               css={{ objectFit: "cover" }}
+              priority={false}
             />
           </div>
         )}
