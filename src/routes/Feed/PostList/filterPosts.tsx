@@ -1,5 +1,6 @@
 import { DEFAULT_CATEGORY } from "src/constants"
 import { TPost } from "src/types"
+import { parseCategoryHierarchy } from "src/libs/utils/category"
 
 interface FilterPostsParams {
   posts: TPost[]
@@ -7,6 +8,22 @@ interface FilterPostsParams {
   tag?: string
   category?: string
   order?: string
+}
+
+function matchesCategory(postCategories: string[], targetCategory: string): boolean {
+  return postCategories.some(postCat => {
+    if (postCat === targetCategory) return true
+    
+    const postHierarchy = parseCategoryHierarchy(postCat)
+    const targetHierarchy = parseCategoryHierarchy(targetCategory)
+    
+    if (!targetHierarchy.minor) {
+      return postHierarchy.major === targetHierarchy.major
+    }
+    
+    return postHierarchy.major === targetHierarchy.major && 
+           postHierarchy.minor === targetHierarchy.minor
+  })
 }
 
 export function filterPosts({
@@ -24,7 +41,7 @@ export function filterPosts({
         searchContent.toLowerCase().includes(q.toLowerCase()) &&
         (!tag || (post.tags && post.tags.includes(tag))) &&
         (category === DEFAULT_CATEGORY ||
-          (post.category && post.category.includes(category)))
+          (post.category && matchesCategory(post.category, category)))
       )
     })
     .sort((a, b) => {

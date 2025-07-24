@@ -6,20 +6,29 @@ import { TPost } from "../../../types"
 import Image from "next/image"
 import Category from "../../../components/Category"
 import styled from "@emotion/styled"
+import { parseCategoryHierarchy } from "src/libs/utils/category"
 
 type Props = {
   data: TPost
 }
 
 const PostCard: React.FC<Props> = ({ data }) => {
-  const category = (data.category && data.category?.[0]) || undefined
+  const categoryStr = (data.category && data.category?.[0]) || undefined
+  const category = categoryStr ? parseCategoryHierarchy(categoryStr) : undefined
 
   return (
     <StyledWrapper href={`/${data.slug}`}>
       <article>
-        {category && (
+        {categoryStr && (
           <div className="category">
-            <Category>{category}</Category>
+            <Category>{categoryStr}</Category>
+            {category.minor && (
+              <div className="category-hierarchy">
+                <span className="major">{category.major}</span>
+                <span className="separator">/</span>
+                <span className="minor">{category.minor}</span>
+              </div>
+            )}
           </div>
         )}
         {data.thumbnail && (
@@ -32,7 +41,7 @@ const PostCard: React.FC<Props> = ({ data }) => {
             />
           </div>
         )}
-        <div data-thumb={!!data.thumbnail} data-category={!!category} className="content">
+        <div data-thumb={!!data.thumbnail} data-category={!!categoryStr} className="content">
           <header className="top">
             <h2>{data.title}</h2>
           </header>
@@ -86,6 +95,25 @@ const StyledWrapper = styled(Link)`
       top: 1rem;
       left: 1rem;
       z-index: 10;
+      
+      .category-hierarchy {
+        display: none;
+        margin-top: 0.25rem;
+        font-size: 0.75rem;
+        color: ${({ theme }) => theme.colors.gray9};
+        
+        .major {
+          font-weight: 500;
+        }
+        
+        .separator {
+          margin: 0 0.25rem;
+        }
+        
+        .minor {
+          font-weight: 400;
+        }
+      }
     }
 
     > .thumbnail {

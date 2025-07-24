@@ -48,4 +48,18 @@ export type TCategories = {
   [category: string]: number
 }
 
+export type TCategoryHierarchy = {
+  major: string
+  minor?: string
+}
+
+export type TMajorCategories = {
+  [majorCategory: string]: {
+    count: number
+    minorCategories: {
+      [minorCategory: string]: number
+    }
+  }
+}
+
 export type SchemeType = "light" | "dark"
