@@ -21,7 +21,13 @@ const PostHeader: React.FC<Props> = ({ data }) => {
               <>
                 <div className="author">
                   <Image
-                    css={{ borderRadius: "50%" }}
+                    css={{ 
+                      borderRadius: "50%",
+                      "@media (max-width: 960px)": {
+                        width: "20px",
+                        height: "20px"
+                      }
+                    }}
                     src={data.author[0].profile_photo || CONFIG.profile.image}
                     alt="profile_photo"
                     width={24}
@@ -71,19 +77,40 @@ const StyledWrapper = styled.div`
     font-size: 1.875rem;
     line-height: 2.25rem;
     font-weight: 700;
+
+    @media (max-width: 960px) {
+      font-size: 1.5rem;
+      line-height: 1.75rem;
+    }
   }
   nav {
     margin-top: 1.5rem;
     color: ${({ theme }) => theme.colors.gray11};
+    
+    @media (max-width: 960px) {
+      margin-top: 1rem;
+    }
+
     > .top {
       display: flex;
       margin-bottom: 0.75rem;
       gap: 0.75rem;
       align-items: center;
+      
+      @media (max-width: 960px) {
+        margin-bottom: 0.5rem;
+        gap: 0.5rem;
+        font-size: 0.875rem;
+      }
+
       .author {
         display: flex;
         gap: 0.5rem;
         align-items: center;
+        
+        @media (max-width: 960px) {
+          gap: 0.375rem;
+        }
       }
       .hr {
         margin-top: 0.25rem;
@@ -104,12 +131,21 @@ const StyledWrapper = styled.div`
       display: flex;
       margin-bottom: 1rem;
       align-items: center;
+      
+      @media (max-width: 960px) {
+        margin-bottom: 0.75rem;
+      }
+
       .tags {
         display: flex;
         overflow-x: auto;
         flex-wrap: nowrap;
         gap: 0.5rem;
         max-width: 100%;
+        
+        @media (max-width: 960px) {
+          gap: 0.375rem;
+        }
       }
     }
     .thumbnail {
