@@ -157,25 +157,43 @@ export const notionCustomStyles = css`
 
   /* 모바일 대응 */
   @media screen and (max-width: 768px) {
+    .notion-text,
+    .notion-list,
+    .notion-list *,
     .notion-quote,
     .notion-callout,
     .notion-table-of-contents,
     .notion-table-of-contents *,
     .notion-simple-table-cell,
     .notion-simple-table-cell * {
-      font-size: 0.9rem !important;
+      font-size: 0.85rem !important;
+    }
+    
+    .notion-h1 {
+      font-size: 1.8rem !important;
+    }
+    
+    .notion-h2 {
+      font-size: 1.5rem !important;
+    }
+    
+    .notion-h3 {
+      font-size: 1.3rem !important;
     }
   }
 
   /* iOS/Android 특화 대응 */
   @media screen and (-webkit-min-device-pixel-ratio:0) {
+    .notion-text,
+    .notion-list,
+    .notion-list *,
     .notion-quote,
     .notion-callout,
     .notion-table-of-contents,
     .notion-table-of-contents *,
     .notion-simple-table-cell,
     .notion-simple-table-cell * {
-      font-size: 0.9rem !important;
+      font-size: 0.85rem !important;
       -webkit-text-size-adjust: none !important;
     }
   }
