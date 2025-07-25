@@ -39,7 +39,20 @@ async function getPageProperties(
         case "select": {
           const selects = getTextContent(val)
           if (selects[0]?.length) {
-            properties[schema[key].name] = selects.split(",")
+            const categories = selects.split(",")
+            const expandedCategories = new Set(categories)
+            
+            // '/' 구분자가 있는 카테고리에서 대분류도 추가
+            categories.forEach(category => {
+              if (category.includes('/')) {
+                const majorCategory = category.split('/')[0]?.trim()
+                if (majorCategory) {
+                  expandedCategories.add(majorCategory)
+                }
+              }
+            })
+            
+            properties[schema[key].name] = Array.from(expandedCategories)
           }
           break
         }

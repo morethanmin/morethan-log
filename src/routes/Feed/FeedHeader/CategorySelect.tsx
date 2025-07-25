@@ -5,15 +5,18 @@ import { MdExpandMore } from "react-icons/md"
 import { DEFAULT_CATEGORY } from "src/constants"
 import styled from "@emotion/styled"
 import { useCategoriesQuery } from "src/hooks/useCategoriesQuery"
+import usePostsQuery from "src/hooks/usePostsQuery"
+import { getMajorCategoriesFromPosts } from "src/libs/utils/category"
 
 type Props = {}
 
 const CategorySelect: React.FC<Props> = () => {
   const router = useRouter()
-  const data = useCategoriesQuery()
+  const posts = usePostsQuery()
   const [dropdownRef, opened, handleOpen] = useDropdown()
 
   const currentCategory = `${router.query.category || ``}` || DEFAULT_CATEGORY
+  const majorCategories = posts && posts.length > 0 ? getMajorCategoriesFromPosts(posts) : {}
 
   const handleOptionClick = (category: string) => {
     router.push({
@@ -30,13 +33,23 @@ const CategorySelect: React.FC<Props> = () => {
       </div>
       {opened && (
         <div className="content">
-          {Object.keys(data).map((key, idx) => (
-            <div
-              className="item"
-              key={idx}
-              onClick={() => handleOptionClick(key)}
-            >
-              {`${key} (${data[key]})`}
+          {Object.entries(majorCategories).map(([major, data]) => (
+            <div key={major}>
+              <div
+                className="item major-category"
+                onClick={() => handleOptionClick(major)}
+              >
+                {`${major} (${data.count})`}
+              </div>
+              {Object.entries(data.minorCategories).map(([minor, count]) => (
+                <div
+                  key={`${major}/${minor}`}
+                  className="item minor-category"
+                  onClick={() => handleOptionClick(`${major}/${minor}`)}
+                >
+                  {`  ${minor} (${count})`}
+                </div>
+              ))}
             </div>
           ))}
         </div>
@@ -69,7 +82,7 @@ const StyledWrapper = styled.div`
     color: ${({ theme }) => theme.colors.gray10};
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
       0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    > .item {
+    > div > .item {
       padding: 0.25rem;
       padding-left: 0.5rem;
       padding-right: 0.5rem;
@@ -81,6 +94,17 @@ const StyledWrapper = styled.div`
 
       :hover {
         background-color: ${({ theme }) => theme.colors.gray4};
+      }
+      
+      &.major-category {
+        font-weight: 600;
+        margin-bottom: 0.125rem;
+      }
+      
+      &.minor-category {
+        font-size: 0.8rem;
+        color: ${({ theme }) => theme.colors.gray9};
+        margin-left: 0.5rem;
       }
     }
   }

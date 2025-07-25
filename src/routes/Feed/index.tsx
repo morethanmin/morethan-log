@@ -4,7 +4,7 @@ import SearchInput from "./SearchInput"
 import { FeedHeader } from "./FeedHeader"
 import Footer from "./Footer"
 import styled from "@emotion/styled"
-import TagList from "./TagList"
+import CategoryList from "./CategoryList"
 import MobileProfileCard from "./MobileProfileCard"
 import ProfileCard from "./ProfileCard"
 import ServiceCard from "./ServiceCard"
@@ -27,14 +27,14 @@ const Feed: React.FC<Props> = () => {
           height: `calc(100vh - ${HEADER_HEIGHT}px)`,
         }}
       >
-        <TagList />
+        <CategoryList />
       </div>
       <div className="mid">
         <MobileProfileCard />
         <PinnedPosts q={q} />
         <SearchInput value={q} onChange={(e) => setQ(e.target.value)} />
-        <div className="tags">
-          <TagList />
+        <div className="categories">
+          <CategoryList />
         </div>
         <FeedHeader />
         <PostList q={q} />
@@ -98,7 +98,7 @@ const StyledWrapper = styled.div`
       grid-column: span 7 / span 7;
     }
 
-    > .tags {
+    > .categories {
       display: block;
 
       @media (min-width: 1024px) {

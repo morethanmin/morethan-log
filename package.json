@@ -33,7 +33,8 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
     "react-notion-x": "^7.4.2",
-    "react-syntax-highlighter": "^15.6.1"
+    "react-syntax-highlighter": "^15.6.1",
+    "@next/env": "^13.4.9"
   },
   "devDependencies": {
     "@types/gtag.js": "^0.0.12",
@@ -47,7 +48,26 @@
     "next-sitemap": "^3.1.32",
     "postcss": "^8.3.11",
     "prettier": "^2.7.1",
-    "prismjs": "^1.29.0",
     "typescript": "^4.9.4"
+  },
+  "overrides": {
+    "react-cusdis": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "react-notion-x": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "react-image": {
+      "@babel/runtime": "^7.0.0"
+    },
+    "react-lazy-images": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "react-intersection-observer": {
+      "react": "$react"
+    }
   }
 }

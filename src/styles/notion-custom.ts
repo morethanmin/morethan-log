@@ -40,10 +40,10 @@ export const notionCustomStyles = css`
     margin-left: 0 !important;
     padding-left: 1.3em !important;
   }
-  .notion-list > ol > li:first-child,
-  .notion-list > ul > li:first-child,
-  .notion-list-numbered > ol > li:first-child,
-  .notion-list-numbered > ul > li:first-child {
+  .notion-list > ol > li:first-of-type,
+  .notion-list > ul > li:first-of-type,
+  .notion-list-numbered > ol > li:first-of-type,
+  .notion-list-numbered > ul > li:first-of-type {
     padding-left: 0 !important;
   }
 
@@ -71,6 +71,22 @@ export const notionCustomStyles = css`
     padding: 8px;
     vertical-align: top;
     border: 1px solid #d1d5db !important;
+  }
+
+  /* 제목 스타일 - 오버플로우 방지 */
+  .notion-h1,
+  .notion-h2,
+  .notion-h3,
+  .notion-title {
+    word-wrap: break-word !important;
+    word-break: break-all !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    white-space: normal !important;
   }
 
   /* 텍스트 요소 공통 스타일 */

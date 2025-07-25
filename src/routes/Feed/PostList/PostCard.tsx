@@ -6,20 +6,29 @@ import { TPost } from "../../../types"
 import Image from "next/image"
 import Category from "../../../components/Category"
 import styled from "@emotion/styled"
+import { parseCategoryHierarchy } from "src/libs/utils/category"
 
 type Props = {
   data: TPost
 }
 
 const PostCard: React.FC<Props> = ({ data }) => {
-  const category = (data.category && data.category?.[0]) || undefined
+  const categoryStr = (data.category && data.category?.[0]) || undefined
+  const category = categoryStr ? parseCategoryHierarchy(categoryStr) : undefined
 
   return (
     <StyledWrapper href={`/${data.slug}`}>
       <article>
-        {category && (
+        {categoryStr && (
           <div className="category">
-            <Category>{category}</Category>
+            <Category>{categoryStr}</Category>
+            {category?.minor && (
+              <div className="category-hierarchy">
+                <span className="major">{category.major}</span>
+                <span className="separator">/</span>
+                <span className="minor">{category.minor}</span>
+              </div>
+            )}
           </div>
         )}
         {data.thumbnail && (
@@ -32,7 +41,7 @@ const PostCard: React.FC<Props> = ({ data }) => {
             />
           </div>
         )}
-        <div data-thumb={!!data.thumbnail} data-category={!!category} className="content">
+        <div data-thumb={!!data.thumbnail} data-category={!!categoryStr} className="content">
           <header className="top">
             <h2>{data.title}</h2>
           </header>
@@ -65,7 +74,7 @@ const StyledWrapper = styled(Link)`
   article {
     overflow: hidden;
     position: relative;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     border-radius: 1rem;
     background-color: ${({ theme }) =>
       theme.scheme === "light" ? "white" : theme.colors.gray4};
@@ -74,7 +83,7 @@ const StyledWrapper = styled(Link)`
     transition-duration: 300ms;
 
     @media (min-width: 768px) {
-      margin-bottom: 2rem;
+      margin-bottom: 1.25rem;
     }
 
     :hover {
@@ -86,6 +95,25 @@ const StyledWrapper = styled(Link)`
       top: 1rem;
       left: 1rem;
       z-index: 10;
+      
+      .category-hierarchy {
+        display: none;
+        margin-top: 0.25rem;
+        font-size: 0.75rem;
+        color: ${({ theme }) => theme.colors.gray9};
+        
+        .major {
+          font-weight: 500;
+        }
+        
+        .separator {
+          margin: 0 0.25rem;
+        }
+        
+        .minor {
+          font-weight: 400;
+        }
+      }
     }
 
     > .thumbnail {
@@ -99,13 +127,13 @@ const StyledWrapper = styled(Link)`
       }
     }
     > .content {
-      padding: 1rem;
+      padding: 0.75rem;
 
       &[data-thumb="false"] {
-        padding-top: 3.5rem;
+        padding-top: 2.75rem;
       }
       &[data-category="false"] {
-        padding-top: 1.5rem;
+        padding-top: 1rem;
       }
       > .top {
         display: flex;
@@ -117,22 +145,22 @@ const StyledWrapper = styled(Link)`
           align-items: baseline;
         }
         h2 {
-          margin-bottom: 0.5rem;
-          font-size: 1.125rem;
-          line-height: 1.75rem;
+          margin-bottom: 0.25rem;
+          font-size: 1rem;
+          line-height: 1.5rem;
           font-weight: 500;
 
           cursor: pointer;
 
           @media (min-width: 768px) {
-            font-size: 1.25rem;
+            font-size: 1.125rem;
             line-height: 1.75rem;
           }
         }
       }
       > .date {
         display: flex;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
         gap: 0.5rem;
         align-items: center;
         .content {
@@ -145,7 +173,7 @@ const StyledWrapper = styled(Link)`
         }
       }
       > .summary {
-        margin-bottom: 1rem;
+        margin-bottom: 0.75rem;
         p {
           display: none;
           line-height: 2rem;

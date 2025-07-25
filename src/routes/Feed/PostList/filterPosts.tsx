@@ -9,6 +9,21 @@ interface FilterPostsParams {
   order?: string
 }
 
+function matchesCategory(postCategories: string[], targetCategory: string): boolean {
+  return postCategories.some(postCat => {
+    // 정확한 매치
+    if (postCat === targetCategory) return true
+    
+    // '/' 구분으로 첫 번째 요소 비교 (대분류 매치)
+    const postFirstPart = postCat.split('/')[0]?.trim()
+    const targetFirstPart = targetCategory.split('/')[0]?.trim()
+    
+    if (postFirstPart === targetFirstPart) return true
+    
+    return false
+  })
+}
+
 export function filterPosts({
   posts,
   q,
@@ -24,7 +39,7 @@ export function filterPosts({
         searchContent.toLowerCase().includes(q.toLowerCase()) &&
         (!tag || (post.tags && post.tags.includes(tag))) &&
         (category === DEFAULT_CATEGORY ||
-          (post.category && post.category.includes(category)))
+          (post.category && matchesCategory(post.category, category)))
       )
     })
     .sort((a, b) => {
