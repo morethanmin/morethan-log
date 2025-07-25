@@ -59,5 +59,8 @@ const StyledWrapper = styled.div`
   > article {
     margin: 0 auto;
     max-width: 42rem;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    overflow: hidden;
   }
 `
