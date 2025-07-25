@@ -123,6 +123,102 @@ export const notionCustomStyles = css`
     margin-bottom: 0.8rem;
     font-size: clamp(0.7rem, 2vw, 0.9rem) !important;
   }
+
+  /* 반응형 토글 스타일 */
+  .notion-toggle,
+  .notion-toggle *,
+  .notion-toggle-content,
+  .notion-toggle-content * {
+    font-size: clamp(0.75rem, 2.2vw, 0.95rem) !important;
+    line-height: 1.6 !important;
+  }
+  
+  .notion-toggle summary {
+    font-size: clamp(0.75rem, 2.2vw, 0.95rem) !important;
+    font-weight: 500 !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  /* 반응형 헤딩 토글 스타일 */
+  .notion-h1.notion-toggle,
+  .notion-h1.notion-toggle summary {
+    font-size: clamp(1.35rem, 3.5vw, 1.8rem) !important;
+    line-height: 1.3 !important;
+    font-weight: 700 !important;
+    margin-top: clamp(1rem, 2.5vw, 1.8rem) !important;
+    margin-bottom: clamp(0.5rem, 1.2vw, 0.9rem) !important;
+  }
+
+  .notion-h2.notion-toggle,
+  .notion-h2.notion-toggle summary {
+    font-size: clamp(1.2rem, 3vw, 1.5rem) !important;
+    line-height: 1.4 !important;
+    font-weight: 700 !important;
+    margin-top: clamp(0.8rem, 2vw, 1.4rem) !important;
+    margin-bottom: clamp(0.4rem, 1vw, 0.7rem) !important;
+  }
+
+  .notion-h3.notion-toggle,
+  .notion-h3.notion-toggle summary {
+    font-size: clamp(1.05rem, 2.5vw, 1.3rem) !important;
+    line-height: 1.4 !important;
+    font-weight: 700 !important;
+    margin-top: clamp(0.7rem, 1.8vw, 1.2rem) !important;
+    margin-bottom: clamp(0.35rem, 0.8vw, 0.6rem) !important;
+  }
+
+  /* 헤딩 토글 내부 컨텐츠는 일반 텍스트 크기 */
+  .notion-h1.notion-toggle .notion-toggle-content,
+  .notion-h1.notion-toggle .notion-toggle-content *,
+  .notion-h2.notion-toggle .notion-toggle-content,
+  .notion-h2.notion-toggle .notion-toggle-content *,
+  .notion-h3.notion-toggle .notion-toggle-content,
+  .notion-h3.notion-toggle .notion-toggle-content * {
+    font-size: clamp(0.75rem, 2.2vw, 0.95rem) !important;
+    line-height: 1.6 !important;
+    font-weight: 400 !important;
+  }
+
+  /* 반응형 북마크 및 링크 멘션 스타일 */
+  .notion-bookmark,
+  .notion-bookmark-title,
+  .notion-bookmark-description,
+  .notion-bookmark-link,
+  .notion-bookmark-link-text {
+    font-size: clamp(0.75rem, 2.2vw, 0.95rem) !important;
+    line-height: 1.5 !important;
+  }
+
+  .notion-bookmark-title {
+    font-weight: 600 !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  .notion-bookmark-description {
+    color: rgba(55, 53, 47, 0.65) !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .notion-link-mention,
+  .notion-link-mention *,
+  .notion-link-mention-link,
+  .notion-link-mention-title,
+  .notion-link-mention-provider,
+  .notion-link-mention-preview-title,
+  .notion-link-mention-preview-description {
+    font-size: clamp(0.75rem, 2.2vw, 0.95rem) !important;
+    line-height: 1.5 !important;
+  }
+
+  .notion-link-mention-title,
+  .notion-link-mention-preview-title {
+    font-weight: 600 !important;
+  }
+
+  .notion-link-mention-provider,
+  .notion-link-mention-preview-description {
+    color: rgba(55, 53, 47, 0.65) !important;
+  }
   
   .notion-table-of-contents,
   .notion-table-of-contents *,
