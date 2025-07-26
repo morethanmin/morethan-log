@@ -19,7 +19,7 @@ const CONFIG = {
   // blog setting (required)
   blog: {
     title: "YUKI's DEV LOG",
-    description: "주니어 개발자 Yuki의 개발 블로그입니다",
+    description: "주니어 개발자 Yuki의 개발 블로그입니다. AI, 데이터, SW 엔지니어링과 같이 다양한 개발 분야에 관심이 많습니다. 개발 관련 이야기들 (책 리뷰, 트러블 슈팅, 공부한 내용 등)과 회고를 적고 있습니다.",
     scheme: "dark", // 'light' | 'dark' | 'system'
   },
 
