@@ -2,7 +2,9 @@ import styled from "@emotion/styled"
 import Link from "next/link"
 
 const NavBar: React.FC = () => {
-  const links = [{ id: 1, name: "About", to: "/about" }]
+  const links = [{ id: 1, name: "Resume", to: "https://drive.google.com/file/d/1ZDuj3J7Ex6q1e68_Zs1VORQn3aHaefTu/view" }]
+  // 원래 라우팅은 /about 로 밀기.
+  // https://drive.google.com/file/d/1ZDuj3J7Ex6q1e68_Zs1VORQn3aHaefTu/view
   return (
     <StyledWrapper className="">
       <ul>

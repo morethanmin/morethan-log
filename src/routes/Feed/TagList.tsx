@@ -35,7 +35,7 @@ const TagList: React.FC<Props> = () => {
   return (
     <StyledWrapper>
       <div className="top">
-        <Emoji>🏷️</Emoji> Tags
+        <Emoji>️</Emoji> <b>카테고리</b>
       </div>
       <div className="list">
         {Object.keys(data).map((key) => (

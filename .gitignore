@@ -37,3 +37,9 @@ yarn-error.log*
 # public/sitemap.xml
 
 /.firebase
+
+# 로컬이랑 원격 pakage.json 차이 막기
+package.json
+
+#
+.env.local
