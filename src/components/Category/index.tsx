@@ -33,7 +33,10 @@ const Category: React.FC<Props> = ({ readOnly = false, children }) => {
     <StyledWrapper
       onClick={() => handleClick(children)}
       css={{
-        backgroundColor: getColorClassByName(children),
+        // 랜덤 색상 설정
+        // backgroundColor: getColorClassByName(children),
+
+        backgroundColor: "rgba(255, 255, 255)", // 흰색
         cursor: readOnly ? "default" : "pointer",
       }}
     >
