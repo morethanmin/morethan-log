@@ -21,8 +21,8 @@ const CONFIG = {
   ],
   // blog setting (required)
   blog: {
-    title: "seoseuo-log",
-      description: "서승 기술 블로그 입니다.",
+    title: "seuo-log",
+      description: "기술 블로그 | 꾸준히 추구미",
     scheme: "light", // 'light' | 'dark' | 'system'
   },
 
