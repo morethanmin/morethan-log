@@ -48,7 +48,7 @@ const StyledWrapper = styled.div`
   z-index: ${zIndexes.header};
   position: sticky;
   top: 0;
-  backdrop-filter: blur(50px);
+  backdrop-filter: blur(30px);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); // 얇은 그림자
 `
 
@@ -62,7 +62,7 @@ const HeaderWrapper = styled.div`
     align-items: center;
     width: 100%;
     max-width: 1120px;
-    height: 4rem;
+    height: 2rem;
     margin: 0 auto;
     &[data-full-width="true"] {
       @media (min-width: 768px) {
