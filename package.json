@@ -23,7 +23,6 @@
     "mermaid": "^10.9.1",
     "next": "^13.4.9",
     "notion-client": "^6.16.0",
-    // "notion-types": "^6.16.0",
     "notion-utils": "^6.16.0",
     "prismjs": "^1.29.0",
     "react": "^18.2.0",
