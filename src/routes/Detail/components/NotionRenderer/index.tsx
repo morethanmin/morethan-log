@@ -5,7 +5,6 @@ import Image from "next/image"
 import Link from "next/link"
 import "prismjs/themes/prism-tomorrow.css"
 import { FC } from "react"
-import type { ExtendedRecordMap } from "react-notion-x"
 import "react-notion-x/src/styles.css"
 import useScheme from "src/hooks/useScheme"
 
@@ -41,7 +40,7 @@ const mapPageUrl = (id: string) => {
 }
 
 type Props = {
-  recordMap: ExtendedRecordMap
+  recordMap: any
 }
 
 const NotionRenderer: FC<Props> = ({ recordMap }) => {
