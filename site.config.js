@@ -20,7 +20,7 @@ const CONFIG = {
   blog: {
     title: "blanq",
     description: "매일의 삶을 더 가볍게, blanq와 함께",
-    scheme: "dark", // 'light' | 'dark' | 'system'
+    scheme: "system", // 'light' | 'dark' | 'system'
   },
 
   // CONFIG configration (required)
