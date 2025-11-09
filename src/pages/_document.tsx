@@ -6,8 +6,8 @@ class MyDocument extends Document {
     return (
       <Html lang={CONFIG.lang}>
         <Head>
-          <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-          <link rel="icon" href="/favicon.ico" type="image/x-icon">
+          <link rel="shortcut icon" href="public/favicon.ico" type="image/x-icon">
+          <link rel="icon" href="public/favicon.ico" type="image/x-icon">
           {/* google search console */}
           {CONFIG.googleSearchConsole.enable === true && (
             <>
