@@ -1,3 +1,4 @@
+/** @jsxImportSource @emotion/react */
 import { useRouter } from "next/router"
 import React from "react"
 import { COLOR_SET } from "./constants"

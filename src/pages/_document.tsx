@@ -6,35 +6,21 @@ class MyDocument extends Document {
     return (
       <Html lang={CONFIG.lang}>
         <Head>
-          <link rel="icon" href="/favicon.ico" />
-          <link
-            rel="apple-touch-icon"
-            sizes="192x192"
-            href="/apple-touch-icon.png"
-          ></link>
-          <link
-            rel="alternate"
-            type="application/rss+xml"
-            title="RSS 2.0"
-            href="/feed"
-          ></link>
-          {/* google search console */}
-          {CONFIG.googleSearchConsole.enable === true && (
-            <>
-              <meta
-                name="google-site-verification"
-                content={CONFIG.googleSearchConsole.config.siteVerification}
-              />
-            </>
+          <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+          <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+          {CONFIG.googleSearchConsole?.enable && (
+            <meta
+              name="google-site-verification"
+              content={CONFIG.googleSearchConsole?.config?.siteVerification}
+            />
           )}
-          {/* naver search advisor */}
-          {CONFIG.naverSearchAdvisor.enable === true && (
-            <>
-              <meta
-                name="naver-site-verification"
-                content={CONFIG.naverSearchAdvisor.config.siteVerification}
-              />
-            </>
+
+          {CONFIG.naverSearchAdvisor?.enable && (
+            <meta
+              name="naver-site-verification"
+              content={CONFIG.naverSearchAdvisor?.config?.siteVerification}
+            />
           )}
         </Head>
         <body>

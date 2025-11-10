@@ -1,3 +1,4 @@
+/** @jsxImportSource @emotion/react */
 import React, { ReactNode } from "react"
 import { Noto_Color_Emoji } from "next/font/google"
 

@@ -1,3 +1,4 @@
+/** @jsxImportSource @emotion/react */
 import { useState } from "react"
 
 import SearchInput from "./SearchInput"

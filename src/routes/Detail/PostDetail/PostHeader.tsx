@@ -1,3 +1,4 @@
+/** @jsxImportSource @emotion/react */
 import { CONFIG } from "site.config"
 import Tag from "src/components/Tag"
 import { TPost } from "src/types"

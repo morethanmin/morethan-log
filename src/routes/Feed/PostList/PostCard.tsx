@@ -1,3 +1,4 @@
+/** @jsxImportSource @emotion/react */
 import Link from "next/link"
 import { CONFIG } from "site.config"
 import { formatDate } from "src/libs/utils"
