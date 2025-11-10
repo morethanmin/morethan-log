@@ -6,6 +6,9 @@
     "type": "git",
     "url": "https://github.com/morethanmin/morethan-log.git"
   },
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
