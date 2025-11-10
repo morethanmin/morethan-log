@@ -9,20 +9,18 @@ class MyDocument extends Document {
           <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
           <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
-          {/* google search console */}
-          {CONFIG.googleSearchConsole.enable && (
-              <meta
-                name="google-site-verification"
-                content={CONFIG.googleSearchConsole.config.siteVerification}
-              />
+          {CONFIG.googleSearchConsole?.enable && (
+            <meta
+              name="google-site-verification"
+              content={CONFIG.googleSearchConsole?.config?.siteVerification}
+            />
           )}
 
-          {/* naver search advisor */}
-          {CONFIG.naverSearchAdvisor.enable && (
-              <meta
-                name="naver-site-verification"
-                content={CONFIG.naverSearchAdvisor.config.siteVerification}
-              />
+          {CONFIG.naverSearchAdvisor?.enable && (
+            <meta
+              name="naver-site-verification"
+              content={CONFIG.naverSearchAdvisor?.config?.siteVerification}
+            />
           )}
         </Head>
         <body>

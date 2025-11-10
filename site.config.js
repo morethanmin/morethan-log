@@ -6,6 +6,8 @@ const CONFIG = {
     role: "노션 크리에이터",
     bio: "매일의 삶을 더 가볍게 만드는 템플릿을 제작합니다.",
     email: "byeoldom@gmail.com",
+    linkedin: "",
+    github: "",
     instagram: "blanq_kr",
     threads:"blanq_kr",
     youtube:"blanq_kr"

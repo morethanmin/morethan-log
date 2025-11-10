@@ -20,7 +20,7 @@ export default function getAllPageIds(
         pageSet.add(id)
       )
     })
-    pageIds = [...pageSet]
+    pageIds = Array.from(pageSet)
   }
   return pageIds
 }

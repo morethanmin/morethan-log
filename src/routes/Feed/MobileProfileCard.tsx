@@ -1,3 +1,4 @@
+/** @jsxImportSource @emotion/react */
 import { CONFIG } from "site.config"
 import Image from "next/image"
 import React from "react"
