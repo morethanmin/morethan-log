@@ -8,7 +8,7 @@ const CONFIG = {
     email: "byeoldom@gmail.com",
     instagram: "blanq_kr",
     threads:"blanq_kr",
-    youtube:"blanq_kr",
+    youtube:"blanq_kr"
   },
   projects: [
     {
