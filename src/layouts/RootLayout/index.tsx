@@ -69,4 +69,5 @@ const StyledMain = styled.main`
   width: 100%;
   max-width: 1120px;
   padding: 0 1rem;
+  text-align: justify;
 `
