@@ -71,6 +71,7 @@ const StyledWrapper = styled.div`
     font-size: 1.875rem;
     line-height: 2.25rem;
     font-weight: 700;
+    text-align: center;
   }
   nav {
     margin-top: 1.5rem;

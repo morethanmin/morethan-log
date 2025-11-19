@@ -23,6 +23,7 @@ const StyledWrapper = styled.div`
   justify-content: space-between;
   font-weight: 500;
   color: ${({ theme }) => theme.colors.gray10};
+  margin-top: 3rem;
   a {
     margin-top: 0.5rem;
     cursor: pointer;
