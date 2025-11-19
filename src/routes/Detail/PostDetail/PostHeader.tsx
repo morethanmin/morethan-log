@@ -80,10 +80,12 @@ const StyledWrapper = styled.div`
       margin-bottom: 0.75rem;
       gap: 0.75rem;
       align-items: center;
+      display: flow;
       .author {
         display: flex;
         gap: 0.5rem;
         align-items: center;
+        font-size: large;
       }
       .hr {
         margin-top: 0.25rem;
@@ -94,10 +96,12 @@ const StyledWrapper = styled.div`
       }
       .date {
         margin-right: 0.5rem;
+        margin-left: 2rem;
+        font-size: small;
 
-        @media (min-width: 768px) {
-          margin-left: 0;
-        }
+        // @media (min-width: 768px) {
+        //   margin-left: 0;
+        // }
       }
     }
     > .mid {
