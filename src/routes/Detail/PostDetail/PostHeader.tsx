@@ -74,8 +74,11 @@ const StyledWrapper = styled.div`
     text-align: center;
   }
   nav {
+    display: flex;
     margin-top: 1.5rem;
     color: ${({ theme }) => theme.colors.gray11};
+    justify-content: space-between;
+    align-items: start;
     > .top {
       display: flex;
       margin-bottom: 0.75rem;
