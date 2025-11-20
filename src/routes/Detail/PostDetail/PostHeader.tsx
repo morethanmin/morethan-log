@@ -75,6 +75,7 @@ const StyledWrapper = styled.div`
     line-height: 2.25rem;
     font-weight: 700;
     text-align: center;
+    margin-bottom: 1rem;
   }
   .hr {
     width: 100%;
