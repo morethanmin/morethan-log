@@ -78,7 +78,7 @@ const StyledWrapper = styled.div`
   }
   nav {
     display: flex;
-    margin-top: 1.5rem;
+    margin-top: 0.5rem;
     color: ${({ theme }) => theme.colors.gray11};
     justify-content: space-between;
     align-items: start;
@@ -96,11 +96,13 @@ const StyledWrapper = styled.div`
         justify-items: left;
       }
       .hr {
-        margin-top: 0.25rem;
-        margin-bottom: 0.25rem;
-        align-self: stretch;
-        width: 1px;
-        background-color: ${({ theme }) => theme.colors.gray10};
+        width: 100%;
+        border-right: none;
+        border-bottom: none;
+        border-left: none;
+        border-image: initial;
+        margin: 0;
+        border-top: 0.125rem solid rgb(52, 52, 52);
       }
       .date {
         margin-right: 0.5rem;
