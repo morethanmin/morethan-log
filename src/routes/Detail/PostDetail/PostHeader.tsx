@@ -76,6 +76,15 @@ const StyledWrapper = styled.div`
     font-weight: 700;
     text-align: center;
   }
+  .hr {
+    width: 100%;
+    border-right: none;
+    border-bottom: none;
+    border-left: none;
+    border-image: initial;
+    margin: 0;
+    border-top: 0.125rem solid rgb(52, 52, 52);
+  }
   nav {
     display: flex;
     margin-top: 0.5rem;
@@ -94,15 +103,6 @@ const StyledWrapper = styled.div`
         align-items: center;
         font-size: smaller;
         justify-items: left;
-      }
-      .hr {
-        width: 100%;
-        border-right: none;
-        border-bottom: none;
-        border-left: none;
-        border-image: initial;
-        margin: 0;
-        border-top: 0.125rem solid rgb(52, 52, 52);
       }
       .date {
         margin-right: 0.5rem;
