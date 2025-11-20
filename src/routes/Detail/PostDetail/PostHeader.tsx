@@ -14,7 +14,7 @@ const PostHeader: React.FC<Props> = ({ data }) => {
   return (
     <StyledWrapper>
       <h1 className="title">{data.title}</h1>
-      <div className="hr"></div>
+      <StyledHr />
       {data.type[0] !== "Paper" && (
         <nav>
           <div className="top">
@@ -62,7 +62,7 @@ const PostHeader: React.FC<Props> = ({ data }) => {
           )}
         </nav>
       )}
-      <div className="hr"></div>
+      <StyledHr />
     </StyledWrapper>
   )
 }
@@ -140,3 +140,11 @@ const StyledWrapper = styled.div`
     }
   }
 `
+
+const StyledHr = styled.hr`
+  width: 100%;
+  margin: 0.75rem 0;
+  border: 0;
+  border-top: 1px solid ${({ theme }) => theme.colors.gray10};
+`;
+
