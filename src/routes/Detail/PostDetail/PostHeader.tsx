@@ -97,7 +97,6 @@ const StyledWrapper = styled.div`
       margin-bottom: 0.75rem;
       gap: 0.75rem;
       align-items: center;
-      display: flow;
       .author {
         display: flex;
         gap: 0.5rem;
