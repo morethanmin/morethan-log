@@ -84,7 +84,7 @@ const StyledWrapper = styled.div`
     border-left: none;
     border-image: initial;
     margin: 0;
-    background-color: ${({ theme }) => theme.colors.gray10};
+    border-top: 0.063rem ${({ theme }) => theme.colors.gray10};
   }
   nav {
     display: flex;
