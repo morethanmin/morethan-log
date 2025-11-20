@@ -50,19 +50,19 @@ const PostHeader: React.FC<Props> = ({ data }) => {
               </div>
             )}
           </div>
-          {data.thumbnail && (
-            <div className="thumbnail">
-              <Image
-                src={data.thumbnail}
-                css={{ objectFit: "cover" }}
-                fill
-                alt={data.title}
-              />
-            </div>
-          )}
         </nav>
       )}
       <StyledHr />
+      {data.thumbnail && (
+        <StyledThumbnail>
+          <Image
+            src={data.thumbnail}
+            css={{ objectFit: "cover" }}
+            fill
+            alt={data.title}
+          />
+        </StyledThumbnail>
+      )}
     </StyledWrapper>
   )
 }
@@ -77,26 +77,20 @@ const StyledWrapper = styled.div`
     text-align: center;
     margin-bottom: 1rem;
   }
-  .hr {
-    width: 100%;
-    border-right: none;
-    border-bottom: none;
-    border-left: none;
-    border-image: initial;
-    margin: 0;
-    border-top: 0.063rem ${({ theme }) => theme.colors.gray10};
-  }
+
   nav {
     display: flex;
     margin-top: 0.5rem;
     color: ${({ theme }) => theme.colors.gray11};
     justify-content: space-between;
     align-items: start;
+
     > .top {
       display: flex;
       margin-bottom: 0.75rem;
       gap: 0.75rem;
       align-items: center;
+
       .author {
         display: flex;
         gap: 0.5rem;
@@ -104,38 +98,24 @@ const StyledWrapper = styled.div`
         font-size: smaller;
         justify-items: left;
       }
+
       .date {
         margin-right: 0.5rem;
         font-size: x-small;
-
-        // @media (min-width: 768px) {
-        //   margin-left: 0;
-        // }
       }
     }
+
     > .mid {
       display: flex;
       margin-bottom: 1rem;
       align-items: center;
+
       .tags {
         display: flex;
         overflow-x: auto;
         flex-wrap: nowrap;
         gap: 0.5rem;
         max-width: 100%;
-      }
-    }
-    .thumbnail {
-      overflow: hidden;
-      position: relative;
-      margin-bottom: 1.75rem;
-      border-radius: 1.5rem;
-      width: 100%;
-      background-color: ${({ theme }) => theme.colors.gray4};
-      padding-bottom: 66%;
-
-      @media (min-width: 1024px) {
-        padding-bottom: 50%;
       }
     }
   }
@@ -145,5 +125,17 @@ const StyledHr = styled.hr`
   width: 100%;
   border: 0;
   border-top: 1px solid ${({ theme }) => theme.colors.gray10};
-`;
+`
+const StyledThumbnail = styled.div`
+  overflow: hidden;
+  position: relative;
+  margin: 1.75rem 0;
+  border-radius: 1.5rem;
+  width: 100%;
+  background-color: ${({ theme }) => theme.colors.gray4};
+  padding-bottom: 66%;
 
+  @media (min-width: 1024px) {
+    padding-bottom: 50%;
+  }
+`
