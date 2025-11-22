@@ -47,6 +47,6 @@ export default Utterances
 
 const StyledWrapper = styled.div`
   @media (min-width: 768px) {
-    margin-left: -4rem;
+    margin-left: 0;
   }
 `
