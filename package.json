@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
     "postbuild": "next-sitemap --config next-sitemap.config.js",
     "lint": "next lint"
@@ -45,5 +45,6 @@
     "prettier": "^2.7.1",
     "prismjs": "^1.29.0",
     "typescript": "^4.9.4"
-  }
+  },
+  "packageManager": "yarn@1.22.19"
 }

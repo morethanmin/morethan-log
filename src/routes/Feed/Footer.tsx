@@ -1,6 +1,7 @@
 import { CONFIG } from "site.config"
 import React from "react"
 import styled from "@emotion/styled"
+import Link from "next/link"
 
 const d = new Date()
 const y = d.getFullYear()
@@ -11,15 +12,18 @@ type Props = {
 }
 
 const Footer: React.FC<Props> = ({ className }) => {
+  const link = { id: 1, name: "Privacy Policy", to: "/privacy-policy" }
   return (
     <StyledWrapper className={className}>
       <a
-        href={`https://github.com/${CONFIG.profile.github}`}
+        href={`https://creativecommons.org/licenses/by-nc-nd/4.0/`}
         target="_blank"
         rel="noreferrer"
       >
         © {CONFIG.profile.name} {from === y || !from ? y : `${from} - ${y}`}
       </a>
+      <br></br>
+      <Link href={link.to}>{link.name}</Link>
     </StyledWrapper>
   )
 }
