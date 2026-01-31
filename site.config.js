@@ -2,7 +2,7 @@ const CONFIG = {
   // profile setting (required)
   profile: {
     name: "JSong",
-    image: "/Jsong.png", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
+    image: "/JSong.png", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
     role: "Reader",
     bio: "Who am I",
     email: "frenz104@gmail.com",
@@ -18,8 +18,8 @@ const CONFIG = {
   ],
   // blog setting (required)
   blog: {
-    title: "morethan-log",
-    description: "welcome to morethan-log!",
+    title: "my reading",
+    description: "Read together!",
     scheme: "dark", // 'light' | 'dark' | 'system'
   },
 
