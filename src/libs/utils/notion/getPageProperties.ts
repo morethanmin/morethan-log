@@ -9,44 +9,54 @@ async function getPageProperties(
   schema: CollectionPropertySchemaMap
 ) {
   const api = new NotionAPI()
-  const rawProperties = Object.entries(block?.[id]?.value?.properties || [])
+  
+  // Handle nested block structure: block[id].value.value or block[id].value
+  const blockData = block?.[id] as any
+  const blockValue = blockData?.value?.value || blockData?.value
+  const rawProperties = Object.entries(blockValue?.properties || [])
+  
   const excludeProperties = ["date", "select", "multi_select", "person", "file"]
   const properties: any = {}
   for (let i = 0; i < rawProperties.length; i++) {
     const [key, val]: any = rawProperties[i]
     properties.id = id
-    if (schema[key]?.type && !excludeProperties.includes(schema[key].type)) {
-      properties[schema[key].name] = getTextContent(val)
+    
+    const schemaInfo = schema[key]
+    if (!schemaInfo) {
+      continue
+    }
+    
+    if (schemaInfo.type && !excludeProperties.includes(schemaInfo.type)) {
+      properties[schemaInfo.name] = getTextContent(val)
     } else {
-      switch (schema[key]?.type) {
+      switch (schemaInfo.type) {
         case "file": {
           try {
-            const Block = block?.[id].value
             const url: string = val[0][1][0][1]
-            const newurl = customMapImageUrl(url, Block)
-            properties[schema[key].name] = newurl
+            const newurl = customMapImageUrl(url, blockValue)
+            properties[schemaInfo.name] = newurl
           } catch (error) {
-            properties[schema[key].name] = undefined
+            properties[schemaInfo.name] = undefined
           }
           break
         }
         case "date": {
           const dateProperty: any = getDateValue(val)
           delete dateProperty.type
-          properties[schema[key].name] = dateProperty
+          properties[schemaInfo.name] = dateProperty
           break
         }
         case "select": {
           const selects = getTextContent(val)
           if (selects[0]?.length) {
-            properties[schema[key].name] = selects.split(",")
+            properties[schemaInfo.name] = selects.split(",")
           }
           break
         }
         case "multi_select": {
           const selects = getTextContent(val)
           if (selects[0]?.length) {
-            properties[schema[key].name] = selects.split(",")
+            properties[schemaInfo.name] = selects.split(",")
           }
           break
         }
@@ -71,7 +81,7 @@ async function getPageProperties(
               users.push(user)
             }
           }
-          properties[schema[key].name] = users
+          properties[schemaInfo.name] = users
           break
         }
         default:
