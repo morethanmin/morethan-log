@@ -9,44 +9,80 @@ async function getPageProperties(
   schema: CollectionPropertySchemaMap
 ) {
   const api = new NotionAPI()
-  const rawProperties = Object.entries(block?.[id]?.value?.properties || [])
-  const excludeProperties = ["date", "select", "multi_select", "person", "file"]
+  const blockEntry = block?.[id]?.value as any
+  const blockValue = blockEntry?.value ?? blockEntry
+  const rawProperties = Object.entries(blockValue?.properties || [])
+  
+  const excludeProperties = [
+    "date",
+    "select",
+    "multi_select",
+    "person",
+    "file",
+    "files",
+  ]
   const properties: any = {}
+
+  const extractFileUrl = (value: any): string | undefined => {
+    if (!Array.isArray(value) || value.length === 0) return undefined
+
+    const inner = value[0]?.[1]
+    if (!inner) return undefined
+
+    if (typeof inner === "string") return inner
+
+    if (Array.isArray(inner)) {
+      const first = inner[0]
+      if (typeof first === "string") return first
+      if (Array.isArray(first)) {
+        if (typeof first[1] === "string") return first[1]
+        if (typeof first[0] === "string") return first[0]
+      }
+    }
+
+    return undefined
+  }
   for (let i = 0; i < rawProperties.length; i++) {
     const [key, val]: any = rawProperties[i]
     properties.id = id
-    if (schema[key]?.type && !excludeProperties.includes(schema[key].type)) {
-      properties[schema[key].name] = getTextContent(val)
+    
+    const schemaInfo = schema[key]
+    if (!schemaInfo) {
+      continue
+    }
+    
+    if (schemaInfo.type && !excludeProperties.includes(schemaInfo.type)) {
+      properties[schemaInfo.name] = getTextContent(val)
     } else {
-      switch (schema[key]?.type) {
+      switch (schemaInfo.type) {
         case "file": {
           try {
-            const Block = block?.[id].value
-            const url: string = val[0][1][0][1]
-            const newurl = customMapImageUrl(url, Block)
-            properties[schema[key].name] = newurl
+            const url = extractFileUrl(val)
+            properties[schemaInfo.name] = url
+              ? customMapImageUrl(url, blockValue)
+              : undefined
           } catch (error) {
-            properties[schema[key].name] = undefined
+            properties[schemaInfo.name] = undefined
           }
           break
         }
         case "date": {
           const dateProperty: any = getDateValue(val)
           delete dateProperty.type
-          properties[schema[key].name] = dateProperty
+          properties[schemaInfo.name] = dateProperty
           break
         }
         case "select": {
           const selects = getTextContent(val)
           if (selects[0]?.length) {
-            properties[schema[key].name] = selects.split(",")
+            properties[schemaInfo.name] = selects.split(",")
           }
           break
         }
         case "multi_select": {
           const selects = getTextContent(val)
           if (selects[0]?.length) {
-            properties[schema[key].name] = selects.split(",")
+            properties[schemaInfo.name] = selects.split(",")
           }
           break
         }
@@ -71,7 +107,7 @@ async function getPageProperties(
               users.push(user)
             }
           }
-          properties[schema[key].name] = users
+          properties[schemaInfo.name] = users
           break
         }
         default:
