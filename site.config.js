@@ -4,7 +4,7 @@ const CONFIG = {
     name: "Gaye Suner",
     image: "/image.png", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
     role: "Cloud Engineer",
-    bio: "virtualization, cloud, automation, orchestration, devops",
+    bio: "vmware, virtualization, cloud, automation, orchestration, devops",
     email: "gayemsuner@gmail.com",
     linkedin: "",
     github: "",
