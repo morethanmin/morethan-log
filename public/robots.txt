@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: www.gayesuner.com
+
+# Sitemaps
+Sitemap: www.gayesuner.com/sitemap.xml
