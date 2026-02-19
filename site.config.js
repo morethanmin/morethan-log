@@ -27,7 +27,7 @@ const CONFIG = {
   blog: {
     title: "Private Cloud Blogs",
     description: "Burada Automation ve Orchestration hakkinda bilgi paylasıyorum.",
-    scheme: "light", // 'light' | 'dark' | 'system'
+    scheme: "dark", // 'light' | 'dark' | 'system'
   },
 
   // CONFIG configration (required)
@@ -38,7 +38,7 @@ const CONFIG = {
 
   // notion configuration (required)
   notionConfig: {
-    pageId: process.env.NOTION_PAGE_ID,
+    pageId: "20aa302b7d5480c4a7d4c3388015d753",
   },
 
   // plugin configuration (optional)
